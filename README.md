@@ -18,6 +18,8 @@ Nuestro sitio está dirigido a una audiencia amplia que incluye tanto a propieta
 
 - **Juan Francisco Misuraca**: Soy de San Nicolás, tengo 27 años y estoy estudiando la carrera de Ciencias de la Educación. Además soy músico y estudiante de desarrollo Full Stack, interesado particularmente en linux, seguridad informtica, optimización de recursos y equipos limitados y desarrollo de aplicaciones web. Mi interés se despertó cuando me encontré con el scripting de bash y la automatización de tareas sencillas, lo que me puso en este camino de formación.
 
+- **Santiago Ezequiel Temperini**: Mi nombre es Santiago Ezequiel Temperini, vivo en la ciudad de San Nicolas De Los Arroyos, tengo 18 años, el año pasado termine el secundario en la escuela Jean Piaget, normalmente, en mi tiempos libre practico boxeo y juego al futbol con amigos. Aprendí a programar por mi hermana, ella había empezado Análisis en Sistemas y me intereso lo que hacía, y luego, me termine de decidir por seguir con la programación porque la escuela nos otorgo un curso de desarrollo web. Realmente todo lo que este relacionado con las computadoras me gusta, cuando tengo tiempo trabajo limpiando computadoras y arreglando.
+
 ## Páginas de referencia
 
 - https://autocity.com.ar/
