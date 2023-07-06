@@ -18,7 +18,7 @@ los Arroyos. También soy una persona paciente, detallista y que siempre que pue
 conocimientos lo hare con gusto. Durante mi tiempo libre me gusta
 juntarme con mis amigos, ir al gimnasio
 
-Ariel Isaías: oriundo de San Nicolás de los Arroyos, Provincia de Buenos Aires. Mi interés 
+Ariel Isaías: Soy oriundo de San Nicolás de los Arroyos, Provincia de Buenos Aires. Mi interés 
 por la programación comenzó desde temprana edad, cuando empecé a crear programas en Basic 
 utilizando una Commodore 64. Con el paso del tiempo, adquirí una portátil IBM PC-XT 5155,
 con la cual desarrollaba menús en archivos batch para iniciar programas y juegos que se 
