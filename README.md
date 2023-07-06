@@ -2,13 +2,13 @@
 
 Sitio de ecommerce de SixMotors - Grupo 4 - Comisión 52 - Full Stack Digital House
 
-##  --------------- Sobre el e-commerce --------------
+## Sobre el e-commerce
 
 Nuestro sitio web ofrece una amplia gama de productos y servicios relacionados con la venta de autos y autopartes. En cuanto a la venta de autos, contamos con un inventario de autos de diferentes marcas, modelos y categorías.
 Además, ofrecemos una variedad de autopartes para aquellos que buscan reparar, mejorar o personalizar sus vehículos.
 Nuestro sitio está dirigido a una audiencia amplia que incluye tanto a propietarios de automóviles en busca de comprar un vehículo nuevo o usado, como a personas que le interesen los automóviles y mecánicos que necesitan adquirir autopartes para sus proyectos o reparaciones.
 
-## --------------- Sobre nosotros --------------
+## Sobre nosotros
 
 - **Mateo Nerli**: Hola me llamo Mateo Nerli, tengo 20 años, me encuentro estudiando la tecnicatura universitaria en programacion en la UTN, me encuentro actualmente haciendo distintos cursos de programacion, para tener mayores conocimientos,esto es lo que me gusta; Vivo en San Nicolas de los Arroyos.  También soy una persona paciente, detallista y que siempre que pueda ayudar con mis conocimientos lo hare con gusto. Durante mi tiempo libre me gusta juntarme con mis amigos, ir al gimnasio
 
@@ -18,7 +18,7 @@ Nuestro sitio está dirigido a una audiencia amplia que incluye tanto a propieta
 
 - **Juan Francisco Misuraca**: Soy de San Nicolás, tengo 27 años y estoy estudiando la carrera de Ciencias de la Educación. Además soy músico y estudiante de desarrollo Full Stack, interesado particularmente en linux, seguridad informtica, optimización de recursos y equipos limitados y desarrollo de aplicaciones web. Mi interés se despertó cuando me encontré con el scripting de bash y la automatización de tareas sencillas, lo que me puso en este camino de formación.
 
-## --------------- Páginas de referencia --------------
+## Páginas de referencia
 
 - https://autocity.com.ar/
 - https://www.imolaautos.com/
