@@ -20,6 +20,8 @@ Nuestro sitio está dirigido a una audiencia amplia que incluye tanto a propieta
 
 - **Santiago Ezequiel Temperini**: Mi nombre es Santiago Ezequiel Temperini, vivo en la ciudad de San Nicolas De Los Arroyos, tengo 18 años, el año pasado termine el secundario en la escuela Jean Piaget, normalmente, en mi tiempos libre practico boxeo y juego al futbol con amigos. Aprendí a programar por mi hermana, ella había empezado Análisis en Sistemas y me intereso lo que hacía, y luego, me termine de decidir por seguir con la programación porque la escuela nos otorgo un curso de desarrollo web. Realmente todo lo que este relacionado con las computadoras me gusta, cuando tengo tiempo trabajo limpiando computadoras y arreglando.
 
+- **Martin Ignacio Dorado**: Soy de San Nicolas, tengo 18 años, actualmente soy estudiantes de ultimo año en la E.E.ST N°2 en la especialidad de informatica, gracias a esto tengo conocimientos de HTML,JS,CSS. Desde que soy pequeño estoy interesado en la informatica, y el siguiente año al terminar la secundaria planeo estudiar Ingenieria en sistemas.
+
 ## Páginas de referencia
 
 - https://autocity.com.ar/
