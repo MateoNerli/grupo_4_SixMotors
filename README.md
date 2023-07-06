@@ -28,6 +28,8 @@ propio camino. Actualmente, brindo servicios técnicos de PC y Notebook para var
 Para volver a sumergirme en el mundo de la programación y mantenerme actualizado, estoy cursando 
 el programa de formación en Desarrollo Full Stack en Digital House."
 
+Federico Tschanz: Mi nombre es Federico Tschanz, vivo en San Nicolas de los Arroyos, tengo 18 años, actualmente estoy en ultimo año de la Secundaria de Educacion Tecnica N2 de San Nicolas de los Arroyos en la rama de informatica, conoci la programacion gracias a la escuela y desde que la conoci siempre me interesaron las cosas relacionadas a esto, en mi tiempo libre voy al gimnasio o me junto con amigos, mi deporte favorito es el basquet y lo juego de vez en cuando con amigos, me considero una persona bastante ordenada con los tiempos y que cuando me propongo algo lo consigo, luego de terminar la secundaria me gustaria poder seguir algo relacionado con la programacion, ya que es algo que me gusta y siento que me va bien en todo este mundo.
+
 --------------- Paginas de referencia --------------
 
 https://autocity.com.ar/
