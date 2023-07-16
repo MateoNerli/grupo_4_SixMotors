@@ -16,6 +16,10 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/index.html"));
 });
 
+app.get("/nav", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./views/nav.html"));
+});
+
 app.get("/detalles", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/detalles.html"));
 });
