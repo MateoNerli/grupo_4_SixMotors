@@ -3,21 +3,80 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Detalles</title>
     <link rel="stylesheet" href="css/style-detalles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
   </head>
   <body>
     <header>
-      
+      <div class="container-principal-header">
+        <img src="/images/logo-sin-fondo.png" alt="Logo" class="logo">
+      <form action="" class="buscador">
+        <button type="submit" class="btn-buscar"><i class="fas fa-search"></i></button>
+        <input type="text" placeholder="Buscar productos">
+      </form>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Carrito</a></li>
+          <li><a href="#">Productos</a></li>
+          <li><a href="#">Iniciar sesion</a></li>
+          <li><a href="#">Registrarse</a></li>
+        </ul>
+      </nav>
+      <div class="burger-menu">
+        <i class="fas fa-bars hamburguesa"></i>
+      </div>
+      </div>
     </header>
-
-    <main>
-
+      
+      <main>
+        <section class="producto">
+          <h1>Nombre del Articulo</h1>
+        <div class="container-prod-info">
+        <img src="images/foto-ejemplo-detalles.jpg" alt="" class="img-producto">
+        <div class="informacion">
+          <div class="precio-descuento">
+            <div class="precio">$420.000</div>
+            <div class="descuento">30% OFF</div>
+          </div>
+          <div class="precio-anterior">$600.000</div>
+        </div>
+      </section>
+      <section class="compra">
+        <div class="cantidad">
+          <form action="" method="get" class="formulario-compra">
+            <div class="formulario-cantidad">
+              <label>Cantidad: </label>
+              <input type="number" placeholder="Ingrese la cantidad">
+            </div>
+            <div class="comprar">
+              <h2>Comprar</h2>
+            </div>
+            <div class="agregar-carrito">
+              <h2>Agregar al carrito</h2>
+            </div>
+          </form>
+        </div>
+        </div>
+      </section>
+      <section class="especificaciones">
+        <h2>Sobre el producto</h2>
+        <ul>
+          <li><h3>Marca:</h3> sit amet consectetur </li>
+          <li><h3>MMA:</h3> ipsum dolor sit amet co nse ctet ur adipis  icing elit. Repudiandae est </li>
+          <li><h3>Medidas de los neumáticos:</h3> ipsum dolor sit amet consectetur adipisicin</li>
+          <li><h3>Número de plazas:</h3> ipsum dolor sit amet consectetur adipisicing elit. Repudiandae est animi odio, unde possimus quasi asperiores eveniet magni</li>
+          <li><h3>Altura:</h3> ipsum dolor sit amet consectetur adipisicing elit. Repudiandae est animi odi</li>
+        </ul>
+      </section>
     </main>
     <footer>
 
     </footer>
+
+    <script src="js/script-nav.js"></script>
   </body>
 </html>
