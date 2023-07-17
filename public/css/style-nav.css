@@ -190,6 +190,9 @@ button .arrow {
   }
 }
 @media (max-width: 768px) {
+  .logo-img {
+    display: none;
+  }
   .search-box input {
     padding: 10px 0;
   }
@@ -226,8 +229,20 @@ button .arrow {
     clip-path: circle(144% at 100% 0%);
   }
 }
-@media (max-width: 450) {
-  .icons {
+@media (max-width: 400px) {
+  #search-icon {
     font-size: 15px;
+  }
+  .icons i {
+    font-size: 15px;
+  }
+  #menu-icon {
+    font-size: 15px;
+  }
+  .btn {
+    font-size: 12px;
+  }
+  .logo {
+    font-size: 1rem;
   }
 }
