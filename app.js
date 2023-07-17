@@ -11,15 +11,15 @@ app.listen(puerto, () => {
 
 app.use(express.json());
 app.use("/", express.static(__dirname + "/public"));
-
+app.use("/", express.static(__dirname + "/design"));
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/index.html"));
 });
 
-app.get("/nav", (req, res) => {
+app.get("/nav.html", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./views/nav.html"));
 });
 
-app.get("/detalles", (req, res) => {
+app.get("/detalles.html", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/detalles.html"));
 });

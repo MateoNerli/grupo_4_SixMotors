@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+.container {
+  max-width: 1068px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav {
+  font-family: "Agdasima", sans-serif;
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: var(--background);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 35px;
+}
+
+#menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--primary);
+  display: none;
+}
+
+.logo {
+  font-family: "Agdasima", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.logo:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease 0s;
+}
+.logo span {
+  color: var(--accent);
+}
+
+.navbar {
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+}
+.navbar a {
+  color: var(--text);
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.navbar a:hover,
+.navbar .active {
+  color: var(--accent);
+  border-bottom: 3px solid var(--accent);
+}
+
+#search-icon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.search-box {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  left: 0;
+  background: var(--secondary);
+  box-shadow: 4px 4px 20px rgb(15 54 5/10%);
+  border: 1px solid var(--accent);
+  border-radius: 0.5rem;
+  clip-path: circle(0% at 100% 0%);
+}
+
+.search-box.active {
+  clip-path: circle(144% at 100% 0%);
+}
+.search-box input {
+  width: 100%;
+  padding: 20px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 1rem;
+  text-decoration: none;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.icons a {
+  color: var(--text);
+}
+.icons a:hover {
+  color: var(--accent);
+}
+.btn {
+  --primary-color: #645bff;
+  --secondary-color: #fff;
+  --hover-color: #111;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+}
+
+button .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.btn .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.btn:hover {
+  background-color: var(--hover-color);
+}
+
+.btn:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.btn:hover .arrow:before {
+  right: 0;
+}
+
+@media (max-width: 1080px) {
+  .container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+@media (max-width: 991px) {
+  .nav {
+    padding: 10px 5px;
+  }
+  .icons {
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+@media (max-width: 768px) {
+  .search-box input {
+    padding: 10px 0;
+  }
+
+  #menu-icon {
+    display: initial;
+  }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+    row-gap: 0.5rem;
+    text-align: center;
+    box-shadow: 4px 4px 20px rgb(15 54 5/10%);
+    clip-path: circle(0% at 100% 0%);
+    transition: 0.6s;
+  }
+  .navbar a {
+    display: block;
+    padding: 15px;
+    border-bottom: 1px solid var(--accent);
+  }
+
+  .navbar a:hover,
+  .navbar .active {
+    color: var(--text);
+    border-bottom: none;
+  }
+  .navbar.active {
+    clip-path: circle(144% at 100% 0%);
+  }
+}
+@media (max-width: 450) {
+  .icons {
+    font-size: 15px;
+  }
+}
