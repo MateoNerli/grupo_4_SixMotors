@@ -85,15 +85,17 @@ main {
     border-radius: 5px;
     display: flex;
     gap: 20px;
+    align-items: center; /* Alinea los elementos verticalmente al centro */
 }
 
 .product-img {
     flex-basis: 100px;
     flex-shrink: 0;
+    margin-right: 40px; /* Agrega un margen derecho para el espacio entre la imagen y la descripción */
 }
 
 .product-img img {
-    width: 100%;
+    width: 130%;
     height: auto;
     border-radius: 5px;
 }
