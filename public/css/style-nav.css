@@ -28,7 +28,10 @@ nav {
   justify-content: space-between;
   padding: 20px 35px;
 }
-
+.logo-img img:hover {
+  transform: rotate(360deg);
+  transition: 0.5s;
+}
 #menu-icon {
   font-size: 24px;
   cursor: pointer;
