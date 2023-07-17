@@ -1,9 +1,8 @@
 :root {
-  --text: #e4e3fc;
-  --background: #000000;
-  --primary: #5c57ef;
-  --secondary: #070538;
-  --accent: #1913cd;
+  --text: #171c19;
+  --background: #f4f6f5;
+  --primary: #7c9285;
+  --secondary: #d3dad6;
+  --accent: #667a6f;
 }
-
 @import url("https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap");
