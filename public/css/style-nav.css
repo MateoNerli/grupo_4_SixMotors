@@ -123,9 +123,9 @@ nav {
   box-sizing: border-box;
   border: 0;
   border-radius: 20px;
-  color: var(--secondary-color);
+  color: var(--text);
   padding: 1em 1.8em;
-  background: var(--primary-color);
+  background: var(--primary);
   display: flex;
   transition: 0.2s background;
   align-items: center;
@@ -142,7 +142,7 @@ button .arrow-wrapper {
 button .arrow {
   margin-top: 1px;
   width: var(--arrow-width);
-  background: var(--primary-color);
+  background: var(--primary);
   height: var(--arrow-stroke);
   position: relative;
   transition: 0.2s;
@@ -152,7 +152,7 @@ button .arrow {
   content: "";
   box-sizing: border-box;
   position: absolute;
-  border: solid var(--secondary-color);
+  border: solid var(--text);
   border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
   display: inline-block;
   top: -3px;
@@ -163,11 +163,11 @@ button .arrow {
 }
 
 .btn:hover {
-  background-color: var(--hover-color);
+  background-color: var(--accent);
 }
 
 .btn:hover .arrow {
-  background: var(--secondary-color);
+  background: var(--secondary);
 }
 
 .btn:hover .arrow:before {
