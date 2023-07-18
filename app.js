@@ -16,10 +16,14 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/index.html"));
 });
 
-app.get("/nav.html", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./views/nav.html"));
+app.get("/Nav-Footer.html", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./views/Nav-Footer.html"));
 });
 
 app.get("/detalles.html", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/detalles.html"));
+});
+
+app.get("/footer.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/footer.html"));
 });
