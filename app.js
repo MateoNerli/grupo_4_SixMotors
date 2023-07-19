@@ -27,3 +27,7 @@ app.get("/detalles.html", (req, res) => {
 app.get("/footer.html", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/footer.html"));
 });
+
+app.get("/register.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/register.html"));
+});
