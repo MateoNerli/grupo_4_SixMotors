@@ -10,7 +10,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url(../images/img-login.jpg);
+  background-image: url(../images/register-login.jpg);
   background-size: cover;
 }
 .container-form {
