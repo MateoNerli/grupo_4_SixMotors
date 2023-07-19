@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap");
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Agdasima", sans-serif;
+    color: #171c19;;
+}
+main{
+  background-color: #f4f6f5;;
+  margin-bottom: 1em;
+  height: 100%;
+}
+#banner{
+    position: relative;
+    margin-bottom: 1em;
+   
+}
+
+/* Slider de autos 0Km,Usados y mas Vendidos */
+#Autos{
+  display: flex;
+  height: 400px;
+  margin: 2em 0;
+  gap: 10px;
+  
+  
+}
+#ventaAutos{
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap:wrap;
+  gap: 5px;
+  left: 1%;
+  height: 100%;
+  width: 200px;
+}
+.Nuevos, .Usados{
+  min-width: 200px;
+  min-height: 200px;
+  max-height: 200px;
+  border-radius: 5px;
+  border: 1px solid #171c19;
+  box-shadow: 3px 3px rgb(75, 74, 74);
+}
+
+.Mvendidos {
+  width: 200px;
+  height: 100%;
+  border-radius: 5px;
+  border: 1px solid #171c19;
+  box-shadow: 3px 3px rgb(75, 74, 74);
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.contenido{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+/* Autopartes */
+
+.autopartes{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2em 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 3px 3px rgb(75, 74, 74);
+}
+
+article{
+  width: 110px;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 3px rgb(75, 74, 74);
+}
+
+/* Reseñas de usuarios */
+
+#resenias{
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 3px rgb(75, 74, 74);
+  overflow: hidden;
+  overflow-x: auto;
+  height: 300px;
+  margin: 2em 5px;
+  
+}
+.contenido2{
+  display:inline-flex;
+  gap: 3em;
+  
+}
+.resenia{
+  width: 200px;
+  height: 100%;
+  border: 1px solid black;
+  margin-top:8em;
+}
+
+
+  
