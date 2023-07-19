@@ -25,6 +25,7 @@ main{
 }
 
 article{
+    padding: 25px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,6 +33,12 @@ article{
     text-align: center;
     background-color: antiquewhite;
     width: 100vw;
+}
+
+/* CONTENEDOR NOMBRE */
+
+.contenedor-nombre-articulo{
+    padding-bottom: 20px;
 }
 
 
@@ -76,6 +83,8 @@ article{
 /* CONTENEDOR CANTIDAD */
 .contenedor-cantidad{
     margin-top: 30px;
+    width: 100%;
+    padding: 0 20px;
 }
 
 .cantidad{
@@ -130,4 +139,32 @@ article{
    border-radius: 10px 10px 10px 10px;
    width: 100%;
    text-align: center;
+}
+
+
+/* CONTENEDOR INFORMACION */
+
+.contenedor-informacion{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: start;
+    width: 100%;
+    margin: 20px;
+}
+
+.contenedor-informacion li{
+    margin: 15px 0;
+    display: flex;
+}
+
+.contenedor-informacion li span{
+    display: flex;
+    align-items: center;
+    
+}
+.contenedor-informacion li .fa-dot-circle{
+    padding: 5px 10px 5px 0;
+    font-size: 10px;
+    
 }
