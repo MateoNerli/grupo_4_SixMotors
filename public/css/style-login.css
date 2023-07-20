@@ -31,7 +31,10 @@ body {
   text-align: center;
   background-color: var(--primary);
 }
-
+.logo img:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.1);
+}
 .datos {
   width: 100%;
   padding: 0 30px;
