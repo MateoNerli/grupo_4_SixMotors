@@ -15,7 +15,7 @@ body {
     background-color: var(--background);
 }
 
-header {
+/*header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -67,7 +67,7 @@ nav ul li a:hover {
 nav input {
     padding: 5px;
 }
-
+*/
 
 main {
     margin: 20px;
