@@ -135,6 +135,9 @@ article{
     text-align: center;
     transition: all .5s;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .comprar:hover{
     background-color: #375ba3;
@@ -152,6 +155,9 @@ article{
    text-align: center;
    transition: all .5s;
    cursor: pointer;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .agregar-carrito:hover{
@@ -212,9 +218,10 @@ article{
 }
 
 .articulos img{
-    width: 33vw;
+    width: 32vw;
     height: 75%;
     border-radius: 10px 10px 0 0;
+    overflow: hidden;
 }
 
 .articulo1, .articulo2, .articulo3, .articulo4, .articulo5, .articulo6{
@@ -223,7 +230,7 @@ article{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: #000000 1px solid;
+    border: #ebf1ff 1px solid;
     border-radius: 10px;
     transition: all .5s;
 }
@@ -245,7 +252,20 @@ article{
 
 
 @media (min-width:400px) {
-    
+    .contenedor-imagen{
+        max-width: 500px;
+    }
+    .contenedor-detalles{
+        max-width: 500px;
+    }
+
+    .contenedor-cantidad{
+        max-width: 500px;
+    }
+
+    .contenedor-compra{
+        max-width: 500px;
+    }
 }
 
 
