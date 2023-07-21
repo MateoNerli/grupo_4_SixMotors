@@ -24,20 +24,17 @@ body {
   transition: all 1s ease;
   overflow: hidden;
 }
-.logo img:hover {
-  transition: all 0.3s ease;
-  transform: scale(1.1);
-}
 .informacion {
   width: 40%;
   display: flex;
   align-items: center;
   text-align: center;
   background-color: var(--primary);
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
 }
-
+.logo img:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.1);
+}
 .datos {
   width: 100%;
   padding: 0 30px;
@@ -103,12 +100,10 @@ button:hover {
 .form-information {
   width: 60%;
   /* display: flex;
-  justify-content: center;
-  align-items: center; */
+    justify-content: center;
+    align-items: center; */
   text-align: center;
   background-color: var(--background);
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
 }
 
 .form-information-info {
@@ -200,13 +195,17 @@ button:hover {
 .register:hover::before {
   box-shadow: inset 0 0 0 10em var(--accent);
 }
-.btn-ingresar {
+.btn-regist {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-.button-ing {
+.link {
+  text-decoration: none;
+  color: var(--text);
+}
+.button-re {
   height: 50px;
   position: relative;
   background-color: transparent;
@@ -238,7 +237,7 @@ button:hover {
   z-index: -1;
 }
 
-.button-ing:hover {
+.button-re:hover {
   box-shadow: 1px 1px 200px #252525;
   color: #fff;
   border: none;
@@ -249,17 +248,12 @@ button:hover {
   transform: scale(100) translateX(2px);
 }
 
-.button-ing a {
+.button-re a {
   text-decoration: none;
-
   color: #333;
 }
-.button-ing a:hover {
+.button-re a:hover {
   color: #fff;
-}
-.link {
-  text-decoration: none;
-  color: var(--text);
 }
 @media screen and (max-width: 1020px) {
 }
@@ -273,16 +267,22 @@ button:hover {
   html {
     font-size: 12px;
   }
+
   .container-form {
+    display: flex;
     flex-direction: column;
     height: auto;
   }
+
   .informacion {
+    order: 1;
     width: 100%;
     padding: 20px;
     border-radius: 20px 20px 0 0;
   }
+
   .form-information {
+    order: 2;
     width: 100%;
     border-radius: 0 0 20px 20px;
   }

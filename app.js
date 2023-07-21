@@ -16,18 +16,22 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/index.html"));
 });
 
-app.get("/Nav-Footer.html", (req, res) => {
+app.get("/Nav-Footer", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./views/Nav-Footer.html"));
 });
 
-app.get("/productDetail.html", (req, res) => {
+app.get("/productDetail", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/productDetail.html"));
 });
 
-app.get("/footer.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/footer.html"));
+app.get("/register", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/register.html"));
 });
 
-app.get("/register.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/register.html"));
+app.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/login.html"));
+});
+
+app.get("/carrito", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/carrito.html"));
 });
