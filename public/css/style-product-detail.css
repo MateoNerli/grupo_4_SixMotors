@@ -76,6 +76,10 @@ article{
     color: #39b54a;
 }
 
+.precio-con-descuento{
+    display: none;
+}
+
 
 
 
@@ -279,7 +283,7 @@ article{
         justify-content: center;
         align-items: center;
         gap: 20px;
-        margin: 50px 40px;
+        margin: 50px 10px;
         align-items: start;
     }
     
@@ -296,6 +300,7 @@ article{
         padding: 40px 0 0 0;
         background-color: #ebf1ff;
         border-radius: 20px;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
     }
     
     .contenedor-imagen{
@@ -320,15 +325,36 @@ article{
     }
     
     .contenedor-detalles{
+        margin: 0 30px;
+        width: fit-content;
         align-items: center;
         flex-direction: column;
+        max-width: none;
+        padding: 0;
+    }
+    .precio-con-descuento{
+        transition: all .5s;
+    }
+
+    .contenedor-detalles:hover{
+        .precio-con-descuento{
+            display: block;
+            transform: scale(1.4);
+        }
+
+        .precio{
+            transform: scale(0.7);
+            text-decoration: line-through;
+            color: red;
+        }
     }
     
     .contenedor-cantidad{
-    
+        max-width: none;
     }
     
     .contenedor-compra{
+        max-width: none;
         display: flex;
         flex-direction: row;
     }
