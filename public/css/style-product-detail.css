@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
-
-
+:root {
+    --text: #171c19;
+    --background: #f4f6f5;
+    --primary: #7c9285;
+    --secondary: #d3dad6;
+    --accent: #667a6f;
+  }
 
 *{
     box-sizing: border-box;
@@ -9,7 +14,7 @@
 }
 
 body{
-    background-color: #FFFFFF;
+    background-color: var(--background);
     font-family: Roboto, sans-serif;
     overflow-x: hidden;
 }
@@ -28,7 +33,7 @@ article{
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #FFFFFF;
+    background-color: var(--background);
     width: 100vw;
 }
 
@@ -60,7 +65,7 @@ article{
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
-    background-color: #ebf1ff;
+    background-color: var(--secondary);
     width: 90vw;
     padding: 20px 0 20px 15px;
     align-items: start;
@@ -99,7 +104,7 @@ article{
     background: rgb(201, 201, 201);
     padding: 15px;
     border-radius: 10px 0 0 10px;
-    border: black 1px solid;
+    border: var(--text) 1px solid;
     border-right: white;
 }
 
@@ -115,7 +120,7 @@ article{
         border: none;
         font-size: 15px;
         width: 100%;
-        border: black 1px solid;
+        border: var(--text) 1px solid;
         border-left: white;
 }
 
@@ -131,8 +136,8 @@ article{
 }
 
 .comprar{
-    background-color: #8fb4ff;
-    color: #000000;
+    background-color: var(--primary);
+    color: white;
     padding: 15px;
     border-radius: 10px 10px 10px 10px;
     width: 100%;
@@ -144,15 +149,16 @@ article{
     align-items: center;
 }
 .comprar:hover{
-    background-color: #375ba3;
+    background-color: var(--accent);
     color: white;
     transform: scale(1.03);
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
 
 .agregar-carrito{
-    background-color: #ff8f94;
-   color: #000000;
+    background-color: var(--secondary);
+   color: var(--text);
    padding: 15px;
    border-radius: 10px 10px 10px 10px;
    width: 100%;
@@ -165,9 +171,9 @@ article{
 }
 
 .agregar-carrito:hover{
-    background-color: #bd5f63;
+    background-color: #c1c5c2 ;
     transform: scale(1.03);
-    color: white;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
 /* CONTENEDOR INFORMACION */
@@ -180,7 +186,7 @@ article{
     width: 100%;
     margin: 50px 0 10px 0;
     padding: 15px;
-    background-color: #ebf1ff;
+    background-color: none;
 }
 
 .contenedor-informacion li{
@@ -230,11 +236,11 @@ article{
 
 .articulo1, .articulo2, .articulo3, .articulo4, .articulo5, .articulo6{
     width: 33vw;
-    background-color: #ebf1ff;
+    background-color: var(--secondary);
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: #ebf1ff 1px solid;
+    border: #c1c5c2 1px solid;
     border-radius: 10px;
     transition: all .5s;
 }
@@ -243,6 +249,7 @@ article{
 .articulo1:hover, .articulo2:hover, .articulo3:hover, .articulo4:hover, .articulo5:hover, .articulo6:hover{
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
     transform: scale(1.05);
+    background-color: #c1c5c2;
 }
 
 
@@ -298,7 +305,7 @@ article{
         width: 50%;
         align-items: start;
         padding: 40px 0 0 0;
-        background-color: #ebf1ff;
+        background-color: var(--background);
         border-radius: 20px;
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
     }
@@ -331,6 +338,7 @@ article{
         flex-direction: column;
         max-width: none;
         padding: 0;
+        background: none;
     }
     .precio-con-descuento{
         transition: all .5s;
@@ -365,7 +373,6 @@ article{
     .agregar-carrito{
         width: 50%;
     }
-
 
 
 
