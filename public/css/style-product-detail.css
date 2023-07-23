@@ -14,7 +14,7 @@
 }
 
 body{
-    background-color: var(--background);
+    background-color: white;
     font-family: Roboto, sans-serif;
     overflow-x: hidden;
 }
@@ -243,6 +243,7 @@ article{
     border: #c1c5c2 1px solid;
     border-radius: 10px;
     transition: all .5s;
+    justify-content: space-evenly;
 }
 
 
@@ -347,13 +348,18 @@ article{
     .contenedor-detalles:hover{
         .precio-con-descuento{
             display: block;
-            transform: scale(1.4);
+            font-size: 20px;
+            
         }
 
         .precio{
-            transform: scale(0.7);
+            font-size: 12px;
             text-decoration: line-through;
             color: red;
+        }
+
+        .descuento{
+            display: none;
         }
     }
     
