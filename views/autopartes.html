@@ -51,19 +51,15 @@
 
   <div class="wrapper">
     <aside>
-      <header>
-        <div class="logo-img">
-          <img
-            src=""
-            alt="carrito"
-            width="100px"
-            height="100px"
-          />
+      <header class="header">
+        <div>
+          <BUtton class="volver"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5ZM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5Z"/>
+          </svg></BUtton>
         </div>
       </header>
         <nav>
           <ul class="menu-categoria">
-            <li ><BUtton class="boton-categoria">Todos los productos</BUtton></li><br>
             <li> <BUtton class="boton-categoria">Modelo</BUtton></li><br>
             <li> <BUtton class="boton-categoria">Marca</BUtton></li><br>
             <li> <BUtton class="boton-categoria">Piezas</BUtton></li><br>
@@ -71,44 +67,95 @@
           </ul>
         </nav>
         <footer class="autorizacion">
-          <p>Venta totalmente legal</p>
+          <p>@SixMotors</p>
         </footer>
     </aside>
     <main>
       <h2 class="titulo-principal">Todos los productos</h2>
       <div class="contenedor-productos">
-        <article class="producto">
-          <img class="img-producto" src="../public/images/faro.jpg" alt="faro" height="50%" width="100%">
-          <br>
-          <p class="precio-producto">$xxx</p> <br>
-          <p class="oferta-producto">40% OFF</p> <br>
-          <h3 class="nombre-producto">Faro</h3> <br>
-          <button class="agregar-producto">Agregar</button>
-        </article>
-        <article class="producto">
-          <img class="img-producto" src="../public/images/piston.jpg" alt="piston" height="50%" width="100%">
-          <br>
-          <p class="precio-producto">$xxx</p> <br>
-          <p class="oferta-producto">40% OFF</p> <br>
-          <h3 class="nombre-producto">Piston</h3> <br>
-          <button class="agregar-producto">Agregar</button>
-        </article>
-        <article class="producto">
-          <img class="img-producto" src="../public/images/escape.png" alt="escape" height="50%" width="100%">
-          <br>
-          <p class="precio-producto">$xxx</p> <br>
-          <p class="oferta-producto">40% OFF</p> <br>
-          <h3 class="nombre-producto">Escape</h3> <br>
-          <button class="agregar-producto">Agregar</button>
-        </article>
-        <article class="producto">
-          <img class="img-producto" src="../public/images/cables-bujias.jpg" alt="cables bujia" height="50%" width="100%">
-          <br>
-          <p class="precio-producto">$6.770</p> <br>
-          <p class="oferta-producto">40% OFF</p> <br>
-          <h3 class="nombre-producto">Cable de Bujia</h3> <br>
-          <button class="agregar-producto">Agregar</button>
-        </article>
+        <div class="producto">
+          <img class="img-producto" src="../public/images/alternador ap.png" alt="" class="img-producto"> 
+          <div class="detalle-producto">
+            <h3 class="nombre-producto">Alternador</h3>
+            <p class="oferta-producto">40% OFF</p>
+            <p class="precio-producto">$XXX</p>
+            <button class="boton-producto">Agregar</button>
+          </div>
+        </div>
+        <div class="producto">
+          <img class="img-producto" src="../public/images/amortiguadores ap.png" alt="" class="img-producto"> 
+          <div class="detalle-producto">
+            <h3 class="nombre-producto">Amortiguador</h3>
+            <p class="oferta-producto">40% OFF</p>
+            <p class="precio-producto">$XXX</p>
+            <button class="boton-producto">Agregar</button>
+          </div>
+        </div>
+        <div class="producto">
+          <img class="img-producto" src="../public/images/bateria ap.png" alt="" class="img-producto"> 
+          <div class="detalle-producto">
+            <h3 class="nombre-producto">Bateria</h3>
+            <p class="oferta-producto">40% OFF</p>
+            <p class="precio-producto">$XXX</p>
+            <button class="boton-producto">Agregar</button>
+          </div>
+        </div>
+        <div class="producto">
+          <img class="img-producto" src="../public/images/bujia ap.png" alt="" class="img-producto"> 
+          <div class="detalle-producto">
+            <h3 class="nombre-producto">Bujia</h3>
+            <p class="oferta-producto">40% OFF</p>
+            <p class="precio-producto">$XXX</p>
+            <button class="boton-producto">Agregar</button>
+          </div>
+        </div>
+        <div class="producto">
+          <img class="img-producto" src="../public/images/cables-de-bujia ap.png" alt="cables de bujias"> 
+          <div class="detalle-producto">
+            <h3 class="nombre-producto">Cables de bujia</h3>
+            <p class="oferta-producto">N/D</p>
+            <p class="precio-producto">$XXX</p>
+            <button class="boton-producto">Agregar</button>
+          </div>
+        </div>
+        <div class="producto">
+          <img class="img-producto" src="../public/images/escape ap.jpg" alt="escape"> 
+          <div class="detalle-producto">
+            <h3 class="nombre-producto">Escape</h3>
+            <p class="oferta-producto">N/D</p>
+            <p class="precio-producto">$xxx</p>
+            <button class="boton-producto">Agregar</button>
+          </div>
+        </div>
+        <div class="producto">
+          <img class="img-producto" src="../public/images/espejo-retrovisor ap.png" alt="espejo retrovisor"> 
+          <div class="detalle-producto">
+            <h3 class="nombre-producto">Espejo Retrovisor</h3>
+            <p class="oferta-producto">N/d</p>
+            <p class="precio-producto">$XXX</p>
+            <button class="boton-producto">Agregar</button>
+          </div>
+        </div>
+        <div class="producto">
+          <img class="img-producto" src="../public/images/espejos-laterales ap.jpg" alt="espejos laterales"> 
+          <div class="detalle-producto">
+            <h3 class="nombre-producto">Espejos Laterales</h3>
+            <p class="oferta-producto">N/d</p>
+            <p class="precio-producto">$XXX</p>
+            <button class="boton-producto">Agregar</button>
+          </div>
+        </div>
+        <div class="producto">
+          <img class="img-producto" src="../public/images/faros ap.jpg" alt="faros"> 
+          <div class="detalle-producto">
+            <h3 class="nombre-producto">Faros Delanteros</h3>
+            <p class="oferta-producto">N/d</p>
+            <p class="precio-producto">$XXX</p>
+            <button class="boton-producto">Agregar</button>
+          </div>
+        </div>
+       
+     
       </div>
       
     </main>
@@ -121,7 +168,7 @@
       <div class="box">
         <figure class="logo2">
           <a href="#">
-            <img src="/images/logo2-sin-fondo.png" alt="Logo" />
+            <img src="../public/images/logo2-sin-fondo.png" alt="Logo" />
           </a>
         </figure>
       </div>
