@@ -1,46 +1,61 @@
 @import url("https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap");
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Agdasima", sans-serif;
-    color: #171c19;;
-    
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Agdasima", sans-serif;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 }
-main{
-  background-color: #f4f6f5;;
+main {
+  background-color: #f4f6f5;
   margin-bottom: 1em;
   height: 100%;
+  width: 100%;
 }
-#banner{
-    position: relative;
-    margin-bottom: 1em;
-    
+#banner {
+  position: relative;
+  display: flex;
+  margin-bottom: 1em;
+  justify-content: center;
+  align-items: center;
+}
+#carousel1 {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Slider de autos 0Km,Usados y mas Vendidos */
-#autos{
+#autos {
   display: flex;
   height: 400px;
   margin: 2em 0;
   gap: 10px;
 }
 
-#ventaAutos{
+#ventaAutos {
   position: relative;
   box-sizing: border-box;
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   gap: 5px;
   left: 1%;
   height: 100%;
   width: 200px;
 }
-#ventaAutos img{
+#ventaAutos img {
   border-radius: 5px;
   padding: 5px;
 }
-.Nuevos, .Usados{
+.Nuevos,
+.Usados {
   background-color: #7c9285;
   min-width: 200px;
   min-height: 200px;
@@ -60,7 +75,7 @@ main{
   overflow-y: auto;
 }
 
-.contenido{
+.contenido {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
@@ -69,7 +84,7 @@ main{
 
 /* Autopartes */
 
-.autopartes{
+.autopartes {
   background-color: #7c9285;
   position: relative;
   display: flex;
@@ -82,7 +97,7 @@ main{
   gap: 10px;
 }
 
-article{
+article {
   background-color: #d3dad6;
   width: 110px;
   height: 150px;
@@ -91,14 +106,14 @@ article{
   padding: 2px;
 }
 
-#icono-flecha{
+#icono-flecha {
   position: relative;
   left: 35%;
   top: 35%;
 }
 /* Reseñas de usuarios */
 
-#resenias{
+#resenias {
   background-color: #7c9285;
   border: 1px solid black;
   border-radius: 5px;
@@ -106,24 +121,22 @@ article{
   overflow-x: auto;
   height: 300px;
   margin: 2em 5px;
-  
 }
-.contenido2{
-  display:inline-flex;
+.contenido2 {
+  display: inline-flex;
   gap: 3em;
   position: relative;
   bottom: 45%;
   padding: 10px;
 }
-.resenia{
+.resenia {
   background-color: #d3dad6;
   width: 200px;
   height: 290px;
   border: 1px solid black;
-  margin-top:8em;
+  margin-top: 8em;
   padding-bottom: 10px;
   border-radius: 10px;
-  
 }
 .resenia img {
   height: 100px;
@@ -132,52 +145,49 @@ article{
 
 /* Tablet */
 @media screen and (min-width: 768px) {
-  html {
+  main {
     font-size: 12px;
   }
-  #banner img{
-    height: 300px;
-  }
 
-  #autos{
+  #autos {
     height: 600px;
     margin-bottom: 4em;
   }
-  #ventaAutos{
+  #ventaAutos {
     width: 50%;
     padding: 10px;
     gap: 10px;
   }
-  #ventaAutos img{
+  #ventaAutos img {
     height: 200px;
     margin-top: 20px;
     border-radius: 5px;
   }
-  .Nuevos, .Usados{
+  .Nuevos,
+  .Usados {
     max-height: 300px;
     border-radius: 5px;
     padding: 10px;
     width: 100%;
     height: 100%;
     border: 1px solid #171c19;
-    
   }
   .Mvendidos {
     width: 40%;
     margin-left: 30px;
-    font-size:x-large;
+    font-size: x-large;
   }
-  .autopartes{
+  .autopartes {
     height: 400px;
-    font-size:large;
+    font-size: large;
   }
-  article{
+  article {
     height: 170px;
   }
-  .contenido2{
+  .contenido2 {
     bottom: 15%;
   }
-  .resenia{
+  .resenia {
     height: 200px;
   }
 }
@@ -185,71 +195,72 @@ article{
 /* Laptop L */
 
 @media screen and (min-width: 1440px) {
-  
- #banner img{
-  height: 500px;
- }
- #autos{
-  height: 800px;
- }
- .Mvendidos{
-  margin-left: 60px;
-  font-size:xx-large;
- }
- .contenido{
-  gap: 20px;
- }
- .Nuevos, .Usados{
-  max-height: 400px;
-  border-radius: 5px;
-}
-#ventaAutos{
-  gap: 20px;
-}
-#ventaAutos img{
-  height: 300px;
-  border-radius: 10px;
-}
+  #banner img {
+    height: 500px;
+  }
+  #autos {
+    height: 800px;
+  }
+  .Mvendidos {
+    margin-left: 60px;
+    font-size: xx-large;
+  }
+  .contenido {
+    gap: 20px;
+  }
+  .Nuevos,
+  .Usados {
+    max-height: 400px;
+    border-radius: 5px;
+  }
+  #ventaAutos {
+    gap: 20px;
+  }
+  #ventaAutos img {
+    height: 300px;
+    border-radius: 10px;
+  }
 }
 
 @media screen and (min-width: 1600px) {
-  #banner img{
+  #banner img {
     height: 600px;
-   }
+  }
 
-   #autos{
+  #autos {
     height: 1200px;
-   }
+  }
 
-   .Nuevos, .Usados{
+  .Nuevos,
+  .Usados {
     max-height: 600px;
     border-radius: 5px;
   }
-  #ventaAutos img{
+  #ventaAutos img {
     height: 500px;
     border-radius: 10px;
   }
-   .Mvendidos{
+  .Mvendidos {
     margin-left: 100px;
     font-size: x-large;
-   }
-   #autos h3{
+  }
+  #autos h3 {
     font-size: 30px;
-   }
-   .autopartes{
+  }
+  .autopartes {
     margin: 60px 0;
     gap: 30px;
-   }
-   article{
+  }
+  article {
     width: 150px;
     height: 300px;
-   }
-   
-   .resenias{
+  }
+
+  .resenias {
     margin: 60px 0;
     height: 400px;
-   }
-   .contenido2{
+  }
+  .contenido2 {
     height: 400px;
-   }
+  }
 }
