@@ -2,17 +2,17 @@
 despues veremos si mergeamos todo en uno solo, por las dudas
 no quise mezclar */
 :root {
-    --text: #171c19;
-    --background: #f4f6f5;
-    --primary: #7c9285;
-    --secondary: #d3dad6;
-    --accent: #667a6f;
+  --text: #171c19;
+  --background: #f4f6f5;
+  --primary: #7c9285;
+  --secondary: #d3dad6;
+  --accent: #667a6f;
 }
 
 body {
-    font-family: 'Agdasima', sans-serif;
-    color: var(--text);
-    background-color: var(--background);
+  font-family: "Agdasima", sans-serif;
+  color: var(--text);
+  background-color: var(--background);
 }
 
 /*header {
@@ -70,84 +70,84 @@ nav input {
 */
 
 main {
-    margin: 20px;
+  margin: 20px;
 }
 
 .product-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .product {
-    background-color: var(--secondary);
-    padding: 20px;
-    border-radius: 5px;
-    display: flex;
-    gap: 20px;
-    align-items: center; /* Alinea los elementos verticalmente al centro */
+  background-color: var(--secondary);
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  gap: 20px;
+  align-items: center; /* Alinea los elementos verticalmente al centro */
 }
 
 .product-img {
-    flex-basis: 100px;
-    flex-shrink: 0;
-    margin-right: 40px; /* Agrega un margen derecho para el espacio entre la imagen y la descripción */
+  flex-basis: 100px;
+  flex-shrink: 0;
+  margin-right: 40px; /* Agrega un margen derecho para el espacio entre la imagen y la descripción */
 }
 
 .product-img img {
-    width: 130%;
-    height: auto;
-    border-radius: 5px;
+  width: 130%;
+  height: auto;
+  border-radius: 5px;
 }
 
 .product-details {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .product-details h2 {
-    margin: 0;
+  margin: 0;
 }
 
 .product-details p {
-    margin: 0;
-    font-weight: bold;
+  margin: 0;
+  font-weight: bold;
 }
 
 .product-buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .delete-button,
 .add-button {
-    background-color: var(--accent);
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    cursor: pointer;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .purchase-buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .buy-button,
 .cancel-button {
-    background-color: var(--accent);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-right: 10px;
-    border-radius: 5px;
-    cursor: pointer;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-/*footer {
-    background-color: var(--primary);
-    padding: 10px;
-}*/
+footer {
+  background-color: var(--primary);
+  padding: 10px;
+}
