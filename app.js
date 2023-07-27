@@ -43,3 +43,7 @@ app.get("/home", (req, res) => {
 app.get("/autopartes", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/autopartes.html"));
 });
+
+app.get("/home2", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/home2.html"));
+});

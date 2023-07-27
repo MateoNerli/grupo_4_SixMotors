@@ -1,0 +1,131 @@
+main {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: var(--font);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+#banner {
+  position: relative;
+  max-width: 1250px;
+  height: 100%;
+  margin: 0 auto;
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  padding: 0;
+  margin: 15px auto;
+}
+
+.swiper {
+  width: 100%;
+  height: 80%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.titulo {
+  margin: 10px;
+  padding: 5px;
+}
+.titulo h2 {
+  text-align: center;
+  justify-content: center;
+  max-width: 968px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-bottom: 5px solid var(--accent);
+}
+.titulo h3 {
+  max-width: 968px;
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-transform: uppercase;
+  border-bottom: 3px solid var(--accent);
+}
+
+/* Sliders venta autos */
+.slider {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.swiper-container {
+  padding-bottom: 20px;
+}
+
+.swiper-scrollbar {
+  background: #d6d6d6;
+}
+
+.swiper-container-horizontal > .swiper-scrollbar {
+  border-radius: 2px;
+  height: 5px;
+  width: 200px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.swiper-wrapper img {
+  width: 100%;
+}
+
+.swiper-scrollbar-usados,
+.swiper-button-next-usados,
+.swiper-button-prev-usados {
+  display: none;
+}
+
+.autos-venta {
+  display: flex;
+}
+
+.autos-cont {
+  background-color: var(--primary);
+  border-radius: 10px;
+}
+
+.autos-0km,
+.autos-usados {
+  width: 60%;
+  height: 31vh;
+  overflow: hidden;
+  margin-bottom: 20px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.masVendidos {
+  width: 30%;
+  background-color: var(--primary);
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+
+/* Estilos adicionales para la distribución de los elementos */
+.autos-venta {
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan en una nueva línea si no caben en el ancho */
+}
