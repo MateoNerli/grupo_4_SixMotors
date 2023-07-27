@@ -36,3 +36,7 @@ Nuestro sitio está dirigido a una audiencia amplia que incluye tanto a propieta
 ## Wireframe V0.1 del Site
 
 https://excalidraw.com/#json=CzFQ71GcWkTITP3fhrI0H,DgzjUGC9Mo235LB8ekD_BQ
+
+## Tablero de Trello
+
+https://trello.com/b/qYuvdYKt/six-motors
