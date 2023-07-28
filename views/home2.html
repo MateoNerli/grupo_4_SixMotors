@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>Home</title>
 
     <!-- font awesome -->
     <link
@@ -15,6 +15,12 @@
     />
     <!--  -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="path/to/swiper.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
     <!-- bootstrap -->
 
     <!-- <link
@@ -104,83 +110,242 @@
       <div class="titulo">
         <h2>Consegui los mejores autos de tu zona</h2>
       </div>
-      <section class="autos-venta">
-        <div class="autos-0km autos-cont">
-          <div class="titulo">
-            <h3>Autos 0km</h3>
-          </div>
-          <div class="slider">
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="/images/0km-slider1.jpg" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="/images/0km-slider1.jpg" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="/images/0km-slider1.jpg" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="/images/0km-slider1.jpg" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="/images/0km-slider1.jpg" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="/images/0km-slider1.jpg" alt="" />
-                </div>
-              </div>
-
-              <!-- pagination -->
-              <div class="swiper-pagination"></div>
+      <section id="autos-venta" class="autos-venta">
+        <div class="autos">
+          <div class="autos-0km autos-cont">
+            <div class="titulo">
+              <h3>Autos 0km</h3>
+              <a href="">
+                <p>Ver mas</p>
+              </a>
             </div>
-          </div>
-        </div>
+            <div class="slider">
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider1.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider1.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider1.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider1.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider1.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider1.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                </div>
 
-        <div class="autos-usados autos-cont">
-          <div class="titulo">
-            <h3>Autos usados</h3>
-          </div>
-          <div class="slider">
-            <div class="swiper-container swiper-container-usados">
-              <!-- Agregamos una clase específica para este slider -->
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="/images/0km-slider2.jpg" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="/images/0km-slider2.jpg" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="/images/0km-slider2.jpg" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="/images/0km-slider2.jpg" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="/images/0km-slider2.jpg" alt="" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="/images/0km-slider2.jpg" alt="" />
-                </div>
+                <!-- pagination -->
+                <div class="swiper-pagination"></div>
               </div>
             </div>
-            <div class="swiper-button-next swiper-button-next-usados"></div>
-            <div class="swiper-button-prev swiper-button-prev-usados"></div>
-            <div class="swiper-scrollbar swiper-scrollbar-usados"></div>
+          </div>
+
+          <div class="autos-usados autos-cont">
+            <div class="titulo">
+              <h3>Autos usados</h3>
+              <a href="">
+                <p>Ver mas</p>
+              </a>
+            </div>
+            <div class="slider">
+              <div class="swiper-container swiper-container-usados">
+                <!-- Agregamos una clase específica para este slider -->
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider2.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider2.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider2.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider2.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider2.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider2.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next swiper-button-next-usados"></div>
+              <div class="swiper-button-prev swiper-button-prev-usados"></div>
+              <div class="swiper-scrollbar swiper-scrollbar-usados"></div>
+            </div>
           </div>
         </div>
 
         <div class="masVendidos autos-cont">
           <div class="titulo">
             <h3>los mas vendidos</h3>
+            <a href="">
+              <p>Ver mas</p>
+            </a>
           </div>
-          <div class="slider">
-            <img src="/images/vw-amarok-2021-300x220.png" />
-            <img src="/images/vw-amarok-2021-300x220.png" />
-            <img src="/images/vw-amarok-2021-300x220.png" />
-            <img src="/images/vw-amarok-2021-300x220.png" />
+          <div class="swiperVendi mySwiperVendi">
+            <div class="swiper-wrapperVendi">
+              <div class="swiper-slide">
+                <div class="card float-left p-4">
+                  <div class="row">
+                    <div class="col-sm-7">
+                      <div class="card-block">
+                        <h4>Card 1</h4>
+                      </div>
+                    </div>
+                    <div class="col-sm-5">
+                      <img
+                        class="d-block w-100"
+                        src="/images/0km-slider2.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card float-left p-4">
+                  <div class="row">
+                    <div class="col-sm-7">
+                      <div class="card-block">
+                        <h4>Card 2</h4>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-5">
+                      <img
+                        class="d-block w-100"
+                        src="/images/0km-slider2.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card float-left p-4">
+                  <div class="row">
+                    <div class="col-sm-7">
+                      <div class="card-block">
+                        <h4>Card 3</h4>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-5">
+                      <img
+                        class="d-block w-100"
+                        src="/images/0km-slider2.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card float-left p-4">
+                  <div class="row">
+                    <div class="col-sm-7">
+                      <div class="card-block">
+                        <h4>Card 4</h4>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-5">
+                      <img
+                        class="d-block w-100"
+                        src="/images/0km-slider2.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card float-left p-4">
+                  <div class="row">
+                    <div class="col-sm-7">
+                      <div class="card-block">
+                        <h4>Card 4</h4>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-5">
+                      <img
+                        class="d-block w-100"
+                        src="/images/0km-slider2.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card float-left p-4">
+                  <div class="row">
+                    <div class="col-sm-7">
+                      <div class="card-block">
+                        <h4>Card 4</h4>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-5">
+                      <img
+                        class="d-block w-100"
+                        src="/images/0km-slider2.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-paginationVendi"></div>
           </div>
         </div>
       </section>
@@ -234,6 +399,9 @@
     <script type="module" src="/javascript/home2.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="path/to/jquery.min.js"></script>
+    <script src="path/to/swiper.min.js"></script>
     <!-- bootstrap -->
     <!-- <script
         src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

@@ -234,3 +234,18 @@ $swiperSelector2.each(function (index) {
     },
   });
 });
+
+var swiperVendi = new Swiper(".swiperVendi", {
+  direction: "vertical",
+  slidesPerView: 1,
+  spaceBetween: 30,
+  mousewheel: {
+    forceToAxis: true,
+    sensitivity: 1,
+    releaseOnEdges: true,
+  },
+  pagination: {
+    el: ".swiper-paginationVendi",
+    clickable: true,
+  },
+});
