@@ -370,6 +370,162 @@ h6 {
   font-size: 1rem;
 }
 
+/* CONTACTO */
+.mensaje-container {
+  max-width: 1250px;
+  position: relative;
+  width: 100%;
+  padding: 40px 100px;
+  background-color: var(--background);
+  margin: 0 auto;
+}
+
+.caja {
+  position: relative;
+}
+.form {
+  grid-area: form;
+}
+.info {
+  grid-area: info;
+}
+.map {
+  grid-area: map;
+}
+.conta {
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0 5px 35px rgba(0, 0, 0, 0.1);
+}
+.caja {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 5fr 4fr;
+  grid-template-areas:
+    "form info"
+    "form map";
+  grid-gap: 20px;
+  margin-top: 20px;
+}
+.conta h3 {
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--accent);
+}
+
+/* Formulario */
+.formBox {
+  position: relative;
+  width: 100%;
+}
+.formBox .row50 {
+  display: flex;
+  gap: 20px;
+}
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  width: 50%;
+}
+.formBox .row100 .inputBox {
+  width: 100%;
+}
+.inputBox span {
+  color: var(--accent);
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.inputBox input {
+  padding: 10px;
+  font-size: 1em;
+  outline: none;
+  border: 1px solid black;
+}
+.inputBox textarea {
+  padding: 10px;
+  font-size: 1.1em;
+  outline: none;
+  border: 1px solid black;
+  resize: none;
+  min-height: 220px;
+  margin-bottom: 10px;
+}
+.inputBox input[type="submit"] {
+  background: var(--accent);
+  color: var(--text);
+  border: none;
+  max-width: 120px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.inputBox ::placeholder {
+  color: gray;
+}
+.inputBox input[type="submit"]:hover {
+  background: var(--primary);
+}
+
+/* Info */
+.info {
+  background-color: var(--primary);
+}
+.info h3 {
+  color: var(--text);
+}
+.info .infoBox .datos {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.info .infoBox .datos span {
+  min-width: 40px;
+  height: 40px;
+  color: white;
+  background-color: var(--accent);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.info .infoBox .datos p {
+  color: var(--text);
+  font-size: 1.1em;
+}
+.info .infoBox .datos a {
+  color: var(--text);
+  font-size: 1.1em;
+  text-decoration: none;
+}
+.sci {
+  margin-top: 40px;
+  display: flex;
+}
+.sci li {
+  list-style: none;
+  margin-right: 15px;
+}
+.sci li a {
+  color: var(--text);
+  font-size: 1.5em;
+  transition: 0.3s;
+}
+.map {
+  padding: 0;
+}
+.map iframe {
+  width: 100%;
+  height: 100%;
+}
+
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
   .autos-venta {
@@ -380,6 +536,34 @@ h6 {
   .autos {
     height: auto;
     margin-bottom: 0px;
+  }
+  .mensaje-container {
+    padding: 20px;
+  }
+  .caja {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "form"
+      "info"
+      "map";
+  }
+  .map {
+    min-height: 300px;
+  }
+  .formBox .row50 {
+    display: flex;
+    gap: 0;
+    flex-direction: column;
+  }
+  .inputBox {
+    width: 100%;
+  }
+  .conta {
+    padding: 10px;
+  }
+  .map {
+    padding: 0;
   }
 }
 
