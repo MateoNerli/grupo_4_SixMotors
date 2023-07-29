@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <!-- bootstrap -->
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    /> -->
+
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" href="/css/style-Nav-Footer.css" />
+    <link rel="stylesheet" href="/design/variables.css" />
+    <link rel="stylesheet" href="/css/home2.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div class="nav container">
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+        <div class="logo-img">
+          <img
+            src="/images/logo-sin-fondo.png"
+            alt="logo"
+            width="100px"
+            height="100px"
+          />
+        </div>
+        <a href="#" class="logo">Six<span>Motors</span></a>
+        <ul class="navbar">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">Autos</a></li>
+          <li><a href="#">Autopartes</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+        <div class="icons">
+          <i class="fa-sharp fa-solid fa-magnifying-glass" id="search-icon"></i>
+          <a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+          <a href="/login"><i class="fa-solid fa-user"></i></a>
+        </div>
+        <div class="search-box container">
+          <input type="search" name="" id="" placeholder="   Buscar ..." />
+        </div>
+        <button class="btn">
+          Sign up
+          <div class="arrow-wrapper">
+            <div class="arrow"></div>
+          </div>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main -->
+    <main>
+      <!-- Banner Slider -->
+      <section class="banner" id="banner">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="/images/0km-slider1.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/images/0km-slider1.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/images/0km-slider1.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/images/0km-slider1.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/images/0km-slider1.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="/images/0km-slider1.jpg" alt="" />
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+
+      <div class="titulo">
+        <h2>Consegui los mejores autos de tu zona</h2>
+      </div>
+
+      <section id="autos-venta" class="autos-venta">
+        <div class="autos">
+          <div class="autos-0km autos-cont">
+            <div class="titulo">
+              <h3>Autos 0km</h3>
+              <a href="">
+                <p>Ver mas</p>
+              </a>
+            </div>
+            <div class="slider">
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider1.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider1.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider1.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider1.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider1.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider1.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- pagination -->
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="autos-usados autos-cont">
+            <div class="titulo">
+              <h3>Autos usados</h3>
+              <a href="">
+                <p>Ver mas</p>
+              </a>
+            </div>
+            <div class="slider">
+              <div class="swiper-container swiper-container-usados">
+                <!-- Agregamos una clase específica para este slider -->
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider2.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider2.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider2.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider2.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider2.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-container">
+                      <img src="/images/0km-slider2.jpg" alt="" />
+                      <h6>Modelo</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next swiper-button-next-usados"></div>
+              <div class="swiper-button-prev swiper-button-prev-usados"></div>
+              <div class="swiper-scrollbar swiper-scrollbar-usados"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="masVendidos autos-cont">
+          <div class="titulo">
+            <h3>los mas vendidos</h3>
+            <a href="">
+              <p>Ver mas</p>
+            </a>
+          </div>
+          <div class="swiperVendi mySwiperVendi">
+            <div class="swiper-wrapperVendi">
+              <div class="swiper-slide">
+                <div class="card float-left p-4">
+                  <div class="row">
+                    <div class="col-sm-7">
+                      <div class="card-block">
+                        <h4>Card 1</h4>
+                      </div>
+                    </div>
+                    <div class="col-sm-5">
+                      <img
+                        class="d-block w-100"
+                        src="/images/0km-slider2.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card float-left p-4">
+                  <div class="row">
+                    <div class="col-sm-7">
+                      <div class="card-block">
+                        <h4>Card 2</h4>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-5">
+                      <img
+                        class="d-block w-100"
+                        src="/images/0km-slider2.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card float-left p-4">
+                  <div class="row">
+                    <div class="col-sm-7">
+                      <div class="card-block">
+                        <h4>Card 3</h4>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-5">
+                      <img
+                        class="d-block w-100"
+                        src="/images/0km-slider2.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card float-left p-4">
+                  <div class="row">
+                    <div class="col-sm-7">
+                      <div class="card-block">
+                        <h4>Card 4</h4>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-5">
+                      <img
+                        class="d-block w-100"
+                        src="/images/0km-slider2.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card float-left p-4">
+                  <div class="row">
+                    <div class="col-sm-7">
+                      <div class="card-block">
+                        <h4>Card 4</h4>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-5">
+                      <img
+                        class="d-block w-100"
+                        src="/images/0km-slider2.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="card float-left p-4">
+                  <div class="row">
+                    <div class="col-sm-7">
+                      <div class="card-block">
+                        <h4>Card 4</h4>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-5">
+                      <img
+                        class="d-block w-100"
+                        src="/images/0km-slider2.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-paginationVendi"></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="titulo">
+        <h2>Podes adquirir autopartes en nuestra tienda online</h2>
+      </div>
+
+      <div class="titulo titulo-auto-partes">
+        <h3>Autopartes</h3>
+        <a href="">
+          <p>Ver mas</p>
+        </a>
+      </div>
+      <section id="autopartes" class="autopartes">
+        <div class="autopartes-items">
+          <div class="items">
+            <span class="titulo-items">Respuesto </span>
+            <img src="/images/amortiguadores ap.png" alt="" class="img-item" />
+            <span class="precio-item">10.000$</span>
+          </div>
+          <div class="items">
+            <span class="titulo-items">Respuesto </span>
+            <img src="/images/amortiguadores ap.png" alt="" class="img-item" />
+            <span class="precio-item">10.000$</span>
+          </div>
+          <div class="items">
+            <span class="titulo-items">Respuesto </span>
+            <img src="/images/amortiguadores ap.png" alt="" class="img-item" />
+            <span class="precio-item">10.000$</span>
+          </div>
+          <div class="items">
+            <span class="titulo-items">Respuesto </span>
+            <img src="/images/amortiguadores ap.png" alt="" class="img-item" />
+            <span class="precio-item">10.000$</span>
+          </div>
+          <div class="items">
+            <span class="titulo-items">Respuesto </span>
+            <img src="/images/amortiguadores ap.png" alt="" class="img-item" />
+            <span class="precio-item">10.000$</span>
+          </div>
+          <div class="items">
+            <span class="titulo-items">Respuesto </span>
+            <img src="/images/amortiguadores ap.png" alt="" class="img-item" />
+            <span class="precio-item">10.000$</span>
+          </div>
+          <div class="items">
+            <span class="titulo-items">Respuesto </span>
+            <img src="/images/amortiguadores ap.png" alt="" class="img-item" />
+            <span class="precio-item">10.000$</span>
+          </div>
+          <div class="items">
+            <span class="titulo-items">Respuesto </span>
+            <img src="/images/amortiguadores ap.png" alt="" class="img-item" />
+            <span class="precio-item">10.000$</span>
+          </div>
+          <div class="items">
+            <span class="titulo-items">Respuesto </span>
+            <img src="/images/amortiguadores ap.png" alt="" class="img-item" />
+            <span class="precio-item">10.000$</span>
+          </div>
+          <div class="items">
+            <span class="titulo-items">Respuesto </span>
+            <img src="/images/amortiguadores ap.png" alt="" class="img-item" />
+            <span class="precio-item">10.000$</span>
+          </div>
+          <div class="items">
+            <span class="titulo-items">Respuesto </span>
+            <img src="/images/amortiguadores ap.png" alt="" class="img-item" />
+            <span class="precio-item">10.000$</span>
+          </div>
+          <div class="items">
+            <span class="titulo-items">Respuesto </span>
+            <img src="/images/amortiguadores ap.png" alt="" class="img-item" />
+            <span class="precio-item">10.000$</span>
+          </div>
+        </div>
+      </section>
+
+      <br />
+
+      <div class="titulo">
+        <h2>Reseñas de nuestros clientes</h2>
+      </div>
+      <section id="reseñas" class="reseñas">
+        <div class="wrapper">
+          <i id="left" class="fa-solid fa-angle-left"></i>
+          <ul class="carousel">
+            <li class="card">
+              <div class="img">
+                <img
+                  src="/images/reseñaPerso.png"
+                  alt="img"
+                  draggable="false"
+                />
+              </div>
+              <h2>Nombre Apellido</h2>
+              <span
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+                vel corporis dolorem voluptas mollitia culpa, pariatur
+              </span>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img src="/images/reseñas.png" alt="img" draggable="false" />
+              </div>
+              <h2>Nombre Apellido</h2>
+              <span
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+                vel corporis dolorem voluptas mollitia culpa, pariatur
+              </span>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img
+                  src="/images/reseñaPerso.png"
+                  alt="img"
+                  draggable="false"
+                />
+              </div>
+              <h2>Nombre Apellido</h2>
+              <span
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+                vel corporis dolorem voluptas mollitia culpa, pariatur
+              </span>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img src="/images/reseñas.png" alt="img" draggable="false" />
+              </div>
+              <h2>Nombre Apellido</h2>
+              <span
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+                vel corporis dolorem voluptas mollitia culpa, pariatur
+              </span>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img
+                  src="/images/reseñaPerso.png"
+                  alt="img"
+                  draggable="false"
+                />
+              </div>
+              <h2>Nombre Apellido</h2>
+              <span
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+                vel corporis dolorem voluptas mollitia culpa, pariatur
+              </span>
+            </li>
+            <li class="card">
+              <div class="img">
+                <img src="/images/reseñas.png" alt="img" draggable="false" />
+              </div>
+              <h2>Nombre Apellido</h2>
+              <span
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+                vel corporis dolorem voluptas mollitia culpa, pariatur
+              </span>
+            </li>
+          </ul>
+          <i id="right" class="fa-solid fa-angle-right"></i>
+        </div>
+      </section>
+
+      <div class="titulo">
+        <h2>Contactanos</h2>
+      </div>
+      <section id="contacto" class="mensaje-container">
+        <div class="caja">
+          <div class="conta form">
+            <h3>Envianos un mensaje</h3>
+            <form action="">
+              <div class="formBox">
+                <div class="row50">
+                  <div class="inputBox">
+                    <span>Nombre</span>
+                    <input type="text" placeholder="Pedro" />
+                  </div>
+                  <div class="inputBox">
+                    <span>Nombre</span>
+                    <input type="text" placeholder="Rodriguez" />
+                  </div>
+                </div>
+                <div class="row50">
+                  <div class="inputBox">
+                    <span>Email</span>
+                    <input type="text" placeholder="PedroRodriguez@email.com" />
+                  </div>
+                  <div class="inputBox">
+                    <span>Telefono</span>
+                    <input type="text" placeholder="+54 3364525352" />
+                  </div>
+                </div>
+                <div class="row100">
+                  <div class="inputBox">
+                    <span>Message</span>
+                    <textarea
+                      name="mensaje"
+                      id=""
+                      cols="30"
+                      rows="10"
+                      placeholder="Escribi tu mensaje aqui..."
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="row100">
+                  <div class="inputBox">
+                    <input type="submit" value="Enviar" />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="conta info">
+            <h3>Informacion</h3>
+            <div class="infoBox">
+              <div class="datos">
+                <span><i class="fa-solid fa-map-pin"></i></span>
+                <p>Buenos Aires, San Nicolas de los Arroyos</p>
+              </div>
+              <div class="datos">
+                <span><i class="fa-solid fa-envelope"></i></span>
+                <a href="">SixMotors@gmail.com</a>
+              </div>
+              <div class="datos">
+                <span><i class="fa-solid fa-phone"></i></span>
+                <a href="">+54 3364123987</a>
+              </div>
+            </div>
+            <ul class="sci">
+              <li>
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="conta map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d26663.605763735824!2d-60.20563474411568!3d-33.346237223207766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1690653004640!5m2!1ses!2sar"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="pie-pagina">
+      <div class="grupo-1">
+        <div class="box">
+          <figure class="logo2">
+            <a href="#">
+              <img src="/images/logo2-sin-fondo.png" alt="Logo" />
+            </a>
+          </figure>
+        </div>
+        <div class="box">
+          <h2>Sobre Nosotros</h2>
+          <p>
+            Nuestro sitio web ofrece una amplia gama de productos y servicios
+            relacionados con la venta de autos y autopartes. En cuanto a la
+            venta de autos, contamos con un inventario de autos de diferentes
+            marcas, modelos y categorías. Además, ofrecemos una variedad de
+            autopartes para aquellos que buscan reparar, mejorar o personalizar
+            sus vehículos. Nuestro sitio está dirigido a una audiencia amplia
+            que incluye tanto a propietarios de automóviles en busca de comprar
+            un vehículo nuevo o usado, como a personas que le interesen los
+            automóviles y mecánicos que necesitan adquirir autopartes para sus
+            proyectos o reparaciones.
+          </p>
+        </div>
+        <div class="box">
+          <h2>Redes sociales</h2>
+          <div class="redes">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram-square"></i></a>
+            <a href="#"><i class="fab fa-twitter-square"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="grupo-2">
+        <small
+          >&copy; 2023 <b>SiXMotors</b>-Todos los derechos reservados</small
+        >
+      </div>
+    </footer>
+
+    <!-- javascript del nav -->
+    <script type="module" src="/javascript/nav.js"></script>
+    <!-- Javascript pagina -->
+    <script type="module" src="/javascript/home2.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.js"></script>
+    <!--  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- bootstrap -->
+    <!-- <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"
+      ></script> -->
+  </body>
+</html>
