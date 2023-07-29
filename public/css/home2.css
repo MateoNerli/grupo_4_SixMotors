@@ -195,7 +195,7 @@ h6 {
   position: relative;
   box-sizing: border-box;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 .autos-container {
@@ -230,14 +230,11 @@ h6 {
 @media (max-width: 768px) {
   .autos-venta {
     flex-direction: column;
-    align-items: center;
-    margin: 10px;
+    width: 100%;
+    /* flex-wrap: wrap; */
   }
-  .autos-0km,
-  .autos-usados {
-    width: 90%;
-  }
-  .masVendidos {
-    width: 90%;
+  .autos {
+    height: auto;
+    margin-bottom: 0px;
   }
 }
