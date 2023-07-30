@@ -20,7 +20,7 @@ app.get("/Nav-Footer", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./views/Nav-Footer.html"));
 });
 
-app.get("/productDetail.html", (req, res) => {
+app.get("/productDetail", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/productDetail.html"));
 });
 
