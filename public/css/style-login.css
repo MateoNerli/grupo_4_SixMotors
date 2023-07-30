@@ -186,7 +186,9 @@ button:hover {
   transition: box-shadow 0.5s ease-out;
   z-index: -1;
 }
-
+.forgot {
+  margin: 5px;
+}
 .register:hover {
   color: #fff;
   border: 1px solid var(--accent);
