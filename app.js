@@ -35,3 +35,15 @@ app.get("/login", (req, res) => {
 app.get("/carrito", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/carrito.html"));
 });
+
+app.get("/home", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/home.html"));
+});
+
+app.get("/autopartes", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/autopartes.html"));
+});
+
+app.get("/home2", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/home2.html"));
+});
