@@ -47,3 +47,7 @@ app.get("/autopartes", (req, res) => {
 app.get("/home2", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/home2.html"));
 });
+
+app.get("/usuario", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/usuario.html"));
+});
