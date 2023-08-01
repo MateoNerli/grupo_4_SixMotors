@@ -83,7 +83,7 @@ main {
 
 /* Swiper vertical vendidos */
 .masVendidos {
-  background-color: var(--primary);
+  background-color: #7c92858e;
   border-radius: 10px;
   flex: 0 0 30%;
   margin: 10px;
@@ -117,7 +117,6 @@ main {
   font-size: 1.2rem;
   font-weight: 500;
   text-transform: uppercase;
-  border-bottom: 5px solid var(--accent);
   margin: 0;
   padding: 0;
   text-decoration: none;
@@ -209,7 +208,7 @@ h6 {
 
 .autos-0km,
 .autos-usados {
-  background-color: var(--primary);
+  background-color: #7c92858e;
   border-radius: 10px;
   margin: 10px;
   padding: 10px;
@@ -329,15 +328,15 @@ h6 {
   cursor: grab;
   user-select: none;
 }
-.carousel :where(.card, .img) {
+.carousel :where(.card-reseña, .img) {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.card {
+.card-reseña {
   border: 1px solid var(--accent);
 }
-.carousel .card {
+.carousel .card-reseña {
   scroll-snap-align: start;
   height: 342px;
   list-style: none;
@@ -347,25 +346,25 @@ h6 {
   flex-direction: column;
   border-radius: 8px;
 }
-.carousel .card .img {
+.carousel .card-reseña .img {
   background: var(--accent);
   height: 148px;
   width: 148px;
   border-radius: 50%;
 }
-.card .img img {
+.card-reseña .img img {
   width: 140px;
   height: 140px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #fff;
 }
-.carousel .card h2 {
+.carousel .card-reseña h2 {
   font-weight: 500;
   font-size: 1.56rem;
   margin: 30px 0 5px;
 }
-.carousel .card span {
+.carousel .card-reseña span {
   color: #6a6d78;
   font-size: 1rem;
 }
