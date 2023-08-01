@@ -1,20 +1,21 @@
-#usuarios {
+.usuarios {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Agdasima", sans-serif;
   max-width: 1250px;
+  margin: 0 auto;
 }
 .wrapper {
   width: 90%;
   display: flex;
   box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
   justify-content: center;
-  align-items: center;
   margin: 50px auto;
 }
 .wrapper .left {
   width: 35%;
+  flex: 1;
   background: var(--primary);
   padding: 30px 25px;
   border-top-left-radius: 5px;
@@ -143,4 +144,80 @@
   align-items: center;
   right: 0;
   z-index: 1;
+}
+
+/* Estilos slider ultiams compras */
+.ultimas-compras {
+  margin-top: 30px;
+}
+
+.ultimas-compras-data {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.compras-carrusel {
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+.compras-contenido {
+  flex: 0 0 auto;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.compras-contenido img {
+  width: 80%;
+  max-width: 100px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.compras-contenido h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.compras-contenido p {
+  font-size: 14px;
+  color: #888;
+}
+
+.compras-contenido span {
+  font-size: 12px;
+  color: #666;
+}
+
+#compras-left,
+#compras-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  color: var(--text);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+#compras-left {
+  left: 10px;
+}
+
+#compras-right {
+  right: 10px;
+}
+
+#compras-left.hidden,
+#compras-right.hidden {
+  display: none;
 }
