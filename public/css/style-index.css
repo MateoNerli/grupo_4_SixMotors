@@ -1,0 +1,12 @@
+html
+{
+    /* background: yellow; */
+}
+.comp
+{
+    width:50px;
+    border-style: solid;
+    border-color: rgb(20, 54, 94);
+    margin-left:20px;
+    padding: 2px;
+}
