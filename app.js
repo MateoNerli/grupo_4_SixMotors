@@ -20,8 +20,8 @@ app.get("/Nav-Footer", (req, res) => {
   res.sendFile(path.resolve(__dirname, "./views/Nav-Footer.html"));
 });
 
-app.get("/detalles", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/detalles.html"));
+app.get("/productDetail", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/productDetail.html"));
 });
 
 app.get("/register", (req, res) => {
@@ -36,7 +36,14 @@ app.get("/carrito", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/carrito.html"));
 });
 
+app.get("/home", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/home.html"));
+});
+
 app.get("/autopartes", (req, res) => {
   res.sendFile(path.join(__dirname, "/views/autopartes.html"));
 });
 
+app.get("/home2", (req, res) => {
+  res.sendFile(path.join(__dirname, "/views/home2.html"));
+});
