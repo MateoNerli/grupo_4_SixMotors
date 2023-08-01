@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="../public/css/style-autopartes.css">
-  <link rel="stylesheet" href="/design/variables.css">
+  <link rel="stylesheet" href="../design/variables.css">
   <link rel="stylesheet" href="../public/css/style-Nav-Footer.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
       <i class="fa-solid fa-bars" id="menu-icon"></i>
       <div class="logo-img">
         <img
-          src="../design/logo-sin-fondo.png"
+          src="/images/logo-sin-fondo.png"
           alt="logo"
           width="100px"
           height="100px"
@@ -47,117 +47,178 @@
     </div>
   </nav>
 
-  <!-- Autopartes -->
+<!-- Autopartes -->
+<!-- Header de autopartes -->
 
   <div class="wrapper">
     <aside>
-      <header class="header">
-        <div>
-          <BUtton class="volver"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5ZM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5Z"/>
-          </svg></BUtton>
-        </div>
-      </header>
-        <nav>
-          <ul class="menu-categoria">
+        <nav class="menu">
+          <div class="search-container">
+            <input type="text" class="search-input" placeholder="Buscar...">
+            <button class="search-button">Buscar</button>
+          </div>
+          <ul class="menu-botones">
             <li> <BUtton class="boton-categoria">Modelo</BUtton></li><br>
             <li> <BUtton class="boton-categoria">Marca</BUtton></li><br>
             <li> <BUtton class="boton-categoria">Piezas</BUtton></li><br>
-            <li> <button class="boton-categoria-link"><a class="boton-carrito" href="../views/carrito.html">Carrito</a></li></button>
+            <li> <button class="boton-categoria-link"><a class="boton-carrito" href="/carrito">Carrito</a></li></button>
           </ul>
+          <div class="menu-bars">
+            <button>
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        </div>
         </nav>
+  
+
+<!-- Footer de autopartes -->
+
         <footer class="autorizacion">
           <p>@SixMotors</p>
         </footer>
     </aside>
+
+<!-- Main de autopartes -->
+    
     <main>
-      <h2 class="titulo-principal">Todos los productos</h2>
-      <div class="contenedor-productos">
-        <div class="producto">
-          <img class="img-producto" src="../public/images/alternador ap.png" alt="" class="img-producto"> 
-          <div class="detalle-producto">
-            <h3 class="nombre-producto">Alternador</h3>
-            <p class="oferta-producto">40% OFF</p>
-            <p class="precio-producto">$XXX</p>
-            <button class="boton-producto">Agregar</button>
-          </div>
+      <h2>Todos los productos</h2>
+
+<!-- Contenedor de articulos, autopartes -->
+
+    <div class="contenedor-productos">
+      <article class="articulos">
+        <img src="/images/amortiguadores-ap.png" alt="" width="100%">
+        <div class="productos-detalles">
+            <div class="precio-descuento">
+            <p class="precio">$30.000</p>
+            <p class="descuento">40% OFF</p>
         </div>
-        <div class="producto">
-          <img class="img-producto" src="../public/images/amortiguadores ap.png" alt="" class="img-producto"> 
-          <div class="detalle-producto">
-            <h3 class="nombre-producto">Amortiguador</h3>
-            <p class="oferta-producto">40% OFF</p>
-            <p class="precio-producto">$XXX</p>
-            <button class="boton-producto">Agregar</button>
-          </div>
+            <p class="nombre-elemento">Amortiguador</p> 
         </div>
-        <div class="producto">
-          <img class="img-producto" src="../public/images/bateria ap.png" alt="" class="img-producto"> 
-          <div class="detalle-producto">
-            <h3 class="nombre-producto">Bateria</h3>
-            <p class="oferta-producto">40% OFF</p>
-            <p class="precio-producto">$XXX</p>
-            <button class="boton-producto">Agregar</button>
-          </div>
-        </div>
-        <div class="producto">
-          <img class="img-producto" src="../public/images/bujia ap.png" alt="" class="img-producto"> 
-          <div class="detalle-producto">
-            <h3 class="nombre-producto">Bujia</h3>
-            <p class="oferta-producto">40% OFF</p>
-            <p class="precio-producto">$XXX</p>
-            <button class="boton-producto">Agregar</button>
-          </div>
-        </div>
-        <div class="producto">
-          <img class="img-producto" src="../public/images/cables-de-bujia ap.png" alt="cables de bujias"> 
-          <div class="detalle-producto">
-            <h3 class="nombre-producto">Cables de bujia</h3>
-            <p class="oferta-producto">N/D</p>
-            <p class="precio-producto">$XXX</p>
-            <button class="boton-producto">Agregar</button>
-          </div>
-        </div>
-        <div class="producto">
-          <img class="img-producto" src="../public/images/escape ap.jpg" alt="escape"> 
-          <div class="detalle-producto">
-            <h3 class="nombre-producto">Escape</h3>
-            <p class="oferta-producto">N/D</p>
-            <p class="precio-producto">$xxx</p>
-            <button class="boton-producto">Agregar</button>
-          </div>
-        </div>
-        <div class="producto">
-          <img class="img-producto" src="../public/images/espejo-retrovisor ap.png" alt="espejo retrovisor"> 
-          <div class="detalle-producto">
-            <h3 class="nombre-producto">Espejo Retrovisor</h3>
-            <p class="oferta-producto">N/d</p>
-            <p class="precio-producto">$XXX</p>
-            <button class="boton-producto">Agregar</button>
-          </div>
-        </div>
-        <div class="producto">
-          <img class="img-producto" src="../public/images/espejos-laterales ap.jpg" alt="espejos laterales"> 
-          <div class="detalle-producto">
-            <h3 class="nombre-producto">Espejos Laterales</h3>
-            <p class="oferta-producto">N/d</p>
-            <p class="precio-producto">$XXX</p>
-            <button class="boton-producto">Agregar</button>
-          </div>
-        </div>
-        <div class="producto">
-          <img class="img-producto" src="../public/images/faros ap.jpg" alt="faros"> 
-          <div class="detalle-producto">
-            <h3 class="nombre-producto">Faros Delanteros</h3>
-            <p class="oferta-producto">N/d</p>
-            <p class="precio-producto">$XXX</p>
-            <button class="boton-producto">Agregar</button>
-          </div>
-        </div>
-       
-     
+    </article>
+
+    <article class="articulos">
+      <img src="/images/bujia-ap.png" alt="" width="100%">
+      <div class="productos-detalles">
+          <div class="precio-descuento">
+          <p class="precio">$12.000</p>
+          <p class="descuento">N/D</p>
       </div>
-      
+          <p class="nombre-elemento">Bujias</p> 
+      </div>
+  </article>
+
+  <article class="articulos">
+    <img src="/images/cables-de-bujia-ap.png" alt="" width="100%">
+    <div class="productos-detalles">
+        <div class="precio-descuento">
+        <p class="precio">$8.625</p>
+        <p class="descuento">25% OFF</p>
+    </div>
+        <p class="nombre-elemento">Cables Bujias</p> 
+    </div>
+</article>
+
+<article class="articulos">
+  <img src="/images/faros-ap.jpg" alt="" width="100%">
+  <div class="productos-detalles">
+      <div class="precio-descuento">
+      <p class="precio">$22.500</p>
+      <p class="descuento">10% OFF</p>
+  </div>
+      <p class="nombre-elemento">Faros delanteros</p> 
+  </div>
+</article>
+
+<article class="articulos">
+  <img src="/images/espejos-laterales-ap.jpg" alt="" width="100%">
+  <div class="productos-detalles">
+      <div class="precio-descuento">
+      <p class="precio">$8.000</p>
+      <p class="descuento">20% OFF</p>
+  </div>
+      <p class="nombre-elemento">Espejos laterales</p> 
+  </div>
+</article>
+
+<article class="articulos">
+  <img src="/images/espejo-retrovisor-ap.png" alt="" width="100%">
+  <div class="productos-detalles">
+      <div class="precio-descuento">
+      <p class="precio">$2.350</p>
+      <p class="descuento">N/D</p>
+  </div>
+      <p class="nombre-elemento">Espejo retrovisor</p> 
+  </div>
+</article>
+
+<article class="articulos">
+  <img src="/images/alternador-ap.png" alt="" width="100%">
+  <div class="productos-detalles">
+      <div class="precio-descuento">
+      <p class="precio">$148.000</p>
+      <p class="descuento">20% OFF</p>
+  </div>
+      <p class="nombre-elemento">Alternador</p> 
+  </div>
+</article>
+
+<article class="articulos">
+  <img src="/images/bateria-ap.png" alt="" width="100%">
+  <div class="productos-detalles">
+      <div class="precio-descuento">
+      <p class="precio">$16.800</p>
+      <p class="descuento">40% OFF</p>
+  </div>
+      <p class="nombre-elemento">Bateria</p> 
+  </div>
+</article>
+
+<article class="articulos">
+  <img src="/images/embragu-ap.png" alt="" width="100%">
+  <div class="productos-detalles">
+      <div class="precio-descuento">
+      <p class="precio">$66.150</p>
+      <p class="descuento">10% OFF</p>
+  </div>
+      <p class="nombre-elemento">Embrague</p> 
+  </div>
+</article>
+
+<article class="articulos">
+  <img src="/images/embrague-ceramico-ap.png" alt="" width="100%">
+  <div class="productos-detalles">
+      <div class="precio-descuento">
+      <p class="precio">$983.000</p>
+      <p class="descuento">10% OFF</p>
+  </div>
+      <p class="nombre-elemento">Embrague ceramico</p> 
+  </div>
+</article>
+
+<article class="articulos">
+  <img src="/images/escape-ap.jpg" alt="" width="100%">
+  <div class="productos-detalles">
+      <div class="precio-descuento">
+      <p class="precio">$48.000</p>
+      <p class="descuento">50% OFF</p>
+  </div>
+      <p class="nombre-elemento">Escape</p> 
+  </div>
+</article>
+
+<article class="articulos">
+  <img src="/images/pistones-ap.jpg" alt="" width="100%">
+  <div class="productos-detalles">
+      <div class="precio-descuento">
+      <p class="precio">$8.500</p>
+      <p class="descuento">N/d</p>
+  </div>
+      <p class="nombre-elemento">Pistones</p> 
+  </div>
+</article>
+
+</div>
     </main>
   </div>
 
@@ -168,7 +229,7 @@
       <div class="box">
         <figure class="logo2">
           <a href="#">
-            <img src="../public/images/logo2-sin-fondo.png" alt="Logo" />
+            <img src="/images/logo2-sin-fondo.png" alt="Logo" />
           </a>
         </figure>
       </div>
@@ -206,8 +267,7 @@
 
   <!-- javascript del Nav & Autopartes -->
 
-  <script type="module" src="../public/javascript/nav.js"></script>
-  <script type="module" src="../public/javascript/autopartes.js"></script>
+  <script type="module" src="/javascript/nav.js"></script>
 </body>
 
 </html>
