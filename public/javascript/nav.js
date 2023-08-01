@@ -7,7 +7,6 @@ document.querySelector("#search-icon").onclick = () => {
 };
 
 document.querySelector("#menu-icon").onclick = () => {
-  console.log("clicked");
   menu.classList.toggle("active");
   search.classList.remove("active");
 };
