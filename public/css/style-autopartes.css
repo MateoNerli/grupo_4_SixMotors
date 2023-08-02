@@ -19,7 +19,7 @@
   padding: 0;
   margin: 0;
   font-family: url("https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap");
-  color: #171c19;
+  /* color: #171c19; */
 }
 
 body {
@@ -295,8 +295,6 @@ main > h2:hover {
     margin-top: 2rem;
   }
 
- 
-
   /* Main */
 
   body {
@@ -320,13 +318,10 @@ main > h2:hover {
   }
 }
 
-
-@media screen and (min-width: 900px){
-
-    .contenedor-productos {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        padding: 1rem;
-      }
-
+@media screen and (min-width: 900px) {
+  .contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1rem;
+  }
 }
