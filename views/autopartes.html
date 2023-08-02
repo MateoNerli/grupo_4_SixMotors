@@ -52,183 +52,211 @@
 
     <!-- Autopartes -->
     <!-- Header de autopartes -->
-
-    <div class="wrapper">
-      <aside>
-        <nav class="menu">
-          <div class="search-container">
-            <input type="text" class="search-input" placeholder="Buscar..." />
-            <button class="search-button">Buscar</button>
+    <main>
+      <div class="wrapper">
+        <aside class="sidebar">
+          <div class="logo">
+            <img src="images/logo.jpg" alt="logo" />
+            <h2>CodingNepal</h2>
           </div>
-          <ul class="menu-botones">
-            <li><button class="boton-categoria">Modelo</button></li>
-            <br />
-            <li><button class="boton-categoria">Marca</button></li>
-            <br />
-            <li><button class="boton-categoria">Piezas</button></li>
-            <br />
+          <ul class="links">
+            <h4>Main Menu</h4>
             <li>
-              <button class="boton-categoria-link">
-                <a class="boton-carrito" href="/carrito">Carrito</a>
-              </button>
+              <span class="material-symbols-outlined">dashboard</span>
+              <a href="#">Dashboard</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">show_chart</span>
+              <a href="#">Revenue</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">flag</span>
+              <a href="#">Reports</a>
+            </li>
+            <hr />
+            <h4>Advanced</h4>
+            <li>
+              <span class="material-symbols-outlined">person</span>
+              <a href="#">Designer</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">group</span>
+              <a href="#">Developer </a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">ambient_screen</span>
+              <a href="#">Magic Build</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">pacemaker</span>
+              <a href="#">Theme Maker</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">monitoring</span>
+              <a href="#">Analytic</a>
+            </li>
+            <hr />
+            <h4>Account</h4>
+            <li>
+              <span class="material-symbols-outlined">bar_chart</span>
+              <a href="#">Overview</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">mail</span>
+              <a href="#">Message</a>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">settings</span>
+              <a href="#">Settings</a>
+            </li>
+            <li class="logout-link">
+              <span class="material-symbols-outlined">logout</span>
+              <a href="#">Logout</a>
             </li>
           </ul>
-          <div class="menu-bars">
-            <button>
-              <i class="fa-solid fa-bars"></i>
-            </button>
+        </aside>
+
+        <section class="productos">
+          <h2>Todos los productos</h2>
+
+          <!-- Contenedor de articulos, autopartes -->
+
+          <div class="contenedor-productos">
+            <article class="articulos">
+              <img src="/images/amortiguadores-ap.png" alt="" width="100%" />
+              <div class="productos-detalles">
+                <div class="precio-descuento">
+                  <p class="precio">$30.000</p>
+                  <p class="descuento">40% OFF</p>
+                </div>
+                <p class="nombre-elemento">Amortiguador</p>
+              </div>
+            </article>
+
+            <article class="articulos">
+              <img src="/images/bujia-ap.png" alt="" width="100%" />
+              <div class="productos-detalles">
+                <div class="precio-descuento">
+                  <p class="precio">$12.000</p>
+                  <p class="descuento">N/D</p>
+                </div>
+                <p class="nombre-elemento">Bujias</p>
+              </div>
+            </article>
+
+            <article class="articulos">
+              <img src="/images/cables-de-bujia-ap.png" alt="" width="100%" />
+              <div class="productos-detalles">
+                <div class="precio-descuento">
+                  <p class="precio">$8.625</p>
+                  <p class="descuento">25% OFF</p>
+                </div>
+                <p class="nombre-elemento">Cables Bujias</p>
+              </div>
+            </article>
+
+            <article class="articulos">
+              <img src="/images/faros-ap.jpg" alt="" width="100%" />
+              <div class="productos-detalles">
+                <div class="precio-descuento">
+                  <p class="precio">$22.500</p>
+                  <p class="descuento">10% OFF</p>
+                </div>
+                <p class="nombre-elemento">Faros delanteros</p>
+              </div>
+            </article>
+
+            <article class="articulos">
+              <img src="/images/espejos-laterales-ap.jpg" alt="" width="100%" />
+              <div class="productos-detalles">
+                <div class="precio-descuento">
+                  <p class="precio">$8.000</p>
+                  <p class="descuento">20% OFF</p>
+                </div>
+                <p class="nombre-elemento">Espejos laterales</p>
+              </div>
+            </article>
+
+            <article class="articulos">
+              <img src="/images/espejo-retrovisor-ap.png" alt="" width="100%" />
+              <div class="productos-detalles">
+                <div class="precio-descuento">
+                  <p class="precio">$2.350</p>
+                  <p class="descuento">N/D</p>
+                </div>
+                <p class="nombre-elemento">Espejo retrovisor</p>
+              </div>
+            </article>
+
+            <article class="articulos">
+              <img src="/images/alternador-ap.png" alt="" width="100%" />
+              <div class="productos-detalles">
+                <div class="precio-descuento">
+                  <p class="precio">$148.000</p>
+                  <p class="descuento">20% OFF</p>
+                </div>
+                <p class="nombre-elemento">Alternador</p>
+              </div>
+            </article>
+
+            <article class="articulos">
+              <img src="/images/bateria-ap.png" alt="" width="100%" />
+              <div class="productos-detalles">
+                <div class="precio-descuento">
+                  <p class="precio">$16.800</p>
+                  <p class="descuento">40% OFF</p>
+                </div>
+                <p class="nombre-elemento">Bateria</p>
+              </div>
+            </article>
+
+            <article class="articulos">
+              <img src="/images/embragu-ap.png" alt="" width="100%" />
+              <div class="productos-detalles">
+                <div class="precio-descuento">
+                  <p class="precio">$66.150</p>
+                  <p class="descuento">10% OFF</p>
+                </div>
+                <p class="nombre-elemento">Embrague</p>
+              </div>
+            </article>
+
+            <article class="articulos">
+              <img src="/images/embrague-ceramico-ap.png" alt="" width="100%" />
+              <div class="productos-detalles">
+                <div class="precio-descuento">
+                  <p class="precio">$983.000</p>
+                  <p class="descuento">10% OFF</p>
+                </div>
+                <p class="nombre-elemento">Embrague ceramico</p>
+              </div>
+            </article>
+
+            <article class="articulos">
+              <img src="/images/escape-ap.jpg" alt="" width="100%" />
+              <div class="productos-detalles">
+                <div class="precio-descuento">
+                  <p class="precio">$48.000</p>
+                  <p class="descuento">50% OFF</p>
+                </div>
+                <p class="nombre-elemento">Escape</p>
+              </div>
+            </article>
+
+            <article class="articulos">
+              <img src="/images/pistones-ap.jpg" alt="" width="100%" />
+              <div class="productos-detalles">
+                <div class="precio-descuento">
+                  <p class="precio">$8.500</p>
+                  <p class="descuento">N/d</p>
+                </div>
+                <p class="nombre-elemento">Pistones</p>
+              </div>
+            </article>
           </div>
-        </nav>
-
-        <!-- Footer de autopartes -->
-
-        <footer class="autorizacion">
-          <p>@SixMotors</p>
-        </footer>
-      </aside>
-
-      <!-- Main de autopartes -->
-
-      <main>
-        <h2>Todos los productos</h2>
-
-        <!-- Contenedor de articulos, autopartes -->
-
-        <div class="contenedor-productos">
-          <article class="articulos">
-            <img src="/images/amortiguadores-ap.png" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$30.000</p>
-                <p class="descuento">40% OFF</p>
-              </div>
-              <p class="nombre-elemento">Amortiguador</p>
-            </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/bujia-ap.png" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$12.000</p>
-                <p class="descuento">N/D</p>
-              </div>
-              <p class="nombre-elemento">Bujias</p>
-            </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/cables-de-bujia-ap.png" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$8.625</p>
-                <p class="descuento">25% OFF</p>
-              </div>
-              <p class="nombre-elemento">Cables Bujias</p>
-            </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/faros-ap.jpg" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$22.500</p>
-                <p class="descuento">10% OFF</p>
-              </div>
-              <p class="nombre-elemento">Faros delanteros</p>
-            </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/espejos-laterales-ap.jpg" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$8.000</p>
-                <p class="descuento">20% OFF</p>
-              </div>
-              <p class="nombre-elemento">Espejos laterales</p>
-            </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/espejo-retrovisor-ap.png" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$2.350</p>
-                <p class="descuento">N/D</p>
-              </div>
-              <p class="nombre-elemento">Espejo retrovisor</p>
-            </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/alternador-ap.png" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$148.000</p>
-                <p class="descuento">20% OFF</p>
-              </div>
-              <p class="nombre-elemento">Alternador</p>
-            </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/bateria-ap.png" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$16.800</p>
-                <p class="descuento">40% OFF</p>
-              </div>
-              <p class="nombre-elemento">Bateria</p>
-            </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/embragu-ap.png" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$66.150</p>
-                <p class="descuento">10% OFF</p>
-              </div>
-              <p class="nombre-elemento">Embrague</p>
-            </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/embrague-ceramico-ap.png" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$983.000</p>
-                <p class="descuento">10% OFF</p>
-              </div>
-              <p class="nombre-elemento">Embrague ceramico</p>
-            </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/escape-ap.jpg" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$48.000</p>
-                <p class="descuento">50% OFF</p>
-              </div>
-              <p class="nombre-elemento">Escape</p>
-            </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/pistones-ap.jpg" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$8.500</p>
-                <p class="descuento">N/d</p>
-              </div>
-              <p class="nombre-elemento">Pistones</p>
-            </div>
-          </article>
-        </div>
-      </main>
-    </div>
+        </section>
+      </div>
+    </main>
 
     <!-- Footer -->
 
