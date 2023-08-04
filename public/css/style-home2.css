@@ -10,7 +10,7 @@ main {
 /* banner */
 #banner {
   position: relative;
-  max-width: 1250px;
+  width: 100%;
 }
 
 .banner .swiper {
@@ -28,7 +28,7 @@ main {
 
 .banner .swiper-slide img {
   display: block;
-  max-height: 450px;
+  max-height: 650px;
   width: 100%;
   height: 100%;
   object-fit: cover;
