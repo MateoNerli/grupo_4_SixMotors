@@ -4,13 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/css/style-autopartes.css" />
-    <link rel="stylesheet" href="/design/variables.css" />
-    <link rel="stylesheet" href="/css/style-Nav-Footer.css" />
-    <script
-      src="https://kit.fontawesome.com/3f0244d368.js"
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
       crossorigin="anonymous"
-    ></script>
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link rel="stylesheet" href="/css/style-Nav-Footer.css" />
+    <link rel="stylesheet" href="/css/style-productos.css" />
+    <link rel="stylesheet" href="/design/variables.css" class="css" />
   </head>
   <body>
     <!-- Nav -->
@@ -54,178 +66,137 @@
     <!-- Header de autopartes -->
 
     <div class="wrapper">
+      <header class="header-mobile">
+        <button class="open-menu" id="open-menu">
+          <i class="bi bi-list"></i>
+        </button>
+        <button class="close-menu" id="close-menu">
+          <i class="bi bi-x"></i>
+        </button>
+      </header>
       <aside>
-        <nav class="menu">
-          <div class="search-container">
-            <input type="text" class="search-input" placeholder="Buscar..." />
-            <button class="search-button">Buscar</button>
-          </div>
-          <ul class="menu-botones">
-            <li><button class="boton-categoria">Modelo</button></li>
-            <br />
-            <li><button class="boton-categoria">Marca</button></li>
-            <br />
-            <li><button class="boton-categoria">Piezas</button></li>
-            <br />
+        <button class="close-menu" id="close-menu">
+          <i class="bi bi-x"></i>
+        </button>
+        <header>
+          <h1 class="logo-aside">SixMOTORS</h1>
+        </header>
+        <div class="menu-aside">
+          <ul class="menu-autos">
             <li>
-              <button class="boton-categoria-link">
-                <a class="boton-carrito" href="/carrito">Carrito</a>
+              <button id="" class="boton-menu boton-categoria active">
+                <i class="bi bi-hand-index-thumb-fill"></i> Todos los repuestos
               </button>
             </li>
+            <li>
+              <button id="" class="boton-menu boton-categoria">
+                <i class="bi bi-hand-index-thumb"></i> iluminacion
+              </button>
+            </li>
+            <li>
+              <button id="" class="boton-menu boton-categoria">
+                <i class="bi bi-hand-index-thumb"></i> Amortiguadoes
+              </button>
+            </li>
+            <li>
+              <button id="" class="boton-menu boton-categoria">
+                <i class="bi bi-hand-index-thumb"></i> Ruedas
+              </button>
+            </li>
+            <li>
+              <button id="" class="boton-menu boton-categoria">
+                <i class="bi bi-hand-index-thumb"></i> Bateria
+              </button>
+            </li>
+            <li>
+              <a class="boton-menu boton-carrito" href="">
+                <i class="bi bi-cart-fill"></i> Carrito
+                <span id="numerito" class="numerito">0</span>
+              </a>
+            </li>
           </ul>
-          <div class="menu-bars">
-            <button>
-              <i class="fa-solid fa-bars"></i>
-            </button>
-          </div>
-        </nav>
-
-        <!-- Footer de autopartes -->
-
-        <footer class="autorizacion">
-          <p>@SixMotors</p>
+        </div>
+        <footer>
+          <p class="texto-footer">© 2023 SixMotors</p>
         </footer>
       </aside>
 
       <!-- Main de autopartes -->
-
       <main>
-        <h2>Todos los productos</h2>
-
+        <h2 class="titulo-principal" id="titulo-principal">
+          Todos los productos
+        </h2>
         <!-- Contenedor de articulos, autopartes -->
 
-        <div class="contenedor-productos">
-          <article class="articulos">
-            <img src="/images/amortiguadores-ap.png" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$30.000</p>
-                <p class="descuento">40% OFF</p>
-              </div>
-              <p class="nombre-elemento">Amortiguador</p>
+        <div id="contenedor-productos" class="contenedor-productos">
+          <div class="producto">
+            <img class="producto-imagen" src="/images/bujia-ap.png" alt="" />
+            <div class="producto-detalles">
+              <h3 class="producto-titulo">Producto</h3>
+              <p class="producto-precio">10000000000000</p>
+              <button class="producto-agregar" id="">Agregar</button>
             </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/bujia-ap.png" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$12.000</p>
-                <p class="descuento">N/D</p>
-              </div>
-              <p class="nombre-elemento">Bujias</p>
+          </div>
+          <div class="producto">
+            <img class="producto-imagen" src="/images/bateria-ap.png" alt="" />
+            <div class="producto-detalles">
+              <h3 class="producto-titulo">Producto</h3>
+              <p class="producto-precio">10000000000000</p>
+              <button class="producto-agregar" id="">Agregar</button>
             </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/cables-de-bujia-ap.png" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$8.625</p>
-                <p class="descuento">25% OFF</p>
-              </div>
-              <p class="nombre-elemento">Cables Bujias</p>
+          </div>
+          <div class="producto">
+            <img
+              class="producto-imagen"
+              src="/images/amortiguadores-ap.png"
+              alt=""
+            />
+            <div class="producto-detalles">
+              <h3 class="producto-titulo">Producto</h3>
+              <p class="producto-precio">10000000000000</p>
+              <button class="producto-agregar" id="">Agregar</button>
             </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/faros-ap.jpg" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$22.500</p>
-                <p class="descuento">10% OFF</p>
-              </div>
-              <p class="nombre-elemento">Faros delanteros</p>
+          </div>
+          <div class="producto">
+            <img class="producto-imagen" src="/images/bujia-ap.png" alt="" />
+            <div class="producto-detalles">
+              <h3 class="producto-titulo">Producto</h3>
+              <p class="producto-precio">10000000000000</p>
+              <button class="producto-agregar" id="">Agregar</button>
             </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/espejos-laterales-ap.jpg" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$8.000</p>
-                <p class="descuento">20% OFF</p>
-              </div>
-              <p class="nombre-elemento">Espejos laterales</p>
+          </div>
+          <div class="producto">
+            <img class="producto-imagen" src="/images/bujia-ap.png" alt="" />
+            <div class="producto-detalles">
+              <h3 class="producto-titulo">Producto</h3>
+              <p class="producto-precio">10000000000000</p>
+              <button class="producto-agregar" id="">Agregar</button>
             </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/espejo-retrovisor-ap.png" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$2.350</p>
-                <p class="descuento">N/D</p>
-              </div>
-              <p class="nombre-elemento">Espejo retrovisor</p>
+          </div>
+          <div class="producto">
+            <img class="producto-imagen" src="/images/bujia-ap.png" alt="" />
+            <div class="producto-detalles">
+              <h3 class="producto-titulo">Producto</h3>
+              <p class="producto-precio">10000000000000</p>
+              <button class="producto-agregar" id="">Agregar</button>
             </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/alternador-ap.png" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$148.000</p>
-                <p class="descuento">20% OFF</p>
-              </div>
-              <p class="nombre-elemento">Alternador</p>
+          </div>
+          <div class="producto">
+            <img class="producto-imagen" src="/images/bujia-ap.png" alt="" />
+            <div class="producto-detalles">
+              <h3 class="producto-titulo">Producto</h3>
+              <p class="producto-precio">10000000000000</p>
+              <button class="producto-agregar" id="">Agregar</button>
             </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/bateria-ap.png" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$16.800</p>
-                <p class="descuento">40% OFF</p>
-              </div>
-              <p class="nombre-elemento">Bateria</p>
+          </div>
+          <div class="producto">
+            <img class="producto-imagen" src="/images/bujia-ap.png" alt="" />
+            <div class="producto-detalles">
+              <h3 class="producto-titulo">Producto</h3>
+              <p class="producto-precio">10000000000000</p>
+              <button class="producto-agregar" id="">Agregar</button>
             </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/embragu-ap.png" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$66.150</p>
-                <p class="descuento">10% OFF</p>
-              </div>
-              <p class="nombre-elemento">Embrague</p>
-            </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/embrague-ceramico-ap.png" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$983.000</p>
-                <p class="descuento">10% OFF</p>
-              </div>
-              <p class="nombre-elemento">Embrague ceramico</p>
-            </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/escape-ap.jpg" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$48.000</p>
-                <p class="descuento">50% OFF</p>
-              </div>
-              <p class="nombre-elemento">Escape</p>
-            </div>
-          </article>
-
-          <article class="articulos">
-            <img src="/images/pistones-ap.jpg" alt="" width="100%" />
-            <div class="productos-detalles">
-              <div class="precio-descuento">
-                <p class="precio">$8.500</p>
-                <p class="descuento">N/d</p>
-              </div>
-              <p class="nombre-elemento">Pistones</p>
-            </div>
-          </article>
+          </div>
         </div>
       </main>
     </div>
@@ -273,8 +244,12 @@
       </div>
     </footer>
 
-    <!-- javascript del Nav & Autopartes -->
-
+    <!-- javascript del Nav -->
     <script type="module" src="/javascript/nav.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="/javascript/autos.js"></script>
   </body>
 </html>
