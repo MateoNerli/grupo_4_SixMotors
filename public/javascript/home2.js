@@ -168,11 +168,9 @@ $swiperSelector2.each(function (index) {
   });
 });
 
-// Slider de reseñas
-
 const wrapper = document.querySelector(".wrapper");
 const carousel = document.querySelector(".carousel");
-const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+const firstCardWidth = carousel.querySelector(".card-reseña").offsetWidth;
 const arrowBtns = document.querySelectorAll(".wrapper i");
 const carouselChildrens = [...carousel.children];
 
@@ -222,3 +220,47 @@ const infiniteScroll = () => {
   clearTimeout(timeoutId);
   if (!wrapper.matches(":hover")) autoPlay();
 };
+
+const autoPlay = () => {
+  if (isAutoPlay) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      carousel.scrollLeft += firstCardWidth;
+      infiniteScroll();
+    }, 3000);
+  }
+};
+
+autoPlay();
+
+wrapper.addEventListener("mouseenter", () => {
+  isAutoPlay = false;
+  clearTimeout(timeoutId);
+});
+wrapper.addEventListener("mouseleave", () => {
+  isAutoPlay = true;
+  autoPlay();
+});
+
+window.addEventListener("resize", () => {
+  cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+  infiniteScroll();
+});
+
+carousel.addEventListener("touchstart", (e) => {
+  isDragging = true;
+  startX = e.touches[0].clientX;
+  startScrollLeft = carousel.scrollLeft;
+});
+
+carousel.addEventListener("touchmove", (e) => {
+  if (!isDragging) return;
+  const touchX = e.touches[0].clientX;
+  const touchDelta = touchX - startX;
+  carousel.scrollLeft = startScrollLeft - touchDelta;
+});
+
+carousel.addEventListener("touchend", () => {
+  isDragging = false;
+  infiniteScroll();
+});
