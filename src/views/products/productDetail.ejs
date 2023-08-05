@@ -9,86 +9,137 @@
     <!-- Navbar -->
     <%- include ('../partials/header.ejs') %>
 
+    <!-- Product Detail -->
+    <div class="titulo">
+      <h2>Producto Nombre</h2>
+    </div>
     <main>
-      <section class="producto">
-        <article>
-          <div class="contenedor-nombre-articulo">
-            <h1>Nombre del articulo</h1>
+      <div class="container-img">
+        <img src="/images/0km-slider1.jpg" alt="imagen-producto" />
+      </div>
+
+      <div class="container-info-product">
+        <div class="container-price">
+          <span>$11111111110</span>
+        </div>
+
+        <div class="container-add-cart">
+          <div class="container-quantity">
+            <input
+              type="number"
+              placeholder="1"
+              value="1"
+              min="1"
+              class="input-quantity"
+            />
+            <div class="btn-increment-decrement">
+              <i class="fa-solid fa-chevron-up" id="increment"></i>
+              <i class="fa-solid fa-chevron-down" id="decrement"></i>
+            </div>
           </div>
-          <div class="contenedor-imagen">
-            <img src="images/foto-ejemplo-detalles.jpg" alt="" />
+          <button class="btn-add-to-cart">
+            <i class="fa-solid fa-plus"></i>
+            Añadir al carrito
+          </button>
+        </div>
+
+        <div class="container-description">
+          <div class="title-description">
+            <h4>Descripción</h4>
+            <i class="fa-solid fa-chevron-down"></i>
           </div>
-          <div class="contenedor-detalles">
-            <div class="precio">$30.000</div>
-            <div class="descuento">30% OFF</div>
-          </div>
-          <div class="contenedor-cantidad">
-            <form action="" class="cantidad">
-              <label>Cantidad: </label>
-              <input type="number" placeholder="Ingrese la cantidad" />
-            </form>
-          </div>
-          <div class="contenedor-compra">
-            <div class="comprar">Comprar</div>
-            <div class="agregar-carrito">Agregar al carrito</div>
-          </div>
-          <div class="contenedor-informacion">
-            <h2 class="especificaciones">Informacion</h2>
-            <p class="texto-info">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat
-              excepturi deserunt, dolorem reprehenderit, sed iusto blanditiis
-              recusandae porro laboriosam voluptates molestias soluta minima
-              iste laborum sapiente inventore, a deleniti cum?
+          <div class="text-description">
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Laboriosam iure provident atque voluptatibus reiciendis quae
+              rerum, maxime placeat enim cupiditate voluptatum, temporibus quis
+              iusto. Enim eum qui delectus deleniti similique? Lorem, ipsum
+              dolor sit amet consectetur adipisicing elit. Sint autem magni
+              earum est dolorem saepe perferendis repellat ipsam laudantium cum
+              assumenda quidem quam, vero similique? Iusto officiis quod
+              blanditiis iste?
             </p>
-            <ul class="lista-informacion">
-              <li>
-                <span><i class="fas fa-dot-circle"></i></span>Lorem ipsum dolor
-                sit amet consectetur adipisicing elit. Delectus, ipsa aperiam!
-                Cumque
-              </li>
-              <li>
-                <span><i class="fas fa-dot-circle"></i></span>Lorem ipsum dolor
-                sit amet consectetur adipisicing elit. Delectus, ipsa aperiam!
-                Cumque
-              </li>
-              <li>
-                <span><i class="fas fa-dot-circle"></i></span>Lorem ipsum dolor
-                sit amet consectetur adipisicing elit. Delectus, ipsa aperiam!
-                Cumque
-              </li>
-              <li>
-                <span><i class="fas fa-dot-circle"></i></span>Lorem ipsum dolor
-                sit amet consectetur adipisicing elit. Delectus, ipsa aperiam!
-                Cumque
-              </li>
-              <li>
-                <span><i class="fas fa-dot-circle"></i></span>Lorem ipsum dolor
-                sit amet consectetur adipisicing elit. Delectus, ipsa aperiam!
-                Cumque
-              </li>
-            </ul>
           </div>
-        </article>
-      </section>
-      <section class="relacionados">
-        <div class="texto-art-relacionados">
-          <h2>Articulos relacionados</h2>
         </div>
-        <div class="articulos">
-          <img src="images/recomendado.jpg" alt="" />
-          <img src="images/recomendado2.jpg" alt="" />
-          <img src="images/recomendado3.webp" alt="" />
-          <img src="images/recomendado4.webp" alt="" />
-          <img src="images/recomendado5.jpg" alt="" />
-          <img src="images/recomendado6.jpg" alt="" />
+
+        <div class="container-reviews">
+          <div class="title-reviews">
+            <h4>Reseñas</h4>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="text-reviews hidden">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius
+              neque molestias qui tempore facere nam eligendi consequuntur.
+              eaque ad inventore.
+            </p>
+          </div>
         </div>
-      </section>
+      </div>
     </main>
+    <section class="container-related-products">
+      <div class="titulo">
+        <h2>Productos Relacionados</h2>
+      </div>
+      <div class="card-list-products">
+        <div class="card">
+          <div class="card-img">
+            <img src="/images/espejos-laterales-ap.jpg" alt="producto-1" />
+          </div>
+          <div class="info-card">
+            <div class="text-product">
+              <h3>titulo</h3>
+              <p class="category">categopria</p>
+            </div>
+            <div class="price">$111111</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img">
+            <img src="/images/espejos-laterales-ap.jpg" alt="producto-2" />
+          </div>
+          <div class="info-card">
+            <div class="text-product">
+              <h3>titulo</h3>
+              <p class="category">categopria</p>
+            </div>
+            <div class="price">$111111</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img">
+            <img src="/images/espejos-laterales-ap.jpg" alt="producto-3" />
+          </div>
+          <div class="info-card">
+            <div class="text-product">
+              <h3>titulo</h3>
+              <p class="category">categopria</p>
+            </div>
+            <div class="price">$111111</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-img">
+            <img src="/images/espejos-laterales-ap.jpg" alt="producto-4" />
+          </div>
+          <div class="info-card">
+            <div class="text-product">
+              <h3>titulo</h3>
+              <p class="category">categopria</p>
+            </div>
+            <div class="price">$111111</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
     <%- include ('../partials/footer.ejs') %>
 
     <!-- javascript del nav -->
     <script type="module" src="/javascript/nav.js"></script>
+
+    <!-- javascript del product detail -->
+    <script type="module" src="/javascript/details.js"></script>
   </body>
 </html>
