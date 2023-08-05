@@ -1,29 +1,29 @@
-const path = require("path"); //requiero path
+const path = require("path");
 
 const userController = {
   home: (req, res) => {
     res.render("home");
   },
   login: (req, res) => {
-    res.render("login");
+    res.render(path.join("users", "login"));
   },
   register: (req, res) => {
-    res.render("register");
+    res.render(path.join("users", "register"));
   },
   usuario: (req, res) => {
-    res.render("usuario");
+    res.render(path.join("users", "usuario"));
   },
   detail: (req, res) => {
-    res.render("productDetail");
+    res.render(path.join("products", "productDetail"));
   },
   carrito: (req, res) => {
-    res.render("carrito");
+    res.render(path.join("products", "carrito"));
   },
   autos: (req, res) => {
-    res.render("autos");
+    res.render(path.join("products", "autos"));
   },
   autopartes: (req, res) => {
-    res.render("autopartes");
+    res.render(path.join("products", "autopartes"));
   },
 };
 

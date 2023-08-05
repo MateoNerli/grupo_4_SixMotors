@@ -17,8 +17,9 @@ app.use(express.json()); //para que pueda leer json
 app.use("/", express.static(__dirname + "/public")); //para que pueda leer archivos estaticos
 app.use("/", express.static(__dirname + "/design"));
 
-app.set("views", path.resolve(__dirname, "./src/views")); //para que pueda leer views
 app.set("view engine", "ejs"); //para que pueda leer ejs
+
+app.set("views", path.resolve(__dirname, "./src/views"));
 
 app.use("/", userRouter); //para que pueda leer el router
 

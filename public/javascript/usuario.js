@@ -37,9 +37,9 @@ let comprasPosition = 0;
 const comprasMaxPosition = -(comprasItems.length - 1) * comprasItemWidth;
 
 function updateComprasArrowsVisibility() {
-  comprasLeftArrow.style.display = comprasPosition === 0 ? "none" : "block";
+  comprasLeftArrow.style.display = comprasPosition === 0 ? "none" : "";
   comprasRightArrow.style.display =
-    comprasPosition === comprasMaxPosition ? "none" : "block";
+    comprasPosition === comprasMaxPosition ? "none" : "";
 }
 
 function slideComprasLeft() {

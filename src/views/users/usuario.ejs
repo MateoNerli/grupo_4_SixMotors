@@ -1,32 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>usuario</title>
-    <!-- font awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- Swiper -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-    />
+    <%- include ('../partials/head.ejs') %>
 
-    <link rel="stylesheet" href="/design/variables.css" />
-    <link rel="stylesheet" href="/css/style-home2.css" />
+
     <link rel="stylesheet" href="/css/style-usuario.css" />
-    <link rel="stylesheet" href="/css/style-nav-Footer.css" />
   </head>
   <body>
 
     <!-- Navbar -->
-    <%- include ('partials/header.ejs') %>
+    <%- include ('../partials/header.ejs') %>
 
     <main>
       <section class="usuario">
@@ -162,7 +146,7 @@
 
     
     <!-- Footer -->
-    <%- include ('partials/footer.ejs') %>
+    <%- include ('../partials/footer.ejs') %>
     
     <!-- NAVBAR -->
     <script type="module" src="/javascript/nav.js"></script>

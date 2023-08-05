@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Login</title>
-    <%- include ('partials/head.ejs') %>
-    <link rel="stylesheet" href="/css/style-login.css" />
+    <title>Registro</title>
+    <%- include ('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/style-register.css" />
   </head>
   <body>
     <div class="container-form">
+      <div class="informacion">
+        <div class="datos">
+          <h2>Bienvenido</h2>
+          <p>
+            Si ya tienes una cuenta, inicia sesion para acceder a la sitio de
+            SixMotors
+          </p>
+          <div class="btn-ingresar">
+            <a href="/login" class="link">
+              <button class="button-ing type1">
+                <span class="btn-txt">Iniciar sesion</span>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
       <div class="form-information">
         <div class="form-information-info">
           <div class="logo">
@@ -17,8 +33,8 @@
               height="50%"
             />
           </div>
-          <h2>Iniciar sesion</h2>
-          <p>Ingresa tus datos para iniciar sesion</p>
+          <h2>Crete una cuenta</h2>
+          <p>Create una cuenta para mirar las novedades que tenemos</p>
           <div class="input-google">
             <button class="button">
               <svg
@@ -45,14 +61,26 @@
               </svg>
               Continuar con Google
             </button>
-            <!-- <i class="fa-brands fa-google"></i> -->
           </div>
           <form action="" class="form">
             <label for="">
               <i class="fa-solid fa-user"></i>
+              <input type="text" name="" placeholder="Nombre completo" />
+            </label>
+            <label for="">
+              <i class="fa-solid fa-user"></i>
               <input type="text" name="" placeholder="Usuario" />
             </label>
-
+            <label for="">
+              <i class="fa-solid fa-envelope"></i>
+              <input
+                type="email"
+                name=""
+                placeholder="Correo electronico"
+                required
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+              />
+            </label>
             <label for="password">
               <i class="fa-solid fa-lock"></i>
               <input
@@ -64,40 +92,25 @@
               <i class="fa-solid fa-eye-slash" id="togglePassword"></i>
             </label>
 
-            <input type="checkbox" name="" id="" />
-            <span>Recordar usuario</span>
-
-            <div class="forgot">
-              <a href="" class="link">
-                <span>¿Olvidaste tu contraseña?</span>
-              </a>
-            </div>
-
+            <label for="repeatPassword">
+              <i class="fa-solid fa-lock"></i>
+              <input
+                type="password"
+                name="repeatPassword"
+                id="repeatPassword"
+                placeholder="Repetir contraseña"
+              />
+              <i class="fa-solid fa-eye-slash" id="toggleRepeatPassword"></i>
+            </label>
             <div class="register-cont">
               <button class="register" type="submit">
-                <span>Ingresar</span>
+                <span>Registrarse</span>
               </button>
             </div>
           </form>
         </div>
       </div>
-      <div class="informacion">
-        <div class="datos">
-          <h2>Bienvenido</h2>
-          <p>
-            Si no tienes una cuenta, registrate para acceder a la sitio de
-            SixMotors
-          </p>
-          <div class="btn-regist">
-            <a href="/register" class="link">
-              <button class="button-re type1">
-                <span class="btn-txt">Registrarse</span>
-              </button>
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
-    <script type="module" src="/javascript/login.js"></script>
+    <script type="module" src="/javascript/Register.js"></script>
   </body>
 </html>
