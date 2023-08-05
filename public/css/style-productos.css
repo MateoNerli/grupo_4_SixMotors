@@ -37,7 +37,10 @@ aside {
   font-weight: 400;
   font-size: 1.3rem;
 }
-
+.producto {
+  border: solid 1px black;
+  border-radius: 10px 10px 0 0;
+}
 .menu-autos {
   display: flex;
   flex-direction: column;
