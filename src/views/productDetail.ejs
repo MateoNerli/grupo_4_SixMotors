@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Product Detail</title>
+    <%- include ('partials/head.ejs') %>
+    <link rel="stylesheet" href="css/style-product-detail.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <%- include ('partials/header.ejs') %>
+
+    <main>
+      <section class="producto">
+        <article>
+          <div class="contenedor-nombre-articulo">
+            <h1>Nombre del articulo</h1>
+          </div>
+          <div class="contenedor-imagen">
+            <img src="images/foto-ejemplo-detalles.jpg" alt="" />
+          </div>
+          <div class="contenedor-detalles">
+            <div class="precio">$30.000</div>
+            <div class="descuento">30% OFF</div>
+          </div>
+          <div class="contenedor-cantidad">
+            <form action="" class="cantidad">
+              <label>Cantidad: </label>
+              <input type="number" placeholder="Ingrese la cantidad" />
+            </form>
+          </div>
+          <div class="contenedor-compra">
+            <div class="comprar">Comprar</div>
+            <div class="agregar-carrito">Agregar al carrito</div>
+          </div>
+          <div class="contenedor-informacion">
+            <h2 class="especificaciones">Informacion</h2>
+            <p class="texto-info">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat
+              excepturi deserunt, dolorem reprehenderit, sed iusto blanditiis
+              recusandae porro laboriosam voluptates molestias soluta minima
+              iste laborum sapiente inventore, a deleniti cum?
+            </p>
+            <ul class="lista-informacion">
+              <li>
+                <span><i class="fas fa-dot-circle"></i></span>Lorem ipsum dolor
+                sit amet consectetur adipisicing elit. Delectus, ipsa aperiam!
+                Cumque
+              </li>
+              <li>
+                <span><i class="fas fa-dot-circle"></i></span>Lorem ipsum dolor
+                sit amet consectetur adipisicing elit. Delectus, ipsa aperiam!
+                Cumque
+              </li>
+              <li>
+                <span><i class="fas fa-dot-circle"></i></span>Lorem ipsum dolor
+                sit amet consectetur adipisicing elit. Delectus, ipsa aperiam!
+                Cumque
+              </li>
+              <li>
+                <span><i class="fas fa-dot-circle"></i></span>Lorem ipsum dolor
+                sit amet consectetur adipisicing elit. Delectus, ipsa aperiam!
+                Cumque
+              </li>
+              <li>
+                <span><i class="fas fa-dot-circle"></i></span>Lorem ipsum dolor
+                sit amet consectetur adipisicing elit. Delectus, ipsa aperiam!
+                Cumque
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+      <section class="relacionados">
+        <div class="texto-art-relacionados">
+          <h2>Articulos relacionados</h2>
+        </div>
+        <div class="articulos">
+          <img src="images/recomendado.jpg" alt="" />
+          <img src="images/recomendado2.jpg" alt="" />
+          <img src="images/recomendado3.webp" alt="" />
+          <img src="images/recomendado4.webp" alt="" />
+          <img src="images/recomendado5.jpg" alt="" />
+          <img src="images/recomendado6.jpg" alt="" />
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <%- include ('partials/footer.ejs') %>
+
+    <!-- javascript del nav -->
+    <script type="module" src="/javascript/nav.js"></script>
+  </body>
+</html>

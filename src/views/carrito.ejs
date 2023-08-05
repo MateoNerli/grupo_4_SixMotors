@@ -1,0 +1,73 @@
+<!-- ESTO ES UN CROQUIS DE LA PAGINA PARA VER COMO QUEDA -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Docuemnt</title>
+
+    <%- include ('partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/style-carrito.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <%- include ('partials/header.ejs') %>
+
+    <main>
+      <div class="product-container">
+        <div class="product">
+          <div class="product-img">
+            <img src="images/peu-5008-300x220.png" alt="Producto 1" />
+          </div>
+          <div class="product-details">
+            <h2>PEUGEOT 5008 GT PACK 7 ASIENTOS</h2>
+            <p>Precio: $25.983.699</p>
+          </div>
+          <div class="product-buttons">
+            <button class="delete-button">Eliminar del carrito</button>
+            <button class="add-button">Agregar más items</button>
+          </div>
+        </div>
+
+        <div class="product">
+          <div class="product-img">
+            <img src="images/vw-amarok-2021-300x220.png" alt="Producto 2" />
+          </div>
+          <div class="product-details">
+            <h2>VOLKSWAGEN AMAROK DC 3.0L TDI 258 CV V6 EXTREME 4X4 AUT</h2>
+            <p>Precio: $20.800.000</p>
+          </div>
+          <div class="product-buttons">
+            <button class="delete-button">Eliminar del carrito</button>
+            <button class="add-button">Agregar más items</button>
+          </div>
+        </div>
+
+        <div class="product">
+          <div class="product-img">
+            <img
+              src="images/vw-tigguan_allspace-300x220.png"
+              alt="Producto 3"
+            />
+          </div>
+          <div class="product-details">
+            <h2>VOLKSWAGEN TIGUAN ALLSPACE LIFE 350TSI</h2>
+            <p>Precio: $19.769.499</p>
+          </div>
+          <div class="product-buttons">
+            <button class="delete-button">Eliminar del carrito</button>
+            <button class="add-button">Agregar más items</button>
+          </div>
+        </div>
+        <div class="purchase-buttons">
+          <button class="buy-button">Comprar</button>
+          <button class="cancel-button">Cancelar compra</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <%- include ('partials/footer.ejs') %>
+
+    <script type="module" src="/javascript/nav.js"></script>
+  </body>
+</html>

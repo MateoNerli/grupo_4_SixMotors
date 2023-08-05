@@ -1,20 +1,23 @@
 const togglePassword = document.getElementById("togglePassword");
-const passwordField = document.getElementById("password");
-const toggleRepeatPassword = document.getElementById("toggleRepeatPassword");
-const repeatPasswordField = document.getElementById("repeatPassword");
+const passwordInput = document.getElementById("password");
 
-togglePassword.addEventListener("click", () => {
+const toggleRepeatPassword = document.getElementById("toggleRepeatPassword");
+const repeatPasswordInput = document.getElementById("repeatPassword");
+
+togglePassword.addEventListener("click", function () {
   const type =
-    passwordField.getAttribute("type") === "password" ? "text" : "password";
-  passwordField.setAttribute("type", type);
+    passwordInput.getAttribute("type") === "password" ? "text" : "password";
+  passwordInput.setAttribute("type", type);
+  togglePassword.classList.toggle("fa-eye");
   togglePassword.classList.toggle("fa-eye-slash");
 });
 
-toggleRepeatPassword.addEventListener("click", () => {
+toggleRepeatPassword.addEventListener("click", function () {
   const type =
-    repeatPasswordField.getAttribute("type") === "password"
+    repeatPasswordInput.getAttribute("type") === "password"
       ? "text"
       : "password";
-  repeatPasswordField.setAttribute("type", type);
+  repeatPasswordInput.setAttribute("type", type);
+  toggleRepeatPassword.classList.toggle("fa-eye");
   toggleRepeatPassword.classList.toggle("fa-eye-slash");
 });

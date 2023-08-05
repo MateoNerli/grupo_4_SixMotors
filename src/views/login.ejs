@@ -1,35 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registro</title>
-    <link rel="stylesheet" href="/css/style-register.css" />
-    <link rel="stylesheet" href="/design/variables.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <title>Login</title>
+    <%- include ('partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/style-login.css" />
   </head>
   <body>
     <div class="container-form">
-      <div class="informacion">
-        <div class="datos">
-          <h2>Bienvenido</h2>
-          <p>
-            Si ya tienes una cuenta, inicia sesion para acceder a la sitio de
-            SixMotors
-          </p>
-          <div class="btn-ingresar">
-            <a href="/login" class="link">
-              <button class="button-ing type1">
-                <span class="btn-txt">Iniciar sesion</span>
-              </button>
-            </a>
-          </div>
-        </div>
-      </div>
       <div class="form-information">
         <div class="form-information-info">
           <div class="logo">
@@ -40,8 +17,8 @@
               height="50%"
             />
           </div>
-          <h2>Crete una cuenta</h2>
-          <p>Create una cuenta para mirar las novedades que tenemos</p>
+          <h2>Iniciar sesion</h2>
+          <p>Ingresa tus datos para iniciar sesion</p>
           <div class="input-google">
             <button class="button">
               <svg
@@ -68,26 +45,14 @@
               </svg>
               Continuar con Google
             </button>
+            <!-- <i class="fa-brands fa-google"></i> -->
           </div>
           <form action="" class="form">
             <label for="">
               <i class="fa-solid fa-user"></i>
-              <input type="text" name="" placeholder="Nombre completo" />
-            </label>
-            <label for="">
-              <i class="fa-solid fa-user"></i>
               <input type="text" name="" placeholder="Usuario" />
             </label>
-            <label for="">
-              <i class="fa-solid fa-envelope"></i>
-              <input
-                type="email"
-                name=""
-                placeholder="Correo electronico"
-                required
-                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-              />
-            </label>
+
             <label for="password">
               <i class="fa-solid fa-lock"></i>
               <input
@@ -96,28 +61,43 @@
                 id="password"
                 placeholder="Contraseña"
               />
-              <i class="fa-solid fa-eye" id="togglePassword"></i>
+              <i class="fa-solid fa-eye-slash" id="togglePassword"></i>
             </label>
 
-            <label for="repeatPassword">
-              <i class="fa-solid fa-lock"></i>
-              <input
-                type="password"
-                name="repeatPassword"
-                id="repeatPassword"
-                placeholder="Repetir contraseña"
-              />
-              <i class="fa-solid fa-eye" id="toggleRepeatPassword"></i>
-            </label>
+            <input type="checkbox" name="" id="" />
+            <span>Recordar usuario</span>
+
+            <div class="forgot">
+              <a href="" class="link">
+                <span>¿Olvidaste tu contraseña?</span>
+              </a>
+            </div>
+
             <div class="register-cont">
               <button class="register" type="submit">
-                <span>Registrarse</span>
+                <span>Ingresar</span>
               </button>
             </div>
           </form>
         </div>
       </div>
+      <div class="informacion">
+        <div class="datos">
+          <h2>Bienvenido</h2>
+          <p>
+            Si no tienes una cuenta, registrate para acceder a la sitio de
+            SixMotors
+          </p>
+          <div class="btn-regist">
+            <a href="/register" class="link">
+              <button class="button-re type1">
+                <span class="btn-txt">Registrarse</span>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-    <script type="module" src="/javascript/Register.js"></script>
+    <script type="module" src="/javascript/login.js"></script>
   </body>
 </html>
