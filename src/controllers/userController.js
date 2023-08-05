@@ -2,7 +2,7 @@ const path = require("path"); //requiero path
 
 const userController = {
   home: (req, res) => {
-    res.render("home2");
+    res.render("home");
   },
   login: (req, res) => {
     res.render("login");
