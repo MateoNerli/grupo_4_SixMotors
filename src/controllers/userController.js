@@ -1,4 +1,5 @@
 const path = require("path");
+const datos = require("../datos/autos/autos.json");
 
 const userController = {
   home: (req, res) => {
@@ -20,7 +21,7 @@ const userController = {
     res.render(path.join("products", "carrito"));
   },
   autos: (req, res) => {
-    res.render(path.join("products", "autos"));
+    res.render(path.join("products", "autos"), { datos });
   },
   autopartes: (req, res) => {
     res.render(path.join("products", "autopartes"));
