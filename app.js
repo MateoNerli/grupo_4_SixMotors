@@ -6,6 +6,7 @@ const fs = require("fs"); //requiero fs
 const path = require("path"); //requiero path
 
 const userRouter = require("./src/router/userRouter"); //requiero el router
+const editCreateRouter = require("./src/router/edit-creacionRouter"); //requiero el router
 
 const puerto = 3000;
 
@@ -22,6 +23,7 @@ app.set("view engine", "ejs"); //para que pueda leer ejs
 app.set("views", path.resolve(__dirname, "./src/views"));
 
 app.use("/", userRouter); //para que pueda leer el router
+app.use("/producto", editCreateRouter); //para que pueda leer el router
 
 // app.get("/", (req, res) => {
 //   res.sendFile(path.join(__dirname, "/views/index.html"));

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <%- include ('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/style-creacion-edicion.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <%- include ('../partials/header.ejs') %>
+
+    <div class="titulo">
+      <h2>Crear Producto</h2>
+    </div>
+    <main class="formulario">
+      <form action="/create" method="POST">
+        <label for="name">Nombre del producto:</label>
+        <input type="text" name="name" required />
+        <label for="description">Descripción:</label>
+        <textarea name="description" required></textarea>
+        <label for="image">URL de la imagen:</label>
+        <input type="url" name="image" required />
+        <label for="category">Categoría:</label>
+        <input type="text" name="category" required />
+        <label for="colors">Colores (separados por comas):</label>
+        <input type="text" name="colors" required />
+        <label for="price">Precio:</label>
+        <input
+          type="number"
+          name="price"
+          step="0.01"
+          required
+          placeholder="$"
+        />
+        <input type="submit" value="Crear Producto" />
+      </form>
+    </main>
+    <!-- Footer -->
+    <%- include ('../partials/footer.ejs') %>
+  </body>
+</html>
