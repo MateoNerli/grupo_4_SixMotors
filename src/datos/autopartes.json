@@ -1,0 +1,110 @@
+[
+  {
+    "id": "1",
+    "title": "Amortiguador",
+    "description": "Amortiguador para vehiculo",
+    "img": "/images/autopartes/Amortiguadores-autos.jpg",
+    "category": "Auto",
+    "colors": ["red", "Azul"],
+    "price": 10000
+  },
+  {
+    "id": "2",
+    "title": "Alternador",
+    "description": "alternador para vehiculo",
+    "img": "/images/autopartes/alternador.jpg",
+    "category": "Auto",
+    "colors": ["red", "blue", "green"],
+    "price": 50000
+  },
+  {
+    "id": "3",
+    "title": "Bateria",
+    "description": "Bateria para vehiculo",
+    "img": "/images/autopartes/bateria.jpg",
+    "category": "Auto",
+    "colors": ["negro"],
+    "price": 50000
+  },
+  {
+    "id": "4",
+    "title": "Bujia",
+    "description": "Bujia para moto",
+    "img": "/images/autopartes/bujia.jpeg",
+    "category": "Moto",
+    "colors": ["balanco"],
+    "price": 500
+  },
+  {
+    "id": "5",
+    "title": "Embrague",
+    "description": "embrague para vehiculo",
+    "img": "/images/autopartes/embragu-ap.png",
+    "category": "Auto",
+    "colors": ["blanco"],
+    "price": 50000
+  },
+  {
+    "id": "6",
+    "title": "Embrague ceramico",
+    "description": "embrague ceramico para vehiculo",
+    "img": "/images/autopartes/embrague-ceramico-ap.png",
+    "category": "Auto",
+    "colors": ["red", "blue", "green"],
+    "price": 50000
+  },
+  {
+    "id": "7",
+    "title": "cables-de-bujia",
+    "description": "cables-de-bujia para vehiculo",
+    "img": "/images/autopartes/cables-de-bujia-ap.png",
+    "category": "Auto",
+    "colors": ["red", "blue", "green"],
+    "price": 50000
+  },
+  {
+    "id": "8",
+    "title": "escape",
+    "description": "escape para moto",
+    "img": "/images/autopartes/escape.png",
+    "category": "Auto",
+    "colors": ["red", "blue", "green"],
+    "price": 50000
+  },
+  {
+    "id": "9",
+    "title": "espejo-retroviso",
+    "description": "espejo-retroviso para vehiculo",
+    "img": "/images/autopartes/espejo-retrovisor-ap.png",
+    "category": "Auto",
+    "colors": ["red", "blue", "green"],
+    "price": 50000
+  },
+  {
+    "id": "10",
+    "title": "espejos-laterales",
+    "description": "espejos-laterales para vehiculo",
+    "img": "/images/autopartes/espejos-laterales-ap.jpg",
+    "category": "Auto",
+    "colors": ["red", "blue", "green"],
+    "price": 50000
+  },
+  {
+    "id": "11",
+    "title": "faro",
+    "description": "faro para vehiculo",
+    "img": "/images/autopartes/faro.jpg",
+    "category": "Auto",
+    "colors": ["red", "blue", "green"],
+    "price": 50000
+  },
+  {
+    "id": "12",
+    "title": "piston",
+    "description": "fpiston para vehiculo",
+    "img": "/images/autopartes/piston.jpg",
+    "category": "Auto",
+    "colors": ["red", "blue", "green"],
+    "price": 50000
+  }
+]

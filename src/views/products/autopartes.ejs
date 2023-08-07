@@ -76,76 +76,23 @@
           Todos los productos
         </h2>
         <!-- Contenedor de articulos, autopartes -->
-
         <div id="contenedor-productos" class="contenedor-productos">
-          <div class="producto">
-            <img class="producto-imagen" src="/images/bujia-ap.png" alt="" />
-            <div class="producto-detalles">
-              <h3 class="producto-titulo">Producto</h3>
-              <p class="producto-precio">10000000000000</p>
-              <button class="producto-agregar" id="">Agregar</button>
-            </div>
-          </div>
-          <div class="producto">
-            <img class="producto-imagen" src="/images/bateria-ap.png" alt="" />
-            <div class="producto-detalles">
-              <h3 class="producto-titulo">Producto</h3>
-              <p class="producto-precio">10000000000000</p>
-              <button class="producto-agregar" id="">Agregar</button>
-            </div>
-          </div>
-          <div class="producto">
+          <% datosAutoPartes.forEach(autopartes => { %>
+          <div class="producto-container">
             <img
               class="producto-imagen"
-              src="/images/amortiguadores-ap.png"
-              alt=""
+              src="<%= autopartes.img %>"
+              alt="<%= autopartes.title %>"
             />
             <div class="producto-detalles">
-              <h3 class="producto-titulo">Producto</h3>
-              <p class="producto-precio">10000000000000</p>
-              <button class="producto-agregar" id="">Agregar</button>
+              <h3 class="producto-titulo"><%= autopartes.title %></h3>
+              <p class="producto-precio">$<%= autopartes.price %></p>
+              <button class="producto-agregar" id="<%= autopartes.id %>">
+                Agregar
+              </button>
             </div>
           </div>
-          <div class="producto">
-            <img class="producto-imagen" src="/images/bujia-ap.png" alt="" />
-            <div class="producto-detalles">
-              <h3 class="producto-titulo">Producto</h3>
-              <p class="producto-precio">10000000000000</p>
-              <button class="producto-agregar" id="">Agregar</button>
-            </div>
-          </div>
-          <div class="producto">
-            <img class="producto-imagen" src="/images/bujia-ap.png" alt="" />
-            <div class="producto-detalles">
-              <h3 class="producto-titulo">Producto</h3>
-              <p class="producto-precio">10000000000000</p>
-              <button class="producto-agregar" id="">Agregar</button>
-            </div>
-          </div>
-          <div class="producto">
-            <img class="producto-imagen" src="/images/bujia-ap.png" alt="" />
-            <div class="producto-detalles">
-              <h3 class="producto-titulo">Producto</h3>
-              <p class="producto-precio">10000000000000</p>
-              <button class="producto-agregar" id="">Agregar</button>
-            </div>
-          </div>
-          <div class="producto">
-            <img class="producto-imagen" src="/images/bujia-ap.png" alt="" />
-            <div class="producto-detalles">
-              <h3 class="producto-titulo">Producto</h3>
-              <p class="producto-precio">10000000000000</p>
-              <button class="producto-agregar" id="">Agregar</button>
-            </div>
-          </div>
-          <div class="producto">
-            <img class="producto-imagen" src="/images/bujia-ap.png" alt="" />
-            <div class="producto-detalles">
-              <h3 class="producto-titulo">Producto</h3>
-              <p class="producto-precio">10000000000000</p>
-              <button class="producto-agregar" id="">Agregar</button>
-            </div>
-          </div>
+          <% }); %>
         </div>
       </main>
     </div>
