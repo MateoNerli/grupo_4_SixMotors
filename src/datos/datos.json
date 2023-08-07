@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "title": "Amortiguador",
+    "description": "Amortiguador para vehiculo",
+    "img": "/images/bujia-ap.png",
+    "category": "Amortiguador",
+    "colors": ["red", "blue", "green"],
+    "price": 10000
+  },
+  {
+    "id": "2",
+    "title": "alternador",
+    "description": "alternador para vehiculo",
+    "img": "/images/alternador-ap.png",
+    "category": "Amortiguador",
+    "colors": ["red", "blue", "green"],
+    "price": 50000
+  }
+]

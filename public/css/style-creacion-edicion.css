@@ -1,0 +1,134 @@
+.titulo {
+  margin: 10px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.titulo h2 {
+  text-align: center;
+  justify-content: center;
+  max-width: 968px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-bottom: 5px solid var(--accent);
+}
+.formulario {
+  margin: 10px;
+  padding: 5px;
+}
+form {
+  border: 1px solid var(--accent);
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+}
+textarea {
+  resize: none;
+}
+label,
+input,
+textarea {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="url"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+  background-color: var(--primary);
+  color: var(--text);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--secondary);
+}
+
+/* Estilos para la página de edición */
+.edit-form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+}
+
+.edit-form label,
+.edit-form input,
+.edit-form textarea {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.edit-form input[type="text"],
+.edit-form input[type="url"],
+.edit-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.edit-form input[type="submit"] {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.edit-form input[type="submit"]:hover {
+  background-color: #1f8c3c;
+}
+
+/* Estilos para la lista de productos */
+.product-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.product-list li {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.product-list img {
+  max-width: 100px;
+}
+
+.product-list h3 {
+  margin-top: 0;
+}
+
+.product-list p {
+  margin: 10px 0;
+}
+
+.product-list span {
+  display: block;
+  font-weight: bold;
+}
+
+.product-list a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.product-list a:hover {
+  text-decoration: underline;
+}

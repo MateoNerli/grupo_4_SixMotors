@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <%- include ('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/style-creacion-edicion.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <%- include ('../partials/header.ejs') %>
+
+    <div class="titulo">
+      <h2>Crear Producto</h2>
+    </div>
+    <main class="formulario">
+      <form action="/edit/<%= producto.id %>" method="POST">
+        <label for="name">Nombre del producto:</label>
+        <input type="text" name="name" value="<%= producto.title %>" required />
+        <label for="description">Descripción:</label>
+        <textarea name="description" required>
+<%= producto.description %></textarea
+        >
+        <label for="image">URL de la imagen:</label>
+        <input type="url" name="image" value="<%= producto.img %>" required />
+        <label for="category">Categoría:</label>
+        <input
+          type="text"
+          name="category"
+          value="<%= producto.category %>"
+          required
+        />
+        <label for="colors">Colores (separados por comas):</label>
+        <input
+          type="text"
+          name="colors"
+          value="<%= producto.colors.join(',') %>"
+          required
+        />
+        <br />
+        <label for="price">Precio:</label>
+        <input
+          type="number"
+          name="price"
+          step="0.01"
+          value="<%= producto.price %>"
+          required
+        />
+        <input type="submit" value="Guardar Cambios" />
+      </form>
+    </main>
+    <!-- Footer -->
+    <%- include ('../partials/footer.ejs') %>
+  </body>
+</html>
