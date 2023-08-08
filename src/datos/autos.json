@@ -8,17 +8,9 @@
     "colors": ["Gris"],
     "price": 1000000
   },
+
   {
     "id": "2",
-    "title": "Peugeot 208",
-    "description": "El Peugeot 208 es el único hatchback chico de la marca francesa desde 2013. Sucesor del célebre 206, su éxito sostenido llevó al Grupo PSA a fabricarlo en Argentina a partir de 2020. Es uno de los autos más populares en nuestro país. El impacto del 208 en el mercado argentino es insoslayable. La 1ra generación, entre 2013 y 2020, llegó a patentar más de 100.000 unidades 0km y quedó regularmente entre los 10 autos más vendidos de cada año. Hoy, ya en su 2da generación y producido localmente",
-    "img": "/images/vehiculos/peugot-208.jpg",
-    "category": "Hatchback ",
-    "colors": ["Azul"],
-    "price": 50000
-  },
-  {
-    "id": "3",
     "title": "Chevrolet Tracker",
     "description": "Es uno de los pocos SUV que se producen en el país y eso le da mayor disponibilidad por lo que se convierte en una de las mejores opciones para acceder a este tipo de modelos sin listas de espera interminables. Además, el producto tiene un balance general muy bueno con buen espacio, equipamiento de seguridad completo en toda la gama, espacio interior y baúl además de un motor que rinde tanto en empuje como en consumos.",
     "img": "/images/vehiculos/Chevrolet Tracker.jpg",
@@ -27,7 +19,7 @@
     "price": 50000
   },
   {
-    "id": "4",
+    "id": "3",
     "title": "Renault Sandero",
     "description": "El Sandero ofrece mucho espacio por un precio accesible. Producido en Argentina debido a la dificultad para las importaciones es posible que sea mas fácil de conseguir por lo que es una buena opción para acceder al 0km. Lamentablemente, la versión CVT como la probada ya no se comercializa más, pero el test sirve como referencia para el andar general del hatchback.",
     "img": "/images/vehiculos/Renault Sandero.jpg",
@@ -36,7 +28,7 @@
     "price": 50000
   },
   {
-    "id": "5",
+    "id": "4",
     "title": "Renault Stepway",
     "description": "El Renault Sandero separó a su variante de corte aventurero que ahora se llama Stepway a secas. Producida en Argentina es una de las opciones disponibles para quienes buscan un modelo de corte aventurero con mejor disponibilidad para entrega",
     "img": "/images/vehiculos/Renault Stepway.jpg",
@@ -45,7 +37,7 @@
     "price": 50000
   },
   {
-    "id": "6",
+    "id": "5",
     "title": "Volkswagen Taos",
     "description": "VW Taos es un nuevo SUV de la marca alemana que que se sitúa en el segmento C. Tiene como enemigos naturales a Corolla Cross y a Compass, pero cuenta con buena disponibilidad ya que es el único producido en Argentina. Entre sus virtudes está la plataforma MQB A, suspensión trasera multibrazo, gran equipamiento, espacio interior y baúl amplios y el 250 TSi, motor que se destaca por su empuje y buenos consumos.",
     "img": "/images/vehiculos/Volkswagen Taos.jpg",
@@ -54,7 +46,7 @@
     "price": 50000
   },
   {
-    "id": "7",
+    "id": "6",
     "title": "Citroën Berlingo Multispace",
     "description": "Nacido hace muchos años como una cruza entre un utilitario y un MPV, el Berlingo recibió varias actualizaciones para mantenerse en el ruedo. A la espera (o no) de una nueva generación, se destaca el increible espacio interior y la opción de mecánica naftera o HDi turbodiesel.",
     "img": "/images/vehiculos/Citroën Berlingo Multispace.jpg",
@@ -63,7 +55,7 @@
     "price": 50000
   },
   {
-    "id": "8",
+    "id": "7",
     "title": "Ford Ranger",
     "description": "La quinta generación de la pickup mediana también es producida en el país gracias a una inversión de 660 millones de dólares que se utilizaron en gran parte para renovar la planta de Pacheco. La nueva Ranger crece marginalmente, pero sobre todo incrementa 50 mm la distancia entre ejes y 50 mm las trochas. Junto a un chasis más sólido, lo anterior permite un mejor andar, además de mejor capacidad. La gama incluye ahora motores nuevos, todos turbodiesel, dos 2.0, con uno o dos turbos y un 3.0L V6 proveniente de la F150. Otras novedades son la caja automática de 10 velocidades y el sistema 4WD que además de reductora, permite reparto inteligente entre ejes. Remata un despliegue de pantallas y tecnología que empieza desde el extremo inferior de la gama.",
     "img": "/images/vehiculos/Ford Ranger.jpg",
@@ -72,7 +64,7 @@
     "price": 50000
   },
   {
-    "id": "9",
+    "id": "8",
     "title": "Toyota Hilux",
     "description": "Teniendo la dureza e indestructibilidad como bandera, la Toyota Hilux no es solo la pick-up más vendida en el país y también está entre los vehículos con más patentamientos. Esta última generación buscó sumar mayor refinamiento, ya sea en confort de marcha, insonorización y equipamiento, sin embargo sigue siendo la camioneta más elegida a la hora del trabajar. En su ultimo cambio se sumá más potencia al motor grande, mejoras de equipamiento y más confort de marcha. Conocé los resultados leyendo nuestro Test a la Toyota Hilux o viendo la prueba en video.",
     "img": "/images/vehiculos/Toyota Hilux.jpg",
@@ -81,7 +73,7 @@
     "price": 50000
   },
   {
-    "id": "10",
+    "id": "9",
     "title": "Renault Alaskan",
     "description": "Renault Alaskan, la pickup mediana melliza de la Nissan Frontier que también es producida en Argentina ofrece los mismos trucos que su hermana nipona con resortes helicoidales y brazos múltiples en el tren trasero para dar un mayor confort de marcha con la misma capacidad de carga que la competencia. La personalidad del rombo se siente más por fuera que por dentro, pero para saber que tal funciona esta camioneta te recomendamos leer nuestro Test Drive",
     "img": "/images/vehiculos/Renault Alaskan.jpg",
@@ -90,7 +82,7 @@
     "price": 50000
   },
   {
-    "id": "11",
+    "id": "10",
     "title": "Volkswagen Amarok",
     "description": "Volkswagen llegó última al terreno de las pick-ups medianas y le costó entrar, pero hoy se mantiene como una de las preferidas del mercado argentino. Se destaca su andar, el más similar a un SUV dentro de las camionetas y la llegada de la versión V6, única en su segmento que en 2020 recibe un upgrade de potencia que le permite entregar 258 caballos. Completan la gama las ya conocidas versiones 2.0 TDi con uno y dos turbos que entregan 140 y 180 CV respectivamente. Un dato curioso de la VW Amarok es que las versiones automáticas no cuentan con reductora, pero si con 8 relaciones y diferencial central que mejora su comportamiento dinámico.",
     "img": "/images/vehiculos/Volkswagen Amarok.jpg",
@@ -100,12 +92,41 @@
   },
 
   {
-    "id": "12",
+    "id": "11",
     "title": "Escarabajo",
     "description": "--",
     "img": "/images/vehiculos/escarabajo.jpg",
     "category": "--",
     "colors": ["Turquesa"],
+    "price": 50000
+  },
+
+  {
+    "id": "12",
+    "title": "Renault Clio",
+    "description": "--",
+    "img": "/images/vehiculos/Renault Clio.jpg",
+    "category": "--",
+    "colors": ["Blanco"],
+    "price": 50000
+  },
+
+  {
+    "id": "13",
+    "title": "Fiat 147",
+    "description": "--",
+    "img": "/images/vehiculos/Fiat-147.jpg",
+    "category": "--",
+    "colors": ["rojo"],
+    "price": 50000
+  },
+  {
+    "id": "14",
+    "title": "Peugeot 208",
+    "description": "El Peugeot 208 es el único hatchback chico de la marca francesa desde 2013. Sucesor del célebre 206, su éxito sostenido llevó al Grupo PSA a fabricarlo en Argentina a partir de 2020. Es uno de los autos más populares en nuestro país. El impacto del 208 en el mercado argentino es insoslayable. La 1ra generación, entre 2013 y 2020, llegó a patentar más de 100.000 unidades 0km y quedó regularmente entre los 10 autos más vendidos de cada año. Hoy, ya en su 2da generación y producido localmente",
+    "img": "/images/vehiculos/peugot-208.jpg",
+    "category": "Hatchback ",
+    "colors": ["Azul"],
     "price": 50000
   }
 ]

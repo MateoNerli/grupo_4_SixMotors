@@ -4,7 +4,7 @@ const datosAutoPartes = require("../datos/autopartes.json");
 
 const userController = {
   home: (req, res) => {
-    res.render("home");
+    res.render(path.join("home"), { datosAutos, datosAutoPartes });
   },
   login: (req, res) => {
     res.render(path.join("users", "login"));
