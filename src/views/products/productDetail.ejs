@@ -3,7 +3,7 @@
   <head>
     <title>Product Detail</title>
     <%- include ('../partials/head.ejs') %>
-    <link rel="stylesheet" href="css/style-product-detail.css" />
+    <link rel="stylesheet" href="/css/style-product-detail.css" />
   </head>
   <body>
     <!-- Navbar -->
@@ -11,16 +11,16 @@
 
     <!-- Product Detail -->
     <div class="titulo">
-      <h2>Producto Nombre</h2>
+      <h2><%= producto.title %></h2>
     </div>
     <main>
       <div class="container-img">
-        <img src="/images/0km-slider1.jpg" alt="imagen-producto" />
+        <img src="<%= producto.img %>" alt="<%= producto.title %>" />
       </div>
 
       <div class="container-info-product">
         <div class="container-price">
-          <span>$11111111110</span>
+          <span><%= producto.price %></span>
         </div>
 
         <div class="container-add-cart">
@@ -49,16 +49,7 @@
             <i class="fa-solid fa-chevron-down"></i>
           </div>
           <div class="text-description">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Laboriosam iure provident atque voluptatibus reiciendis quae
-              rerum, maxime placeat enim cupiditate voluptatum, temporibus quis
-              iusto. Enim eum qui delectus deleniti similique? Lorem, ipsum
-              dolor sit amet consectetur adipisicing elit. Sint autem magni
-              earum est dolorem saepe perferendis repellat ipsam laudantium cum
-              assumenda quidem quam, vero similique? Iusto officiis quod
-              blanditiis iste?
-            </p>
+            <p><%= producto.description %></p>
           </div>
         </div>
 
@@ -68,68 +59,40 @@
             <i class="fa-solid fa-chevron-down"></i>
           </div>
           <div class="text-reviews hidden">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius
-              neque molestias qui tempore facere nam eligendi consequuntur.
-              eaque ad inventore.
-            </p>
+            <p><%= producto.reseña %></p>
           </div>
         </div>
       </div>
     </main>
+
+    <% function cargaRandomAutopartes(array) { %> <% for (let i = array.length -
+    1; i > 0; i--) { %> <% const j = Math.floor(Math.random() * (i + 1)); %> <%
+    [array[i], array[j]] = [array[j], array[i]]; %> <% } %> <% return array; %>
+    <% } %>
+
     <section class="container-related-products">
       <div class="titulo">
         <h2>Productos Relacionados</h2>
       </div>
+      <% const cargaAutosPartes = cargaRandomAutopartes(datosAutoPartes); %>
       <div class="card-list-products">
+        <% for (let i = 0; i < 4 && i < cargaAutosPartes.length; i++) { %>
         <div class="card">
           <div class="card-img">
-            <img src="/images/espejos-laterales-ap.jpg" alt="producto-1" />
+            <img
+              src="<%= cargaAutosPartes[i].img %>"
+              alt="<%= cargaAutosPartes[i].title %>"
+            />
           </div>
           <div class="info-card">
             <div class="text-product">
-              <h3>titulo</h3>
-              <p class="category">categopria</p>
+              <h3><%= cargaAutosPartes[i].title %></h3>
+              <p class="category"><%= cargaAutosPartes[i].category %></p>
             </div>
-            <div class="price">$111111</div>
+            <div class="price">$<%= cargaAutosPartes[i].price %></div>
           </div>
         </div>
-        <div class="card">
-          <div class="card-img">
-            <img src="/images/espejos-laterales-ap.jpg" alt="producto-2" />
-          </div>
-          <div class="info-card">
-            <div class="text-product">
-              <h3>titulo</h3>
-              <p class="category">categopria</p>
-            </div>
-            <div class="price">$111111</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-img">
-            <img src="/images/espejos-laterales-ap.jpg" alt="producto-3" />
-          </div>
-          <div class="info-card">
-            <div class="text-product">
-              <h3>titulo</h3>
-              <p class="category">categopria</p>
-            </div>
-            <div class="price">$111111</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-img">
-            <img src="/images/espejos-laterales-ap.jpg" alt="producto-4" />
-          </div>
-          <div class="info-card">
-            <div class="text-product">
-              <h3>titulo</h3>
-              <p class="category">categopria</p>
-            </div>
-            <div class="price">$111111</div>
-          </div>
-        </div>
+        <% } %>
       </div>
     </section>
 

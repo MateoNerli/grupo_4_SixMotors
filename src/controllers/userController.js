@@ -16,7 +16,14 @@ const userController = {
     res.render(path.join("users", "usuario"));
   },
   detail: (req, res) => {
-    res.render(path.join("products", "productDetail"));
+    let id = req.params.id;
+    let producto = datosAutos.find((producto) => {
+      return producto.id == id;
+    });
+    res.render(path.join("products", "productDetail"), {
+      producto,
+      datosAutoPartes,
+    });
   },
   carrito: (req, res) => {
     res.render(path.join("products", "carrito"));

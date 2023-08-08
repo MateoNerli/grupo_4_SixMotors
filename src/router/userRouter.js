@@ -6,7 +6,7 @@ router.get("/", userController.home);
 router.get("/login", userController.login);
 router.get("/register", userController.register);
 router.get("/user", userController.usuario);
-router.get("/prodctDetails", userController.detail);
+router.get("/prodctDetails/:id", userController.detail);
 router.get("/autopartes", userController.autopartes);
 router.get("/autos", userController.autos);
 router.get("/carrito", userController.carrito);
