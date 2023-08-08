@@ -21,7 +21,11 @@
 <%= producto.description %></textarea
         >
         <label for="image">URL de la imagen:</label>
-        <input type="url" name="image" value="<%= producto.img %>" required />
+        <img
+          class="producto-imagen"
+          src="<%= producto.img %>"
+          alt="<%= producto.title %>"
+        />
         <label for="category">Categoría:</label>
         <input
           type="text"
@@ -36,7 +40,6 @@
           value="<%= producto.colors.join(',') %>"
           required
         />
-        <br />
         <label for="price">Precio:</label>
         <input
           type="number"
