@@ -12,7 +12,7 @@
     <%- include ('../partials/header.ejs') %>
 
     <main>
-      <div class="product-container">
+      <!-- <div class="product-container">
         <div class="product">
           <div class="product-img">
             <img src="images/peu-5008-300x220.png" alt="Producto 1" />
@@ -60,6 +60,73 @@
         <div class="purchase-buttons">
           <button class="buy-button">Comprar</button>
           <button class="cancel-button">Cancelar compra</button>
+        </div>
+      </div> -->
+
+      <div class="titulo">
+        <h2>Carrito</h2>
+        <a href="/autopartes">
+          <button class="seguir">
+            <span> Seguir comprando </span>
+          </button>
+        </a>
+      </div>
+      <div class="contenedor-carrito">
+        <div class="carrito-producto">
+          <img
+            class="carrito-producto-imagen"
+            src="/images/autopartes/alternador-ap.png"
+            alt=""
+          />
+          <div class="carrito-producto-titulo">
+            <small>Titulo</small>
+            <h3>Producto</h3>
+          </div>
+          <div class="carrito-producto-cantidad">
+            <small>Cantidad</small>
+            <p>1</p>
+          </div>
+          <div class="carrito-producto-precio">
+            <small>Precio</small>
+            <p>$ 255555555</p>
+          </div>
+          <button class="carrito-producto-eliminar">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+        <div class="carrito-producto">
+          <img
+            class="carrito-producto-imagen"
+            src="/images/autopartes/alternador-ap.png"
+            alt=""
+          />
+          <div class="carrito-producto-titulo">
+            <small>Titulo</small>
+            <h3>Producto</h3>
+          </div>
+          <div class="carrito-producto-cantidad">
+            <small>Cantidad</small>
+            <p>1</p>
+          </div>
+          <div class="carrito-producto-precio">
+            <small>Precio</small>
+            <p>$ 25.983.699</p>
+          </div>
+          <button class="carrito-producto-eliminar">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      </div>
+      <div class="carrito-acciones">
+        <div class="carrito-acciones-izquierda">
+          <button class="carrito-acciones-vaciar">Vaciar carrito</button>
+        </div>
+        <div class="carrito-acciones-derecha">
+          <div class="carrito-acciones-total">
+            <p>Total</p>
+            <p>$10000</p>
+          </div>
+          <button class="carrito-acciones-comprar">Comprar ahora</button>
         </div>
       </div>
     </main>

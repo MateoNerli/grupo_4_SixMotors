@@ -18,20 +18,14 @@
         <input type="text" name="name" required />
         <label for="description">Descripción:</label>
         <textarea name="description" required></textarea>
-        <label for="image">URL de la imagen:</label>
-        <input type="url" name="image" required />
+        <label for="foto"><br />Foto del producto:</label>
+        <input type="file" id="foto" name="foto" />
         <label for="category">Categoría:</label>
         <input type="text" name="category" required />
         <label for="colors">Colores (separados por comas):</label>
         <input type="text" name="colors" required />
         <label for="price">Precio:</label>
-        <input
-          type="number"
-          name="price"
-          step="0.01"
-          required
-          placeholder="$"
-        />
+        <input type="number" name="price" required placeholder="$" />
         <input type="submit" value="Crear Producto" />
       </form>
     </main>

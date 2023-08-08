@@ -50,6 +50,11 @@
         <h2>Consegui los mejores autos de tu zona</h2>
       </div>
 
+      <% function cargaRandom(array) { %> <% for (let i = array.length - 1; i >
+      0; i--) { %> <% const j = Math.floor(Math.random() * (i + 1)); %> <%
+      [array[i], array[j]] = [array[j], array[i]]; %> <% } %> <% return array;
+      %> <% } %>
+
       <section id="autos-venta" class="autos-venta">
         <div class="autos">
           <div class="autos-0km autos-cont">
@@ -62,44 +67,16 @@
             <div class="slider">
               <div class="swiper-container">
                 <div class="swiper-wrapper">
+                  <% const cargaAutos0k = cargaRandom(datosAutos); %> <% for
+                  (let i = 0; i < 7 && i < cargaAutos0k.length; i++) { %>
                   <div class="swiper-slide">
                     <div class="img-container">
-                      <img src="/images/0km-slider1.jpg" alt="" />
-                      <h6>Modelo</h6>
+                      <img src="<%= cargaAutos0k[i].img %>" alt="" />
+                      <h6><%= cargaAutos0k[i].title %></h6>
                     </div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="img-container">
-                      <img src="/images/0km-slider1.jpg" alt="" />
-                      <h6>Modelo</h6>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img-container">
-                      <img src="/images/0km-slider1.jpg" alt="" />
-                      <h6>Modelo</h6>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img-container">
-                      <img src="/images/0km-slider1.jpg" alt="" />
-                      <h6>Modelo</h6>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img-container">
-                      <img src="/images/0km-slider1.jpg" alt="" />
-                      <h6>Modelo</h6>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img-container">
-                      <img src="/images/0km-slider1.jpg" alt="" />
-                      <h6>Modelo</h6>
-                    </div>
-                  </div>
+                  <% } %>
                 </div>
-
                 <!-- pagination -->
                 <div class="swiper-pagination"></div>
               </div>
@@ -117,42 +94,16 @@
               <div class="swiper-container swiper-container-usados">
                 <!-- Agregamos una clase específica para este slider -->
                 <div class="swiper-wrapper">
+                  <% const cargaRandomAutosUsados = cargaRandom(datosAutos); %>
+                  <% for (let i = 0; i < 7 && i < cargaRandomAutosUsados.length;
+                  i++) { %>
                   <div class="swiper-slide">
                     <div class="img-container">
-                      <img src="/images/0km-slider2.jpg" alt="" />
-                      <h6>Modelo</h6>
+                      <img src="<%= cargaRandomAutosUsados[i].img %>" alt="" />
+                      <h6><%= cargaRandomAutosUsados[i].title %></h6>
                     </div>
                   </div>
-                  <div class="swiper-slide">
-                    <div class="img-container">
-                      <img src="/images/0km-slider2.jpg" alt="" />
-                      <h6>Modelo</h6>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img-container">
-                      <img src="/images/0km-slider2.jpg" alt="" />
-                      <h6>Modelo</h6>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img-container">
-                      <img src="/images/0km-slider2.jpg" alt="" />
-                      <h6>Modelo</h6>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img-container">
-                      <img src="/images/0km-slider2.jpg" alt="" />
-                      <h6>Modelo</h6>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img-container">
-                      <img src="/images/0km-slider2.jpg" alt="" />
-                      <h6>Modelo</h6>
-                    </div>
-                  </div>
+                  <% } %>
                 </div>
               </div>
               <div class="swiper-button-next swiper-button-next-usados"></div>
@@ -168,119 +119,26 @@
           </div>
           <div class="swiperVendi mySwiperVendi">
             <div class="swiper-wrapperVendi">
+              <% for (let i = 0; i < 5; i++) { %>
               <div class="swiper-slide">
                 <div class="card float-left p-4">
                   <div class="row">
                     <div class="col-sm-7">
                       <div class="card-block">
-                        <h4>Card 1</h4>
+                        <h4><%= datosAutos[i].title %></h4>
                       </div>
                     </div>
                     <div class="col-sm-5">
                       <img
                         class="d-block w-100"
-                        src="/images/0km-slider2.jpg"
+                        src="<%= datosAutos[i].img %>"
                         alt=""
                       />
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="swiper-slide">
-                <div class="card float-left p-4">
-                  <div class="row">
-                    <div class="col-sm-7">
-                      <div class="card-block">
-                        <h4>Card 2</h4>
-                      </div>
-                    </div>
-
-                    <div class="col-sm-5">
-                      <img
-                        class="d-block w-100"
-                        src="/images/0km-slider2.jpg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card float-left p-4">
-                  <div class="row">
-                    <div class="col-sm-7">
-                      <div class="card-block">
-                        <h4>Card 3</h4>
-                      </div>
-                    </div>
-
-                    <div class="col-sm-5">
-                      <img
-                        class="d-block w-100"
-                        src="/images/0km-slider2.jpg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card float-left p-4">
-                  <div class="row">
-                    <div class="col-sm-7">
-                      <div class="card-block">
-                        <h4>Card 4</h4>
-                      </div>
-                    </div>
-
-                    <div class="col-sm-5">
-                      <img
-                        class="d-block w-100"
-                        src="/images/0km-slider2.jpg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card float-left p-4">
-                  <div class="row">
-                    <div class="col-sm-7">
-                      <div class="card-block">
-                        <h4>Card 4</h4>
-                      </div>
-                    </div>
-
-                    <div class="col-sm-5">
-                      <img
-                        class="d-block w-100"
-                        src="/images/0km-slider2.jpg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="card float-left p-4">
-                  <div class="row">
-                    <div class="col-sm-7">
-                      <div class="card-block">
-                        <h4>Card 4</h4>
-                      </div>
-                    </div>
-
-                    <div class="col-sm-5">
-                      <img
-                        class="d-block w-100"
-                        src="/images/0km-slider2.jpg"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <% } %>
             </div>
             <div class="swiper-paginationVendi"></div>
           </div>
@@ -299,66 +157,17 @@
       </div>
       <section id="autopartes" class="autopartes">
         <div class="autopartes-items">
+          <% datosAutoPartes.forEach(autopartes => { %>
           <div class="items">
-            <span class="titulo-items">Respuesto </span>
-            <img src="/images/escape.png" alt="" class="img-item" />
-            <span class="precio-item">10.000$</span>
+            <span class="titulo-items"><%= autopartes.title %></span>
+            <img
+              src="<%= autopartes.img %>"
+              alt="<%= autopartes.title %>"
+              class="img-item"
+            />
+            <span class="precio-item">$<%= autopartes.price %></span>
           </div>
-          <div class="items">
-            <span class="titulo-items">Respuesto </span>
-            <img src="/images/escape.png" alt="" class="img-item" />
-            <span class="precio-item">10.000$</span>
-          </div>
-          <div class="items">
-            <span class="titulo-items">Respuesto </span>
-            <img src="/images/escape.png" alt="" class="img-item" />
-            <span class="precio-item">10.000$</span>
-          </div>
-          <div class="items">
-            <span class="titulo-items">Respuesto </span>
-            <img src="/images/escape.png" alt="" class="img-item" />
-            <span class="precio-item">10.000$</span>
-          </div>
-          <div class="items">
-            <span class="titulo-items">Respuesto </span>
-            <img src="/images/escape.png" alt="" class="img-item" />
-            <span class="precio-item">10.000$</span>
-          </div>
-          <div class="items">
-            <span class="titulo-items">Respuesto </span>
-            <img src="/images/escape.png" alt="" class="img-item" />
-            <span class="precio-item">10.000$</span>
-          </div>
-          <div class="items">
-            <span class="titulo-items">Respuesto </span>
-            <img src="/images/escape.png" alt="" class="img-item" />
-            <span class="precio-item">10.000$</span>
-          </div>
-          <div class="items">
-            <span class="titulo-items">Respuesto </span>
-            <img src="/images/escape.png" alt="" class="img-item" />
-            <span class="precio-item">10.000$</span>
-          </div>
-          <div class="items">
-            <span class="titulo-items">Respuesto </span>
-            <img src="/images/escape.png" alt="" class="img-item" />
-            <span class="precio-item">10.000$</span>
-          </div>
-          <div class="items">
-            <span class="titulo-items">Respuesto </span>
-            <img src="/images/escape.png" alt="" class="img-item" />
-            <span class="precio-item">10.000$</span>
-          </div>
-          <div class="items">
-            <span class="titulo-items">Respuesto </span>
-            <img src="/images/escape.png" alt="" class="img-item" />
-            <span class="precio-item">10.000$</span>
-          </div>
-          <div class="items">
-            <span class="titulo-items">Respuesto </span>
-            <img src="/images/escape.png" alt="" class="img-item" />
-            <span class="precio-item">10.000$</span>
-          </div>
+          <% }); %>
         </div>
       </section>
 
