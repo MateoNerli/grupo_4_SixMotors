@@ -124,7 +124,28 @@ aside {
   color: rgba(0, 0, 0, 0.468);
   font-size: 0.85rem;
 }
+.conten {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 15px;
+}
 
+.favorito button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.favorito i.bi.bi-heart {
+  font-size: 24px;
+  color: #e74c3c;
+  transition: color 0.3s ease;
+}
+
+.favorito i.bi.bi-heart:hover {
+  color: #c0392b;
+}
 main {
   background-color: #fff;
   margin: 1rem;
@@ -167,9 +188,13 @@ main {
   margin-top: 10px;
   background-color: var(--secondary);
   color: var(--text);
-  border: none;
+  border-radius: 10px;
   padding: 8px 12px;
   cursor: pointer;
+}
+
+.producto-agregar:hover {
+  background-color: var(--accent);
 }
 
 .header-mobile {
