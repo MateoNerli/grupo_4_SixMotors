@@ -75,27 +75,29 @@
         </h2>
         <div id="contenedor-productos" class="contenedor-productos">
           <% datosAutos.forEach(auto => { %>
-          <div class="producto-container">
-            <img
-              class="producto-imagen"
-              src="<%= auto.img %>"
-              alt="<%= auto.title %>"
-            />
-            <div class="producto-detalles">
-              <h3 class="producto-titulo"><%= auto.title %></h3>
-              <p class="producto-precio">$<%= auto.price %></p>
-              <div class="conten">
-                <button class="producto-agregar" id="<%= auto.id %>">
-                  Agregar
-                </button>
-                <div class="favorito">
-                  <button>
-                    <i class="bi bi-heart"></i>
+          <a href="/DetailsAutos/<%= auto.id %>">
+            <div class="producto-container">
+              <img
+                class="producto-imagen"
+                src="<%= auto.img %>"
+                alt="<%= auto.title %>"
+              />
+              <div class="producto-detalles">
+                <h3 class="producto-titulo"><%= auto.title %></h3>
+                <p class="producto-precio">$<%= auto.price %></p>
+                <div class="conten">
+                  <button class="producto-agregar" id="<%= auto.id %>">
+                    Agregar
                   </button>
+                  <div class="favorito">
+                    <button>
+                      <i class="bi bi-heart"></i>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </a>
           <% }); %>
         </div>
       </main>

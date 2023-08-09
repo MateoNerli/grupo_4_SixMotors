@@ -78,27 +78,29 @@
         <!-- Contenedor de articulos, autopartes -->
         <div id="contenedor-productos" class="contenedor-productos">
           <% datosAutoPartes.forEach(autopartes => { %>
-          <div class="producto-container">
-            <img
-              class="producto-imagen"
-              src="<%= autopartes.img %>"
-              alt="<%= autopartes.title %>"
-            />
-            <div class="producto-detalles">
-              <h3 class="producto-titulo"><%= autopartes.title %></h3>
-              <p class="producto-precio">$<%= autopartes.price %></p>
-              <div class="conten">
-                <button class="producto-agregar" id="<%= autopartes.id %>">
-                  Agregar
-                </button>
-                <div class="favorito">
-                  <button>
-                    <i class="bi bi-heart"></i>
+          <a href="/DetailsAutopartes/<%= autopartes.id %>">
+            <div class="producto-container">
+              <img
+                class="producto-imagen"
+                src="<%= autopartes.img %>"
+                alt="<%= autopartes.title %>"
+              />
+              <div class="producto-detalles">
+                <h3 class="producto-titulo"><%= autopartes.title %></h3>
+                <p class="producto-precio">$<%= autopartes.price %></p>
+                <div class="conten">
+                  <button class="producto-agregar" id="<%= autopartes.id %>">
+                    Agregar
                   </button>
+                  <div class="favorito">
+                    <button>
+                      <i class="bi bi-heart"></i>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </a>
           <% }); %>
         </div>
       </main>
