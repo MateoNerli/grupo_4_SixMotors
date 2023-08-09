@@ -11,10 +11,6 @@ ul {
   list-style-type: none;
 }
 
-a {
-  text-decoration: none;
-}
-
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 4fr;
@@ -161,6 +157,10 @@ main {
 
 .contenedor-productos {
   text-align: center;
+}
+.producto-container a {
+  text-decoration: none;
+  color: var(--text);
 }
 .producto-container {
   border: solid 1px black;
