@@ -78,21 +78,23 @@
       <% const cargaAutosPartes = cargaRandomAutopartes(datosAutoPartes); %>
       <div class="card-list-products">
         <% for (let i = 0; i < 4 && i < cargaAutosPartes.length; i++) { %>
-        <div class="card">
-          <div class="card-img">
-            <img
-              src="<%= cargaAutosPartes[i].img %>"
-              alt="<%= cargaAutosPartes[i].title %>"
-            />
-          </div>
-          <div class="info-card">
-            <div class="text-product">
-              <h3><%= cargaAutosPartes[i].title %></h3>
-              <p class="category"><%= cargaAutosPartes[i].category %></p>
+        <a href="/DetailsAutopartes/<%= cargaAutosPartes[i].id %>">
+          <div class="card">
+            <div class="card-img">
+              <img
+                src="<%= cargaAutosPartes[i].img %>"
+                alt="<%= cargaAutosPartes[i].title %>"
+              />
             </div>
-            <div class="price">$<%= cargaAutosPartes[i].price %></div>
+            <div class="info-card">
+              <div class="text-product">
+                <h3><%= cargaAutosPartes[i].title %></h3>
+                <p class="category"><%= cargaAutosPartes[i].category %></p>
+              </div>
+              <div class="price">$<%= cargaAutosPartes[i].price %></div>
+            </div>
           </div>
-        </div>
+        </a>
         <% } %>
       </div>
     </section>

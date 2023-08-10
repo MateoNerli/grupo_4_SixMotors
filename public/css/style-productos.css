@@ -16,7 +16,10 @@ ul {
   grid-template-columns: 1fr 4fr;
   background-color: var(--primary);
 }
-
+a {
+  text-decoration: none;
+  color: inherit;
+}
 aside {
   padding: 2rem;
   padding-right: 0;

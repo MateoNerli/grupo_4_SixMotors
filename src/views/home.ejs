@@ -70,10 +70,12 @@
                   <% const cargaAutos0k = cargaRandom(datosAutos); %> <% for
                   (let i = 0; i < 7 && i < cargaAutos0k.length; i++) { %>
                   <div class="swiper-slide">
-                    <div class="img-container">
-                      <img src="<%= cargaAutos0k[i].img %>" alt="" />
-                      <h6><%= cargaAutos0k[i].title %></h6>
-                    </div>
+                    <a href="/DetailsAutos/<%= cargaAutos0k[i].id %>">
+                      <div class="img-container">
+                        <img src="<%= cargaAutos0k[i].img %>" alt="" />
+                        <h6><%= cargaAutos0k[i].title %></h6>
+                      </div>
+                    </a>
                   </div>
                   <% } %>
                 </div>
@@ -92,16 +94,20 @@
             </div>
             <div class="slider">
               <div class="swiper-container swiper-container-usados">
-                <!-- Agregamos una clase específica para este slider -->
                 <div class="swiper-wrapper">
                   <% const cargaRandomAutosUsados = cargaRandom(datosAutos); %>
                   <% for (let i = 0; i < 7 && i < cargaRandomAutosUsados.length;
                   i++) { %>
                   <div class="swiper-slide">
-                    <div class="img-container">
-                      <img src="<%= cargaRandomAutosUsados[i].img %>" alt="" />
-                      <h6><%= cargaRandomAutosUsados[i].title %></h6>
-                    </div>
+                    <a href="cargaRandomAutosUsados[i].id">
+                      <div class="img-container">
+                        <img
+                          src="<%= cargaRandomAutosUsados[i].img %>"
+                          alt=""
+                        />
+                        <h6><%= cargaRandomAutosUsados[i].title %></h6>
+                      </div>
+                    </a>
                   </div>
                   <% } %>
                 </div>
@@ -158,15 +164,17 @@
       <section id="autopartes" class="autopartes">
         <div class="autopartes-items">
           <% datosAutoPartes.forEach(autopartes => { %>
-          <div class="items">
-            <span class="titulo-items"><%= autopartes.title %></span>
-            <img
-              src="<%= autopartes.img %>"
-              alt="<%= autopartes.title %>"
-              class="img-item"
-            />
-            <span class="precio-item">$<%= autopartes.price %></span>
-          </div>
+          <a href="/DetailsAutopartes/<%= autopartes.id %>">
+            <div class="items">
+              <span class="titulo-items"><%= autopartes.title %></span>
+              <img
+                src="<%= autopartes.img %>"
+                alt="<%= autopartes.title %>"
+                class="img-item"
+              />
+              <span class="precio-item">$<%= autopartes.price %></span>
+            </div>
+          </a>
           <% }); %>
         </div>
       </section>

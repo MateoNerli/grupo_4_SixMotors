@@ -61,7 +61,10 @@ body {
 }
 
 /* Main */
-
+a {
+  text-decoration: none;
+  color: inherit;
+}
 main {
   padding: 20px;
   background-color: #f4f6f5;
