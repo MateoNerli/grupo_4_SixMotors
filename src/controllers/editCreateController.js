@@ -1,5 +1,5 @@
 const path = require("path");
-const dataBase = require("../datos/datos.json");
+const dataBase = require("../datos/products.json");
 
 const editCreacionCointroller = {
   create: (req, res) => {
