@@ -32,6 +32,9 @@ const productController = {
   autopartes: (req, res) => {
     res.render(path.join("products", "autopartes"), { datosAutoPartes });
   },
+  contacto: (req, res) => {
+    res.render(path.join("products", "contacto"), { datosAutoPartes , datosAutos });
+  },
 };
 
 module.exports = productController;
