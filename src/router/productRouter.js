@@ -7,5 +7,6 @@ router.get("/DetailsAutopartes/:id", productController.detailAutopartes);
 router.get("/autopartes", productController.autopartes);
 router.get("/autos", productController.autos);
 router.get("/carrito", productController.carrito);
+router.get("/contacto", productController.contacto);
 
 module.exports = router;
