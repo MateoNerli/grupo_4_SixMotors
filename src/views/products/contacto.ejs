@@ -1,84 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Docuemnt</title>
     <%- include ('../partials/head.ejs') %>
-        <!-- Link Swiper's CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-        <!-- CSS -->
-        <link rel="stylesheet" href="/css/style-home2.css" />
-</head>
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style-contacto.css" />
+  </head>
 
-<body>
+  <body>
     <!-- Navbar -->
     <%- include ('../partials/header.ejs') %>
 
-        <div class="titulo">
-            <h2>Contactanos</h2>
-        </div>
-        <section id="contacto" class="mensaje-container">
-            <div class="caja">
-                <div class="conta form">
-                    <h3>Envianos un mensaje</h3>
-                    <form action="">
-                        <div class="formBox">
-                            <div class="row50">
-                                <div class="inputBox">
-                                    <span>Nombre</span>
-                                    <input type="text" placeholder="Pedro" />
-                                </div>
-                                <div class="inputBox">
-                                    <span>Nombre</span>
-                                    <input type="text" placeholder="Rodriguez" />
-                                </div>
-                            </div>
-                            <div class="row50">
-                                <div class="inputBox">
-                                    <span>Email</span>
-                                    <input type="text" placeholder="PedroRodriguez@email.com" />
-                                </div>
-                                <div class="inputBox">
-                                    <span>Telefono</span>
-                                    <input type="text" placeholder="+54 3364525352" />
-                                </div>
-                            </div>
-                            <div class="row100">
-                                <div class="inputBox">
-                                    <span>Message</span>
-                                    <textarea name="mensaje" id="" cols="30" rows="10"
-                                        placeholder="Escribi tu mensaje aqui..."></textarea>
-                                </div>
-                            </div>
-                            <div class="row100">
-                                <div class="inputBox">
-                                    <input type="submit" value="Enviar" />
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+    <div class="titulo">
+      <h2>Contactanos</h2>
+    </div>
+    <section id="contacto" class="mensaje-container">
+      <div class="caja">
+        <div class="conta form">
+          <h3>Envianos un mensaje</h3>
+          <form action="">
+            <div class="formBox">
+              <div class="row50">
+                <div class="inputBox">
+                  <span>Nombre</span>
+                  <input type="text" placeholder="Pedro" />
                 </div>
+                <div class="inputBox">
+                  <span>Nombre</span>
+                  <input type="text" placeholder="Rodriguez" />
+                </div>
+              </div>
+              <div class="row50">
+                <div class="inputBox">
+                  <span>Email</span>
+                  <input type="text" placeholder="PedroRodriguez@email.com" />
+                </div>
+                <div class="inputBox">
+                  <span>Telefono</span>
+                  <input type="text" placeholder="+54 3364525352" />
+                </div>
+              </div>
+              <div class="row100">
+                <div class="inputBox">
+                  <span>Message</span>
+                  <textarea
+                    name="mensaje"
+                    id=""
+                    cols="30"
+                    rows="10"
+                    placeholder="Escribi tu mensaje aqui..."
+                  ></textarea>
+                </div>
+              </div>
+              <div class="row100">
+                <div class="inputBox">
+                  <input type="submit" value="Enviar" />
+                </div>
+              </div>
             </div>
-        </section>
-        </main>
+          </form>
+        </div>
+      </div>
+    </section>
 
-        <!-- Footer -->
-        <%- include ('../partials/footer.ejs') %>
+    <!-- Footer -->
+    <%- include ('../partials/footer.ejs') %>
 
-            <!-- javascript del nav -->
-            <script type="module" src="/javascript/nav.js"></script>
-            <!-- Javascript pagina -->
-            <script type="module" src="/javascript/home2.js"></script>
-            <!-- Swiper JS -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.js"></script>
-            <!--  -->
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <!-- bootstrap -->
-            <!-- <script
+    <!-- javascript del nav -->
+    <script type="module" src="/javascript/nav.js"></script>
+    <!-- Javascript pagina -->
+    <script type="module" src="/javascript/home2.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.0.4/swiper-bundle.min.js"></script>
+    <!--  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- bootstrap -->
+    <!-- <script
         src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"
       ></script> -->
-</body>
-
+  </body>
 </html>
