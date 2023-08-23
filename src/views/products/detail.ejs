@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Product Detail</title>
+    <%- include ('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/style-product-detail.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <%- include ('../partials/header.ejs') %>
+
+    <!-- Product Detail -->
+    <div class="titulo">
+      <h2><%= product.title %></h2>
+    </div>
+    <main>
+      <div class="container-img">
+        <img src="<%= product.img %>" alt="<%= product.title %>" />
+      </div>
+
+      <div class="container-info-product">
+        <div class="container-price">
+          <span><%= product.price %></span>
+        </div>
+
+        <div class="container-add-cart">
+          <div class="container-quantity">
+            <input
+              type="number"
+              placeholder="1"
+              value="1"
+              min="1"
+              class="input-quantity"
+            />
+            <div class="btn-increment-decrement">
+              <i class="fa-solid fa-chevron-up" id="increment"></i>
+              <i class="fa-solid fa-chevron-down" id="decrement"></i>
+            </div>
+          </div>
+          <button class="btn-add-to-cart">
+            <i class="fa-solid fa-plus"></i>
+            Añadir al carrito
+          </button>
+        </div>
+
+        <div class="container-description">
+          <div class="title-description">
+            <h4>Descripción</h4>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="text-description">
+            <p><%= product.description %></p>
+          </div>
+        </div>
+
+        <div class="container-reviews">
+          <div class="title-reviews">
+            <h4>Reseñas</h4>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="text-reviews hidden">
+            <p><%= product.reseña %></p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <% function cargaRandom(array) { %> <% for (let i = array.length - 1; i > 0;
+    i--) { %> <% const j = Math.floor(Math.random() * (i + 1)); %> <% [array[i],
+    array[j]] = [array[j], array[i]]; %> <% } %> <% return array; %> <% } %>
+
+    <section class="container-related-products">
+      <div class="titulo">
+        <h2>Productos Relacionados</h2>
+      </div>
+      <% const carga = cargaRandom(products); %>
+      <div class="card-list-products">
+        <% for (let i = 0; i < 4 && i < carga.length; i++) { %>
+        <a href="/products/detail/<%= carga[i].id %>">
+          <div class="card">
+            <div class="card-img">
+              <img src="<%= carga[i].img %>" alt="<%= carga[i].title %>" />
+            </div>
+            <div class="info-card">
+              <div class="text-product">
+                <h3><%= carga[i].title %></h3>
+                <p class="category"><%= carga[i].category %></p>
+              </div>
+              <div class="price">$<%= carga[i].price %></div>
+            </div>
+          </div>
+        </a>
+        <% } %>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <%- include ('../partials/footer.ejs') %>
+
+    <!-- javascript del nav -->
+    <script type="module" src="/javascript/nav.js"></script>
+
+    <!-- javascript del product detail -->
+    <script type="module" src="/javascript/details.js"></script>
+  </body>
+</html>

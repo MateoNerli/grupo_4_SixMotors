@@ -67,10 +67,10 @@
             <div class="slider">
               <div class="swiper-container">
                 <div class="swiper-wrapper">
-                  <% const cargaAutos0k = cargaRandom(datosAutos); %> <% for
-                  (let i = 0; i < 7 && i < cargaAutos0k.length; i++) { %>
+                  <% const cargaAutos0k = cargaRandom(autos); %> <% for (let i =
+                  0; i < 7 && i < cargaAutos0k.length; i++) { %>
                   <div class="swiper-slide">
-                    <a href="/DetailsAutos/<%= cargaAutos0k[i].id %>">
+                    <a href="/products/detail/<%= cargaAutos0k[i].id %>">
                       <div class="img-container">
                         <img src="<%= cargaAutos0k[i].img %>" alt="" />
                         <h6><%= cargaAutos0k[i].title %></h6>
@@ -95,11 +95,13 @@
             <div class="slider">
               <div class="swiper-container swiper-container-usados">
                 <div class="swiper-wrapper">
-                  <% const cargaRandomAutosUsados = cargaRandom(datosAutos); %>
-                  <% for (let i = 0; i < 7 && i < cargaRandomAutosUsados.length;
+                  <% const cargaRandomAutosUsados = cargaRandom(autos); %> <%
+                  for (let i = 0; i < 7 && i < cargaRandomAutosUsados.length;
                   i++) { %>
                   <div class="swiper-slide">
-                    <a href="cargaRandomAutosUsados[i].id">
+                    <a
+                      href="/products/detail/<%= cargaRandomAutosUsados[i].id %>"
+                    >
                       <div class="img-container">
                         <img
                           src="<%= cargaRandomAutosUsados[i].img %>"
@@ -131,13 +133,13 @@
                   <div class="row">
                     <div class="col-sm-7">
                       <div class="card-block">
-                        <h4><%= datosAutos[i].title %></h4>
+                        <h4><%= autos[i].title %></h4>
                       </div>
                     </div>
                     <div class="col-sm-5">
                       <img
                         class="d-block w-100"
-                        src="<%= datosAutos[i].img %>"
+                        src="<%= autos[i].img %>"
                         alt=""
                       />
                     </div>
@@ -157,22 +159,22 @@
 
       <div class="titulo titulo-auto-partes">
         <h3>Autopartes</h3>
-        <a href="/autopartes">
+        <a href="/">
           <p>Ver mas</p>
         </a>
       </div>
       <section id="autopartes" class="autopartes">
         <div class="autopartes-items">
-          <% datosAutoPartes.forEach(autopartes => { %>
-          <a href="/DetailsAutopartes/<%= autopartes.id %>">
+          <% autoparte.forEach(autoparte => { %>
+          <a href="products/detail/<%= autoparte.id %>">
             <div class="items">
-              <span class="titulo-items"><%= autopartes.title %></span>
+              <span class="titulo-items"><%= autoparte.title %></span>
               <img
-                src="<%= autopartes.img %>"
-                alt="<%= autopartes.title %>"
+                src="<%= autoparte.img %>"
+                alt="<%= autoparte.title %>"
                 class="img-item"
               />
-              <span class="precio-item">$<%= autopartes.price %></span>
+              <span class="precio-item">$<%= autoparte.price %></span>
             </div>
           </a>
           <% }); %>

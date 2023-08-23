@@ -1,10 +1,15 @@
 const path = require("path");
-const datosAutos = require("../datos/autos.json");
-const datosAutoPartes = require("../datos/autopartes.json");
+const products = require("../datos/products.json");
 
 const homeController = {
   home: (req, res) => {
-    res.render(path.join("home"), { datosAutos, datosAutoPartes });
+    const autos = products.filter((autos) => {
+      return autos.type == "vehiculo";
+    });
+    const autoparte = products.filter((autoparte) => {
+      return autoparte.type == "autoparte";
+    });
+    res.render(path.join("home"), { autos, autoparte });
   },
 };
 

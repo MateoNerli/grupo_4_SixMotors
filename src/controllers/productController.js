@@ -1,39 +1,44 @@
 const path = require("path");
-const datosAutos = require("../datos/autos.json");
-const datosAutoPartes = require("../datos/autopartes.json");
+const products = require("../datos/products.json");
 
 const productController = {
-  detailAutos: (req, res) => {
-    let id = req.params.id;
-    let auto = datosAutos.find((auto) => {
-      return auto.id == id;
-    });
-    res.render(path.join("products", "productDetailAuto"), {
-      auto,
-      datosAutos,
+  productosVehiculos: (req, res) => {
+    const vehiculosProducts = products.filter(
+      (product) => product.type === "vehiculo"
+    );
+    res.render("products/productos", {
+      products: vehiculosProducts,
     });
   },
-  detailAutopartes: (req, res) => {
-    let id = req.params.id;
-    let productoAP = datosAutoPartes.find((productoAP) => {
-      return productoAP.id == id;
-    });
-    res.render(path.join("products", "productDetail"), {
-      productoAP,
-      datosAutoPartes,
+  productosAutopartes: (req, res) => {
+    const autopartesProducts = products.filter(
+      (product) => product.type === "autoparte"
+    );
+    res.render("products/productos", {
+      products: autopartesProducts,
     });
   },
+  detail: (req, res) => {
+    let id = req.params.id;
+    let product = products.find((product) => {
+      return product.id == id;
+    });
+    res.render(path.join("products", "detail"), {
+      product,
+      products,
+    });
+  },
+
   carrito: (req, res) => {
-    res.render(path.join("products", "carrito"));
+    res.render(path.join("products", "carrito"), {
+      products,
+    });
   },
-  autos: (req, res) => {
-    res.render(path.join("products", "autos"), { datosAutos });
-  },
-  autopartes: (req, res) => {
-    res.render(path.join("products", "autopartes"), { datosAutoPartes });
-  },
+
   contacto: (req, res) => {
-    res.render(path.join("products", "contacto"), { datosAutoPartes , datosAutos });
+    res.render(path.join("products", "contacto"), {
+      products,
+    });
   },
 };
 
