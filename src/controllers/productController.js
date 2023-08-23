@@ -20,18 +20,24 @@ const productController = {
   },
   detail: (req, res) => {
     let id = req.params.id;
-    let productDetail = products.find((productDetail) => {
-      return productDetail.id == id;
+    let product = products.find((product) => {
+      return product.id == id;
     });
-    res.render(path.join("detail"), { productDetail });
+    res.render(path.join("products", "detail"), {
+      product,
+      products,
+    });
   },
 
-  carrito: (req, res) => {},
+  carrito: (req, res) => {
+    res.render(path.join("products", "carrito"), {
+      products,
+    });
+  },
 
   contacto: (req, res) => {
     res.render(path.join("products", "contacto"), {
-      datosAutoPartes,
-      datosAutos,
+      products,
     });
   },
 };
