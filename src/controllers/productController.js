@@ -1,39 +1,38 @@
 const path = require("path");
-const datosAutos = require("../datos/autos.json");
-const datosAutoPartes = require("../datos/autopartes.json");
+const products = require("../datos/products.json");
 
 const productController = {
-  detailAutos: (req, res) => {
-    let id = req.params.id;
-    let auto = datosAutos.find((auto) => {
-      return auto.id == id;
+  productosVehiculos: (req, res) => {
+    const vehiculosProducts = products.filter(
+      (product) => product.type === "vehiculo"
+    );
+    res.render("products/productos", {
+      products: vehiculosProducts,
     });
-    res.render(path.join("products", "productDetailAuto"), {
-      auto,
+  },
+  productosAutopartes: (req, res) => {
+    const autopartesProducts = products.filter(
+      (product) => product.type === "autoparte"
+    );
+    res.render("products/productos", {
+      products: autopartesProducts,
+    });
+  },
+  detail: (req, res) => {
+    let id = req.params.id;
+    let productDetail = products.find((productDetail) => {
+      return productDetail.id == id;
+    });
+    res.render(path.join("detail"), { productDetail });
+  },
+
+  carrito: (req, res) => {},
+
+  contacto: (req, res) => {
+    res.render(path.join("products", "contacto"), {
+      datosAutoPartes,
       datosAutos,
     });
-  },
-  detailAutopartes: (req, res) => {
-    let id = req.params.id;
-    let productoAP = datosAutoPartes.find((productoAP) => {
-      return productoAP.id == id;
-    });
-    res.render(path.join("products", "productDetail"), {
-      productoAP,
-      datosAutoPartes,
-    });
-  },
-  carrito: (req, res) => {
-    res.render(path.join("products", "carrito"));
-  },
-  autos: (req, res) => {
-    res.render(path.join("products", "autos"), { datosAutos });
-  },
-  autopartes: (req, res) => {
-    res.render(path.join("products", "autopartes"), { datosAutoPartes });
-  },
-  contacto: (req, res) => {
-    res.render(path.join("products", "contacto"), { datosAutoPartes , datosAutos });
   },
 };
 

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+    <%- include ('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/style-productos.css" />
+  </head>
+  <body>
+    <!-- Nav -->
+
+    <!-- Navbar -->
+    <%- include ('../partials/header.ejs') %>
+
+    <!-- Autopartes -->
+    <!-- Header de autopartes -->
+
+    <div class="wrapper">
+      <header class="header-mobile">
+        <button class="open-menu" id="open-menu">
+          <i class="bi bi-list"></i>
+        </button>
+        <button class="close-menu" id="close-menu">
+          <i class="bi bi-x"></i>
+        </button>
+      </header>
+      <aside>
+        <button class="close-menu" id="close-menu">
+          <i class="bi bi-x"></i>
+        </button>
+        <header>
+          <h1 class="logo-aside">SixMOTORS</h1>
+        </header>
+        <div class="menu-aside">
+          <ul class="menu-autos">
+            <li>
+              <button id="" class="boton-menu boton-categoria active">
+                <i class="bi bi-hand-index-thumb-fill"></i> Todos los repuestos
+              </button>
+            </li>
+            <li>
+              <button id="" class="boton-menu boton-categoria">
+                <i class="bi bi-hand-index-thumb"></i> iluminacion
+              </button>
+            </li>
+            <li>
+              <button id="" class="boton-menu boton-categoria">
+                <i class="bi bi-hand-index-thumb"></i> Amortiguadoes
+              </button>
+            </li>
+            <li>
+              <button id="" class="boton-menu boton-categoria">
+                <i class="bi bi-hand-index-thumb"></i> Ruedas
+              </button>
+            </li>
+            <li>
+              <button id="" class="boton-menu boton-categoria">
+                <i class="bi bi-hand-index-thumb"></i> Bateria
+              </button>
+            </li>
+            <li>
+              <a class="boton-menu boton-carrito" href="/carrito">
+                <i class="bi bi-cart-fill"></i> Carrito
+                <span id="numerito" class="numerito">0</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <footer>
+          <p class="texto-footer">© 2023 SixMotors</p>
+        </footer>
+      </aside>
+
+      <!-- Main de autopartes -->
+      <main>
+        <h2 class="titulo-principal" id="titulo-principal">
+          Todos los productos
+        </h2>
+        <!-- Contenedor de articulos, autopartes -->
+        <div id="contenedor-productos" class="contenedor-productos">
+          <% products.forEach(product => { %>
+          <a href="/detail/<%= product.id %>">
+            <div class="producto-container">
+              <img
+                class="producto-imagen"
+                src="<%= product.img %>"
+                alt="<%= product.title %>"
+              />
+              <div class="producto-detalles">
+                <h3 class="producto-titulo"><%= product.title %></h3>
+                <p class="producto-precio">$<%= product.price %></p>
+                <div class="conten">
+                  <button class="producto-agregar" id="<%= product.id %>">
+                    Agregar
+                  </button>
+                  <div class="favorito">
+                    <button>
+                      <i class="bi bi-heart"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+          <% }); %>
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+
+    <!-- Footer -->
+    <%- include ('../partials/footer.ejs') %>
+
+    <!-- javascript del Nav -->
+    <script type="module" src="/javascript/nav.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="/javascript/autos.js"></script>
+  </body>
+</html>

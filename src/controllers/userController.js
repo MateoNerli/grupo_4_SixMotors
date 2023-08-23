@@ -1,6 +1,5 @@
 const path = require("path");
-const datosAutos = require("../datos/autos.json");
-const datosAutoPartes = require("../datos/autopartes.json");
+const products = require("../datos/products.json");
 
 const userController = {
   login: (req, res) => {

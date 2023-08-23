@@ -25,6 +25,6 @@ app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "./src/views"));
 
 app.use("/", homeRouter);
-app.use("/", productRouter);
+app.use("/products", productRouter);
 app.use("/", userRouter);
 app.use("/", editCreateRouter);

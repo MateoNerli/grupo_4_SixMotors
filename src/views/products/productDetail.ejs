@@ -11,16 +11,16 @@
 
     <!-- Product Detail -->
     <div class="titulo">
-      <h2><%= productoAP.title %></h2>
+      <h2><%= productDetail.title %></h2>
     </div>
     <main>
       <div class="container-img">
-        <img src="<%= productoAP.img %>" alt="<%= productoAP.title %>" />
+        <img src="<%= productDetail.img %>" alt="<%= productDetail.title %>" />
       </div>
 
       <div class="container-info-product">
         <div class="container-price">
-          <span><%= productoAP.price %></span>
+          <span><%= productDetail.price %></span>
         </div>
 
         <div class="container-add-cart">
@@ -49,7 +49,7 @@
             <i class="fa-solid fa-chevron-down"></i>
           </div>
           <div class="text-description">
-            <p><%= productoAP.description %></p>
+            <p><%= productDetail.description %></p>
           </div>
         </div>
 
@@ -59,13 +59,13 @@
             <i class="fa-solid fa-chevron-down"></i>
           </div>
           <div class="text-reviews hidden">
-            <p><%= productoAP.reseña %></p>
+            <p><%= productDetail.reseña %></p>
           </div>
         </div>
       </div>
     </main>
 
-    <% function cargaRandomAutopartes(array) { %> <% for (let i = array.length -
+    <!-- <% function cargaRandom(array) { %> <% for (let i = array.length -
     1; i > 0; i--) { %> <% const j = Math.floor(Math.random() * (i + 1)); %> <%
     [array[i], array[j]] = [array[j], array[i]]; %> <% } %> <% return array; %>
     <% } %>
@@ -73,9 +73,8 @@
     <section class="container-related-products">
       <div class="titulo">
         <h2>Productos Relacionados</h2>
-        v
       </div>
-      <% const cargaAutosPartes = cargaRandomAutopartes(datosAutoPartes); %>
+      <% const cargaAutosPartes = cargaRandom(datosAutoPartes); %>
       <div class="card-list-products">
         <% for (let i = 0; i < 4 && i < cargaAutosPartes.length; i++) { %>
         <a href="/DetailsAutopartes/<%= cargaAutosPartes[i].id %>">
@@ -97,7 +96,7 @@
         </a>
         <% } %>
       </div>
-    </section>
+    </section> -->
 
     <!-- Footer -->
     <%- include ('../partials/footer.ejs') %>
