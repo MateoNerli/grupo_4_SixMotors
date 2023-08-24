@@ -76,7 +76,7 @@
       <% const carga = cargaRandom(products); %>
       <div class="card-list-products">
         <% for (let i = 0; i < 4 && i < carga.length; i++) { %>
-        <a href="/products/detail/<%= carga[i].id %>">
+        <a href="/products/<%= carga[i].id %>">
           <div class="card">
             <div class="card-img">
               <img src="<%= carga[i].img %>" alt="<%= carga[i].title %>" />

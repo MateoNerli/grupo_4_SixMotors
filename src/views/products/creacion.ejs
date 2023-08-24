@@ -14,12 +14,17 @@
     </div>
     <main class="formulario">
       <form action="/create" method="POST">
-        <label for="name">Nombre del producto:</label>
+        <label for="title">Nombre del producto:</label>
         <input type="text" name="name" required />
+        <label for="type" name="type">type</label>
+        <select name="type" id="type">
+          <option value="vehiculo">vehiculo</option>
+          <option value="autoparte">autoparte</option>
+        </select>
         <label for="description">Descripción:</label>
         <textarea name="description" required></textarea>
-        <label for="foto"><br />Foto del producto:</label>
-        <input type="file" id="foto" name="foto" />
+        <label for="img"><br />Foto del producto:</label>
+        <input type="file" id="img" name="img" />
         <label for="category">Categoría:</label>
         <input type="text" name="category" required />
         <label for="colors">Colores (separados por comas):</label>

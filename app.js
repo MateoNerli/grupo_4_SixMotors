@@ -10,6 +10,8 @@ const productRouter = require("./src/router/productRouter");
 const userRouter = require("./src/router/userRouter");
 const editCreateRouter = require("./src/router/edit-creacionRouter");
 
+app.use(express.urlencoded({ extended: true }));
+
 const puerto = 3000;
 
 app.listen(puerto, () => {

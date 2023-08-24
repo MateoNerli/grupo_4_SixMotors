@@ -70,7 +70,7 @@
                   <% const cargaAutos0k = cargaRandom(autos); %> <% for (let i =
                   0; i < 7 && i < cargaAutos0k.length; i++) { %>
                   <div class="swiper-slide">
-                    <a href="/products/detail/<%= cargaAutos0k[i].id %>">
+                    <a href="/products/<%= cargaAutos0k[i].id %>">
                       <div class="img-container">
                         <img src="<%= cargaAutos0k[i].img %>" alt="" />
                         <h6><%= cargaAutos0k[i].title %></h6>
@@ -99,9 +99,7 @@
                   for (let i = 0; i < 7 && i < cargaRandomAutosUsados.length;
                   i++) { %>
                   <div class="swiper-slide">
-                    <a
-                      href="/products/detail/<%= cargaRandomAutosUsados[i].id %>"
-                    >
+                    <a href="/products/<%= cargaRandomAutosUsados[i].id %>">
                       <div class="img-container">
                         <img
                           src="<%= cargaRandomAutosUsados[i].img %>"
@@ -166,7 +164,7 @@
       <section id="autopartes" class="autopartes">
         <div class="autopartes-items">
           <% autoparte.forEach(autoparte => { %>
-          <a href="products/detail/<%= autoparte.id %>">
+          <a href="products/<%= autoparte.id %>">
             <div class="items">
               <span class="titulo-items"><%= autoparte.title %></span>
               <img
