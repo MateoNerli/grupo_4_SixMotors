@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<!-- saved from url=(0012)about:srcdoc -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+
+</style>
+</head>
+<body>
+<script>
+
+        // save the original log for later use
+        var JS_RUNNER_ORIGINAL_LOG = console.log
+        var JS_RUNNER_CAPTURED_LOGS = []
+
+        /** 
+         * Original log redeclaration to be able to intercept the exercise logs and send them outside the iframe 
+         * params (...logs) rest operator of all logs
+        */
+        console.log = function (...logs) {
+            logs.forEach(log => {
+                try {
+                    let toString = log
+                    if (!['number','string'].includes(typeof(log))) {
+                        toString = JSON.stringify(log,null,2)
+                    }
+                    JS_RUNNER_CAPTURED_LOGS.push({
+                        type: "log",
+                        logs: toString
+                    })
+                } catch (e) {
+                    JS_RUNNER_CAPTURED_LOGS.push({
+                        type: "throw",
+                        msg: e.message
+                    })
+                }
+            })
+
+            // after all the logs have been captured, 
+            // a postMessage is sent to the parent document with the parsed result
+            parent.postMessage({ 
+                source: 'captured_logs', 
+                logs: JS_RUNNER_CAPTURED_LOGS 
+            }, "*");
+
+            // finally the original log is executed to ensure its operation
+            JS_RUNNER_ORIGINAL_LOG.apply(this,arguments)
+        }
+    
+</script>
+<script>
+
+
+const EXPRESS_MODULE_GLOBAL_VARIABLES = {
+  "listen": {
+    "called": false,
+    "port": null
+  },
+  "headers": {},
+  "get": [],
+  "post": [],
+  "put": [],
+  "patch": [],
+  "delete": [],
+  "use": []
+}
+const EXPRESS_REQUEST_MODULE = (path = '') => {
+    return (url = '', body = {}) => {
+        const getUrlParams = () => {
+            const splittedPath = path.split('/')
+            const cleanSplittedPath = splittedPath.filter(split => split !== '')
+            const splittedUrl = url.split('/')
+            const cleanSplittedUrl = splittedUrl.filter(split => split !== '').map(clean => clean.split('?')[0])
+            let params = {}
+            cleanSplittedPath.forEach((split, idx) => {
+                if (/:.*/.test(split)) {
+                    params[split.replace(/:/g, '')] = cleanSplittedUrl[idx]
+                }
+            })
+            return params
+        }
+
+        const getUrlQueryString = () => {
+            const [, splittedUrl] = url.split('?')
+            let query = {}
+            if (splittedUrl) {
+                const splittedQueryString = splittedUrl.split('&')
+                splittedQueryString.forEach(arg => {
+                    const [key, value] = arg.split('=')
+                    if (key && value) {
+                        query[key] = value
+                    }
+                })
+            }
+            return query
+        }
+
+        return {
+            query: getUrlQueryString(),
+            params: getUrlParams(),
+            body
+        }
+    }
+}
+const EXPRESS_RESPONSE_MODULE = (type, path) => {
+    const getEndpoint = () => {
+        return EXPRESS_MODULE_GLOBAL_VARIABLES[type].find(route => route.path === path)
+    }
+    return {
+        header: (key,data) => {
+            EXPRESS_MODULE_GLOBAL_VARIABLES.headers[key] = data
+            return EXPRESS_RESPONSE_MODULE(type, path)
+        },
+        status: (httpCode) => {
+            const endpoint = getEndpoint()
+            endpoint.status.called = true
+            endpoint.status.httpCode = httpCode
+            return EXPRESS_RESPONSE_MODULE(type, path)
+        },
+        send: (data) => {
+            const endpoint = getEndpoint()
+            endpoint.send.called = true
+            endpoint.send.data = data
+            return EXPRESS_RESPONSE_MODULE(type, path)
+        },
+        json: (data) => {
+            const endpoint = getEndpoint()
+            endpoint.json.called = true
+            endpoint.json.data = data
+            return EXPRESS_RESPONSE_MODULE(type, path)
+        }
+    }
+}
+const EXPRESS_NEXT_MODULE = (idx,req,res,next,cbs) => {
+    return (e) => {
+        if (e) {
+            throw e
+        }
+        const middleware = EXPRESS_MODULE_GLOBAL_VARIABLES.use[idx]
+        if (middleware) {
+            middleware(req,res,next(idx+1,req,res,next,cbs))
+        } else {
+            const copyCbs = [...cbs]
+            copyCbs.forEach((cb, idxCb) => {
+                copyCbs.splice(idxCb,1)
+                cb(req,res,next(idx,req,res,next,copyCbs))
+            })
+        }
+    }
+}
+const EXPRESS_MODULE = () => {
+    const createEndpoint = (type, path, cbs) => {
+        EXPRESS_MODULE_GLOBAL_VARIABLES[type].push({
+            path,
+            callback: (url, body = {}) => {
+                const req = EXPRESS_REQUEST_MODULE(path)(url, body)
+                const res = EXPRESS_RESPONSE_MODULE(type, path)
+                const next = EXPRESS_NEXT_MODULE
+                next(0, req, res, next, cbs)()
+            },
+            send: { called: false, data: null },
+            json: { called: false, data: null },
+            status: { called: false, httpCode: null }
+        })
+    }
+    return {
+        get: (path, ...cbs) => {
+            createEndpoint('get', path, cbs)
+        },
+        post: (path, ...cbs) => {
+            createEndpoint('post', path, cbs)
+        },
+        put: (path, ...cbs) => {
+            createEndpoint('put', path, cbs)
+        },
+        patch: (path, ...cbs) => {
+            createEndpoint('patch', path, cbs)
+        },
+        delete: (path, ...cbs) => {
+            createEndpoint('delete', path, cbs)
+        },
+        listen: (port, cb = () => { }) => {
+            EXPRESS_MODULE_GLOBAL_VARIABLES.listen.called = true
+            EXPRESS_MODULE_GLOBAL_VARIABLES.listen.port = port
+            EXPRESS_MODULE_GLOBAL_VARIABLES.listen.callback = cb
+        },
+        use: (cb = () => { }) => {
+            EXPRESS_MODULE_GLOBAL_VARIABLES.use.push((req, res, next) => {
+                cb(req, res, next)
+            })
+        }
+    }
+}
+const EXPRESS_ENDPOINT_TEST = (() => {
+    const getEndpoint = (type, url, body = {}) => {
+        const endpoint = EXPRESS_MODULE_GLOBAL_VARIABLES[type].find(route => {
+            const splittedStudentUrl = route.path.split('/')
+            const cleanStudentUrl = splittedStudentUrl.filter(split => split !== '' && !/:.*/.test(split))
+            const splittedTestUrl = url.split('/')
+            const cleanTestUrl = splittedTestUrl.filter(split => split !== '')
+            const contains = cleanStudentUrl.every(split => {
+                return cleanTestUrl.some(s2 => s2.includes(split))
+            })
+            return contains && splittedStudentUrl.length === splittedTestUrl.length
+        })
+        const data = {}
+        data.exists = false
+        data.send = { called: false, data: null }
+        data.json = { called: false, data: null }
+        data.status = { called: false, httpCode: null }
+        if (endpoint) {
+            endpoint.callback(url, body)
+            data.exists = true
+            data.send = endpoint.send
+            data.json = endpoint.json
+            data.status = endpoint.status
+        }
+        return data
+    }
+    return {
+        get: async (url) => {
+            return getEndpoint('get', url)
+        },
+        post: async (url, body) => {
+            return getEndpoint('post', url, body)
+        },
+        patch: async (url, body) => {
+            return getEndpoint('patch', url, body)
+        },
+        put: async (url, body) => {
+            return getEndpoint('put', url, body)
+        },
+        delete: async (url) => {
+            return getEndpoint('delete', url)
+        }
+    }
+})()
+;
+
+require = function (moduleName) {
+    let response = null;
+    if (moduleName === 'express') {
+        response = {
+            Router: () => EXPRESS_MODULE()
+        };
+    }
+    return response;
+}
+let peliculas = [
+    {
+        id: 1,
+        titulo: 'Spider-Man: Lejos de casa',
+        duracion: 129,
+        genero: 'Aventura'
+    },
+    {
+        id: 2,
+        titulo: 'Toy Story 4',
+        duracion: 100,
+        genero: 'Animación'
+    },
+    {
+        id: 3,
+        titulo: 'X-Men: Fénix Oscura',
+        duracion: 113,
+        genero: 'Acción'
+    }
+];
+
+const express = require('express');
+const router = express.Router();
+
+router.put('/pelicula/:id', (req, res) => {
+    const id = parseInt(req.params.id);
+    const { titulo, duracion, genero } = req.body; 
+    
+    const pelicula = peliculas.find(p => p.id === id);
+
+    if (!pelicula) {
+        return res.status(404).json({ mensaje: 'Película no encontrada' });
+    }
+
+    pelicula.titulo = titulo;
+    pelicula.duracion = duracion;
+    pelicula.genero = genero;
+
+    res.json({ mensaje: 'Película actualizada exitosamente', pelicula });
+});
+</script>
+</body></html>

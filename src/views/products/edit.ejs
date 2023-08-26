@@ -13,7 +13,7 @@
       <h2>Crear Producto</h2>
     </div>
     <main class="formulario">
-      <form action="/edit/<%= producto.id %>" method="POST">
+      <form action="/edit/<%= producto.id %>?_method=put" method="POST">
         <label for="name">Nombre del producto:</label>
         <input type="text" name="name" value="<%= producto.title %>" required />
         <label for="description">Descripción:</label>
@@ -37,7 +37,7 @@
         <input
           type="text"
           name="colors"
-          value="<%= producto.colors.join(',') %>"
+          value="<%= producto.colors %>"
           required
         />
         <label for="price">Precio:</label>

@@ -42,6 +42,33 @@ const editCreacionCointroller = {
     });
     res.render(path.join("products", "edit"), { producto });
   },
+
+  editPost: (req, res) => {
+    const { name, type, description, img, category, colors, price } = req.body;
+    const { id } = req.params;
+    const productoId = dataBase.find((e) => e.id == id);
+
+    name ? (productoId.name = name) : productoId.name;
+    type ? (productoId.type = type) : productoId.type;
+    description
+      ? (productoId.description = description)
+      : productoId.description;
+    price ? (productoId.price = price) : productoId.price;
+    img ? (productoId.img = img) : productoId.img;
+    category ? (productoId.category = category) : productoId.category;
+    colors ? (productoId.colors = colors) : productoId.colors;
+
+    try {
+      fs.writeFileSync(
+        path.join(__dirname, "..", "datos", "products.json"),
+        JSON.stringify(products, null, 2)
+      );
+    } catch (error) {
+      console.error(error);
+    }
+
+    res.redirect("/");
+  },
 };
 
 module.exports = editCreacionCointroller;

@@ -1,0 +1,42 @@
+
+<!-- saved from url=(0012)about:srcdoc -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js" integrity="sha512-W7EehcwtSbRF63FIQlXEOOd5mnq0Et0V0nUOvwcUvjnCKgOLLYbqriQxEQSp63sfrkryxIg/A/O8v8O18QwQCQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    window.onload = function() {
+        const iframe = window.parent.document.getElementById('HTMLBlock-a3e38bbf-a78c-4deb-9d81-e1f3c570a8c2')
+        const container = document.getElementById('HTMLBlockContent-a3e38bbf-a78c-4deb-9d81-e1f3c570a8c2')
+        const blocks = iframe.contentWindow.document.querySelectorAll('pre code')
+        blocks.forEach(block => {
+            if (block.className.includes('html')) {
+                block.innerHTML = block.innerHTML.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;')
+            }
+            hljs.highlightElement(block)
+        })
+        const height = Math.max(
+            document.documentElement["clientHeight"],
+            document.body["scrollHeight"],
+            document.documentElement["scrollHeight"],
+            document.body["offsetHeight"],
+            document.documentElement["offsetHeight"]
+        )
+        iframe.style.height = height + 'px'
+    }
+</script>
+<link type="text/css" rel="Stylesheet" href="https://prod-gbl-pg-lnf.digitalhouse.com/tenants/dh/playstrap/playstrap.css?v=1.46.5">
+<link type="text/css" rel="Stylesheet" href="https://prod-gbl-pg-lnf.digitalhouse.com/tenants/dh/ui/index.css?v=1.46.5">
+</head><body><div id="HTMLBlockContent-a3e38bbf-a78c-4deb-9d81-e1f3c570a8c2" class="lesson__markdown__body"><div class="section">
+    <h1> Procesamiento PUT y DELETE</h1>
+    <p>¿Qué sucede cuando queremos actualizar un registro o quizás borrarlo de nuestra base de datos? ¿Debemos seguir utilizando el método POST para esto?
+<br> <br>
+Si bien usar POST no está del todo mal, no estamos usando la herramienta indicada para tal finalidad. Para llevar a cabo estas tareas existen los métodos <span class="bold">PUT</span> y <span class="bold">DELETE</span>.
+<br> <br>
+PUT, en inglés, significa “poner”, mientras que DELETE significa “borrar”. Tal como lo indican sus nombres, con estos métodos vamos a poder enviar información de forma segura desde el cliente al servidor y modificar la información de un registro existente en la base de datos, o bien borrarlo.
+<br> <br>
+Vayamos entonces al video para descubrir cómo poder implementar estos métodos, los cuales vienen a cerrar el circuito de nuestro proceso del CRUD.
+
+
+
+</p>
+</div></div>
+<!--<base target="_blank">--><base href="." target="_blank">
+</body></html>

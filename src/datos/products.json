@@ -268,5 +268,15 @@
     "category": "Camion",
     "colors": "Negro",
     "price": 55555555
+  },
+  {
+    "id": "28",
+    "type": "vehiculo",
+    "title": "aaaaa",
+    "description": "asaaaaa",
+    "img": "20230206_174542.jpg",
+    "category": "Auto",
+    "colors": "MArron",
+    "price": 1111111111111111200
   }
 ]
