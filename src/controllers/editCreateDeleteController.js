@@ -27,9 +27,9 @@ const editCreacionCointroller = {
         path.join(__dirname, "..", "datos", "products.json"),
         JSON.stringify(dataBase, null, 2)
       );
-      console.log("Product added");
+      console.log("Producto añadido");
     } catch (error) {
-      console.error("Error writing to products.json:", error);
+      console.error(error);
     }
 
     res.redirect("/");
@@ -67,6 +67,24 @@ const editCreacionCointroller = {
       console.error(error);
     }
 
+    res.redirect("/");
+  },
+  eliminar: (req, res) => {
+    let id = req.params.id;
+    let producto = dataBase.find((producto) => {
+      return producto.id == id;
+    });
+    let index = dataBase.indexOf(producto);
+    dataBase.splice(index, 1);
+    try {
+      fs.writeFileSync(
+        path.join(__dirname, "..", "datos", "products.json"),
+        JSON.stringify(dataBase, null, 2)
+      );
+      console.log("Product eliminado");
+    } catch (error) {
+      console.error(error);
+    }
     res.redirect("/");
   },
 };

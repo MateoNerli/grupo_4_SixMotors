@@ -50,6 +50,7 @@
           </div>
           <div class="text-description">
             <p><%= product.description %></p>
+            <p>Color: <%= product.colors %></p>
           </div>
         </div>
 
@@ -61,6 +62,23 @@
           <div class="text-reviews hidden">
             <p><%= product.reseña %></p>
           </div>
+        </div>
+        <div class="btn-opciones">
+          <a href="/productos/edit/<%= product.id %>">
+            <button class="btn-op">
+              <i class="fa-solid fa-pen-to-square"></i>
+              Editar
+            </button>
+          </a>
+          <form
+            action="/productos/delete/<%= product.id %>?_method=delete"
+            method="POST"
+          >
+            <button class="btn-op" type="submit">
+              <i class="fa-solid fa-trash"></i>
+              ELIMINAR
+            </button>
+          </form>
         </div>
       </div>
     </main>

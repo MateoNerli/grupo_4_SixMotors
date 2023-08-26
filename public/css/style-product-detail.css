@@ -217,6 +217,25 @@ section {
   color: #1bbeb4;
 }
 
+.btn-opciones {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+}
+.btn-op {
+  border: none;
+  background-color: var(--primary);
+  padding: 10px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
   main {
     flex-direction: column;
