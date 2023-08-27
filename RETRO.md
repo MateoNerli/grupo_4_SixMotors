@@ -1,20 +1,28 @@
-## Retrospectiva del Segundo Sprint
+## Retrospectiva del Cuarto Sprint
 
 Qué hicimos bien:
-
-📌 Desarrollamos las mayoria de las vistas de la pagina planificadas dentro del tiempo estimado.
-📌 La comunicación entre los miembros del equipo fue efectiva y clara.
+📌 Desarrollamos el C.R.U.D. de productos de la a pagina junto con sus rutas.
+📌 A pesar de tener problemas algunos de los miembros , otros pudieron hacer algo de lo que les 
+correspondia a los mismos y asi se llego a cumplir las consignas,
 
 Qué hicimos mal:
-📌 La definición de las tareas no fue lo suficientemente detallada, lo que generó confusiones en algunos momentos.
-📌 No realizamos reuiniones para sacar dudas e inconvenientes.
+📌 Tuvimos problemas para realizar algunas tareas, la falta de comunicación hizo 
+    que algunos integrantes del grupo tuvieran que cargar con dichas consignas.
+📌 No realizamos la cantidad de reuniones necesarias para sacar dudas e inconvenientes.
 
-Qué deberíamos empezar a hacer:
-📌 Realizar reuniones breves de sincronización diaria para mantenernos al tanto del progreso y los posibles obstáculos.
-📌 Establecer una revisión de código entre pares antes de finalizar cada tarea importante.
+Qué deberiamos hacer mas:
+📌 Realizar mas reuniones si es posible diarias para mantenernos al tanto del progreso y los problemas que enfrente cada integrante.
+📌 Mostrar compromiso y si hay algun problema plantearlo y no quedarnos en silencio.
+
+Qué deberiamos continuar haciendo
+📌 Las reuniones mencionadas en el item anterior, creo que fueron lo que nos permitieron llegar al objetivo.
+📌 Seguir por el camino que venimos recorriendo , pero buscando siempre mejoras.
+
+Qué deberiamos hacer menos
+📌 Dejar para lo ultimo las tareas del sprint.
 
 Qué deberíamos dejar de hacer:
-📌 Dejar de posponer las diferentes actividades que nos toquen.
+📌Posponer tareas y no asignarnos ninguna en el tablero de trello (Este sirve para ordenarnos)
 
 ## Tablero de Trello
 

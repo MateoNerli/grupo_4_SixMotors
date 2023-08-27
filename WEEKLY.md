@@ -1,12 +1,11 @@
 ## Tareas completadas
 
-Se completaron casi todas las diferentes vistas de las paginas
+Se completaron casi todas las diferentes tareas de la consigna del sprint.
 
 ## Impedimentos encontrados
 
-Problemas menores del tipo de estilos
+Algunos de los miembros tuvieron problemas para completar las tareas.
 
 ## Soluciones propuestas
 
-Se propuso una reunion extra para redistribuir tareas, para que 
-cada uno se ocupe de revisar y corregir los errores menores
+Se realizo una reunión en la cual se completo el codigo que faltaba y se redistribuyeron tareas. 
