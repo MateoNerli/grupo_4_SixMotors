@@ -14,26 +14,56 @@
     </div>
     <main class="formulario">
       <form action="/productos/create" method="POST">
-        <label for="title">Nombre del producto:</label>
-        <input type="text" name="name" required />
-        <label for="type" name="type">type</label>
-        <select name="type" id="type">
-          <option value="vehiculo">vehiculo</option>
-          <option value="autoparte">autoparte</option>
-        </select>
-        <label for="description">Descripción:</label>
-        <textarea name="description" required></textarea>
-        <label for="img"><br />Foto del producto:</label>
-        <input type="file" id="img" name="img" />
-        <label for="category">Categoría:</label>
-        <input type="text" name="category" required />
-        <label for="colors">Colores (separados por comas):</label>
-        <input type="text" name="colors" required />
-        <label for="price">Precio:</label>
-        <input type="number" name="price" required placeholder="$" />
-        <input type="submit" value="Crear Producto" />
+        <div class="caja">
+          <div class="conta form">
+            <div class="formBox">
+              <div class="row50">
+                <div class="inputBox">
+                  <label for="title">Nombre del producto:</label>
+                  <input type="text" name="name" required />
+                </div>
+                <div class="inputBox">
+                  <label for="type">Type</label>
+                  <select name="type" id="type">
+                    <option value="vehiculo">Vehiculo</option>
+                    <option value="autoparte">Autoparte</option>
+                  </select>
+                </div>
+                <div class="inputBox">
+                  <label for="price">Precio:</label>
+                  <input type="text" name="price" />
+                </div>
+              </div>
+            </div>
+            <div class="col-der">
+              <div class="infoBox">
+                <label for="img"><br />Foto del producto:</label>
+                <input type="file" id="img" name="img" />
+                <label for="category">Categoria</label>
+                <select name="category" id="category">
+                  <option value="nuevo">Nuevo</option>
+                  <option value="usado">Usado</option>
+                </select>
+                <label for="colors">Colores (separados por comas):</label>
+                <input type="text" name="colors" required />
+              </div>
+            </div>
+          </div>
+          <div class="fondo">
+            <div class="row100">
+              <div class="inputBox">
+                <label for="description">Descripción:</label>
+                <textarea name="description" required></textarea>
+              </div>
+              <div class="inputBox">
+                <input type="submit" value="Enviar" />
+              </div>
+            </div>
+          </div>
+        </div>
       </form>
     </main>
+
     <!-- Footer -->
     <%- include ('../partials/footer.ejs') %>
   </body>

@@ -17,41 +17,81 @@
         action="/productos/edit/<%= producto.id %>?_method=put"
         method="POST"
       >
-        <label for="name">Nombre del producto:</label>
-        <input type="text" name="name" value="<%= producto.title %>" required />
-        <label for="description">Descripción:</label>
-        <textarea name="description" required>
-<%= producto.description %></textarea
-        >
-        <label for="image">URL de la imagen:</label>
-        <img
-          class="producto-imagen"
-          src="<%= producto.img %>"
-          alt="<%= producto.title %>"
-        />
-        <label for="category">Categoría:</label>
-        <input
-          type="text"
-          name="category"
-          value="<%= producto.category %>"
-          required
-        />
-        <label for="colors">Colores (separados por comas):</label>
-        <input
-          type="text"
-          name="colors"
-          value="<%= producto.colors %>"
-          required
-        />
-        <label for="price">Precio:</label>
-        <input
-          type="number"
-          name="price"
-          step="0.01"
-          value="<%= producto.price %>"
-          required
-        />
-        <input type="submit" value="Guardar Cambios" />
+        <div class="caja">
+          <div class="conta form">
+            <div class="formBox">
+              <div class="row50">
+                <div class="inputBox">
+                  <label for="title">Nombre del producto:</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value="<%= producto.title %>"
+                    required
+                  />
+                </div>
+                <div class="inputBox">
+                  <label for="type">Type</label>
+                  <select
+                    name="type"
+                    id="type"
+                    value="<%= producto.category %>"
+                  >
+                    <option value="vehiculo">Vehiculo</option>
+                    <option value="autoparte">Autoparte</option>
+                  </select>
+                </div>
+                <div class="inputBox">
+                  <label for="price">Precio:</label>
+                  <input
+                    type="text"
+                    name="price"
+                    value="<%= producto.price %>"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-der">
+              <div class="infoBox">
+                <label for="img"><br />Foto del producto:</label>
+                <img
+                  class="producto-imagen"
+                  src="<%= producto.img %>"
+                  alt="<%= producto.title %>"
+                />
+                <label for="category">Categoria</label>
+                <select
+                  name="category"
+                  id="category"
+                  value="<%= producto.category %>"
+                >
+                  <option value="nuevo">Nuevo</option>
+                  <option value="usado">Usado</option>
+                </select>
+                <label for="colors">Colores (separados por comas):</label>
+                <input
+                  type="text"
+                  name="colors"
+                  value="<%= producto.colors %>"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="fondo">
+            <div class="row100">
+              <div class="inputBox">
+                <label for="description">Descripción:</label>
+                <textarea name="description" required>
+  <%= producto.description %></textarea
+                >
+              </div>
+              <div class="inputBox">
+                <input type="submit" value="Enviar" />
+              </div>
+            </div>
+          </div>
+        </div>
       </form>
     </main>
     <!-- Footer -->

@@ -15,128 +15,95 @@
   text-transform: uppercase;
   border-bottom: 5px solid var(--accent);
 }
+/* Estilos generales para el formulario */
 .formulario {
-  margin: 10px;
-  padding: 5px;
-}
-form {
-  border: 1px solid var(--accent);
-  padding: 20px;
-  max-width: 400px;
-  margin: 0 auto;
-  background-color: #f9f9f9;
-}
-textarea {
-  resize: none;
-}
-label,
-input,
-textarea {
-  display: block;
-  margin-bottom: 10px;
-}
-
-input[type="text"],
-input[type="url"],
-textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-}
-.producto-imagen {
-  height: 200px;
-  width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px;
-  padding: 5px;
-}
-input[type="submit"] {
-  background-color: var(--primary);
-  color: var(--text);
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  width: 100%;
-}
-
-input[type="submit"]:hover {
-  background-color: var(--secondary);
-}
-
-/* Estilos para la página de edición */
-.edit-form {
-  border: 1px solid #ccc;
+  margin: 0;
   padding: 20px;
-  max-width: 400px;
-  margin: 0 auto;
-  background-color: #f9f9f9;
 }
 
-.edit-form label,
-.edit-form input,
-.edit-form textarea {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.edit-form input[type="text"],
-.edit-form input[type="url"],
-.edit-form textarea {
+.caja {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 800px;
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
-.edit-form input[type="submit"] {
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  width: 100%;
+.conta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
 }
 
-.edit-form input[type="submit"]:hover {
-  background-color: #1f8c3c;
+.formBox {
+  width: calc(50% - 10px);
+  padding-right: 10px;
+  box-sizing: border-box;
 }
 
-/* Estilos para la lista de productos */
-.product-list {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
+.col-der {
+  width: calc(50% - 10px);
+  padding-left: 10px;
+  box-sizing: border-box;
 }
 
-.product-list li {
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  padding: 10px;
+.producto-imagen {
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
 }
 
-.product-list img {
-  max-width: 100px;
-}
-
-.product-list h3 {
-  margin-top: 0;
-}
-
-.product-list p {
-  margin: 10px 0;
-}
-
-.product-list span {
+/* Estilos para las etiquetas */
+.formulario label {
   display: block;
+  margin-bottom: 5px;
   font-weight: bold;
 }
 
-.product-list a {
-  color: #007bff;
-  text-decoration: none;
+/* Estilos para los inputs, selects y textarea */
+.formulario input[type="text"],
+.formulario select,
+.formulario textarea,
+.formulario input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
-.product-list a:hover {
-  text-decoration: underline;
+/* Estilos para los botones */
+
+.fondo {
+  width: 100%;
+}
+
+.fondo textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  height: 100px;
+  resize: none;
+}
+.row100 input[type="submit"] {
+  width: 100%;
+  padding: 10px 0;
+  background-color: var(--accent);
+}
+
+/* Ajuste de estilos en pantallas pequeñas */
+@media (max-width: 768px) {
+  .formBox,
+  .col-der {
+    width: 100%;
+    padding: 0;
+  }
 }
