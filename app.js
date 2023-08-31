@@ -20,17 +20,17 @@ app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "./src/views"));
 
 // ************ Multer ************
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, "/public/images/vehiculos"));
-  },
-  filename: (req, file, cb) => {
-    const newFileName =
-      "vehiculos-" + Date.now() + path.extname(file.originalname);
-    cb(null, newFileName);
-  },
-});
-const upload = multer({ storage });
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, path.join(__dirname, "/public/images/vehiculos"));
+//   },
+//   filename: (req, file, cb) => {
+//     const newFileName =
+//       "products-" + Date.now() + path.extname(file.originalname);
+//     cb(null, newFileName);
+//   },
+// });
+// const upload = multer({ storage });
 
 // ************ Route System ************
 const homeRouter = require("./src/router/homeRouter");

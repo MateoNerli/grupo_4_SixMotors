@@ -14,7 +14,7 @@ const editCreacionCointroller = {
       type: type,
       title: name,
       description: description,
-      img: img,
+      img: `/images/products/${req.file.filename}`,
       category: category,
       colors: colors,
       price: parseFloat(price),
