@@ -33,13 +33,23 @@
               class="fa-sharp fa-solid fa-magnifying-glass"
               id="search-icon"
             ></i>
-            <a href="/products/carrito"
+            <a href="/productos/carrito"
               ><i class="fa-solid fa-cart-shopping"></i
             ></a>
             <a href="/user"><i class="fa-solid fa-user"></i></a>
           </div>
           <div class="search-box container">
-            <input type="search" name="" id="" placeholder="   Buscar ..." />
+            <form action="/productos/search" method="GET" class="search-form">
+              <input
+                type="search"
+                name="keywords"
+                id=""
+                placeholder="   Buscar ..."
+              />
+              <button type="submit" class="search-form_button">
+                <i class="fas fa-search"></i>
+              </button>
+            </form>
           </div>
           <a href="/login">
             <button class="btn">

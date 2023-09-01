@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Buscador</title>
+
+    <%- include ('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/style-search.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <%- include ('../partials/header.ejs') %>
+    <main>
+      <div class="container products-wrapper">
+        <div class="row">
+          <% if (products.length > 0) { %>
+          <div class="col-12">
+            <h2 class="products-title">
+              Resultados de la búsqueda: <%= search %>
+            </h2>
+          </div>
+          <% products.forEach((product) => { %>
+          <div class="container-prod">
+            <section class="product-box">
+              <a href="<%= product.id %>">
+                <figure class="product-box_image">
+                  <img src="<%= product.img %>" alt="imagen de producto" />
+                </figure>
+                <article class="product-box_data">
+                  <h2>$<%= product.price %></h2>
+                  <p><%= product.title %></p>
+                </article>
+              </a>
+            </section>
+          </div>
+          <% }); %> <% } else { %>
+          <div class="col-12">
+            <h2 class="products-title">
+              No hay productos que coincidan con esa búsqueda
+            </h2>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <%- include ('../partials/footer.ejs') %>
+
+    <script type="module" src="/javascript/nav.js"></script>
+  </body>
+</html>
