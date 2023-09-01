@@ -74,6 +74,21 @@ nav {
   border-bottom: 3px solid var(--accent);
 }
 
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.search-form button[type="submit"] {
+  background-color: var(--accent);
+  padding: 0.5rem 1rem;
+  border: 1px solid black;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 #search-icon {
   font-size: 24px;
   cursor: pointer;

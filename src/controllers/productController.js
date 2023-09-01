@@ -40,6 +40,23 @@ const productController = {
       products,
     });
   },
+  search: (req, res) => {
+    let result = [];
+    for (let i = 0; i < products.length; i++) {
+      if (
+        products[i].title &&
+        products[i].title
+          .toLowerCase()
+          .includes(req.query.keywords.toLowerCase())
+      ) {
+        result.push(products[i]);
+      }
+    }
+    res.render("products/resultSearch", {
+      products: result,
+      search: req.query.keywords,
+    });
+  },
 };
 
 module.exports = productController;
