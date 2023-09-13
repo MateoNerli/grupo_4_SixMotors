@@ -1,5 +1,6 @@
 const path = require("path");
 const products = require("../datos/products.json");
+const users = require("../datos/users.json");
 
 const homeController = {
   home: (req, res) => {
@@ -9,7 +10,8 @@ const homeController = {
     const autoparte = products.filter((autoparte) => {
       return autoparte.type == "autoparte";
     });
-    res.render(path.join("home"), { autos, autoparte });
+    const usuarios = users;
+    res.render(path.join("home"), { autos, autoparte, usuarios });
   },
 };
 

@@ -188,78 +188,19 @@
         <div class="wrapper">
           <i id="left" class="fa-solid fa-angle-left"></i>
           <ul class="carousel">
+            <% usuarios.forEach(usuarios => { %>
             <li class="card-reseña">
               <div class="img">
                 <img
-                  src="/images/reseñaPerso.png"
-                  alt="img"
+                  src="<%= usuarios.img %>"
+                  alt="<%= usuarios.nombre %>"
                   draggable="false"
                 />
               </div>
-              <h2>Nombre Apellido</h2>
-              <span
-                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                vel corporis dolorem voluptas mollitia culpa, pariatur
-              </span>
+              <h2><%= usuarios.nombre %></h2>
+              <span><%= usuarios.reseñas %> </span>
             </li>
-            <li class="card-reseña">
-              <div class="img">
-                <img src="/images/reseñas.png" alt="img" draggable="false" />
-              </div>
-              <h2>Nombre Apellido</h2>
-              <span
-                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                vel corporis dolorem voluptas mollitia culpa, pariatur
-              </span>
-            </li>
-            <li class="card-reseña">
-              <div class="img">
-                <img
-                  src="/images/reseñaPerso.png"
-                  alt="img"
-                  draggable="false"
-                />
-              </div>
-              <h2>Nombre Apellido</h2>
-              <span
-                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                vel corporis dolorem voluptas mollitia culpa, pariatur
-              </span>
-            </li>
-            <li class="card-reseña">
-              <div class="img">
-                <img src="/images/reseñas.png" alt="img" draggable="false" />
-              </div>
-              <h2>Nombre Apellido</h2>
-              <span
-                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                vel corporis dolorem voluptas mollitia culpa, pariatur
-              </span>
-            </li>
-            <li class="card-reseña">
-              <div class="img">
-                <img
-                  src="/images/reseñaPerso.png"
-                  alt="img"
-                  draggable="false"
-                />
-              </div>
-              <h2>Nombre Apellido</h2>
-              <span
-                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                vel corporis dolorem voluptas mollitia culpa, pariatur
-              </span>
-            </li>
-            <li class="card-reseña">
-              <div class="img">
-                <img src="/images/reseñas.png" alt="img" draggable="false" />
-              </div>
-              <h2>Nombre Apellido</h2>
-              <span
-                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-                vel corporis dolorem voluptas mollitia culpa, pariatur
-              </span>
-            </li>
+            <% }); %>
           </ul>
           <i id="right" class="fa-solid fa-angle-right"></i>
         </div>

@@ -32,7 +32,7 @@ const productController = {
   carrito: (req, res) => {
     res.render(path.join("products", "carrito"), {
       products,
-    });
+    }); 
   },
 
   contacto: (req, res) => {

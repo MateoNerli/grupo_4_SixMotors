@@ -1,26 +1,35 @@
 [
-{ "id" : "1",
-  "nombre": "Pedro",
-  "apellido" : "Cruz",
-  "email" : "pedrocruz@gmail.com",
-  "password" : "kdlsfj5435",
-  "categoria" : "user",
-  "img" : "/images/reseñaPerso.png"
-},
-{ "id" : "2",
-  "nombre": "Juan",
-  "apellido" : "Perez",
-  "email" : "juanperez45@gmail.com",
-  "password":"AAARE$%$#554",
-  "categoria" : "admin",
-  "img" : "/images/reseñaPerso.png"
-},
-{ "id" : "3",
-  "nombre": "Jose",
-  "apellido" : "Muñoz",
-  "email" :"jm4322@gmail.com",
-  "password" : "GGter443",
-  "categoria" : "User",
-  "img" : "/images/reseñaPerso.png"
-}
+  {
+    "id": "1",
+    "nombre": "Pedro",
+    "apellido": "Cruz",
+    "type": "usuario",
+    "email": "pedrocruz@gmail.com",
+    "password": "kdlsfj5435",
+    "categoria": "user",
+    "img": "/images/users/reseñaPerso.png",
+    "reseñas": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Nul"
+  },
+  {
+    "id": "2",
+    "nombre": "Juan",
+    "apellido": "Perez",
+    "type": "admin",
+    "email": "juanperez45@gmail.com",
+    "password": "AAARE$%$#554",
+    "categoria": "admin",
+    "img": "/images/users/reseñas.png",
+    "reseñas": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Nul"
+  },
+  {
+    "id": "3",
+    "nombre": "Jose",
+    "apellido": "Muñoz",
+    "type": "usuario",
+    "email": "jm4322@gmail.com",
+    "password": "GGter443",
+    "categoria": "User",
+    "img": "/images/users/reseñaPerso.png",
+    "reseñas": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Nul"
+  }
 ]
