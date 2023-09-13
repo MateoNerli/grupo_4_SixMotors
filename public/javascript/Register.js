@@ -1,23 +1,26 @@
-const togglePassword = document.getElementById("togglePassword");
-const passwordInput = document.getElementById("password");
+document.addEventListener("DOMContentLoaded", () => {
+  const registerForm = document.querySelector(".form");
 
-const toggleRepeatPassword = document.getElementById("toggleRepeatPassword");
-const repeatPasswordInput = document.getElementById("repeatPassword");
+  registerForm.addEventListener("submit", async (e) => {
+    e.preventDefault(); // Evita que se recargue la página
 
-togglePassword.addEventListener("click", function () {
-  const type =
-    passwordInput.getAttribute("type") === "password" ? "text" : "password";
-  passwordInput.setAttribute("type", type);
-  togglePassword.classList.toggle("fa-eye");
-  togglePassword.classList.toggle("fa-eye-slash");
-});
+    const formData = new FormData(registerForm);
 
-toggleRepeatPassword.addEventListener("click", function () {
-  const type =
-    repeatPasswordInput.getAttribute("type") === "password"
-      ? "text"
-      : "password";
-  repeatPasswordInput.setAttribute("type", type);
-  toggleRepeatPassword.classList.toggle("fa-eye");
-  toggleRepeatPassword.classList.toggle("fa-eye-slash");
+    try {
+      const response = await fetch("/register", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        // Registro exitoso, puedes redirigir al usuario a otra página
+        window.location.href = "/login";
+      } else {
+        // Maneja errores si es necesario
+        console.error("Error en el registro");
+      }
+    } catch (error) {
+      console.error("Error en la solicitud de registro:", error);
+    }
+  });
 });
