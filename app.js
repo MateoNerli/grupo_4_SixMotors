@@ -15,6 +15,28 @@ app.use("/", express.static(__dirname + "/design"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
+// ************ Conexion a la base de datos ******
+const mysql = require('mysql');
+
+const db = mysql.createConnection({
+  host: 'localhost', // Cambiar cuando tengamos la base en algun servidor no se **ver**
+  user: 'root',
+  password: '123456789',
+  database: 'sixmotors',
+});
+
+db.connect((err) => {
+  if (err) {
+    console.error('Error al conectar a la base de datos: ' + err.stack);
+    return;
+  }
+  console.log('Conexión a la base de datos exitosa');
+});
+
+// Agrega la conexión a la base de datos como una propiedad de app para que puedas acceder a ella en tus rutas
+app.set('db', db);
+
+
 // ************ Template Engine ************
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "./src/views"));

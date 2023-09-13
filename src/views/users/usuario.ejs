@@ -67,6 +67,16 @@
           </div>
         </div>
       </section>
+
+      <!-- Agrega la lista de usuarios aquí -->
+      <section class="lista-usuarios">
+        <h4>Usuarios</h4>
+        <ul>
+          <% users.forEach(user => { %>
+            <li><%= user.nombre %> <%= user.apellido %> - <%= user.email %></li>
+          <% }); %>
+        </ul>
+      </section>
     </main>
 
     <!-- Footer -->
