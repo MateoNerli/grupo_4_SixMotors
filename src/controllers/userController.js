@@ -2,6 +2,7 @@ const path = require("path");
 const products = require("../datos/products.json");
 const usuarios = require("../datos/users.json");
 const fs = require("fs");
+const bcrypt = require("bcryptjs");
 
 const userController = {
   login: (req, res) => {
@@ -29,40 +30,13 @@ const userController = {
   },
 
   register: (req, res) => {
-    const { name, lastName, email, password, repeatPassword } = req.body;
+    const imgperfil = req.file.filename;
 
-    const hashPassword = bcrypt.hashSync(password, 10);
-
-    if (bcrypt.compareSync(repeatPassword, hashPassword)) {
-      let nuevoUsuario = {
-        id: usuarios.length + 1,
-        name: name,
-        lastName: lastName,
-        email: email,
-        password: hashPassword,
-      };
-      console.log(req.body);
-      usuarios.push(nuevoUsuario);
-
-      fs.writeFileSync(
-        path.join(__dirname, "..", "datos", "users.json"),
-        JSON.stringify(usuarios, null, 2)
-      );
-      res.redirect("/usuario/login");
-    } else {
-      res.redirect("/usuario/register", {
-        error: error.mapped(),
-        old: req.body,
-      });
-    }
-  },
-
-  editUser: (req, res) => {
     const {
       name,
       lastname,
+      user,
       email,
-      imgperfil, // Nueva imagen de perfil
       password,
       repeatPassword,
       reseñas,
@@ -70,33 +44,69 @@ const userController = {
       ciudad,
     } = req.body;
 
-    const { id } = req.params;
-    const usuarioId = usuarios.find((e) => e.id == id);
-
-    // Verificar si se proporcionó una nueva imagen de perfil
-    if (imgperfil) {
-      usuarioId.imgperfil = imgperfil; // Actualizar la imagen de perfil
-    }
-
-    let usuarioEditado = {
-      id: usuarioId.id,
-      name: name,
-      lastName: lastname,
-      email: email,
-      imgperfil: usuarioId.imgperfil, // Usar la imagen de perfil actualizada
-      password: usuarioId.password,
-      reseñas: reseñas,
-      telefono: telefono,
-      ciudad: ciudad,
+    const newUser = {
+      id: usuarios.length + 1,
+      name,
+      lastname,
+      user,
+      email,
+      imgperfil,
+      password: bcrypt.hashSync(password, 10),
+      repeatPassword,
+      reseñas,
+      telefono,
+      ciudad,
     };
 
-    usuarios[id - 1] = usuarioEditado;
+    usuarios.push(newUser);
     fs.writeFileSync(
       path.join(__dirname, "..", "datos", "users.json"),
       JSON.stringify(usuarios, null, 2)
     );
-    res.redirect("/usuario/" + id);
+    res.redirect("/login");
   },
+
+  // editUser: (req, res) => {
+  //   const {
+  //     name,
+  //     lastname,
+  //     user,
+  //     email,
+  //     imgperfil,
+  //     password,
+  //     repeatPassword,
+  //     reseñas,
+  //     telefono,
+  //     ciudad,
+  //   } = req.body;
+
+  //   const { id } = req.params;
+  //   const usuarioId = usuarios.find((e) => e.id == id);
+
+  //   if (imgperfil) {
+  //     usuarioId.imgperfil = imgperfil;
+  //   }
+
+  //   let usuarioEditado = {
+  //     id: usuarioId.id,
+  //     name: name,
+  //     lastName: lastname,
+  //     user: user,
+  //     email: email,
+  //     imgperfil: usuarioId.imgperfil,
+  //     password: usuarioId.password,
+  //     reseñas: reseñas,
+  //     telefono: telefono,
+  //     ciudad: ciudad,
+  //   };
+
+  //   usuarios[id - 1] = usuarioEditado;
+  //   fs.writeFileSync(
+  //     path.join(__dirname, "..", "datos", "users.json"),
+  //     JSON.stringify(usuarios, null, 2)
+  //   );
+  //   res.redirect("/usuario/" + id);
+  // },
 };
 
 module.exports = userController;

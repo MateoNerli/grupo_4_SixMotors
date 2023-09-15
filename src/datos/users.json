@@ -1,25 +1,11 @@
 [
   {
     "id": "1",
-    "name": "hola",
-    "lastName": "aaaaaa",
-    "telefono": "aaaaaa",
-    "ciudad": "aaaa"
-  },
-  {
-    "id": "2",
-    "name": " aaaasasassas",
-    "lastName": "aaaa",
-    "password": "$2a$10$lW2Ab8R8e79Wk9YiAgp13ubrJUuPkeBlqKVIylKZCncxht6Y58uSe",
-    "telefono": "364112",
-    "ciudad": "aslsamslams"
-  },
-  {
-    "id": "3",
-    "name": " dssdf",
-    "lastName": "",
-    "password": "$2a$10$nBEEgGe/6Y4ed9xaCPW/sus1lHx1plCD3g/0HMMBmG04cNgB5FbY2",
-    "telefono": "ssssssa",
-    "ciudad": "23232"
+    "name": "Mateo",
+    "lastname": "Nerli",
+    "user": "Mnerli",
+    "email": "mnerli@gmail.com",
+    "password": "$2a$10$994RF4IBTBwPPJ4UMJS6L.G3wpOgz/pHz4.E.IQG3KkqvVu3N9RkC",
+    "imgperfil": "ImgProfile-1694792769755.jpg"
   }
 ]

@@ -64,19 +64,23 @@
               Continuar con Google
             </button>
           </div>
-          <form action="/usuario/register" method="post" class="form">
+          <form
+            action="/usuario/register"
+            enctype="multipart/form-data"
+            method="POST"
+            class="form"
+          >
             <label for="">
               <i class="fa-solid fa-user"></i>
               <input
                 type="text"
                 name="name"
                 placeholder="Nombre"
-                value="<%= ( locals.old && old.name ) ? old.name : '' %> "
+                value="<%= (locals.old && old.name) ? old.name : '' %>"
                 required
               />
-
-              <% if( locals.errors && errors.name ){ %>
-              <i> <%= errors.name.msg %> </i>
+              <% if (locals.errors && errors.name) { %>
+              <p class="error-message"><%= errors.name.msg %></p>
               <% } %>
             </label>
 
@@ -93,6 +97,21 @@
               <i> <%= errors.lastname.msg %> </i>
               <% } %>
             </label>
+
+            <label for="">
+              <i class="fa-solid fa-user"></i>
+              <input
+                type="text"
+                name="user"
+                placeholder="Usuario"
+                value="<%= ( locals.old && old.user ) ? old.user : '' %> "
+              />
+
+              <% if( locals.errors && errors.user ){ %>
+              <i> <%= errors.user.msg %> </i>
+              <% } %>
+            </label>
+
             <label for="">
               <i class="fa-solid fa-envelope"></i>
               <input
@@ -125,6 +144,12 @@
               <% } %>
               <i class="fa-solid fa-eye-slash" id="toggleRepeatPassword"></i>
             </label>
+
+            <label for="imgperfil" class="nombre_campos"
+              >Imagen de perfil:</label
+            >
+            <input type="file" name="imgperfil" id="imgperfil" />
+
             <div class="register-cont">
               <button class="register" type="submit">
                 <span>Registrarse</span>

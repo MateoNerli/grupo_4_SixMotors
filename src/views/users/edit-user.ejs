@@ -14,8 +14,8 @@
       <h1>Editar Información de Usuario</h1>
       <form
         id="edit-user-form"
-        enctype="multipart/form-data"
         action="/usuario/edit/<%= usuario.id %>"
+        enctype="multipart/form-data"
         method="POST"
       >
         <input type="hidden" id="user-id" value="1" />
@@ -33,6 +33,14 @@
           id="apellido"
           name="lastname"
           value="<%= usuario.lastname %>"
+        /><br />
+
+        <label for="user">Usuario:</label>
+        <input
+          type="text"
+          id="user"
+          name="user"
+          value="<%= usuario.user %>"
         /><br />
 
         <label for="img"><br />Foto del perfil :</label>

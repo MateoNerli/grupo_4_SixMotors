@@ -18,11 +18,11 @@ router.get("/edit/:id", userController.edit);
 
 router.post(
   "/register",
+  upload.single("imgperfil"),
   validacionesRegistro,
   resultadoValidacion,
   userController.register
 );
-
-router.post("/edit/:id", upload.single("imgperfil"), userController.editUser);
+//router.post("/edit/:id", upload.single("imgperfil"), userController.editUser);
 
 module.exports = router;
