@@ -14,22 +14,34 @@
       <section class="usuario">
         <div class="wrapper">
           <div class="left">
-            <img src="/images/reseñaPerso.png" alt="usuario" width="100" />
-            <h4>Nombre Apellido</h4>
+            <img
+              src="<%= usuario.img %>"
+              alt="usuario"
+              width="100"
+              id="profile-image"
+            />
+
+            <div class="editar">
+              <a href="/usuario/edit/<%= usuario.id %>">
+                <i class="fa-solid fa-pencil"></i>
+              </a>
+            </div>
+
+            <h4><%= usuario.nombre %> <%= usuario.apellido %></h4>
             <div class="info">
               <h3>Informacion</h3>
               <div class="info_data">
                 <div class="data">
                   <h5>Email</h5>
-                  <p>eemail@email.com</p>
+                  <p><%= usuario.email %></p>
                 </div>
                 <div class="data">
                   <h5>Telefono</h5>
-                  <p>123456789</p>
+                  <p><%= usuario.telefono %></p>
                 </div>
                 <div class="data">
                   <h5>Ciudad</h5>
-                  <p>San nicolas</p>
+                  <p><%= usuario.ciudad %></p>
                 </div>
               </div>
             </div>

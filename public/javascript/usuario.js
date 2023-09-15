@@ -60,3 +60,20 @@ comprasLeftArrow.addEventListener("click", slideComprasLeft);
 comprasRightArrow.addEventListener("click", slideComprasRight);
 
 updateComprasArrowsVisibility();
+
+//cambiar imagen perfli
+document.addEventListener("DOMContentLoaded", function () {
+  const cambiarImagenBtn = document.getElementById("cambiar-imagen-btn");
+  const cambiarImagenForm = document.getElementById("cambiar-imagen-form");
+
+  cambiarImagenBtn.addEventListener("click", function () {
+    cambiarImagenForm.style.display = "block";
+  });
+
+  const nuevaImagenPerfilInput = cambiarImagenForm.querySelector(
+    'input[name="nuevaImagenPerfil"]'
+  );
+  nuevaImagenPerfilInput.addEventListener("change", function () {
+    cambiarImagenForm.style.display = "none";
+  });
+});

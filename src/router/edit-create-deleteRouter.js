@@ -17,18 +17,14 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
-router.get("/productos/create", editCreateDelete.create);
+router.get("/create", editCreateDelete.create);
 
-router.post(
-  "/productos/create",
-  upload.single("img"),
-  editCreateDelete.createPost
-);
+router.post("/create", upload.single("img"), editCreateDelete.createPost);
 
-router.get("/productos/edit/:id", editCreateDelete.edit);
+router.get("/edit/:id", editCreateDelete.edit);
 
-router.post("/productos/edit/:id", editCreateDelete.editPost);
+router.post("/edit/:id", editCreateDelete.editPost);
 
-router.delete("/productos/delete/:id", editCreateDelete.eliminar);
+router.delete("/delete/:id", editCreateDelete.eliminar);
 
 module.exports = router;

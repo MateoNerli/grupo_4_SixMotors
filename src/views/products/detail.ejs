@@ -64,14 +64,14 @@
           </div>
         </div>
         <div class="btn-opciones">
-          <a href="/productos/edit/<%= product.id %>">
+          <a href="/products/configs/edit/<%= product.id %>">
             <button class="btn-op">
               <i class="fa-solid fa-pen-to-square"></i>
               Editar
             </button>
           </a>
           <form
-            action="/productos/delete/<%= product.id %>?_method=delete"
+            action="/products/configs/delete/<%= product.id %>?_method=delete"
             method="POST"
           >
             <button class="btn-op" type="submit">
@@ -94,7 +94,7 @@
       <% const carga = cargaRandom(products); %>
       <div class="card-list-products">
         <% for (let i = 0; i < 4 && i < carga.length; i++) { %>
-        <a href="/products/<%= carga[i].id %>">
+        <a href="/products/detail/<%= carga[i].id %>">
           <div class="card">
             <div class="card-img">
               <img src="<%= carga[i].img %>" alt="<%= carga[i].title %>" />

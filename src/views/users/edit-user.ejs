@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Edit usuario</title>
+    <%- include ('../partials/head.ejs') %>
+
+    <link rel="stylesheet" href="/css/style.edit-user.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <%- include ('../partials/header.ejs') %>
+
+    <main>
+      <h1>Editar Información de Usuario</h1>
+      <form
+        id="edit-user-form"
+        enctype="multipart/form-data"
+        action="/usuario/edit/<%= usuario.id %>?_method=put"
+        method="POST"
+      >
+        <input type="hidden" id="user-id" value="1" />
+        <label for="nombre">Nombre:</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          value="<%= usuario.name %>"
+        /><br />
+
+        <label for="apellido">Apellido:</label>
+        <input
+          type="text"
+          id="apellido"
+          name="apellido"
+          value="<%= usuario.lastname %>"
+        /><br />
+
+        <label for="img"><br />Foto del perfil :</label>
+        <input type="file" id="img" name="img" />
+
+        <label for="reseñas">Reseñas:</label>
+        <textarea id="reseñas" name="reseñas"><%= usuario.reseñas %></textarea
+        ><br />
+
+        <label for="telefono">Teléfono:</label>
+        <input
+          type="tel"
+          id="telefono"
+          name="telefono"
+          value="<%= usuario.telefono %>"
+        /><br />
+
+        <label for="ciudad">Ciudad:</label>
+        <input
+          type="text"
+          id="ciudad"
+          name="ciudad"
+          value="<%= usuario.ciudad %>"
+        /><br />
+
+        <input type="submit" value="Guardar Cambios" />
+      </form>
+    </main>
+
+    <!-- Footer -->
+    <%- include ('../partials/footer.ejs') %>
+
+    <!-- NAVBAR -->
+    <script type="module" src="/javascript/nav.js"></script>
+    <script type="module" src="/javascript/usuario.js"></script>
+  </body>
+</html>

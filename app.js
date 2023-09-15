@@ -10,7 +10,8 @@ const app = express();
 
 // ************ Middlewares ************
 app.use(express.json());
-app.use("/", express.static(__dirname + "/public"));
+app.use(express.static(path.join(__dirname, "public")));
+// app.use("/", express.static(__dirname + "/public"));
 app.use("/", express.static(__dirname + "/design"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
@@ -31,6 +32,6 @@ app.listen(puerto, () => {
 });
 
 app.use("/", homeRouter);
-app.use("/", productRouter);
-app.use("/", editCreateRouter);
-app.use("/", userRouter);
+app.use("/products", productRouter);
+app.use("/products/configs", editCreateRouter);
+app.use("/usuario", userRouter);

@@ -64,44 +64,65 @@
               Continuar con Google
             </button>
           </div>
-          <form action="" class="form">
+          <form action="/register" method="post" class="form">
             <label for="">
               <i class="fa-solid fa-user"></i>
-              <input type="text" name="" placeholder="Nombre completo" />
+              <input
+                type="text"
+                name="name"
+                placeholder="Nombre"
+                value="<%= ( locals.old && old.name ) ? old.name : '' %> "
+                required
+              />
+
+              <% if( locals.errors && errors.name ){ %>
+              <i> <%= errors.name.msg %> </i>
+              <% } %>
             </label>
+
             <label for="">
               <i class="fa-solid fa-user"></i>
-              <input type="text" name="" placeholder="Usuario" />
+              <input
+                type="text"
+                name="lastname"
+                placeholder="Apellido"
+                value="<%= ( locals.old && old.lastname ) ? old.lastname : '' %> "
+              />
+
+              <% if( locals.errors && errors.lastname ){ %>
+              <i> <%= errors.lastname.msg %> </i>
+              <% } %>
             </label>
             <label for="">
               <i class="fa-solid fa-envelope"></i>
               <input
                 type="email"
-                name=""
-                placeholder="Correo electronico"
-                required
-                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                name="email"
+                placeholder="asd@asd.com"
+                id="email"
+                value="<%= ( locals.old && old.email ) ? old.email : '' %>"
               />
+
+              <% if( locals.errors && errors.email ){ %>
+              <i> <%= errors.email.msg %> </i>
+              <% } %>
             </label>
             <label for="password">
               <i class="fa-solid fa-lock"></i>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder="Contraseña"
-              />
+              <input type="password" name="password" id="password" />
+
+              <% if( locals.errors && errors.password ){ %>
+              <i> <%= errors.password.msg %> </i>
+              <% } %>
               <i class="fa-solid fa-eye-slash" id="togglePassword"></i>
             </label>
 
             <label for="repeatPassword">
               <i class="fa-solid fa-lock"></i>
-              <input
-                type="password"
-                name="repeatPassword"
-                id="repeatPassword"
-                placeholder="Repetir contraseña"
-              />
+              <input type="password" name="rePassword" id="rePassword" />
+              <% if( locals.errors && errors.rePassword ){ %>
+              <i> <%= errors.rePassword.msg %> </i>
+              <% } %>
               <i class="fa-solid fa-eye-slash" id="toggleRepeatPassword"></i>
             </label>
             <div class="register-cont">

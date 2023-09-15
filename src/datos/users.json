@@ -1,35 +1,50 @@
 [
   {
     "id": "1",
-    "nombre": "Pedro",
-    "apellido": "Cruz",
-    "type": "usuario",
+    "name": "Pedrosssssss",
+    "lastname": "Cruz",
     "email": "pedrocruz@gmail.com",
     "password": "kdlsfj5435",
     "categoria": "user",
-    "img": "/images/users/reseñaPerso.png",
-    "reseñas": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Nul"
+    "img": "0727079c44eeca4344b88d5dc1a20fd5.jpg",
+    "reseñas": "lorem ipsum dolor sit amet, consectetur adizzpiscing elit. Nul",
+    "telefono": "123456789zzzzzz",
+    "ciudad": "Buenossss Aires"
   },
   {
     "id": "2",
-    "nombre": "Juan",
-    "apellido": "Perez",
-    "type": "admin",
+    "name": "Juan",
+    "lastname": "Perezxxxxx",
     "email": "juanperez45@gmail.com",
     "password": "AAARE$%$#554",
     "categoria": "admin",
-    "img": "/images/users/reseñas.png",
-    "reseñas": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Nul"
+    "img": "896ec8b38d8539a45bef83a64e162316.jpg",
+    "reseñas": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Nul",
+    "telefono": "123456789",
+    "ciudad": "Buenos Aires"
   },
   {
     "id": "3",
-    "nombre": "Jose",
-    "apellido": "Muñoz",
-    "type": "usuario",
+    "name": "Jose",
+    "lastname": "Muñoz",
     "email": "jm4322@gmail.com",
     "password": "GGter443",
     "categoria": "User",
-    "img": "/images/users/reseñaPerso.png",
-    "reseñas": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Nul"
+    "img": " /reseñaPerso.png",
+    "reseñas": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Nul",
+    "telefono": "123456789",
+    "ciudad": "Buenos Aires"
+  },
+  {
+    "id": "4",
+    "name": "Mateo   ",
+    "lastname": "Nerli   ",
+    "email": "lalala@lalala.com",
+    "password": "$2a$10$UzTpW9jcy1sidp8SJpCYH.hzsq905WOcfkLaaTXsnzx0fF8zw5irG",
+    "telefono": "335645123346aaa",
+    "ciudad": "San niciolasaaaa",
+    "img": "ab67616d00001e02f981d171ca5d20e9ce3d14a3.jpg",
+    "nombre": "Mateo   ",
+    "apellido": "Nerli   "
   }
 ]
