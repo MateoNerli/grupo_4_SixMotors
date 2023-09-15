@@ -1,50 +1,25 @@
 [
   {
     "id": "1",
-    "name": "Pedrosssssss",
-    "lastname": "Cruz",
-    "email": "pedrocruz@gmail.com",
-    "password": "kdlsfj5435",
-    "categoria": "user",
-    "img": "0727079c44eeca4344b88d5dc1a20fd5.jpg",
-    "reseñas": "lorem ipsum dolor sit amet, consectetur adizzpiscing elit. Nul",
-    "telefono": "123456789zzzzzz",
-    "ciudad": "Buenossss Aires"
+    "name": "hola",
+    "lastName": "aaaaaa",
+    "telefono": "aaaaaa",
+    "ciudad": "aaaa"
   },
   {
     "id": "2",
-    "name": "Juan",
-    "lastname": "Perezxxxxx",
-    "email": "juanperez45@gmail.com",
-    "password": "AAARE$%$#554",
-    "categoria": "admin",
-    "img": "896ec8b38d8539a45bef83a64e162316.jpg",
-    "reseñas": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Nul",
-    "telefono": "123456789",
-    "ciudad": "Buenos Aires"
+    "name": " aaaasasassas",
+    "lastName": "aaaa",
+    "password": "$2a$10$lW2Ab8R8e79Wk9YiAgp13ubrJUuPkeBlqKVIylKZCncxht6Y58uSe",
+    "telefono": "364112",
+    "ciudad": "aslsamslams"
   },
   {
     "id": "3",
-    "name": "Jose",
-    "lastname": "Muñoz",
-    "email": "jm4322@gmail.com",
-    "password": "GGter443",
-    "categoria": "User",
-    "img": " /reseñaPerso.png",
-    "reseñas": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Nul",
-    "telefono": "123456789",
-    "ciudad": "Buenos Aires"
-  },
-  {
-    "id": "4",
-    "name": "Mateo   ",
-    "lastname": "Nerli   ",
-    "email": "lalala@lalala.com",
-    "password": "$2a$10$UzTpW9jcy1sidp8SJpCYH.hzsq905WOcfkLaaTXsnzx0fF8zw5irG",
-    "telefono": "335645123346aaa",
-    "ciudad": "San niciolasaaaa",
-    "img": "ab67616d00001e02f981d171ca5d20e9ce3d14a3.jpg",
-    "nombre": "Mateo   ",
-    "apellido": "Nerli   "
+    "name": " dssdf",
+    "lastName": "",
+    "password": "$2a$10$nBEEgGe/6Y4ed9xaCPW/sus1lHx1plCD3g/0HMMBmG04cNgB5FbY2",
+    "telefono": "ssssssa",
+    "ciudad": "23232"
   }
 ]
