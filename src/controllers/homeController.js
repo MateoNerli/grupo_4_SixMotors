@@ -1,6 +1,6 @@
 const path = require("path");
-const products = require("../datos/products.json");
-const users = require("../datos/users.json");
+const products = require("../database/products.json");
+const users = require("../database/users.json");
 
 const homeController = {
   home: (req, res) => {

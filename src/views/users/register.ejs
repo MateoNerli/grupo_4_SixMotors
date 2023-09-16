@@ -76,27 +76,26 @@
                 type="text"
                 name="name"
                 placeholder="Nombre"
-                value="<%= (locals.old && old.name) ? old.name : '' %>"
-                required
+                class="form-control <%= locals.errors && errors.name ? 'is-invalid' : null %>"
+                value="<%= locals.oldData ? oldData.name : null %>"
               />
-              <% if (locals.errors && errors.name) { %>
-              <p class="error-message"><%= errors.name.msg %></p>
-              <% } %>
             </label>
+            <% if (locals.errors && errors.name) { %>
+            <div class="text-danger"><%= errors.name.msg %></div>
+            <% } %>
 
             <label for="">
               <i class="fa-solid fa-user"></i>
               <input
                 type="text"
                 name="lastname"
-                placeholder="Apellido"
-                value="<%= ( locals.old && old.lastname ) ? old.lastname : '' %> "
+                class="form-control <%= locals.errors && errors.lastname ? 'is-invalid' : null %>"
+                value="<%= locals.oldData ? oldData.lastname : null %>"
               />
-
-              <% if( locals.errors && errors.lastname ){ %>
-              <i> <%= errors.lastname.msg %> </i>
-              <% } %>
             </label>
+            <% if (locals.errors && errors.lastname) { %>
+            <div class="text-danger"><%= errors.lastname.msg %></div>
+            <% } %>
 
             <label for="">
               <i class="fa-solid fa-user"></i>
@@ -104,13 +103,13 @@
                 type="text"
                 name="user"
                 placeholder="Usuario"
-                value="<%= ( locals.old && old.user ) ? old.user : '' %> "
+                class="form-control <%= locals.errors && errors.user ? 'is-invalid' : null %>"
+                value="<%= locals.oldData ? oldData.user : null %>"
               />
-
-              <% if( locals.errors && errors.user ){ %>
-              <i> <%= errors.user.msg %> </i>
-              <% } %>
             </label>
+            <% if (locals.errors && errors.user) { %>
+            <div class="text-danger"><%= errors.user.msg %></div>
+            <% } %>
 
             <label for="">
               <i class="fa-solid fa-envelope"></i>
@@ -118,37 +117,53 @@
                 type="email"
                 name="email"
                 placeholder="asd@asd.com"
-                id="email"
-                value="<%= ( locals.old && old.email ) ? old.email : '' %>"
+                class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                value="<%= locals.oldData ? oldData.email : null %>"
               />
-
-              <% if( locals.errors && errors.email ){ %>
-              <i> <%= errors.email.msg %> </i>
-              <% } %>
             </label>
+            <% if (locals.errors && errors.email) { %>
+            <div class="text-danger"><%= errors.email.msg %></div>
+            <% } %>
             <label for="password">
               <i class="fa-solid fa-lock"></i>
-              <input type="password" name="password" id="password" />
-
-              <% if( locals.errors && errors.password ){ %>
-              <i> <%= errors.password.msg %> </i>
-              <% } %>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+              />
               <i class="fa-solid fa-eye-slash" id="togglePassword"></i>
             </label>
+            <% if (locals.errors && errors.password) { %>
+            <div class="text-danger"><%= errors.password.msg %></div>
+            <% } %>
 
             <label for="repeatPassword">
               <i class="fa-solid fa-lock"></i>
-              <input type="password" name="rePassword" id="rePassword" />
-              <% if( locals.errors && errors.rePassword ){ %>
-              <i> <%= errors.rePassword.msg %> </i>
-              <% } %>
+              <input
+                type="password"
+                name="repeatPassword"
+                id="rePassword"
+                class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+              />
               <i class="fa-solid fa-eye-slash" id="toggleRepeatPassword"></i>
             </label>
+            <% if( locals.errors && errors.repeatPassword ){ %>
+            <i> <%= errors.repeatPassword.msg %> </i>
+            <% } %>
 
             <label for="imgperfil" class="nombre_campos"
-              >Imagen de perfil:</label
-            >
-            <input type="file" name="imgperfil" id="imgperfil" />
+              >Imagen de perfil:
+              <input
+                type="file"
+                name="imgperfil"
+                id="imgperfil"
+                class="form-control <%= locals.errors && errors.imgperfil ? 'is-invalid' : null %>"
+              />
+            </label>
+            <% if (locals.errors && errors.imgperfil) { %>
+            <div class="text-danger"><%= errors.imgperfil.msg %></div>
+            <% } %>/>
 
             <div class="register-cont">
               <button class="register" type="submit">

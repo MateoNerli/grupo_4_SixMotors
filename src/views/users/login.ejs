@@ -49,10 +49,18 @@
             </button>
             <!-- <i class="fa-brands fa-google"></i> -->
           </div>
-          <form action="" class="form">
+          <form action="/usuario/login" method="POST" class="form">
             <label for="">
               <i class="fa-solid fa-user"></i>
-              <input type="text" name="" placeholder="Usuario" />
+              <input
+                type="text"
+                name="email"
+                class="form-control"
+                placeholder="Email: "
+              />
+              <% if (locals.errors && errors.email) { %>
+              <div class="text-danger"><%= errors.email.msg %></div>
+              <% } %>
             </label>
 
             <label for="password">
@@ -60,20 +68,25 @@
               <input
                 type="password"
                 name="password"
-                id="password"
-                placeholder="Contraseña"
+                placeholder="Contraseña: "
+                class="form-control"
               />
+              <div class="invalid-feedback"></div>
               <i class="fa-solid fa-eye-slash" id="togglePassword"></i>
             </label>
 
-            <input type="checkbox" name="" id="" />
+            <input
+              type="checkbox"
+              class="form-check-input"
+              name="remember_user"
+            />
             <span>Recordar usuario</span>
 
-            <div class="forgot">
+            <!-- <div class="forgot">
               <a href="" class="link">
                 <span>¿Olvidaste tu contraseña?</span>
               </a>
-            </div>
+            </div> -->
 
             <div class="register-cont">
               <button class="register" type="submit">

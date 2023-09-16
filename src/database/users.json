@@ -1,0 +1,39 @@
+[
+  {
+    "id": "1",
+    "name": "Mateo",
+    "lastname": "Nerli",
+    "user": "Mnerli",
+    "email": "mnerli@gmail.com",
+    "password": "$2a$10$994RF4IBTBwPPJ4UMJS6L.G3wpOgz/pHz4.E.IQG3KkqvVu3N9RkC",
+    "imgperfil": "ImgProfile-1694792769755.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Agustin",
+    "lastname": "Natali",
+    "user": "aNataliii",
+    "email": "anattali200@gmail.com",
+    "password": "$2a$10$JxkG2wHWSmUjxhruNXfQCuavh/f9DzY3XuPmDWB5qe/H50AlwP/Jm",
+    "imgperfil": "ImgProfile-1694831296422.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Agustin",
+    "lastname": "Natali",
+    "user": "aNataliii",
+    "email": "anattali200@gmail.com",
+    "imgperfil": "ImgProfile-1694831296422.jpg",
+    "password": "$2a$10$i5fWZY2w/b/La11d.f3KQeweURL..gcY2at1R/WnY3TiB00m/Z6Fq"
+  },
+  {
+    "id": 4,
+    "name": "Carlos",
+    "lastname": "papap",
+    "user": "carlospep",
+    "email": "carlosp@hotmail.com",
+    "password": "$2a$10$T2QRqW7WtDlpUIwBHMIPXeE5wE5GcIitTSm66dkTSKGXHj46giLpe",
+    "repeatPassword": "123456",
+    "imgperfil": "ImgProfile-1694870069839.jpg"
+  }
+]

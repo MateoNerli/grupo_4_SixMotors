@@ -1,12 +1,27 @@
 // ************ Require's ************
-const fs = require("fs");
 const path = require("path");
-const multer = require("multer");
 const express = require("express");
 const methodOverride = require("method-override");
+const session = require("express-session");
+const cookies = require("cookie-parser");
+
+const userLoggedMiddleware = require("./src/middlewares/userLoggedMiddleware");
 
 // ************ express() ************
 const app = express();
+
+// ************ session() ************
+app.use(
+  session({
+    secret: "Shhh, It's a secret",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+// ************ cookies() ************
+app.use(cookies());
+
+app.use(userLoggedMiddleware);
 
 // ************ Middlewares ************
 app.use(express.json());

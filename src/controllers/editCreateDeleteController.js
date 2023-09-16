@@ -1,5 +1,5 @@
 const path = require("path");
-const dataBase = require("../datos/products.json");
+const dataBase = require("../database/products.json");
 const fs = require("fs");
 
 const editCreacionCointroller = {
@@ -24,7 +24,7 @@ const editCreacionCointroller = {
 
     try {
       fs.writeFileSync(
-        path.join(__dirname, "..", "datos", "products.json"),
+        path.join(__dirname, "..", "database", "products.json"),
         JSON.stringify(dataBase, null, 2)
       );
       console.log("Producto añadido");
@@ -60,7 +60,7 @@ const editCreacionCointroller = {
 
     try {
       fs.writeFileSync(
-        path.join(__dirname, "..", "datos", "products.json"),
+        path.join(__dirname, "..", "database", "products.json"),
         JSON.stringify(products, null, 2)
       );
     } catch (error) {
@@ -78,7 +78,7 @@ const editCreacionCointroller = {
     dataBase.splice(index, 1);
     try {
       fs.writeFileSync(
-        path.join(__dirname, "..", "datos", "products.json"),
+        path.join(__dirname, "..", "database", "products.json"),
         JSON.stringify(dataBase, null, 2)
       );
       console.log("Product eliminado");

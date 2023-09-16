@@ -1,64 +1,40 @@
-const { body, validationResult } = require("express-validator");
-const dataBase = require("../datos/users.json");
 const path = require("path");
-const fs = require("fs");
-const { hashSync } = require("bcryptjs");
+const { body } = require("express-validator");
 
-const pathFile = path.join(__dirname, "..", "datos", "users.json");
-
-const validacionesRegistro = [
-  body("name")
+module.exports = [
+  body("name").notEmpty().withMessage("Tienes que escribir un nombre"),
+  body("lastname").notEmpty().withMessage("Tienes que escribir un apellido"),
+  body("user")
     .notEmpty()
-    .withMessage("Debes ingresar un nombre")
-    .withMessage("Debe al menos 5 carácteres"),
-  body("lastname").notEmpty().withMessage("Debes ingresar un apellido"),
-  body("user").notEmpty().withMessage("Debes ingresar un usuario"),
+    .withMessage("Tienes que escribir un nombre de usuario"),
   body("email")
     .notEmpty()
-    .withMessage("Debes ingresar un email")
+    .withMessage("Tienes que escribir un correo electrónico")
     .bail()
     .isEmail()
-    .withMessage("Debe ingresar un formato válido"),
-  body("password").notEmpty().withMessage("Debes ingresar un password"),
-  body("rePassword").notEmpty().withMessage("Debes ingresar un password"),
-  //body("imgperfil").notEmpty().withMessage("Debes ingresar una imagen"),
+    .withMessage("Debes escribir un formato de correo válido"),
+  body("password").notEmpty().withMessage("Tienes que escribir una contraseña"),
+  body("repeatPassword")
+    .notEmpty()
+    .withMessage("Tienes que repetir la contraseña"),
+  // body("country").notEmpty().withMessage("Tienes que elegir un país"),
+  body("imgperfil").custom((value, { req }) => {
+    let file = req.file;
+    let acceptedExtensions = [".jpg", ".png", ".gif"];
+
+    if (!file) {
+      throw new Error("Tienes que subir una imagen");
+    } else {
+      let fileExtension = path.extname(file.originalname);
+      if (!acceptedExtensions.includes(fileExtension)) {
+        throw new Error(
+          `Las extensiones de archivo permitidas son ${acceptedExtensions.join(
+            ", "
+          )}`
+        );
+      }
+    }
+
+    return true;
+  }),
 ];
-
-const resultadoValidacion = (req, res, next) => {
-  const errors = validationResult(req);
-
-  console.log(req.body);
-
-  if (errors.isEmpty() === true) {
-    // FALSE: hay errores | TRUE: No hay errores
-    // TRUE
-    const newUser = {
-      id: `${dataBase.length + 1}`,
-      ...req.body,
-      password: hashSync(req.body.password, 10),
-      imgperfil: req.file.filename, // Agrega el nombre del archivo cargado
-    };
-
-    delete newUser.rePassword;
-
-    dataBase.push(newUser);
-
-    fs.writeFileSync(pathFile, JSON.stringify(dataBase));
-    console.log("Usuario registrado");
-    next();
-  } else {
-    console.log("Hay errores");
-    res.render("users/register", {
-      errors: errors.mapped(),
-      old: req.body,
-    });
-    console.log(errors.mapped());
-    console.log(req.body);
-    console.log(req.file);
-  }
-};
-
-module.exports = {
-  validacionesRegistro,
-  resultadoValidacion,
-};
