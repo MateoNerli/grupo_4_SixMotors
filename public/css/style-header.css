@@ -195,6 +195,67 @@ button .arrow {
   right: 0;
 }
 
+.btn-container {
+  display: inline-block;
+  margin-right: 10px;
+}
+.btn-ingreso {
+  display: flex;
+}
+/* Estilos para el menú de navegación */
+.list-logged {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item-log {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.link-drop {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.link-drop img {
+  margin-right: 5px;
+}
+
+/* Estilos para el menú desplegable */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Estilos para el botón de usuario */
+#dropUser {
+  cursor: pointer;
+}
+
+/* Mostrar el menú desplegable al hacer hover sobre el botón de usuario */
+#dropUser:hover + .dropdown-menu {
+  display: block;
+}
 @media (max-width: 1080px) {
   .container {
     margin-left: 1rem;
@@ -240,6 +301,9 @@ button .arrow {
     padding: 15px;
     border-bottom: 1px solid var(--accent);
   }
+  .btn {
+    font-size: 12px;
+  }
 
   .navbar a:hover,
   .navbar .active {
@@ -261,7 +325,7 @@ button .arrow {
     font-size: 15px;
   }
   .btn {
-    font-size: 12px;
+    font-size: 9px;
   }
   .logo {
     font-size: 1rem;

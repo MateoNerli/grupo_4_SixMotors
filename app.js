@@ -49,4 +49,4 @@ app.listen(puerto, () => {
 app.use("/", homeRouter);
 app.use("/products", productRouter);
 app.use("/products/configs", editCreateRouter);
-app.use("/usuario", userRouter);
+app.use("/user", userRouter);

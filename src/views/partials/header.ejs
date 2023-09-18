@@ -20,7 +20,21 @@
               />
             </a>
           </div>
+
           <a href="/" class="logo">Six<span>Motors</span></a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
           <ul class="navbar">
             <li><a href="/" class="active">Home</a></li>
             <li><a href="/products/autos">Autos</a></li>
@@ -33,10 +47,10 @@
               class="fa-sharp fa-solid fa-magnifying-glass"
               id="search-icon"
             ></i>
-            <a href="/products/carrito"
+            <!-- <a href="/products/carrito"
               ><i class="fa-solid fa-cart-shopping"></i
             ></a>
-            <a href="/usuario"><i class="fa-solid fa-user"></i></a>
+            <a href="/user"><i class="fa-solid fa-user"></i></a> -->
           </div>
           <div class="search-box container">
             <form action="/products/search" method="GET" class="search-form">
@@ -51,14 +65,55 @@
               </button>
             </form>
           </div>
-          <a href="/usuario/login">
-            <button class="btn">
-              Sign up
-              <div class="arrow-wrapper">
-                <div class="arrow"></div>
-              </div>
-            </button>
-          </a>
+          <ul class="list-loged">
+            <% if (locals.isLogged) { %>
+            <li class="item-log">
+              <a
+                class="link-drop"
+                href="#"
+                id="dropUser"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="/images/users/<%= locals.userLogged.imgperfil %>"
+                  width="40"
+                  style="border-radius: 100%"
+                />
+                Hi <%= locals.userLogged.user %>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/user/profile">My perfil</a>
+                <li><hr class="dropdown-divider" /></li>
+                <a class="dropdown-item" href="/user/logout">Logout</a>
+              </ul>
+            </li>
+            <% } else { %>
+            <div class="btn-ingreso">
+              <li class="nav-item">
+                <a href="/user/login">
+                  <button class="btn">
+                    Login
+                    <div class="arrow-wrapper">
+                      <div class="arrow"></div>
+                    </div>
+                  </button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/user/login">
+                  <button class="btn">
+                    Register
+                    <div class="arrow-wrapper">
+                      <div class="arrow"></div>
+                    </div>
+                  </button>
+                </a>
+              </li>
+            </div>
+            <% } %>
+          </ul>
         </div>
       </nav>
       <section id="usuario"></section>

@@ -15,33 +15,33 @@
         <div class="wrapper">
           <div class="left">
             <img
-              src="/images/users/<%= usuario.imgperfil %>"
+              src="/images/users/<%= user.imgperfil %>"
               alt="usuario"
               width="100"
               id="profile-image"
             />
 
             <div class="editar">
-              <a href="/usuario/edit/<%= usuario.id %>">
+              <a href="/user/edit/<%= user.id %>">
                 <i class="fa-solid fa-pencil"></i>
               </a>
             </div>
 
-            <h4><%= usuario.name %> <%= usuario.lastname %></h4>
+            <h4><%= user.name %> <%= user.lastname %></h4>
             <div class="info">
               <h3>Informacion</h3>
               <div class="info_data">
                 <div class="data">
                   <h5>Email</h5>
-                  <p><%= usuario.email %></p>
+                  <p><%= user.email %></p>
                 </div>
                 <div class="data">
                   <h5>Telefono</h5>
-                  <p><%= usuario.telefono %></p>
+                  <p><%= user.telefono %></p>
                 </div>
                 <div class="data">
                   <h5>Ciudad</h5>
-                  <p><%= usuario.ciudad %></p>
+                  <p><%= user.ciudad %></p>
                 </div>
               </div>
             </div>

@@ -28,7 +28,7 @@ const userController = {
           res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
         }
 
-        return res.redirect("/usuario/");
+        return res.redirect("/user/profile");
       }
       return (
         path.join("users", "login"),
@@ -105,7 +105,7 @@ const userController = {
 
     let userCreated = User.create(userToCreate);
 
-    return res.redirect("/usuario/login");
+    return res.redirect("/user/login");
   },
 
   logout: (req, res) => {
@@ -115,7 +115,7 @@ const userController = {
   },
 
   profile: (req, res) => {
-    return res.render(path.join("users", "usuario"), {
+    return res.render(path.join("users", "perfil"), {
       user: req.session.userLogged,
     });
   },
