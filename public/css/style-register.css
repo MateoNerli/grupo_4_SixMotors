@@ -206,6 +206,9 @@ button:hover {
   align-items: center;
   text-align: center;
 }
+.text-danger {
+  color: red;
+}
 .button-ing {
   height: 50px;
   position: relative;
@@ -261,9 +264,28 @@ button:hover {
   text-decoration: none;
   color: var(--text);
 }
-@media screen and (max-width: 1020px) {
+#pais {
+  border: none;
+  padding: 8px;
+  border-radius: 22px;
+  width: 100%;
 }
 
+/* Estilos para el contenedor personalizado */
+.custom-file-upload {
+  border: 2px solid #ccc;
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #f9f9f9; /* Color de fondo del contenedor */
+  color: #333; /* Color del texto en el contenedor */
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.custom-file-upload:hover {
+  background-color: #e0e0e0; /* Cambia el color de fondo al pasar el mouse */
+}
 @media screen and (max-width: 750px) {
   html {
     font-size: 12px;

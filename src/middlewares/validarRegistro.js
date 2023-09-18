@@ -17,7 +17,8 @@ module.exports = [
   body("repeatPassword")
     .notEmpty()
     .withMessage("Tienes que repetir la contraseña"),
-  // body("country").notEmpty().withMessage("Tienes que elegir un país"),
+  body("pais").notEmpty().withMessage("Tienes que elegir un país"),
+
   body("imgperfil").custom((value, { req }) => {
     let file = req.file;
     let acceptedExtensions = [".jpg", ".png", ".gif"];

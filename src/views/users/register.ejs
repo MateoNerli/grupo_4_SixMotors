@@ -15,7 +15,7 @@
             SixMotors
           </p>
           <div class="btn-ingresar">
-            <a href="/login" class="link">
+            <a href="/user/login" class="link">
               <button class="button-ing type1">
                 <span class="btn-txt">Iniciar sesion</span>
               </button>
@@ -89,6 +89,7 @@
               <input
                 type="text"
                 name="lastname"
+                placeholder="Apellido"
                 class="form-control <%= locals.errors && errors.lastname ? 'is-invalid' : null %>"
                 value="<%= locals.oldData ? oldData.lastname : null %>"
               />
@@ -116,7 +117,7 @@
               <input
                 type="email"
                 name="email"
-                placeholder="asd@asd.com"
+                placeholder="perdro123@gmail.com"
                 class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
                 value="<%= locals.oldData ? oldData.email : null %>"
               />
@@ -124,12 +125,50 @@
             <% if (locals.errors && errors.email) { %>
             <div class="text-danger"><%= errors.email.msg %></div>
             <% } %>
+
+            <label for="pais">
+              <i class="fa-solid fa-globe"></i>
+              <select
+                name="pais"
+                id="pais"
+                class="form-control <%= locals.errors && errors.pais ? 'is-invalid' : null %>"
+              >
+                <option value="">Pais</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Brasil">Brasil</option>
+                <option value="Chile">Chile</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Guyana">Guyana</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Peru">Peru</option>
+                <option value="Surinam">Surinam</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="Venezuela">Venezuela</option>
+              </select>
+            </label>
+            <% if (locals.errors && errors.pais) { %>
+            <div class="text-danger"><%= errors.pais.msg %></div>
+            <% } %>
+
+            <label for="Celular">
+              <i class="fa-solid fa-phone"></i>
+              <input
+                type="number"
+                name="celular"
+                id="celular"
+                placeholder="Celular"
+              />
+            </label>
+
             <label for="password">
               <i class="fa-solid fa-lock"></i>
               <input
                 type="password"
                 name="password"
                 id="password"
+                placeholder="Contraseña"
                 class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
               />
               <i class="fa-solid fa-eye-slash" id="togglePassword"></i>
@@ -144,6 +183,7 @@
                 type="password"
                 name="repeatPassword"
                 id="rePassword"
+                placeholder="Repetir contraseña"
                 class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
               />
               <i class="fa-solid fa-eye-slash" id="toggleRepeatPassword"></i>
@@ -163,7 +203,7 @@
             </label>
             <% if (locals.errors && errors.imgperfil) { %>
             <div class="text-danger"><%= errors.imgperfil.msg %></div>
-            <% } %>/>
+            <% } %>
 
             <div class="register-cont">
               <button class="register" type="submit">
