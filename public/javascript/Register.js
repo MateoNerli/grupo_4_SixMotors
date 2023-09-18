@@ -5,7 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault(); // Evita que se recargue la página
 
     const formData = new FormData(registerForm);
-
+    
+    console.log("Form Data:", formData); // Agrega este console.log para verificar los datos del formulario
+    
     try {
       const response = await fetch("/register", {
         method: "POST",
