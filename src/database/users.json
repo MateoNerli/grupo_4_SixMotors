@@ -67,5 +67,16 @@
   "celular": "1515155151",
   "password": "$2a$10$yhFfaQSlCIPaOP6xnxcx1.P/YPamUPelPTCIfNSIysho/cWjZJ9Uy",
   "imgperfil": "ImgProfile-1695085976885.jpg"
+ },
+ {
+  "id": 8,
+  "name": "Kent ",
+  "lastname": "Brockman",
+  "user": "kb123",
+  "email": "KBrockman@gmail.com",
+  "pais": "Argentina",
+  "celular": "15454546546",
+  "password": "$2a$10$Bty.H6R8F3a7qdygZhXP/OmjItbYxvqHBSTpyasOmoVAaW.dnK0EG",
+  "imgperfil": "ImgProfile-1695087754942.jpg"
  }
 ]
