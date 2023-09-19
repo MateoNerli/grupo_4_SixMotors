@@ -1,11 +1,11 @@
-## Tareas completadas
+## Que se hizo ayer
 
-Se completaron casi todas las diferentes tareas de la consigna del sprint.
+Se completaron la parte de registro y login 
 
 ## Impedimentos encontrados
 
-Algunos de los miembros tuvieron problemas para completar las tareas.
+Problemas menores con los datos guardados en el json de usuarios.
 
-## Soluciones propuestas
+## Que se va a hacer hoy
 
-Se realizo una reunión en la cual se completo el codigo que faltaba y se redistribuyeron tareas. 
+Terminar los detalles que restan respecto a las consignas dadas en el sprint 
