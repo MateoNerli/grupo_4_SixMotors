@@ -189,7 +189,7 @@
               <i class="fa-solid fa-eye-slash" id="toggleRepeatPassword"></i>
             </label>
             <% if( locals.errors && errors.repeatPassword ){ %>
-            <i> <%= errors.repeatPassword.msg %> </i>
+            <div class="text-danger"><%= errors.repeatPassword.msg %></div>
             <% } %>
 
             <label for="imgperfil" class="nombre_campos"

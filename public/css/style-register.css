@@ -208,6 +208,8 @@ button:hover {
 }
 .text-danger {
   color: red;
+  font-size: 12px;
+  padding-bottom: 10px;
 }
 .button-ing {
   height: 50px;

@@ -76,16 +76,40 @@ const userController = {
 
   registerProcess: (req, res) => {
     const resultValidation = validationResult(req);
-  
+
     if (resultValidation.errors.length > 0) {
       return res.render(path.join("users", "register"), {
         errors: resultValidation.mapped(),
         oldData: req.body,
       });
     }
-  
-    let userInDB = User.findByField("email", req.body.email);
-  
+
+    // Validar que password y repeatPassword sean iguales
+    if (req.body.password !== req.body.repeatPassword) {
+      return res.render(path.join("users", "register"), {
+        errors: {
+          password: {
+            msg: "Las contraseñas no coinciden",
+          },
+        },
+        oldData: req.body,
+      });
+    }
+
+    // Verificar si el nombre de usuario (user) ya está en uso
+    userInDB = User.findByField("user", req.body.user);
+    if (userInDB) {
+      return res.render(path.join("users", "register"), {
+        errors: {
+          user: {
+            msg: "Este usuario ya está registrado",
+          },
+        },
+        oldData: req.body,
+      });
+    }
+    // Verificar si el email ya está en uso
+    userInDB = User.findByField("email", req.body.email);
     if (userInDB) {
       return res.render(path.join("users", "register"), {
         errors: {
@@ -96,21 +120,21 @@ const userController = {
         oldData: req.body,
       });
     }
-  
+
     // Encriptar la contraseña antes de guardarla en la base de datos.
     const hashedPassword = bcrypt.hashSync(req.body.password, 10);
-  
+
     // Eliminar el campo repeatPassword antes de guardar el usuario.
     const { repeatPassword, ...userWithoutRepeatPassword } = req.body;
-  
+
     let userToCreate = {
       ...userWithoutRepeatPassword, // Usar los datos del usuario sin repeatPassword.
       password: hashedPassword, // Guardar la contraseña encriptada.
       imgperfil: req.file.filename,
     };
-  
+
     let userCreated = User.create(userToCreate);
-  
+
     return res.redirect("/user/login");
   },
 
