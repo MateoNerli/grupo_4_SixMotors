@@ -1,104 +1,71 @@
 [
- {
-  "id": "1",
-  "name": "Mateo",
-  "lastname": "Nerli",
-  "user": "Mnerli",
-  "email": "mnerli@gmail.com",
-  "password": "$2a$10$994RF4IBTBwPPJ4UMJS6L.G3wpOgz/pHz4.E.IQG3KkqvVu3N9RkC",
-  "imgperfil": "ImgProfile-1694831296422.jpg"
- },
- {
-  "id": "2",
-  "name": "Agustin",
-  "lastname": "Natali",
-  "user": "aNataliii",
-  "email": "anattali200@gmail.com",
-  "password": "$2a$10$JxkG2wHWSmUjxhruNXfQCuavh/f9DzY3XuPmDWB5qe/H50AlwP/Jm",
-  "imgperfil": "ImgProfile-1694831296422.jpg"
- },
- {
-  "id": 3,
-  "name": "Agustin",
-  "lastname": "Natali",
-  "user": "aNataliii",
-  "email": "anattali200@gmail.com",
-  "imgperfil": "ImgProfile-1694831296422.jpg",
-  "password": "$2a$10$i5fWZY2w/b/La11d.f3KQeweURL..gcY2at1R/WnY3TiB00m/Z6Fq"
- },
- {
-  "id": 4,
-  "name": "Carlos",
-  "lastname": "papap",
-  "user": "carlospep",
-  "email": "carlosp@hotmail.com",
-  "password": "$2a$10$T2QRqW7WtDlpUIwBHMIPXeE5wE5GcIitTSm66dkTSKGXHj46giLpe",
-  "imgperfil": "ImgProfile-1694870069839.jpg"
- },
- {
-  "id": 5,
-  "name": "Ariel Reinaldo",
-  "lastname": "Isaias",
-  "user": "elari2056",
-  "email": "ariel.r.isaias@gmail.com",
-  "pais": "Argentina",
-  "celular": "3364338670",
-  "password": "$2a$10$WREyi8Kmm2aeMfHc.jVKp.vdNXc1XH3avB4Vbsq4GKetkAon27AIy",
-  "imgperfil": "ImgProfile-1695085540302.jpg"
- },
- {
-  "id": 6,
-  "name": "Julio",
-  "lastname": "Iglesias",
-  "user": "julioiglesias",
-  "email": "julioiglesias@gmail.com",
-  "pais": "Argentina",
-  "celular": "1111111111",
-  "password": "$2a$10$K8/wBnDaZmWYlGbs5Ge07u5tjupL0ZYpFEU7TmNzxL6eABUnyGFVu",
-  "imgperfil": "ImgProfile-1695085942726.jpg"
- },
- {
-  "id": 7,
-  "name": "Daniel",
-  "lastname": "Agostini",
-  "user": "dagostini",
-  "email": "dagostini@gmail.com",
-  "pais": "Argentina",
-  "celular": "1515155151",
-  "password": "$2a$10$yhFfaQSlCIPaOP6xnxcx1.P/YPamUPelPTCIfNSIysho/cWjZJ9Uy",
-  "imgperfil": "ImgProfile-1695085976885.jpg"
- },
- {
-  "id": 8,
-  "name": "aaa",
-  "lastname": "aa",
-  "user": "aaa",
-  "email": "aaaa@aaa.com",
-  "pais": "Bolivia",
-  "celular": "233232",
-  "password": "$2a$10$m5Bic9mVo4oq.yjnTx9pte3gFekZolOmHREKll07yL1cU1Q9ZYJ1q",
-  "imgperfil": "ImgProfile-1695089534245.jpg"
- },
- {
-  "id": 9,
-  "name": "pablo",
-  "lastname": "aaaa",
-  "user": "aaaaa",
-  "email": "aaaa@aaaa.com",
-  "pais": "Surinam",
-  "celular": "111",
-  "password": "$2a$10$OEQO54stc1Cw18gmxa9cXOqB/wyoCycZgPEcPGQOucPX0ffI2ZA2u",
-  "imgperfil": "ImgProfile-1695089666714.jpg"
- },
- {
-  "id": 10,
-  "name": "ñañaña",
-  "lastname": "añaña",
-  "user": "añña",
-  "email": "666aaaa@aaa.com",
-  "pais": "Argentina",
-  "celular": "",
-  "password": "$2a$10$S2BiQxRRlgAaL6bNHJXxzOqmkSHDY/33JCoWh4xcK8bu6Iu7C.cb2",
-  "imgperfil": "ImgProfile-1695089729668.jpg"
- }
+  {
+    "id": "1",
+    "name": "Mateo",
+    "lastname": "Nerli",
+    "user": "Mnerli",
+    "email": "mnerli@gmail.com",
+    "password": "$2a$10$994RF4IBTBwPPJ4UMJS6L.G3wpOgz/pHz4.E.IQG3KkqvVu3N9RkC",
+    "imgperfil": "ImgProfile-1694831296422.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Agustin",
+    "lastname": "Natali",
+    "user": "aNataliii",
+    "email": "anattali200@gmail.com",
+    "password": "$2a$10$JxkG2wHWSmUjxhruNXfQCuavh/f9DzY3XuPmDWB5qe/H50AlwP/Jm",
+    "imgperfil": "ImgProfile-1694831296422.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Agustin",
+    "lastname": "Natali",
+    "user": "aNataliii",
+    "email": "anattali200@gmail.com",
+    "imgperfil": "ImgProfile-1694831296422.jpg",
+    "password": "$2a$10$i5fWZY2w/b/La11d.f3KQeweURL..gcY2at1R/WnY3TiB00m/Z6Fq"
+  },
+  {
+    "id": 4,
+    "name": "Carlos",
+    "lastname": "papap",
+    "user": "carlospep",
+    "email": "carlosp@hotmail.com",
+    "password": "$2a$10$T2QRqW7WtDlpUIwBHMIPXeE5wE5GcIitTSm66dkTSKGXHj46giLpe",
+    "imgperfil": "ImgProfile-1694870069839.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Ariel Reinaldo",
+    "lastname": "Isaias",
+    "user": "elari2056",
+    "email": "ariel.r.isaias@gmail.com",
+    "pais": "Argentina",
+    "celular": "3364338670",
+    "password": "$2a$10$WREyi8Kmm2aeMfHc.jVKp.vdNXc1XH3avB4Vbsq4GKetkAon27AIy",
+    "imgperfil": "ImgProfile-1695085540302.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Julio",
+    "lastname": "Iglesias",
+    "user": "julioiglesias",
+    "email": "julioiglesias@gmail.com",
+    "pais": "Argentina",
+    "celular": "1111111111",
+    "password": "$2a$10$K8/wBnDaZmWYlGbs5Ge07u5tjupL0ZYpFEU7TmNzxL6eABUnyGFVu",
+    "imgperfil": "ImgProfile-1695085942726.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Daniel",
+    "lastname": "Agostini",
+    "user": "dagostini",
+    "email": "dagostini@gmail.com",
+    "pais": "Argentina",
+    "celular": "1515155151",
+    "password": "$2a$10$yhFfaQSlCIPaOP6xnxcx1.P/YPamUPelPTCIfNSIysho/cWjZJ9Uy",
+    "imgperfil": "ImgProfile-1695085976885.jpg"
+  }
 ]
