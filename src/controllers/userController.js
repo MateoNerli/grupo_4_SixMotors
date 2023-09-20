@@ -30,16 +30,14 @@ const userController = {
 
         return res.redirect("/user/profile");
       }
-      return (
-        path.join("users", "login"),
-        {
-          errors: {
-            email: {
-              msg: "Las credenciales son inválidas",
-            },
+    } else {
+      return res.render(path.join("users", "login"), {
+        errors: {
+          NoUser: {
+            msg: "No existe ese usuario",
           },
-        }
-      );
+        },
+      });
     }
 
     return (

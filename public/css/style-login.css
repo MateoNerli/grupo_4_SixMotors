@@ -39,6 +39,11 @@ body {
   width: 100%;
   padding: 0 30px;
 }
+.text-danger {
+  color: red;
+  font-size: 15px;
+  padding-bottom: 5px;
+}
 .datos h2 {
   font-size: 2.5rem;
 }

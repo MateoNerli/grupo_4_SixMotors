@@ -58,9 +58,6 @@
                 class="form-control"
                 placeholder="Email: "
               />
-              <% if (locals.errors && errors.email) { %>
-              <div class="text-danger"><%= errors.email.msg %></div>
-              <% } %>
             </label>
 
             <label for="password">
@@ -74,6 +71,9 @@
               <div class="invalid-feedback"></div>
               <i class="fa-solid fa-eye-slash" id="togglePassword"></i>
             </label>
+            <% if (locals.errors && errors.NoUser) { %>
+            <div class="text-danger"><%= errors.NoUser.msg %></div>
+            <% } %>
 
             <input
               type="checkbox"
