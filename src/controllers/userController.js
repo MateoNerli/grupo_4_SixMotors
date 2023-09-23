@@ -64,14 +64,6 @@ const userController = {
     res.render(path.join("users", "usuario"), { usuario });
   },
 
-  edit: (req, res) => {
-    let id = req.params.id;
-    let usuario = usuarios.find((usuario) => {
-      return usuario.id == id;
-    });
-    res.render(path.join("users", "edit-user"), { usuario });
-  },
-
   registerProcess: (req, res) => {
     const resultValidation = validationResult(req);
 
@@ -119,6 +111,18 @@ const userController = {
       });
     }
 
+    // Verificar si hay una imagen
+    if (!req.file) {
+      return res.render(path.join("users", "register"), {
+        errors: {
+          imgperfil: {
+            msg: "Tienes que subir una imagen",
+          },
+        },
+        oldData: req.body,
+      });
+    }
+
     // Encriptar la contraseña antes de guardarla en la base de datos.
     const hashedPassword = bcrypt.hashSync(req.body.password, 10);
 
@@ -147,48 +151,6 @@ const userController = {
       user: req.session.userLogged,
     });
   },
-
-  // editUser: (req, res) => {
-  //   const {
-  //     name,
-  //     lastname,
-  //     user,
-  //     email,
-  //     imgperfil,
-  //     password,
-  //     repeatPassword,
-  //     reseñas,
-  //     telefono,
-  //     ciudad,
-  //   } = req.body;
-
-  //   const { id } = req.params;
-  //   const usuarioId = usuarios.find((e) => e.id == id);
-
-  //   if (imgperfil) {
-  //     usuarioId.imgperfil = imgperfil;
-  //   }
-
-  //   let usuarioEditado = {
-  //     id: usuarioId.id,
-  //     name: name,
-  //     lastName: lastname,
-  //     user: user,
-  //     email: email,
-  //     imgperfil: usuarioId.imgperfil,
-  //     password: usuarioId.password,
-  //     reseñas: reseñas,
-  //     telefono: telefono,
-  //     ciudad: ciudad,
-  //   };
-
-  //   usuarios[id - 1] = usuarioEditado;
-  //   fs.writeFileSync(
-  //     path.join(__dirname, "..", "database", "users.json"),
-  //     JSON.stringify(usuarios, null, 2)
-  //   );
-  //   res.redirect("/usuario/" + id);
-  // },
 };
 
 module.exports = userController;
