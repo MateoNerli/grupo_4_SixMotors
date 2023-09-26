@@ -29,10 +29,28 @@ const productController = {
     });
   },
 
-  carrito: (req, res) => {
+  viewCart: (req, res) => {
+    if (!req.session.isLogged) {
+      return res.redirect("/user/login");
+    }
+
     res.render(path.join("products", "carrito"), {
-      products,
+      carrito: req.session.carrito,
     });
+  },
+
+  addToCart: (req, res) => {
+    const productId = req.params.id;
+
+    if (!req.session.carrito) {
+      req.session.carrito = [];
+    }
+
+    const product = products.find((product) => product.id == productId);
+
+    req.session.carrito.push(product);
+
+    res.redirect("/products/carrito");
   },
 
   contacto: (req, res) => {

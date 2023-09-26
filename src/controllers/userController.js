@@ -64,12 +64,18 @@ const userController = {
     res.render(path.join("users", "usuario"), { usuario });
   },
 
-  registerProcess: (req, res) => {
+  registerProcess: async (req, res) => {
     const resultValidation = validationResult(req);
 
-    if (resultValidation.errors.length > 0) {
+    // Verificar si el nombre de usuario (user) ya está en uso
+    let userInDB = User.findByField("user", req.body.user);
+    if (userInDB) {
       return res.render(path.join("users", "register"), {
-        errors: resultValidation.mapped(),
+        errors: {
+          user: {
+            msg: "Este usuario ya está registrado",
+          },
+        },
         oldData: req.body,
       });
     }
@@ -86,32 +92,9 @@ const userController = {
       });
     }
 
-    // Verificar si el nombre de usuario (user) ya está en uso
-    userInDB = User.findByField("user", req.body.user);
-    if (userInDB) {
-      return res.render(path.join("users", "register"), {
-        errors: {
-          user: {
-            msg: "Este usuario ya está registrado",
-          },
-        },
-        oldData: req.body,
-      });
-    }
-    // Verificar si el email ya está en uso
-    userInDB = User.findByField("email", req.body.email);
-    if (userInDB) {
-      return res.render(path.join("users", "register"), {
-        errors: {
-          email: {
-            msg: "Este email ya está registrado",
-          },
-        },
-        oldData: req.body,
-      });
-    }
+    // En este punto, todas las validaciones han pasado, incluyendo la validación de los campos del formulario.
 
-    // Verificar si hay una imagen
+    // Verificar si se ha cargado una imagen, y si no, mostrar un error
     if (!req.file) {
       return res.render(path.join("users", "register"), {
         errors: {
@@ -119,6 +102,14 @@ const userController = {
             msg: "Tienes que subir una imagen",
           },
         },
+        oldData: req.body,
+      });
+    }
+
+    //si hay errores de validacion, renderiza el formulario nuevamente
+    if (resultValidation.errors.length > 0) {
+      return res.render(path.join("users", "register"), {
+        errors: resultValidation.mapped(),
         oldData: req.body,
       });
     }
@@ -132,9 +123,10 @@ const userController = {
     let userToCreate = {
       ...userWithoutRepeatPassword, // Usar los datos del usuario sin repeatPassword.
       password: hashedPassword, // Guardar la contraseña encriptada.
-      imgperfil: req.file.filename,
+      imgperfil: req.file.filename, // Asignar el nombre de la imagen.
     };
 
+    // Guardar el usuario en la base de datos
     let userCreated = User.create(userToCreate);
 
     return res.redirect("/user/login");

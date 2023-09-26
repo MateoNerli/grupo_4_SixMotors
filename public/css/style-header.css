@@ -243,19 +243,10 @@ button .arrow {
   color: #333;
 }
 
-.dropdown-menu a:hover {
-  background-color: #f0f0f0;
-}
-
-/* Estilos para el botón de usuario */
 #dropUser {
   cursor: pointer;
 }
 
-/* Mostrar el menú desplegable al hacer hover sobre el botón de usuario */
-#dropUser:hover + .dropdown-menu {
-  display: block;
-}
 @media (max-width: 1080px) {
   .container {
     margin-left: 1rem;

@@ -37,10 +37,22 @@
               <i class="fa-solid fa-chevron-down" id="decrement"></i>
             </div>
           </div>
-          <button class="btn-add-to-cart">
-            <i class="fa-solid fa-plus"></i>
-            Añadir al carrito
-          </button>
+          <div class="boton">
+            <% if (isLogged) { %>
+            <button class="btn-add-to-cart">
+              <i class="fa-solid fa-plus"></i>
+              <a
+                data-product-id="ID_DEL_PRODUCTO"
+                class="btn-add-to-cart add-to-cart-button"
+                >Agregar al carrito</a
+              >
+            </button>
+            <% } else { %>
+            <button class="btn-add-to-cart">
+              <a href="/user/login">Iniciar sesión</a>
+            </button>
+            <% } %>
+          </div>
         </div>
 
         <div class="container-description">
@@ -63,7 +75,9 @@
             <p><%= product.reseña %></p>
           </div>
         </div>
+
         <div class="btn-opciones">
+          <% if (isAdmin) { %>
           <a href="/products/configs/edit/<%= product.id %>">
             <button class="btn-op">
               <i class="fa-solid fa-pen-to-square"></i>
@@ -79,6 +93,7 @@
               ELIMINAR
             </button>
           </form>
+          <% } %>
         </div>
       </div>
     </main>

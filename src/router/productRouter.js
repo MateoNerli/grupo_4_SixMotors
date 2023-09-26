@@ -5,7 +5,8 @@ const router = express.Router();
 router.get("/autos", productController.productosVehiculos);
 router.get("/autopartes", productController.productosAutopartes);
 router.get("/detail/:id/", productController.detail);
-router.get("/carrito", productController.carrito);
+router.get("/carrito", productController.viewCart);
+router.post("/carrito/:id", productController.addToCart);
 //router.get("/contacto", productController.contacto);
 router.get("/search", productController.search);
 

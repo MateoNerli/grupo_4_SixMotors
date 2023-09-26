@@ -6,6 +6,7 @@ const session = require("express-session");
 const cookies = require("cookie-parser");
 
 const userLoggedMiddleware = require("./src/middlewares/userLoggedMiddleware");
+const adminMiddleware = require("./src/middlewares/adminMiddleware");
 
 // ************ express() ************
 const app = express();
@@ -22,6 +23,7 @@ app.use(
 app.use(cookies());
 
 app.use(userLoggedMiddleware);
+app.use(adminMiddleware);
 
 // ************ Middlewares ************
 app.use(express.json());
