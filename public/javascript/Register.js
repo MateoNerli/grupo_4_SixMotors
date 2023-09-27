@@ -1,9 +1,6 @@
 const togglePassword = document.getElementById("togglePassword");
 const passwordInput = document.getElementById("password");
 
-const toggleRepeatPassword = document.getElementById("toggleRepeatPassword");
-const repeatPasswordInput = document.getElementById("repeatPassword");
-
 togglePassword.addEventListener("click", function () {
   const type =
     passwordInput.getAttribute("type") === "password" ? "text" : "password";
@@ -11,6 +8,9 @@ togglePassword.addEventListener("click", function () {
   togglePassword.classList.toggle("fa-eye");
   togglePassword.classList.toggle("fa-eye-slash");
 });
+
+const toggleRepeatPassword = document.getElementById("toggleRepeatPassword");
+const repeatPasswordInput = document.getElementById("rePassword");
 
 toggleRepeatPassword.addEventListener("click", function () {
   const type =
