@@ -40,17 +40,16 @@ const productController = {
   },
 
   addToCart: (req, res) => {
-    const productId = req.params.id;
-
-    if (!req.session.carrito) {
-      req.session.carrito = [];
-    }
-
+    const productId = req.body.productId; // Asumiendo que el ID del producto se envía en la solicitud POST
     const product = products.find((product) => product.id == productId);
 
-    req.session.carrito.push(product);
+    if (!req.session.cart) {
+      req.session.cart = [];
+    }
 
-    res.redirect("/products/carrito");
+    req.session.cart.push(product);
+
+    res.redirect("/carrito");
   },
 
   contacto: (req, res) => {
