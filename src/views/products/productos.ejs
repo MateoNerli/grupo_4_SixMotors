@@ -78,29 +78,30 @@
         <!-- Contenedor de articulos, autopartes -->
         <div id="contenedor-productos" class="contenedor-productos">
           <% products.forEach(product => { %>
-          <a href="/products/detail/<%= product.id %>">
-            <div class="producto-container">
+          <div class="producto-container">
+            <a href="/products/detail/<%= product.id %>">
               <img
                 class="producto-imagen"
                 src="<%= product.img %>"
                 alt="<%= product.title %>"
               />
-              <div class="producto-detalles">
-                <h3 class="producto-titulo"><%= product.title %></h3>
-                <p class="producto-precio">$<%= product.price %></p>
-                <div class="conten">
-                  <button class="producto-agregar" id="<%= product.id %>">
-                    Agregar
+            </a>
+            <div class="producto-detalles">
+              <h3 class="producto-titulo"><%= product.title %></h3>
+              <p class="producto-precio">$<%= product.price %></p>
+              <div class="conten">
+                <button class="producto-agregar Agregar" id="<%= product.id %>">
+                  Agregar
+                </button>
+                <div class="favorito">
+                  <button>
+                    <i class="bi bi-heart"></i>
                   </button>
-                  <div class="favorito">
-                    <button>
-                      <i class="bi bi-heart"></i>
-                    </button>
-                  </div>
                 </div>
               </div>
             </div>
-          </a>
+          </div>
+
           <% }); %>
         </div>
       </main>
@@ -118,5 +119,6 @@
       src="https://cdn.jsdelivr.net/npm/toastify-js"
     ></script>
     <script src="/javascript/autos.js"></script>
+    <script src="/javascript/products.js"></script>
   </body>
 </html>

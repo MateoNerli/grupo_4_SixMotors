@@ -343,5 +343,15 @@
     "category": "nuevo",
     "colors": "aaaa",
     "price": null
+  },
+  {
+    "id": "29",
+    "type": "autoparte",
+    "title": "sasassa",
+    "description": "sa",
+    "img": "/images/products/products-img-1696092767225.jpg",
+    "category": "nuevo",
+    "colors": "asa",
+    "price": null
   }
 ]

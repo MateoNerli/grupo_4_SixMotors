@@ -8,7 +8,10 @@
     "express-session": "^1.17.3",
     "express-validator": "^7.0.1",
     "method-override": "^3.0.0",
-    "multer": "^1.4.5-lts.1"
+    "multer": "^1.4.5-lts.1",
+    "mysql": "^2.18.1",
+    "sequelize": "^6.33.0",
+    "toastify-js": "^1.12.0"
   },
   "name": "grupo_4_sixmotors",
   "description": "Sitio de ecommerce de SixMotors - Grupo 4 - Comisión 52 - Full Stack Digital House",

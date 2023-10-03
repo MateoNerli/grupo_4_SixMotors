@@ -28,30 +28,11 @@ const productController = {
       products,
     });
   },
-
   viewCart: (req, res) => {
-    if (!req.session.isLogged) {
-      return res.redirect("/user/login");
-    }
-
     res.render(path.join("products", "carrito"), {
       carrito: req.session.carrito,
     });
   },
-
-  addToCart: (req, res) => {
-    const productId = req.body.productId; // Asumiendo que el ID del producto se envía en la solicitud POST
-    const product = products.find((product) => product.id == productId);
-
-    if (!req.session.cart) {
-      req.session.cart = [];
-    }
-
-    req.session.cart.push(product);
-
-    res.redirect("/carrito");
-  },
-
   contacto: (req, res) => {
     res.render(path.join("products", "contacto"), {
       products,
