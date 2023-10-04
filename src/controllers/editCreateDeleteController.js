@@ -1,90 +1,65 @@
 const path = require("path");
-const dataBase = require("../database/products.json");
-const fs = require("fs");
-
+// const dataBase = require("../database/products.json");
+// const fs = require("fs");
+const db = require("../database/models");
 const editCreacionCointroller = {
   create: (req, res) => {
     res.render(path.join("products", "creacion"));
   },
-  createPost: (req, res) => {
-    const { name, type, description, img, category, colors, price } = req.body;
-
-    const newProduct = {
-      id: (dataBase.length + 1).toString(),
-      type: type,
-      title: name,
-      description: description,
-      img: `/images/products/${req.file.filename}`,
-      category: category,
-      colors: colors,
-      price: parseFloat(price),
-    };
-
-    dataBase.push(newProduct);
-
-    try {
-      fs.writeFileSync(
-        path.join(__dirname, "..", "database", "products.json"),
-        JSON.stringify(dataBase, null, 2)
-      );
-      console.log("Producto añadido");
-    } catch (error) {
-      console.error(error);
+  store: async function (req, res) {
+    let image = "";
+    if (req.file) {
+      image = req.file.filename;
     }
 
-    res.redirect("/");
-  },
-
-  edit: (req, res) => {
-    let id = req.params.id;
-    let producto = dataBase.find((producto) => {
-      return producto.id == id;
+    //guardo el nuevo producto con la estructura
+    await db.Product.create({
+      type: req.body.type,
+      name: req.body.name,
+      description: req.body.description,
+      img: image,
+      category: req.body.category,
+      colors: req.body.colors,
+      price: req.body.price,
+      marked: req.body.marked ? true : false,
     });
-    res.render(path.join("products", "edit"), { producto });
+
+    //redireccione al home
+    return res.redirect("/");
   },
-
-  editPost: (req, res) => {
-    const { name, type, description, img, category, colors, price } = req.body;
-    const { id } = req.params;
-    const productoId = dataBase.find((e) => e.id == id);
-
-    name ? (productoId.name = name) : productoId.name;
-    type ? (productoId.type = type) : productoId.type;
-    description
-      ? (productoId.description = description)
-      : productoId.description;
-    price ? (productoId.price = price) : productoId.price;
-    img ? (productoId.img = img) : productoId.img;
-    category ? (productoId.category = category) : productoId.category;
-    colors ? (productoId.colors = colors) : productoId.colors;
-
-    try {
-      fs.writeFileSync(
-        path.join(__dirname, "..", "database", "products.json"),
-        JSON.stringify(products, null, 2)
-      );
-    } catch (error) {
-      console.error(error);
+  edit: async function (req, res) {
+    let product = await db.Product.findByPk(req.params.id);
+    if (product) {
+      return res.render("products/edit", { product });
     }
-
-    res.redirect("/");
+    return res.redirect("/products");
   },
-  eliminar: (req, res) => {
-    let id = req.params.id;
-    let producto = dataBase.find((producto) => {
-      return producto.id == id;
+
+  update: async function (req, res) {
+    let product = await db.Product.findByPk(req.params.id);
+    if (product) {
+      let image = product.img;
+      if (req.file) {
+        image = req.file.filename;
+      }
+      await product.update({
+        type: req.body.type,
+        name: req.body.name,
+        description: req.body.description,
+        img: image,
+        category: req.body.category,
+        colors: req.body.colors,
+        price: req.body.price,
+        marked: req.body.marked ? true : false,
+      });
+    }
+    return res.redirect("/");
+  },
+  delete: async function (req, res) {
+    await db.Product.destroy({
+      where: { id: req.params.id },
     });
-    let index = dataBase.indexOf(producto);
-    dataBase.splice(index, 1);
-    try {
-      fs.writeFileSync(
-        path.join(__dirname, "..", "database", "products.json"),
-        JSON.stringify(dataBase, null, 2)
-      );
-      console.log("Product eliminado");
-    } catch (error) {
-      console.error(error);
-    }
+
     res.redirect("/");
   },
 };

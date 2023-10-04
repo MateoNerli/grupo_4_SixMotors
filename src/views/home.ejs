@@ -125,26 +125,26 @@
           </div>
           <div class="swiperVendi mySwiperVendi">
             <div class="swiper-wrapperVendi">
-              <% for (let i = 0; i < 5; i++) { %>
+              <% autos.forEach( prod=> { %> <% if (prod.marked) { %>
               <div class="swiper-slide">
                 <div class="card float-left p-4">
                   <div class="row">
                     <div class="col-sm-7">
                       <div class="card-block">
-                        <h4><%= autos[i].title %></h4>
+                        <h4><%= autos.name %></h4>
                       </div>
                     </div>
                     <div class="col-sm-5">
                       <img
                         class="d-block w-100"
-                        src="<%= autos[i].img %>"
+                        src="<%= autos.img %>"
                         alt=""
                       />
                     </div>
                   </div>
                 </div>
               </div>
-              <% } %>
+              <% } %> <% }) %>
             </div>
             <div class="swiper-paginationVendi"></div>
           </div>

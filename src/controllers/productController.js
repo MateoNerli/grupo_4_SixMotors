@@ -1,32 +1,40 @@
 const path = require("path");
-const products = require("../database/products.json");
+const db = require("../database/models");
 
 const productController = {
-  productosVehiculos: (req, res) => {
-    const vehiculosProducts = products.filter(
-      (product) => product.type === "vehiculo"
-    );
-    res.render("products/productos", {
-      products: vehiculosProducts,
+  // productosVehiculos: (req, res) => {
+  //   const vehiculosProducts = products.filter(
+  //     (product) => product.type === "vehiculo"
+  //   );
+  //   res.render("products/productos", {
+  //     products: vehiculosProducts,
+  //   });
+  // },
+  // productosAutopartes: (req, res) => {
+  //   const autopartesProducts = products.filter(
+  //     (product) => product.type === "autoparte"
+  //   );
+  //   res.render("products/productos", {
+  //     products: autopartesProducts,
+  //   });
+  // },
+  list: async (req, res) => {
+    const autos = await db.Product.findAll({
+      where: {
+        type: "vehiculo",
+      },
     });
+    const autoparte = await db.Product.findAll({
+      where: {
+        type: "autoparte",
+      },
+    });
+    res.render("products/productos", { products: autos, products: autoparte });
   },
-  productosAutopartes: (req, res) => {
-    const autopartesProducts = products.filter(
-      (product) => product.type === "autoparte"
-    );
-    res.render("products/productos", {
-      products: autopartesProducts,
-    });
-  },
-  detail: (req, res) => {
-    let id = req.params.id;
-    let product = products.find((product) => {
-      return product.id == id;
-    });
-    res.render(path.join("products", "detail"), {
-      product,
-      products,
-    });
+  detail: async (req, res) => {
+    const product = await db.Product.findByPk(req.params.id);
+    console.log("Product:", product);
+    res.render(path.join("products", "detail"), { product });
   },
   viewCart: (req, res) => {
     res.render(path.join("products", "carrito"), {
@@ -38,16 +46,15 @@ const productController = {
       products,
     });
   },
-  search: (req, res) => {
+  search: async (req, res) => {
     let result = [];
-    for (let i = 0; i < products.length; i++) {
+
+    for (let i = 0; i < db.length; i++) {
       if (
-        products[i].title &&
-        products[i].title
-          .toLowerCase()
-          .includes(req.query.keywords.toLowerCase())
+        db[i].name &&
+        db[i].name.toLowerCase().includes(req.query.keywords.toLowerCase())
       ) {
-        result.push(products[i]);
+        result.push(db[i]);
       }
     }
     res.render("products/resultSearch", {

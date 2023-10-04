@@ -1,147 +1,111 @@
 const path = require("path");
-const products = require("../database/products.json");
-const usuarios = require("../database/users.json");
-const fs = require("fs");
-const bcrypt = require("bcryptjs");
-const { validationResult } = require("express-validator");
-const User = require("../models/User");
+// const products = require("../database/products.json");
+// const usuarios = require("../database/users.json");
+// const fs = require("fs");
+// const bcrypt = require("bcryptjs");
+// const User = require("../models/User");
 const bcryptjs = require("bcryptjs");
+const db = require("../database/models");
+const { validationResult } = require("express-validator");
 
 const userController = {
   fromLogin: (req, res) => {
     res.render(path.join("users", "login"));
   },
 
-  loginProcess: (req, res) => {
-    let userToLogin = User.findByField("email", req.body.email);
+  loginProcess: async (req, res) => {
+    //validar los datos
+    let errores = validationResult(req);
 
-    if (userToLogin) {
-      let isOkThePassword = bcryptjs.compareSync(
-        req.body.password,
-        userToLogin.password
-      );
-      if (isOkThePassword) {
-        delete userToLogin.password;
-        req.session.userLogged = userToLogin;
-
-        if (req.body.remember_user) {
-          res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
-        }
-
-        return res.redirect("/user/profile");
-      }
-    } else {
-      return res.render(path.join("users", "login"), {
-        errors: {
-          NoUser: {
-            msg: "No existe ese usuario",
-          },
-        },
-      });
+    //si hay errores, retornarlos a la vista
+    if (!errores.isEmpty()) {
+      let errors = errores.mapped();
+      console.log(errors);
+      return res.render("auth/login", { errors: errors, olds: req.body });
     }
 
-    return (
-      path.join("users", "login"),
-      {
-        errors: {
-          email: {
-            msg: "No se encuentra este email en nuestra base de database",
+    //leo el json
+    let user = await db.User.findOne({
+      where: {
+        email: req.body.email,
+      },
+    });
+
+    console.log(req.body);
+    //buscar al usuario
+    if (user) {
+      let passOk = bcryptjs.compareSync(req.body.password, user.password);
+      if (passOk) {
+        //si la password es correcta se guarda el ususario en session
+        req.session.userLogged = user;
+        req.session.lastActitity = Date.now();
+
+        //si recordar usuario esta activado enviamos una cookie con el email
+        if (req.body.remember_user) {
+          res.cookie("userId", user.id, { maxAge: 1000 * 60 * 60 });
+        }
+        //redirigimos al menu de usuario
+        return res.redirect("/user/profile");
+      } else {
+        //si la password no es correcta devolvemos el error
+        return res.render("/users/login", {
+          errors: {
+            password: {
+              msg: "La contraseña no es válida.",
+            },
           },
-        },
+          olds: req.body,
+        });
       }
-    );
+    } else {
+      return res.render("/users/login", {
+        errors: { email: { msg: "No se encontró el usuario", olds: req.body } },
+      });
+    }
   },
 
   formRegister: (req, res) => {
     res.render(path.join("users", "register"));
   },
 
-  usuario: (req, res) => {
-    let id = req.params.id;
-    let usuario = usuarios.find((usuario) => {
-      return usuario.id == id;
-    });
-    res.render(path.join("users", "usuario"), { usuario });
-  },
-
   registerProcess: async (req, res) => {
-    const resultValidation = validationResult(req);
+    //validar los datos
+    let errores = validationResult(req);
 
-    // Verificar si el nombre de usuario (user) ya está en uso
-    let userInDB = User.findByField("user", req.body.user);
-    if (userInDB) {
-      return res.render(path.join("users", "register"), {
-        errors: {
-          user: {
-            msg: "Este usuario ya está registrado",
-          },
-        },
-        oldData: req.body,
-      });
+    //si hay errores, retornarlos a la vista
+    if (!errores.isEmpty()) {
+      let errors = errores.mapped();
+      console.log(errors);
+      return res.render("/users/register", { errors: errors, olds: req.body });
     }
 
-    // Validar que password y repeatPassword sean iguales
-    if (req.body.password !== req.body.repeatPassword) {
-      return res.render(path.join("users", "register"), {
-        errors: {
-          password: {
-            msg: "Las contraseñas no coinciden",
-          },
-        },
-        oldData: req.body,
-      });
-    }
-
-    // En este punto, todas las validaciones han pasado, incluyendo la validación de los campos del formulario.
-
-    // Verificar si se ha cargado una imagen, y si no, mostrar un error
-    if (!req.file) {
-      return res.render(path.join("users", "register"), {
-        errors: {
-          imgperfil: {
-            msg: "Tienes que subir una imagen",
-          },
-        },
-        oldData: req.body,
-      });
-    }
-
-    //si hay errores de validacion, renderiza el formulario nuevamente
-    if (resultValidation.errors.length > 0) {
-      return res.render(path.join("users", "register"), {
-        errors: resultValidation.mapped(),
-        oldData: req.body,
-      });
-    }
-
-    // Encriptar la contraseña antes de guardarla en la base de datos.
-    const hashedPassword = bcrypt.hashSync(req.body.password, 10);
-
-    // Eliminar el campo repeatPassword antes de guardar el usuario.
-    const { repeatPassword, ...userWithoutRepeatPassword } = req.body;
-
-    let userToCreate = {
-      ...userWithoutRepeatPassword, // Usar los datos del usuario sin repeatPassword.
-      password: hashedPassword, // Guardar la contraseña encriptada.
-      imgperfil: req.file.filename, // Asignar el nombre de la imagen.
+    let data = {
+      ...req.body,
+      password: bcryptjs.hashSync(req.body.password, 10),
+      imgperfil: req.file.filename,
     };
+    //guarda el usuario en base de datos
+    let newUser = await db.User.create(data);
 
-    // Guardar el usuario en la base de datos
-    let userCreated = User.create(userToCreate);
+    // SE LOGEA EN SESSION
+    req.session.userLogged = newUser;
 
-    return res.redirect("/user/login");
+    //redirigimos al login
+    return res.redirect(`/user/login`);
   },
 
   logout: (req, res) => {
-    res.clearCookie("userEmail");
     req.session.destroy();
+    res.clearCookie("userId");
     return res.redirect("/");
   },
 
-  profile: (req, res) => {
-    return res.render(path.join("users", "perfil"), {
-      user: req.session.userLogged,
+  profile: async (req, res) => {
+    let orders = await db.Order.findAll({
+      where: { userId: req.session.userLogged.id },
     });
+    // return res.send(orders);
+    return res.render("auth/profile", { orders });
   },
 };
 

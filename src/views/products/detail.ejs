@@ -16,11 +16,22 @@
 
     <!-- Product Detail -->
     <div class="titulo">
-      <h2><%= product.title %></h2>
+      <% if (product && product.name) { %>
+      <h2><%= product.name %></h2>
+      <% } else { %>
+      <h2>Product Not Found</h2>
+      <% } %>
     </div>
     <main>
       <div class="container-img">
-        <img src="<%= product.img %>" alt="<%= product.title %>" />
+        <% if (product && product.img) { %>
+        <img
+          src="/images/products/<%= product.img != ''? product.img: 'default.jpg' %>"
+          alt="<%= product.name %>"
+        />
+        <% } else { %>
+        <p>No Image Available</p>
+        <% } %>
       </div>
 
       <div class="container-info-product">
@@ -43,7 +54,7 @@
             </div>
           </div>
           <div class="boton">
-            <% if (isLogged) { %>
+            <% if (userLogged) { %>
             <button class="btn-add-to-cart">
               <i class="fa-solid fa-plus"></i>
               <a
@@ -112,17 +123,17 @@
       <div class="titulo">
         <h2>Productos Relacionados</h2>
       </div>
-      <% const carga = cargaRandom(products); %>
+      <% const carga = cargaRandom(product); %>
       <div class="card-list-products">
         <% for (let i = 0; i < 4 && i < carga.length; i++) { %>
         <a href="/products/detail/<%= carga[i].id %>">
           <div class="card">
             <div class="card-img">
-              <img src="<%= carga[i].img %>" alt="<%= carga[i].title %>" />
+              <img src="<%= carga[i].img %>" alt="<%= carga[i].name %>" />
             </div>
             <div class="info-card">
               <div class="text-product">
-                <h3><%= carga[i].title %></h3>
+                <h3><%= carga[i].name %></h3>
                 <p class="category"><%= carga[i].category %></p>
               </div>
               <div class="price">$<%= carga[i].price %></div>
