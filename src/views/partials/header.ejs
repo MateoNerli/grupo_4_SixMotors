@@ -66,7 +66,7 @@
             </form>
           </div>
           <ul class="list-loged">
-            <% if (locals.isLogged) { %>
+            <% if (isLogged) { %>
             <li class="item-log">
               <a
                 class="link-drop"
@@ -77,11 +77,11 @@
                 aria-expanded="false"
               >
                 <img
-                  src="/images/users/<%= locals.userLogged.imgperfil %>"
+                  src="/images/users/<%= locals.userLogged.img %>"
                   width="40"
                   style="border-radius: 100%"
                 />
-                Hola <%= locals.userLogged.user %>
+                Hola <%= locals.userLogged.name %>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/user/profile">Mi perfil</a>

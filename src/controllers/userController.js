@@ -21,7 +21,7 @@ const userController = {
     if (!errores.isEmpty()) {
       let errors = errores.mapped();
       console.log(errors);
-      return res.render("auth/login", { errors: errors, olds: req.body });
+      return res.render("/user/login", { errors: errors, olds: req.body });
     }
 
     //leo el json
@@ -42,7 +42,11 @@ const userController = {
 
         //si recordar usuario esta activado enviamos una cookie con el email
         if (req.body.remember_user) {
-          res.cookie("userId", user.id, { maxAge: 1000 * 60 * 60 });
+          res.cookie("userEmail", req.body.email, {
+            maxAge: 1000 * 60 * 60,
+            secure: true,
+            httpOnly: true,
+          });
         }
         //redirigimos al menu de usuario
         return res.redirect("/user/profile");
@@ -105,7 +109,10 @@ const userController = {
       where: { userId: req.session.userLogged.id },
     });
     // return res.send(orders);
-    return res.render("auth/profile", { orders });
+    return res.render(path.join("users", "perfil"), {
+      orders,
+      user: req.session.userLogged,
+    });
   },
 };
 

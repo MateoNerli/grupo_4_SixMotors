@@ -11,9 +11,15 @@ const controller = require("../controllers/userController");
 const redirectIfAutenticated = require("../middlewares/redirectIfAutenticated");
 const authMiddleware = require("../middlewares/authMiddleware");
 const userValidationsLogin = require("../middlewares/userValidationsLogin");
+const guestMiddleware = require("../middlewares/guestMiddleware");
 
 // Formulario de login
-router.get("/login", redirectIfAutenticated, userController.fromLogin);
+router.get(
+  "/login",
+  guestMiddleware,
+  redirectIfAutenticated,
+  userController.fromLogin
+);
 // Procesar el login
 router.post("/login", userController.loginProcess);
 

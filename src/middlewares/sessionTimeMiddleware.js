@@ -1,7 +1,7 @@
 module.exports = (req, res, next) => {
   let dateNow = Date.now();
-  console.log("dateNow", dateNow);
-  console.log("lastActivity:", req.session.lastActitity);
+  //console.log("dateNow", dateNow);
+  //console.log("lastActivity:", req.session.lastActitity);
   // reviso si es un usuario
   if (req.session.userLogged && req.session.lastActitity) {
     // resto las fecha en formato numerico
