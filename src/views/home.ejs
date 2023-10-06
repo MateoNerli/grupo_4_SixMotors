@@ -57,6 +57,7 @@
 
       <section id="autos-venta" class="autos-venta">
         <div class="autos">
+          <!-- Swiper de Autos 0km -->
           <div class="autos-0km autos-cont">
             <div class="titulo">
               <h3>Autos 0km</h3>
@@ -67,17 +68,19 @@
             <div class="slider">
               <div class="swiper-container">
                 <div class="swiper-wrapper">
-                  <% const cargaAutos0k = cargaRandom(autos); %> <% for (let i =
-                  0; i < 7 && i < cargaAutos0k.length; i++) { %>
+                  <% autos.forEach(prod => { %> <% if (prod.km) { %>
                   <div class="swiper-slide">
-                    <a href="/products/detail/<%= cargaAutos0k[i].id %>">
+                    <a href="/products/detail/<%= prod.id %>">
                       <div class="img-container">
-                        <img src="<%= cargaAutos0k[i].img %>" alt="" />
-                        <h6><%= cargaAutos0k[i].title %></h6>
+                        <img
+                          src="/images/products/<%= prod.img %>"
+                          alt="<%= prod.name %>"
+                        />
+                        <h6><%= prod.name %></h6>
                       </div>
                     </a>
                   </div>
-                  <% } %>
+                  <% } %> <% }) %>
                 </div>
                 <!-- pagination -->
                 <div class="swiper-pagination"></div>
@@ -85,6 +88,7 @@
             </div>
           </div>
 
+          <!-- Swiper de Autos Usados -->
           <div class="autos-usados autos-cont">
             <div class="titulo">
               <h3>Autos usados</h3>
@@ -95,21 +99,19 @@
             <div class="slider">
               <div class="swiper-container swiper-container-usados">
                 <div class="swiper-wrapper">
-                  <% const cargaRandomAutosUsados = cargaRandom(autos); %> <%
-                  for (let i = 0; i < 7 && i < cargaRandomAutosUsados.length;
-                  i++) { %>
+                  <% autos.forEach(prod => { %> <% if (!prod.km) { %>
                   <div class="swiper-slide">
-                    <a href="/products/<%= cargaRandomAutosUsados[i].id %>">
+                    <a href="/products/<%= prod.id %>">
                       <div class="img-container">
                         <img
-                          src="<%= cargaRandomAutosUsados[i].img %>"
-                          alt=""
+                          src="/images/products/<%= prod.img %>"
+                          alt="<%= prod.name %>"
                         />
-                        <h6><%= cargaRandomAutosUsados[i].title %></h6>
+                        <h6><%= prod.name %></h6>
                       </div>
                     </a>
                   </div>
-                  <% } %>
+                  <% } %> <% }) %>
                 </div>
               </div>
               <div class="swiper-button-next swiper-button-next-usados"></div>
@@ -119,25 +121,27 @@
           </div>
         </div>
 
+        <!-- Swiper de los más vendidos -->
         <div class="masVendidos autos-cont">
           <div class="titulo">
-            <h3>los mas vendidos</h3>
+            <h3>Los más vendidos</h3>
           </div>
           <div class="swiperVendi mySwiperVendi">
             <div class="swiper-wrapperVendi">
-              <% autos.forEach( prod=> { %> <% if (prod.marked) { %>
+              <% autos.forEach(prod => { %> <% if (prod.marked) { %>
               <div class="swiper-slide">
                 <div class="card float-left p-4">
                   <div class="row">
                     <div class="col-sm-7">
                       <div class="card-block">
-                        <h4><%= autos.name %></h4>
+                        <h4><%= prod.name %></h4>
                       </div>
                     </div>
                     <div class="col-sm-5">
                       <img
                         class="d-block w-100"
-                        src="<%= autos.img %>"
+                        src="/images/products/<%=
+                      prod.img %>"
                         alt=""
                       />
                     </div>
@@ -168,8 +172,8 @@
             <div class="items">
               <span class="titulo-items"><%= autoparte.title %></span>
               <img
-                src="<%= autoparte.img %>"
-                alt="<%= autoparte.title %>"
+                src="/images/products/<%= autoparte.img %>"
+                alt="<%= autoparte.name %>"
                 class="img-item"
               />
               <span class="precio-item">$<%= autoparte.price %></span>

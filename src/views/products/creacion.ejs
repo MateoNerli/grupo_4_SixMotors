@@ -37,16 +37,20 @@
                   <label for="price">Precio:</label>
                   <input type="text" name="price" />
                 </div>
+                <div class="inputBox">
+                  <label for="year">Modelo:(año)</label>
+                  <input type="num" name="year" />
+                </div>
               </div>
             </div>
             <div class="col-der">
               <div class="infoBox">
                 <label for="img"><br />Foto del producto:</label>
                 <input type="file" id="img" name="img" />
-                <label for="category">Categoria</label>
-                <select name="category" id="category">
-                  <option value="nuevo">Nuevo</option>
-                  <option value="usado">Usado</option>
+                <label for="category">Es 0KM</label>
+                <select name="km" id="km">
+                  <option value="0">No</option>
+                  <option value="1">Sí</option>
                 </select>
                 <label for="colors">Colores (separados por comas):</label>
                 <input type="text" name="colors" required />
@@ -59,8 +63,8 @@
                 <label for="description">Descripción:</label>
                 <textarea name="description" required></textarea>
               </div>
-              <div class="inputBox" style="display: flex">
-                <label for="details">marcado:</label>
+              <div class="inputBox check">
+                <label for="marked">Venta inmediata?</label>
                 <input type="checkbox" class="form-check-input" name="marked" />
               </div>
 

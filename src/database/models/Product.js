@@ -39,6 +39,14 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.BOOLEAN,
       defaultValue: false,
     },
+    is_km: {
+      type: dataTypes.BOOLEAN,
+      defaultValue: false,
+    },
+    year: {
+      type: dataTypes.INTEGER(11),
+      allowNull: false,
+    },
   };
 
   let configurations = {};

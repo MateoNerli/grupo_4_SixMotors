@@ -83,10 +83,53 @@ const userController = {
       return res.render("/users/register", { errors: errors, olds: req.body });
     }
 
+    let image = "";
+    if (req.file) {
+      image = req.file.filename;
+    }
+
+    //busco si el usuario ya existe
+    let user = await db.User.findOne({
+      where: {
+        user: req.body.user,
+      },
+    });
+
+    //si el usuario ya existe devuelvo el error
+    if (user) {
+      return res.render("/users/register", {
+        errors: {
+          user: {
+            msg: "El usuario ya existe.",
+          },
+        },
+        olds: req.body,
+      });
+    }
+
+    //busco si el email ya existe
+    let email = await db.User.findOne({
+      where: {
+        email: req.body.email,
+      },
+    });
+
+    //si el email ya existe devuelvo el error
+    if (email) {
+      return res.render("/users/register", {
+        errors: {
+          email: {
+            msg: "El email ya existe.",
+          },
+        },
+        olds: req.body,
+      });
+    }
+
     let data = {
       ...req.body,
       password: bcryptjs.hashSync(req.body.password, 10),
-      imgperfil: req.file.filename,
+      img: image,
     };
     //guarda el usuario en base de datos
     let newUser = await db.User.create(data);

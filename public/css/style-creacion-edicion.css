@@ -69,10 +69,23 @@
 
 /* Estilos para los inputs, selects y textarea */
 .formulario input[type="text"],
+.formulario input[type="num"],
 .formulario select,
 .formulario textarea,
 .formulario input[type="file"] {
   width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.inputBox.check {
+  display: flex;
+  justify-content: center;
+}
+.formulario input[type="checkbox"] {
+  width: 10%;
   padding: 8px;
   margin-bottom: 15px;
   border: 1px solid #ccc;

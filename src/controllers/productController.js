@@ -18,19 +18,36 @@ const productController = {
   //     products: autopartesProducts,
   //   });
   // },
-  list: async (req, res) => {
-    const autos = await db.Product.findAll({
-      where: {
-        type: "vehiculo",
-      },
-    });
-    const autoparte = await db.Product.findAll({
-      where: {
-        type: "autoparte",
-      },
-    });
-    res.render("products/productos", { products: autos, products: autoparte });
+  list: async (req, res, type) => {
+    try {
+      let products;
+
+      if (type === "vehiculo") {
+        // Consulta para obtener todos los productos de tipo "vehiculo"
+        products = await db.Product.findAll({
+          where: {
+            type: "vehiculo",
+          },
+        });
+      } else if (type === "autoparte") {
+        // Consulta para obtener todos los productos de tipo "autoparte"
+        products = await db.Product.findAll({
+          where: {
+            type: "autoparte",
+          },
+        });
+      } else {
+        // Si se proporciona un tipo desconocido, muestra todos los productos
+        products = await db.Product.findAll();
+      }
+
+      res.render(path.join("products", "productos"), { products });
+    } catch (error) {
+      console.error("Error al obtener productos:", error);
+      // Maneja el error adecuadamente aquí
+    }
   },
+
   detail: async (req, res) => {
     const product = await db.Product.findByPk(req.params.id);
     console.log("Product:", product);

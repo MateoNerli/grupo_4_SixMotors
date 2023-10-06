@@ -28,7 +28,7 @@ router.get("/register", redirectIfAutenticated, userController.formRegister);
 // Procesar el registro
 router.post(
   "/register",
-  uploadFile.single("imgperfil"),
+  uploadFile.single("img"),
   userValidationsLogin,
   validations,
   userController.registerProcess

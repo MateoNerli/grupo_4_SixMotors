@@ -82,12 +82,12 @@
             <a href="/products/detail/<%= product.id %>">
               <img
                 class="producto-imagen"
-                src="<%= product.img %>"
-                alt="<%= product.title %>"
+                src="/images/products/<%= product.img %>"
+                alt="<%= product.name %>"
               />
             </a>
             <div class="producto-detalles">
-              <h3 class="producto-titulo"><%= product.title %></h3>
+              <h3 class="producto-titulo"><%= product.name %></h3>
               <p class="producto-precio">$<%= product.price %></p>
               <div class="conten">
                 <button class="producto-agregar Agregar" id="<%= product.id %>">
