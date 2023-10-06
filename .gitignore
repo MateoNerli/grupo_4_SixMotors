@@ -1,4 +1,3 @@
 node_modules
-public/img/products
-public/img/users
+public/images
 .env
