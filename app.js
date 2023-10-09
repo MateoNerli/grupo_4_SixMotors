@@ -34,6 +34,7 @@ const sessionTimeMiddleware = require("./src/middlewares/sessionTimeMiddleware")
 const menuMiddleware = require("./src/middlewares/menuMiddleware");
 
 const userLoggedMiddleware = require("./src/middlewares/userMiddleware");
+const adminMiddleware = require("./src/middlewares/adminMiddleware");
 
 // .ENV
 require("dotenv").config(); // para usar variables de entorno
@@ -41,6 +42,7 @@ require("dotenv").config(); // para usar variables de entorno
 // ************ cookies() ************
 app.use(cookies());
 app.use(userLoggedMiddleware);
+app.use(adminMiddleware);
 
 // ************ Middlewares ************
 app.use(express.json());

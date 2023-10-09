@@ -169,19 +169,20 @@
       </div>
       <section id="autopartes" class="autopartes">
         <div class="autopartes-items">
-          <% autoparte.forEach(autoparte => { %>
-          <a href="/products/detail/<%= autoparte.id %>">
+          <% for (let i = 0; i < 10 && i < autoparte.length; i++) { %> <% const
+          autoparteItem = autoparte[i]; %>
+          <a href="/products/detail/<%= autoparteItem.id %>">
             <div class="items">
-              <span class="titulo-items"><%= autoparte.title %></span>
+              <span class="titulo-items"><%= autoparteItem.title %></span>
               <img
-                src="/images/products/<%= autoparte.img %>"
-                alt="<%= autoparte.name %>"
+                src="/images/products/<%= autoparteItem.img %>"
+                alt="<%= autoparteItem.name %>"
                 class="img-item"
               />
-              <span class="precio-item">$<%= autoparte.price %></span>
+              <span class="precio-item">$<%= autoparteItem.price %></span>
             </div>
           </a>
-          <% }); %>
+          <% } %>
         </div>
       </section>
 
@@ -198,13 +199,13 @@
             <li class="card-reseña">
               <div class="img">
                 <img
-                  src="/images/users/<%= usuarios.imgperfil %>"
+                  src="/images/users/<%= usuarios.img %>"
                   alt="<%= usuarios.name %>"
                   draggable="false"
                 />
               </div>
               <h2><%= usuarios.name %></h2>
-              <span><%= usuarios.reseñas %> </span>
+              <span><%= usuarios.reviews %> </span>
             </li>
             <% }); %>
           </ul>

@@ -44,6 +44,10 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.STRING(45),
       allowNull: true,
     },
+    reviews: {
+      type: dataTypes.STRING(512),
+      allowNull: true,
+    },
   };
   let configurations = {};
 

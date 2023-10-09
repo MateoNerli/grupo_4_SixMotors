@@ -22,18 +22,18 @@ const productController = {
     try {
       let products;
 
-      if (type === "vehiculo") {
+      if (type === 0) {
         // Consulta para obtener todos los productos de tipo "vehiculo"
         products = await db.Product.findAll({
           where: {
-            type: "vehiculo",
+            type: 0,
           },
         });
-      } else if (type === "autoparte") {
+      } else if (type === 1) {
         // Consulta para obtener todos los productos de tipo "autoparte"
         products = await db.Product.findAll({
           where: {
-            type: "autoparte",
+            type: 1,
           },
         });
       } else {
@@ -50,8 +50,10 @@ const productController = {
 
   detail: async (req, res) => {
     const product = await db.Product.findByPk(req.params.id);
-    console.log("Product:", product);
-    res.render(path.join("products", "detail"), { product });
+    const isAdmin = req.session.userLogged && req.session.userLogged.isAdmin;
+    const products = await db.Product.findAll();
+    // console.log("Product:", product);
+    res.render(path.join("products", "detail"), { product, isAdmin, products });
   },
   viewCart: (req, res) => {
     res.render(path.join("products", "carrito"), {

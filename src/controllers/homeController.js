@@ -5,7 +5,7 @@ const homeController = {
   home: async (req, res) => {
     const autos = await db.Product.findAll({
       where: {
-        type: 1,
+        type: 0,
       },
     });
     const autos0KM = await db.Product.findAll({
@@ -22,7 +22,7 @@ const homeController = {
     });
     const autoparte = await db.Product.findAll({
       where: {
-        type: 0,
+        type: 1,
       },
     });
     const marked = await db.Product.findAll({

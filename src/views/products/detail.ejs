@@ -54,7 +54,6 @@
             </div>
           </div>
           <div class="boton">
-            <% if (userLogged) { %>
             <button class="btn-add-to-cart">
               <i class="fa-solid fa-plus"></i>
               <a
@@ -64,11 +63,6 @@
                 >Agregar al carrito</a
               >
             </button>
-            <% } else { %>
-            <button class="btn-add-to-cart">
-              <a href="/user/login">Iniciar sesión</a>
-            </button>
-            <% } %>
           </div>
         </div>
 
@@ -123,13 +117,16 @@
       <div class="titulo">
         <h2>Productos Relacionados</h2>
       </div>
-      <% const carga = cargaRandom(product); %>
+      <% const carga = cargaRandom(products); %>
       <div class="card-list-products">
         <% for (let i = 0; i < 4 && i < carga.length; i++) { %>
         <a href="/products/detail/<%= carga[i].id %>">
           <div class="card">
             <div class="card-img">
-              <img src="<%= carga[i].img %>" alt="<%= carga[i].name %>" />
+              <img
+                src="/images/products/<%= carga[i].img %>"
+                alt="<%= carga[i].name %>"
+              />
             </div>
             <div class="info-card">
               <div class="text-product">

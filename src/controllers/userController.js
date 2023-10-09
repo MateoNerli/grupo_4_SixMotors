@@ -136,6 +136,7 @@ const userController = {
       img: image,
       country: req.body.country,
       cel: req.body.cel,
+      reviews: req.body.reviews,
     };
     //guarda el usuario en base de datos
     let newUser = await db.User.create(data);
