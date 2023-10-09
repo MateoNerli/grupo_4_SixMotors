@@ -21,8 +21,8 @@ const editCreacionCointroller = {
       //  category: req.body.category,
       colors: req.body.colors,
       price: req.body.price,
-      marked,
-      km: km === "1", // Si km es '1', será true, de lo contrario, será false
+      marked: req.body.marked ? true : false,
+      is_km: req.body.is_km,
       year: req.body.year,
     });
 
@@ -49,10 +49,11 @@ const editCreacionCointroller = {
         name: req.body.name,
         description: req.body.description,
         img: image,
-        category: req.body.category,
+        //  category: req.body.category,
         colors: req.body.colors,
         price: req.body.price,
         marked: req.body.marked ? true : false,
+        is_km: req.body.is_km,
       });
     }
     return res.redirect("/");

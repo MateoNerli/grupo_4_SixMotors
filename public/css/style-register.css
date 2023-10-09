@@ -266,7 +266,7 @@ button:hover {
   text-decoration: none;
   color: var(--text);
 }
-#pais {
+#country {
   border: none;
   padding: 8px;
   border-radius: 22px;

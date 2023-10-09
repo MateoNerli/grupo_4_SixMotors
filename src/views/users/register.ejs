@@ -126,12 +126,12 @@
             <div class="text-danger"><%= errors.email.msg %></div>
             <% } %>
 
-            <label for="pais">
+            <label for="country">
               <i class="fa-solid fa-globe"></i>
               <select
-                name="pais"
-                id="pais"
-                class="form-control <%= locals.errors && errors.pais ? 'is-invalid' : null %>"
+                name="country"
+                id="country"
+                class="form-control <%= locals.errors && errors.country ? 'is-invalid' : null %>"
               >
                 <option value="">Pais</option>
                 <option value="Argentina">Argentina</option>
@@ -148,18 +148,13 @@
                 <option value="Venezuela">Venezuela</option>
               </select>
             </label>
-            <% if (locals.errors && errors.pais) { %>
-            <div class="text-danger"><%= errors.pais.msg %></div>
+            <% if (locals.errors && errors.country) { %>
+            <div class="text-danger"><%= errors.country.msg %></div>
             <% } %>
 
-            <label for="Celular">
+            <label for="cel">
               <i class="fa-solid fa-phone"></i>
-              <input
-                type="number"
-                name="celular"
-                id="celular"
-                placeholder="Celular"
-              />
+              <input type="number" name="cel" id="cel" placeholder="Celular" />
             </label>
 
             <label for="password">

@@ -5,16 +5,40 @@ const homeController = {
   home: async (req, res) => {
     const autos = await db.Product.findAll({
       where: {
-        type: "vehiculo",
+        type: 1,
+      },
+    });
+    const autos0KM = await db.Product.findAll({
+      where: {
+        type: 0,
+        is_km: 1,
+      },
+    });
+    const autoUsado = await db.Product.findAll({
+      where: {
+        type: 0,
+        is_km: 0,
       },
     });
     const autoparte = await db.Product.findAll({
       where: {
-        type: "autoparte",
+        type: 0,
+      },
+    });
+    const marked = await db.Product.findAll({
+      where: {
+        marked: 1,
       },
     });
     const usuarios = await db.User.findAll();
-    res.render(path.join("home"), { autos, autoparte, usuarios });
+    res.render(path.join("home"), {
+      autos,
+      autoparte,
+      usuarios,
+      marked,
+      autos0KM,
+      autoUsado,
+    });
   },
   cart: function (req, res) {
     res.render(path.join("products", "carrito"));

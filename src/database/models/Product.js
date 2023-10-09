@@ -23,10 +23,10 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.STRING(100),
       allowNull: true,
     },
-    category: {
-      type: dataTypes.STRING(45),
-      allowNull: false,
-    },
+    // category: {
+    //   type: dataTypes.STRING(45),
+    //   allowNull: false,
+    // },
     colors: {
       type: dataTypes.STRING(45),
       allowNull: false,

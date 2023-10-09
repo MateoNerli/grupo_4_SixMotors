@@ -68,19 +68,19 @@
             <div class="slider">
               <div class="swiper-container">
                 <div class="swiper-wrapper">
-                  <% autos.forEach(prod => { %> <% if (prod.km) { %>
+                  <% cargaRandom(autos0KM).slice(0, 7).forEach(auto => { %>
                   <div class="swiper-slide">
-                    <a href="/products/detail/<%= prod.id %>">
+                    <a href="/products/detail/<%= auto.id %>">
                       <div class="img-container">
                         <img
-                          src="/images/products/<%= prod.img %>"
-                          alt="<%= prod.name %>"
+                          src="/images/products/<%= auto.img %>"
+                          alt="<%= auto.name %>"
                         />
-                        <h6><%= prod.name %></h6>
+                        <h6><%= auto.name %></h6>
                       </div>
                     </a>
                   </div>
-                  <% } %> <% }) %>
+                  <% }) %>
                 </div>
                 <!-- pagination -->
                 <div class="swiper-pagination"></div>
@@ -99,19 +99,19 @@
             <div class="slider">
               <div class="swiper-container swiper-container-usados">
                 <div class="swiper-wrapper">
-                  <% autos.forEach(prod => { %> <% if (!prod.km) { %>
+                  <% cargaRandom(autoUsado).slice(0, 7).forEach(auto => { %>
                   <div class="swiper-slide">
-                    <a href="/products/<%= prod.id %>">
+                    <a href="/products/detail/<%= auto.id %>">
                       <div class="img-container">
                         <img
-                          src="/images/products/<%= prod.img %>"
-                          alt="<%= prod.name %>"
+                          src="/images/products/<%= auto.img %>"
+                          alt="<%= auto.name %>"
                         />
-                        <h6><%= prod.name %></h6>
+                        <h6><%= auto.name %></h6>
                       </div>
                     </a>
                   </div>
-                  <% } %> <% }) %>
+                  <% }) %>
                 </div>
               </div>
               <div class="swiper-button-next swiper-button-next-usados"></div>
@@ -128,27 +128,29 @@
           </div>
           <div class="swiperVendi mySwiperVendi">
             <div class="swiper-wrapperVendi">
-              <% autos.forEach(prod => { %> <% if (prod.marked) { %>
+              <% for (let i = 0; i < 7; i++) { %> <% const randomIndex =
+              Math.floor(Math.random() * marked.length); %> <% const
+              randomProduct = marked[randomIndex]; %> <% if
+              (randomProduct.marked) { %>
               <div class="swiper-slide">
                 <div class="card float-left p-4">
                   <div class="row">
                     <div class="col-sm-7">
                       <div class="card-block">
-                        <h4><%= prod.name %></h4>
+                        <h4><%= randomProduct.name %></h4>
                       </div>
                     </div>
                     <div class="col-sm-5">
                       <img
                         class="d-block w-100"
-                        src="/images/products/<%=
-                      prod.img %>"
+                        src="/images/products/<%= randomProduct.img %>"
                         alt=""
                       />
                     </div>
                   </div>
                 </div>
               </div>
-              <% } %> <% }) %>
+              <% } %> <% } %>
             </div>
             <div class="swiper-paginationVendi"></div>
           </div>

@@ -29,8 +29,8 @@
                 <div class="inputBox">
                   <label for="type">Type</label>
                   <select name="type" id="type">
-                    <option value="vehiculo">Vehiculo</option>
-                    <option value="autoparte">Autoparte</option>
+                    <option value="0">Vehiculo</option>
+                    <option value="1">Autoparte</option>
                   </select>
                 </div>
                 <div class="inputBox">
@@ -47,10 +47,10 @@
               <div class="infoBox">
                 <label for="img"><br />Foto del producto:</label>
                 <input type="file" id="img" name="img" />
-                <label for="category">Es 0KM</label>
-                <select name="km" id="km">
-                  <option value="0">No</option>
-                  <option value="1">Sí</option>
+                <label for="category">Es:</label>
+                <select name="is_km" id="is_km">
+                  <option value="0">Usado</option>
+                  <option value="1">Nuevo</option>
                 </select>
                 <label for="colors">Colores (separados por comas):</label>
                 <input type="text" name="colors" required />

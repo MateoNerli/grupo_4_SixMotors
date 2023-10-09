@@ -22,7 +22,7 @@ module.exports = (sequelize, dataTypes) => {
     type: {
       type: dataTypes.STRING(45),
       allowNull: false,
-      defaultValue: "user",
+      defaultValue: 0,
     },
     email: {
       type: dataTypes.STRING(100),
@@ -34,6 +34,14 @@ module.exports = (sequelize, dataTypes) => {
     },
     img: {
       type: dataTypes.STRING(100),
+      allowNull: false,
+    },
+    country: {
+      type: dataTypes.STRING(255),
+      allowNull: false,
+    },
+    cel: {
+      type: dataTypes.STRING(45),
       allowNull: true,
     },
   };

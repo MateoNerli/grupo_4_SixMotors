@@ -31,7 +31,7 @@ const userController = {
       },
     });
 
-    console.log(req.body);
+    //console.log(req.body);
     //buscar al usuario
     if (user) {
       let passOk = bcryptjs.compareSync(req.body.password, user.password);
@@ -127,9 +127,15 @@ const userController = {
     }
 
     let data = {
-      ...req.body,
+      name: req.body.name,
+      lastname: req.body.lastname,
+      user: req.body.user,
+      email: req.body.email,
+      type: 0,
       password: bcryptjs.hashSync(req.body.password, 10),
       img: image,
+      country: req.body.country,
+      cel: req.body.cel,
     };
     //guarda el usuario en base de datos
     let newUser = await db.User.create(data);

@@ -29,11 +29,7 @@
                 </div>
                 <div class="inputBox">
                   <label for="type">Type</label>
-                  <select
-                    name="type"
-                    id="type"
-                    value="<%= producto.category %>"
-                  >
+                  <select name="type" id="type" value="<%= producto.type %>">
                     <option value="vehiculo">Vehiculo</option>
                     <option value="autoparte">Autoparte</option>
                   </select>
@@ -60,7 +56,7 @@
                 <select
                   name="category"
                   id="category"
-                  value="<%= producto.category %>"
+                  value="<%= producto.type %>"
                 >
                   <option value="nuevo">Nuevo</option>
                   <option value="usado">Usado</option>
