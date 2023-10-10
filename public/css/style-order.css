@@ -1,0 +1,102 @@
+/* Estilos generales */
+.container {
+  max-width: 1100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 5px;
+}
+
+.tituPedido {
+  text-align: center;
+  color: #333;
+}
+
+/* Estilos para la tabla de productos */
+.tablePedido {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tablePedido th {
+  background-color: #f2f2f2;
+  text-align: left;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Mostrar puntos suspensivos (...) para texto largo */
+}
+
+.tablePedido th,
+.tablePedido td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.tablePedido .text-center {
+  text-align: center;
+}
+
+/* Estilos para el total */
+.totalAmount {
+  font-size: 1.5rem;
+}
+
+/* Estilos para la tarjeta de detalles de la compra */
+.card {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  background-color: var(--primary);
+  color: black;
+  padding: 10px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body p {
+  margin-bottom: 10px;
+}
+
+/* Estilos para el botón de volver a mis pedidos */
+.btnPedidos {
+  background-color: var(--accent);
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btnPedidos:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos responsivos para pantallas pequeñas */
+@media (max-width: 375px) {
+  .tablePedido th,
+  .tablePedido td {
+    padding: 5px;
+    font-size: 12px; /* Reduce el tamaño de fuente */
+  }
+
+  .tablePedido th {
+    white-space: normal; /* Permite que el texto se envuelva en varias líneas */
+    text-align: center;
+  }
+
+  .totalAmount {
+    font-size: 1rem; /* Ajusta el tamaño de fuente para el total */
+  }
+}

@@ -20,91 +20,36 @@
           </button>
         </a>
       </div>
-      <!-- <div class="contenedor-carrito">
-        <div class="carrito-producto">
-          <img
-            class="carrito-producto-imagen"
-            src="/images/autopartes/alternador-ap.png"
-            alt=""
-          />
-          <div class="carrito-producto-titulo">
-            <small>Titulo</small>
-            <h3>Producto</h3>
-          </div>
-          <div class="carrito-producto-cantidad">
-            <small>Cantidad</small>
-            <p>1</p>
-          </div>
-          <div class="carrito-producto-precio">
-            <small>Precio</small>
-            <p>$ 255555555</p>
-          </div>
-          <button class="carrito-producto-eliminar">
-            <i class="fa-solid fa-trash"></i>
-          </button>
-        </div>
-        <div class="carrito-producto">
-          <img
-            class="carrito-producto-imagen"
-            src="/images/autopartes/alternador-ap.png"
-            alt=""
-          />
-          <div class="carrito-producto-titulo">
-            <small>Titulo</small>
-            <h3>Producto</h3>
-          </div>
-          <div class="carrito-producto-cantidad">
-            <small>Cantidad</small>
-            <p>1</p>
-          </div>
-          <div class="carrito-producto-precio">
-            <small>Precio</small>
-            <p>$ 25.983.699</p>
-          </div>
-          <button class="carrito-producto-eliminar">
-            <i class="fa-solid fa-trash"></i>
-          </button>
-        </div>
-      </div> -->
       <div class="card-body">
-        <table class="table table-responsive-md mb-0">
-          <thead>
-            <tr>
-              <th style="width: 50px">
-                <strong>#</strong>
-              </th>
-              <th class="th-lg">
-                <strong>Producto</strong>
-              </th>
-              <th class="th-lg">
-                <strong>Precio</strong>
-              </th>
-              <th class="text-center">
-                <strong>Cantidad</strong>
-              </th>
-              <th class="text-center">
-                <strong>Subtotal</strong>
-              </th>
-              <th style="width: 50px"></th>
-            </tr>
-          </thead>
-          <tbody class="cartRows"></tbody>
-        </table>
-        <div class="card-footer text-right">
-          <h2>Total: <span class="totalAmount">$ 0</span></h2>
+        <div class="tabla-container">
+          <table class="table">
+            <thead>
+              <tr>
+                <th style="width: 50px">
+                  <strong>#</strong>
+                </th>
+                <th class="th-lg">
+                  <strong>Producto</strong>
+                </th>
+                <th class="th-lg">
+                  <strong>Precio</strong>
+                </th>
+                <th class="text-center">
+                  <strong>Cantidad</strong>
+                </th>
+                <th class="text-center">
+                  <strong>Subtotal</strong>
+                </th>
+                <th style="width: 50px"></th>
+              </tr>
+            </thead>
+            <tbody class="cartRows"></tbody>
+          </table>
         </div>
       </div>
       <div class="carrito-acciones">
         <div class="carrito-acciones-izquierda">
           <button class="carrito-acciones-vaciar">Vaciar carrito</button>
-        </div>
-        <div class="carrito-acciones-derecha">
-          <div class="carrito-acciones-total">
-            <div class="card-footer text-right">
-              <h2>Total: <span class="totalAmount">$ 0</span></h2>
-            </div>
-          </div>
-          <button class="carrito-acciones-comprar">Comprar ahora</button>
         </div>
       </div>
       <div class="card">
@@ -140,15 +85,19 @@
                 <option value="Débito">Tarjeta Débito</option>
                 <option value="Crédito">Tarjeta Crédito</option>
               </select>
-              <div class="invalid-feedback">Elija un tipo de envio.</div>
+              <div class="invalid-feedback">Elija un tipo de pago</div>
             </div>
           </div>
-          <button
-            class="btn btn-primary btn-lg btn-block waves-effect waves-light"
-            type="submit"
-          >
-            Comprar
-          </button>
+          <div class="carrito-acciones-derecha">
+            <div class="carrito-acciones-total">
+              <div class="card-footer text-right">
+                <h2>Total: <span class="totalAmount">$ 0</span></h2>
+              </div>
+            </div>
+            <button class="carrito-acciones-comprar" type="submit">
+              Comprar ahora
+            </button>
+          </div>
         </form>
       </div>
     </main>
