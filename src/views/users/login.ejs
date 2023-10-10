@@ -59,7 +59,11 @@
                 placeholder="Email: "
               />
             </label>
-
+            <div class="mensaje-error">
+              <% if (locals.errors && errors.email) { %>
+              <span> <%= errors.email.msg %> </span>
+              <% } %>
+            </div>
             <label for="password">
               <i class="fa-solid fa-lock"></i>
               <input
@@ -72,9 +76,11 @@
               <div class="invalid-feedback"></div>
               <i class="fa-solid fa-eye-slash" id="togglePassword"></i>
             </label>
-            <% if (locals.errors && errors.NoUser) { %>
-            <div class="text-danger"><%= errors.NoUser.msg %></div>
-            <% } %>
+            <div class="mensaje-error">
+              <% if (locals.errors && errors.password) { %>
+              <span> <%= errors.password.msg %> </span>
+              <% } %>
+            </div>
 
             <input
               type="checkbox"

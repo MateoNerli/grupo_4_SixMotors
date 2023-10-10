@@ -294,3 +294,9 @@ button:hover {
     border-radius: 0 0 20px 20px;
   }
 }
+
+.mensaje-error {
+  color: red;
+  font-size: 15px;
+  padding-bottom: 5px;
+}

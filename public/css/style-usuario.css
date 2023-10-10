@@ -249,6 +249,12 @@
 }
 
 /* Estilos para los pedidos */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -295,6 +301,15 @@
 .card-body p {
   text-align: center;
   font-weight: bold;
+}
+@media (max-width: 425px) {
+  .table-container {
+    font-size: 14px;
+  }
+  .table th,
+  .table td {
+    padding: 8px;
+  }
 }
 
 @media (min-width: 769px) {

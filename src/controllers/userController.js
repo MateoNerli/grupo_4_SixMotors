@@ -14,33 +14,32 @@ const userController = {
   },
 
   loginProcess: async (req, res) => {
-    //validar los datos
+    // Validar los datos
     let errores = validationResult(req);
 
-    //si hay errores, retornarlos a la vista
+    // Si hay errores, retornarlos a la vista
     if (!errores.isEmpty()) {
       let errors = errores.mapped();
       console.log(errors);
-      return res.render("/user/login", { errors: errors, olds: req.body });
+      return res.render("users/login", { errors: errors, olds: req.body });
     }
 
-    //leo el json
+    // Leer el usuario desde la base de datos
     let user = await db.User.findOne({
       where: {
         email: req.body.email,
       },
     });
 
-    //console.log(req.body);
-    //buscar al usuario
+    // Buscar al usuario
     if (user) {
       let passOk = bcryptjs.compareSync(req.body.password, user.password);
       if (passOk) {
-        //si la password es correcta se guarda el ususario en session
+        // Si la contraseña es correcta, se guarda el usuario en la sesión
         req.session.userLogged = user;
-        req.session.lastActitity = Date.now();
+        req.session.lastActivity = Date.now();
 
-        //si recordar usuario esta activado enviamos una cookie con el email
+        // Si recordar usuario está activado, enviar una cookie con el email
         if (req.body.remember_user) {
           res.cookie("userEmail", req.body.email, {
             maxAge: 1000 * 60 * 60,
@@ -48,22 +47,28 @@ const userController = {
             httpOnly: true,
           });
         }
-        //redirigimos al menu de usuario
+        // Redirigir al menú de usuario
         return res.redirect("/user/profile");
       } else {
-        //si la password no es correcta devolvemos el error
-        return res.render("/users/login", {
+        // Si la contraseña no es correcta, devolver el error
+        return res.render("users/login", {
           errors: {
             password: {
-              msg: "La contraseña no es válida.",
+              msg: "La contraseña es incorrecta.",
             },
           },
           olds: req.body,
         });
       }
     } else {
-      return res.render("/users/login", {
-        errors: { email: { msg: "No se encontró el usuario", olds: req.body } },
+      // El usuario no existe, devolver el error
+      return res.render("users/login", {
+        errors: {
+          email: {
+            msg: "El email no está registrado.",
+          },
+        },
+        olds: req.body,
       });
     }
   },
