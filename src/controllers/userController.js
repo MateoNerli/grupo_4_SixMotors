@@ -161,7 +161,6 @@ const userController = {
     // return res.send(orders);
     return res.render(path.join("users", "perfil"), {
       orders,
-      user: req.session.userLogged,
     });
   },
 };

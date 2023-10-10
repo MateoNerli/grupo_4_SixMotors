@@ -43,12 +43,12 @@ const homeController = {
   cart: function (req, res) {
     res.render(path.join("products", "carrito"));
   },
-  order: async (req, res) => {
+  pedido: async (req, res) => {
     let order = await db.Order.findByPk(req.params.id, {
       include: db.Order.OrderItems,
     });
     // res.send(order);
-    return res.render("order", { order });
+    return res.render(path.join("users", "order"), { order });
   },
 };
 

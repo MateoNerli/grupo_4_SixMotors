@@ -57,7 +57,7 @@
             <button class="btn-add-to-cart">
               <i class="fa-solid fa-plus"></i>
               <a
-                class="btn-add-to-cart add-to-cart-button"
+                class="btn-add-to-cart add-to-cart-button agregar_carrito"
                 id="add-to-cart-button"
                 data-id="<%= product.id %>"
                 >Agregar al carrito</a
@@ -88,7 +88,7 @@
         </div>
 
         <div class="btn-opciones">
-          <% if (isAdmin) { %>
+          <% if (locals.userFound && locals.userAdmin) { %>
           <a href="/products/configs/edit/<%= product.id %>">
             <button class="btn-op">
               <i class="fa-solid fa-pen-to-square"></i>
@@ -145,10 +145,11 @@
     <%- include ('../partials/footer.ejs') %>
 
     <!-- javascript del nav -->
-    <script type="module" src="/javascript/nav.js"></script>
+    <%- include('../partials/scripts') %>
 
     <!-- javascript del product detail -->
     <script type="module" src="/javascript/details.js"></script>
+    <script src="/javascript/cart.js"></script>
 
     <!--  -->
     <script

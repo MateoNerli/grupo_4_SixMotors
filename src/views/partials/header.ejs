@@ -1,124 +1,121 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style-header.css" />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div class="nav container">
-          <i class="fa-solid fa-bars" id="menu-icon"></i>
-          <div class="logo-img">
-            <a href="/">
-              <img
-                src="/images/logo-sin-fondo.png"
-                alt="logo"
-                width="100px"
-                height="100px"
-              />
-            </a>
-          </div>
+<link rel="stylesheet" href="/css/style-header.css" />
 
-          <a href="/" class="logo">Six<span>Motors</span></a>
+<header>
+  <nav>
+    <div class="nav container">
+      <i class="fa-solid fa-bars" id="menu-icon"></i>
+      <div class="logo-img">
+        <a href="/">
+          <img
+            src="/images/logo-sin-fondo.png"
+            alt="logo"
+            width="100px"
+            height="100px"
+          />
+        </a>
+      </div>
 
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#mainNavbar"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+      <a href="/" class="logo">Six<span>Motors</span></a>
 
-          <ul class="navbar">
-            <li><a href="/" class="active">Home</a></li>
-            <li><a href="/products/autos">Autos</a></li>
-            <li><a href="/products/autopartes">Autopartes</a></li>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-            <li><a href="/#contacto">Contacto</a></li>
-          </ul>
-          <div class="icons">
-            <i
-              class="fa-sharp fa-solid fa-magnifying-glass"
-              id="search-icon"
-            ></i>
-            <!-- <a href="/products/carrito"
+      <ul class="navbar">
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/products/autos">Autos</a></li>
+        <li><a href="/products/autopartes">Autopartes</a></li>
+
+        <li><a href="/#contacto">Contacto</a></li>
+      </ul>
+      <div class="icons">
+        <i class="fa-sharp fa-solid fa-magnifying-glass" id="search-icon"></i>
+        <!-- <a href="/products/carrito"
               ><i class="fa-solid fa-cart-shopping"></i
             ></a>
             <a href="/user"><i class="fa-solid fa-user"></i></a> -->
-          </div>
-          <div class="search-box container">
-            <form action="/products/search" method="GET" class="search-form">
-              <input
-                type="search"
-                name="keywords"
-                id=""
-                placeholder="   Buscar ..."
-              />
-              <button type="submit" class="search-form_button">
-                <i class="fas fa-search"></i>
-              </button>
-            </form>
-          </div>
-          <ul class="list-loged">
-            <% if (isLogged) { %>
-            <li class="item-log">
-              <a
-                class="link-drop"
-                href="#"
-                id="dropUser"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <img
-                  src="/images/users/<%= locals.userLogged.img %>"
-                  width="40"
-                  style="border-radius: 100%"
-                />
-                Hola <%= locals.userLogged.name %>
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/user/profile">Mi perfil</a>
-                <a href="/products/configs/create">Vender</a>
-                <a class="dropdown-item" href="/products/carrito">Mi carrito</a>
-                <li><hr class="dropdown-divider" /></li>
-                <a class="dropdown-item" href="/user/logout">Logout</a>
-              </ul>
-            </li>
-            <% } else { %>
-            <div class="btn-ingreso">
-              <li class="nav-item">
-                <a href="/user/login">
-                  <button class="btn">
-                    Login
-                    <div class="arrow-wrapper">
-                      <div class="arrow"></div>
-                    </div>
-                  </button>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/user/register">
-                  <button class="btn">
-                    Register
-                    <div class="arrow-wrapper">
-                      <div class="arrow"></div>
-                    </div>
-                  </button>
-                </a>
-              </li>
-            </div>
-            <% } %>
+      </div>
+      <div class="search-box container">
+        <form action="/products/search" method="GET" class="search-form">
+          <input
+            type="search"
+            name="keywords"
+            id=""
+            placeholder="   Buscar ..."
+          />
+          <button type="submit" class="search-form_button">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+      <div>
+        <li class="nav-item">
+          <a class="nav-link" href="/products/carrito">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-number">0</span>
+          </a>
+        </li>
+      </div>
+      <ul class="list-loged">
+        <% if (isLogged) { %>
+        <li class="item-log">
+          <a
+            class="link-drop"
+            href="#"
+            id="dropUser"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="/images/users/<%= locals.userLogged.img %>"
+              width="40"
+              style="border-radius: 100%"
+            />
+            Hola <%= locals.userLogged.name %>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/user/profile">Mi perfil</a>
+            <a href="/products/configs/create">Vender</a>
+            <a class="dropdown-item" href="/products/carrito">Mi carrito</a>
+            <li><hr class="dropdown-divider" /></li>
+            <a class="dropdown-item" href="/user/logout">Logout</a>
           </ul>
+        </li>
+        <% } else { %>
+        <div class="btn-ingreso">
+          <li class="nav-item">
+            <a href="/user/login">
+              <button class="btn">
+                Login
+                <div class="arrow-wrapper">
+                  <div class="arrow"></div>
+                </div>
+              </button>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/user/register">
+              <button class="btn">
+                Register
+                <div class="arrow-wrapper">
+                  <div class="arrow"></div>
+                </div>
+              </button>
+            </a>
+          </li>
         </div>
-      </nav>
-      <section id="usuario"></section>
-    </header>
-  </body>
-</html>
+        <% } %>
+      </ul>
+    </div>
+  </nav>
+  <section id="usuario"></section>
+</header>

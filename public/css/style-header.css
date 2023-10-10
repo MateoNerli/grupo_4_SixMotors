@@ -118,6 +118,17 @@ nav {
   font-size: 1rem;
 }
 
+.nav-link {
+  color: #333;
+}
+
+.cart-number {
+  background-color: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  padding: 0.2em 0.5em;
+}
+
 .icons {
   display: flex;
   align-items: center;

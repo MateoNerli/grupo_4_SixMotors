@@ -15,33 +15,35 @@
         <div class="wrapper">
           <div class="left">
             <img
-              src="/images/users/<%= user.imgperfil %>"
+              src="/images/users/<%= locals.userLogged.img %>"
               alt="usuario"
               width="100"
               id="profile-image"
             />
 
             <div class="editar">
-              <a href="/user/edit/<%= user.id %>">
+              <a href="/user/edit/<%= locals.userLogged.id %>">
                 <i class="fa-solid fa-pencil"></i>
               </a>
             </div>
 
-            <h4><%= user.name %> <%= user.lastname %></h4>
+            <h4>
+              <%= locals.userLogged.name %> <%= locals.userLogged.lastname %>
+            </h4>
             <div class="info">
               <h3>Informacion</h3>
               <div class="info_data">
                 <div class="data">
                   <h5>Email</h5>
-                  <p><%= user.email %></p>
+                  <p><%= locals.userLogged.email %></p>
                 </div>
                 <div class="data">
                   <h5>Telefono</h5>
-                  <p><%= user.cel %></p>
+                  <p><%= locals.userLogged.cel %></p>
                 </div>
                 <div class="data">
                   <h5>Ciudad</h5>
-                  <p><%= user.country %></p>
+                  <p><%= locals.userLogged.country %></p>
                 </div>
               </div>
             </div>
@@ -61,20 +63,56 @@
                 <i id="right" class="fa-solid fa-angle-right"></i>
               </div>
             </div>
-            <div class="ultimas-compras">
-              <h3>Ultimas compras</h3>
-              <div class="ultimas-compras-data">
-                <i id="compras-left" class="fa-solid fa-angle-left"></i>
-                <div class="compras-carrusel">
-                  <div class="compras-contenido">
-                    <img src="/images/autopartes/escape-ap.jpg" alt="" />
-                    <h3>Titulo</h3>
-                    <p>precio</p>
-                    <span>03/05/2022</span>
-                  </div>
-                </div>
-                <i id="compras-right" class="fa-solid fa-angle-right"></i>
-              </div>
+            <div class="card-header">Mis Pedidos</div>
+            <div class="card-body">
+              <% if (orders !== null && orders !== undefined) { %>
+              <table class="table table-responsive-md mb-0">
+                <thead>
+                  <tr>
+                    <th style="width: 50px">
+                      <strong>#</strong>
+                    </th>
+                    <th class="th-lg">
+                      <strong>Fecha</strong>
+                    </th>
+                    <th class="th-lg">
+                      <strong>Envío</strong>
+                    </th>
+                    <th class="th-lg">
+                      <strong>Pago</strong>
+                    </th>
+                    <th>
+                      <strong>Total</strong>
+                    </th>
+                    <th style="width: 50px"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% orders.forEach((order, index) => { %>
+                  <tr>
+                    <th scope="row"><%= index + 1 %></th>
+                    <td>
+                      <%= new Intl.DateTimeFormat('es-ES', { year: 'numeric' ,
+                      month: 'numeric' , day: '2-digit' ,hour: 'numeric' ,
+                      minute: 'numeric' }).format(order.createdAt) %>
+                    </td>
+                    <td><%= order.shippingMethod %></td>
+                    <td><%= order.paymentMethod %></td>
+                    <td>$ <%= order.total %></td>
+                    <td>
+                      <a
+                        class="btn btn-warning btn-sm"
+                        href="<%= `/order/${order.id}` %> "
+                        ><i class="fas fa-eye"></i
+                      ></a>
+                    </td>
+                  </tr>
+                  <% }); %>
+                </tbody>
+              </table>
+              <% } else { %>
+              <p>No hay órdenes disponibles.</p>
+              <% } %>
             </div>
           </div>
         </div>
@@ -82,10 +120,8 @@
     </main>
 
     <!-- Footer -->
-    <%- include ('../partials/footer.ejs') %>
-
-    <!-- NAVBAR -->
-    <script type="module" src="/javascript/nav.js"></script>
+    <%- include ('../partials/footer.ejs') %> <%- include('../partials/scripts')
+    %>
     <script type="module" src="/javascript/usuario.js"></script>
   </body>
 </html>

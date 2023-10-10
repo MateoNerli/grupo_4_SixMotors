@@ -5,6 +5,6 @@ const router = express.Router();
 
 router.get("/", homeController.home);
 router.get("/cart", authMiddleware, homeController.cart);
-router.get("/order/:id", authMiddleware, homeController.order);
+router.get("/order/:id", authMiddleware, homeController.pedido);
 
 module.exports = router;

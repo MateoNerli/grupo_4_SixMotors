@@ -6,77 +6,82 @@
     <link rel="stylesheet" href="/css/style-creacion-edicion.css" />
   </head>
   <body>
-    <!-- Navbar -->
-    <%- include ('../partials/header.ejs') %>
+    <main>
+      <!-- Navbar -->
+      <%- include ('../partials/header.ejs') %>
 
-    <div class="titulo">
-      <h2>Crear Producto</h2>
-    </div>
-    <main class="formulario">
-      <form
-        action="/products/configs/create"
-        method="POST"
-        enctype="multipart/form-data"
-      >
-        <div class="caja">
-          <div class="conta form">
-            <div class="formBox">
-              <div class="row50">
-                <div class="inputBox">
-                  <label for="title">Nombre del producto:</label>
-                  <input type="text" name="name" required />
+      <div class="titulo">
+        <h2>Crear Producto</h2>
+      </div>
+      <main class="formulario">
+        <form
+          action="/products/configs/create"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <div class="caja">
+            <div class="conta form">
+              <div class="formBox">
+                <div class="row50">
+                  <div class="inputBox">
+                    <label for="title">Nombre del producto:</label>
+                    <input type="text" name="name" required />
+                  </div>
+                  <div class="inputBox">
+                    <label for="type">Type</label>
+                    <select name="type" id="type">
+                      <option value="0">Vehiculo</option>
+                      <option value="1">Autoparte</option>
+                    </select>
+                  </div>
+                  <div class="inputBox">
+                    <label for="price">Precio:</label>
+                    <input type="text" name="price" />
+                  </div>
+                  <div class="inputBox">
+                    <label for="year">Modelo:(año)</label>
+                    <input type="num" name="year" />
+                  </div>
                 </div>
-                <div class="inputBox">
-                  <label for="type">Type</label>
-                  <select name="type" id="type">
-                    <option value="0">Vehiculo</option>
-                    <option value="1">Autoparte</option>
+              </div>
+              <div class="col-der">
+                <div class="infoBox">
+                  <label for="img"><br />Foto del producto:</label>
+                  <input type="file" id="img" name="img" />
+                  <label for="category">Es:</label>
+                  <select name="is_km" id="is_km">
+                    <option value="0">Usado</option>
+                    <option value="1">Nuevo</option>
                   </select>
-                </div>
-                <div class="inputBox">
-                  <label for="price">Precio:</label>
-                  <input type="text" name="price" />
-                </div>
-                <div class="inputBox">
-                  <label for="year">Modelo:(año)</label>
-                  <input type="num" name="year" />
+                  <label for="colors">Colores (separados por comas):</label>
+                  <input type="text" name="colors" required />
                 </div>
               </div>
             </div>
-            <div class="col-der">
-              <div class="infoBox">
-                <label for="img"><br />Foto del producto:</label>
-                <input type="file" id="img" name="img" />
-                <label for="category">Es:</label>
-                <select name="is_km" id="is_km">
-                  <option value="0">Usado</option>
-                  <option value="1">Nuevo</option>
-                </select>
-                <label for="colors">Colores (separados por comas):</label>
-                <input type="text" name="colors" required />
-              </div>
-            </div>
-          </div>
-          <div class="fondo">
-            <div class="row100">
-              <div class="inputBox">
-                <label for="description">Descripción:</label>
-                <textarea name="description" required></textarea>
-              </div>
-              <div class="inputBox check">
-                <label for="marked">Venta inmediata?</label>
-                <input type="checkbox" class="form-check-input" name="marked" />
-              </div>
+            <div class="fondo">
+              <div class="row100">
+                <div class="inputBox">
+                  <label for="description">Descripción:</label>
+                  <textarea name="description" required></textarea>
+                </div>
+                <div class="inputBox check">
+                  <label for="marked">Venta inmediata?</label>
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    name="marked"
+                  />
+                </div>
 
-              <div class="inputBox">
-                <input type="submit" value="Enviar" />
+                <div class="inputBox">
+                  <input type="submit" value="Enviar" />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </main>
     </main>
-
     <!-- Footer -->
     <%- include ('../partials/footer.ejs') %>
   </body>

@@ -1,0 +1,39 @@
+<div class="producto-container">
+  <a href="/products/detail/<%= prod.id %>">
+    <img
+      class="producto-imagen card-img-top"
+      src="/images/products/<%= prod.img != ''? prod.img: 'default.png' %>"
+      alt="<%= prod.name %>"
+    />
+  </a>
+  <div class="producto-detalles">
+    <h3 class="producto-titulo"><%= prod.name %></h3>
+    <p class="producto-precio">$<%= prod.price %></p>
+    <div class="conten">
+      <button class="producto-agregar agregar_carrito" data-id="<%= prod.id %>">
+        Agregar
+      </button>
+      <div class="favorito">
+        <button>
+          <i class="bi bi-heart"></i>
+        </button>
+      </div>
+    </div>
+    <% if (locals.userFound && locals.userAdmin) { %>
+    <div class="d-flex justify-content-around mt-3">
+      <a
+        type="button"
+        href="/products/edit/<%= prod.id %>"
+        class="btn btn-warning btn-sm btn-floating"
+      >
+        <i class="fas fa-edit"></i>
+      </a>
+      <form action="/products/<%= prod.id %>?_method=delete" method="POST">
+        <button class="btn btn-danger btn-floating btn-sm" type="submit">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      </form>
+    </div>
+    <% } %>
+  </div>
+</div>

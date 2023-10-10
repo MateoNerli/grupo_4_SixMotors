@@ -28,24 +28,3 @@ descriptionTitle.addEventListener("click", () => {
 reviewsTitle.addEventListener("click", () => {
   reviewsContent.classList.toggle("hidden");
 });
-
-//agregar al carrito
-const addToCart = document.querySelector(".add-to-cart-button");
-let carrito = [];
-
-addToCart.addEventListener("click", (e) => {
-  e.preventDefault();
-  let id = e.target.dataset.id;
-  let cantidad = inputQuantity.value;
-  let producto = { id: id, cantidad: cantidad };
-  if (localStorage.carrito) {
-    carrito = JSON.parse(localStorage.carrito);
-    carrito.push(producto);
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-  } else {
-    carrito.push(producto);
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-  }
-  toastr.success("Producto agregado al carrito");
-  console.log(carrito);
-});
