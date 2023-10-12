@@ -88,7 +88,7 @@
         </div>
 
         <div class="btn-opciones">
-          <% if (locals.userFound && locals.userAdmin) { %>
+          <% if (isAdmin) { %>
           <a href="/products/configs/edit/<%= product.id %>">
             <button class="btn-op">
               <i class="fa-solid fa-pen-to-square"></i>

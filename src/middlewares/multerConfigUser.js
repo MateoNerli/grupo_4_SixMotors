@@ -15,7 +15,9 @@ const storage = multer.diskStorage({
   },
   filename: function (req, file, cb) {
     const newName =
-      "ImgProfile-" + Date.now() + path.extname(file.originalname);
+      "ImgProfile-" +
+      Date.now() +
+      path.extname(file.originalname).toLowerCase();
     cb(null, newName);
   },
 });

@@ -52,7 +52,6 @@ const productController = {
     const product = await db.Product.findByPk(req.params.id);
     const isAdmin = req.session.userLogged && req.session.userLogged.isAdmin;
     const products = await db.Product.findAll();
-    // console.log("Product:", product);
     res.render(path.join("products", "detail"), { product, isAdmin, products });
   },
   viewCart: (req, res) => {
