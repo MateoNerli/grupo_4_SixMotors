@@ -66,20 +66,19 @@ const productController = {
     });
   },
   search: async (req, res) => {
-    let result = [];
-
-    for (let i = 0; i < db.length; i++) {
-      if (
-        db[i].name &&
-        db[i].name.toLowerCase().includes(req.query.keywords.toLowerCase())
-      ) {
-        result.push(db[i]);
-      }
+    try {
+      const products = await db.Product.findAll({
+        where: {
+          name: {
+            [db.Sequelize.Op.like]: `%${req.query.keywords}%`,
+          },
+        },
+      });
+      res.render(path.join("products", "productos"), { products });
+    } catch (error) {
+      console.error("Error al buscar productos:", error);
+      // Maneja el error adecuadamente aquí
     }
-    res.render("products/resultSearch", {
-      products: result,
-      search: req.query.keywords,
-    });
   },
 };
 
