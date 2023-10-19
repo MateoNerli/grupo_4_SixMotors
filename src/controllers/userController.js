@@ -78,79 +78,47 @@ const userController = {
   },
 
   registerProcess: async (req, res) => {
-    //validar los datos
+    // Validar los datos
     let errores = validationResult(req);
 
-    //si hay errores, retornarlos a la vista
+    // Si hay errores, retornarlos a la vista
     if (!errores.isEmpty()) {
       let errors = errores.mapped();
       console.log(errors);
-      return res.render("/users/register", { errors: errors, olds: req.body });
+      return res.render("users/register", { errors: errors, olds: req.body });
     }
 
-    let image = "";
-    if (req.file) {
-      image = req.file.filename;
-    }
-
-    //busco si el usuario ya existe
+    // Verificar si el usuario ya existe
     let user = await db.User.findOne({
-      where: {
-        user: req.body.user,
-      },
-    });
-
-    //si el usuario ya existe devuelvo el error
-    if (user) {
-      return res.render("/users/register", {
-        errors: {
-          user: {
-            msg: "El usuario ya existe.",
-          },
-        },
-        olds: req.body,
-      });
-    }
-
-    //busco si el email ya existe
-    let email = await db.User.findOne({
       where: {
         email: req.body.email,
       },
     });
 
-    //si el email ya existe devuelvo el error
-    if (email) {
-      return res.render("/users/register", {
+    // Si el usuario ya existe, devolver error
+    if (user) {
+      return res.render("users/register", {
         errors: {
           email: {
-            msg: "El email ya existe.",
+            msg: "Este email ya está registrado.",
           },
         },
         olds: req.body,
       });
     }
 
-    let data = {
-      name: req.body.name,
-      lastname: req.body.lastname,
-      user: req.body.user,
-      email: req.body.email,
-      type: 0,
+    // Crear el usuario
+    let userToCreate = {
+      ...req.body,
       password: bcryptjs.hashSync(req.body.password, 10),
-      img: image,
-      country: req.body.country,
-      cel: req.body.cel,
-      reviews: req.body.reviews,
+      avatar: req.file ? req.file.filename : "default.png",
     };
-    //guarda el usuario en base de datos
-    let newUser = await db.User.create(data);
 
-    // SE LOGEA EN SESSION
-    req.session.userLogged = newUser;
+    // Guardar el usuario en la base de datos
+    await db.User.create(userToCreate);
 
-    //redirigimos al login
-    return res.redirect(`/user/login`);
+    // Redirigir al usuario al login
+    return res.redirect("/user/login");
   },
 
   logout: (req, res) => {

@@ -8,7 +8,7 @@ sessionMiddleware = async (req, res, next) => {
   if (req.session && req.session.userLogged) {
     res.locals.userFound = true;
     res.locals.userLogged = req.session.userLogged;
-    if (req.session.userLogged.id === 1) {
+    if (req.session.userLogged.type === 1) {
       res.locals.userAdmin = true;
     }
   } else {

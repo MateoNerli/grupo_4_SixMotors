@@ -87,8 +87,9 @@
           </div>
         </div>
 
+        <!-- Falta lo del midel que si es admin lo tiene que mostrar -->
         <div class="btn-opciones">
-          <% if (isAdmin) { %>
+          <% if (locals.userAdmin) { %>
           <a href="/products/configs/edit/<%= product.id %>">
             <button class="btn-op">
               <i class="fa-solid fa-pen-to-square"></i>

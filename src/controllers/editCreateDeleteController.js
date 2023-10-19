@@ -30,9 +30,9 @@ const editCreacionCointroller = {
     return res.redirect("/");
   },
   edit: async function (req, res) {
-    let product = await db.Product.findByPk(req.params.id);
-    if (product) {
-      return res.render("products/edit", { product });
+    let producto = await db.Product.findByPk(req.params.id);
+    if (producto) {
+      return res.render(path.join("products", "edit"), { producto });
     }
     return res.redirect("/products");
   },
