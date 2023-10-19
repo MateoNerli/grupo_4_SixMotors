@@ -111,7 +111,7 @@ const userController = {
     let userToCreate = {
       ...req.body,
       password: bcryptjs.hashSync(req.body.password, 10),
-      avatar: req.file ? req.file.filename : "default.png",
+      img: req.file ? req.file.filename : "default.png",
     };
 
     // Guardar el usuario en la base de datos
