@@ -1,12 +1,20 @@
 const path = require("path");
-// const dataBase = require("../database/products.json");
-// const fs = require("fs");
 const db = require("../database/models");
+const { validationResult } = require("express-validator");
+
 const editCreacionCointroller = {
   create: (req, res) => {
     res.render(path.join("products", "creacion"));
   },
   store: async function (req, res) {
+    let errores = validationResult(req);
+    if (!errores.isEmpty()) {
+      return res.render(path.join("products", "creacion"), {
+        errores: errores.mapped(),
+        old: req.body,
+      });
+    }
+
     let image = "";
     if (req.file) {
       image = req.file.filename;

@@ -25,7 +25,14 @@
                 <div class="row50">
                   <div class="inputBox">
                     <label for="title">Nombre del producto:</label>
-                    <input type="text" name="name" required />
+                    <input
+                      type="text"
+                      name="name"
+                      value="<%= locals.old ? old.name : null %>"
+                    />
+                    <% if (locals.errores && errores.name) { %>
+                    <div class="text-danger"><%= errores.name.msg %></div>
+                    <% } %>
                   </div>
                   <div class="inputBox">
                     <label for="type">Type</label>
@@ -36,11 +43,22 @@
                   </div>
                   <div class="inputBox">
                     <label for="price">Precio:</label>
-                    <input type="text" name="price" />
+                    <input
+                      type="text"
+                      name="price"
+                      value="<%= locals.old ? old.price : null %>"
+                    />
+                    <% if (locals.errores && errores.price) { %>
+                    <div class="text-danger"><%= errores.price.msg %></div>
+                    <% } %>
                   </div>
                   <div class="inputBox">
                     <label for="year">Modelo:(año)</label>
-                    <input type="num" name="year" />
+                    <input
+                      type="date"
+                      name="year"
+                      value="<%= locals.old ? old.year : null %>"
+                    />
                   </div>
                 </div>
               </div>
@@ -48,13 +66,23 @@
                 <div class="infoBox">
                   <label for="img"><br />Foto del producto:</label>
                   <input type="file" id="img" name="img" />
+                  <% if (locals.errores && errores.img) { %>
+                  <div class="text-danger"><%= errores.img.msg %></div>
+                  <% } %>
                   <label for="category">Es:</label>
                   <select name="is_km" id="is_km">
                     <option value="0">Usado</option>
                     <option value="1">Nuevo</option>
                   </select>
                   <label for="colors">Colores (separados por comas):</label>
-                  <input type="text" name="colors" required />
+                  <input
+                    type="text"
+                    name="colors"
+                    value="<%= locals.old ? old.colors : null %>"
+                  />
+                  <% if (locals.errores && errores.colors) { %>
+                  <div class="text-danger"><%= errores.colors.msg %></div>
+                  <% } %>
                 </div>
               </div>
             </div>
@@ -62,7 +90,12 @@
               <div class="row100">
                 <div class="inputBox">
                   <label for="description">Descripción:</label>
-                  <textarea name="description" required></textarea>
+                  <textarea name="description">
+<%= locals.old ? old.description : null %></textarea
+                  >
+                  <% if (locals.errores && errores.description) { %>
+                  <div class="text-danger"><%= errores.description.msg %></div>
+                  <% } %>
                 </div>
                 <div class="inputBox check">
                   <label for="marked">Venta inmediata?</label>

@@ -23,7 +23,11 @@
   margin: 0;
   padding: 20px;
 }
-
+.text-danger {
+  color: red;
+  font-size: 15px;
+  padding-bottom: 1px;
+}
 .caja {
   background-color: white;
   border-radius: 5px;
@@ -73,6 +77,15 @@
 .formulario select,
 .formulario textarea,
 .formulario input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.formulario input[type="date"] {
   width: 100%;
   padding: 8px;
   margin-bottom: 15px;
