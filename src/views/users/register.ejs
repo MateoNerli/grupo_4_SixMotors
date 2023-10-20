@@ -77,7 +77,7 @@
                 name="name"
                 placeholder="Nombre"
                 class="form-control <%= locals.errors && errors.name ? 'is-invalid' : null %>"
-                value="<%= locals.oldData ? oldData.name : null %>"
+                value="<%= locals.olds ? olds.name : null %>"
               />
             </label>
             <% if (locals.errors && errors.name) { %>
@@ -91,7 +91,7 @@
                 name="lastname"
                 placeholder="Apellido"
                 class="form-control <%= locals.errors && errors.lastname ? 'is-invalid' : null %>"
-                value="<%= locals.oldData ? oldData.lastname : null %>"
+                value="<%= locals.olds ? olds.lastname : null %>"
               />
             </label>
             <% if (locals.errors && errors.lastname) { %>
@@ -105,7 +105,7 @@
                 name="user"
                 placeholder="Usuario"
                 class="form-control <%= locals.errors && errors.user ? 'is-invalid' : null %>"
-                value="<%= locals.oldData ? oldData.user : null %>"
+                value="<%= locals.olds ? olds.user : null %>"
               />
             </label>
             <% if (locals.errors && errors.user) { %>
@@ -119,7 +119,7 @@
                 name="email"
                 placeholder="perdro123@gmail.com"
                 class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-                value="<%= locals.oldData ? oldData.email : null %>"
+                value="<%= locals.olds ? olds.email : null %>"
               />
             </label>
             <% if (locals.errors && errors.email) { %>

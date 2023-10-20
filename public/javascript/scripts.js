@@ -38,7 +38,7 @@ window.addEventListener("load", function () {
         );
       }
       cartNumber.innerText = productosEnElCarrito();
-      //toastr.success("Se agregó este producto al carrito");
+      toastr.success("Se agregó este producto al carrito");
     });
   });
 
