@@ -1,9 +1,4 @@
 const path = require("path");
-// const products = require("../database/products.json");
-// const usuarios = require("../database/users.json");
-// const fs = require("fs");
-// const bcrypt = require("bcryptjs");
-// const User = require("../models/User");
 const bcryptjs = require("bcryptjs");
 const db = require("../database/models");
 const { validationResult } = require("express-validator");
@@ -20,7 +15,7 @@ const userController = {
     // Si hay errores, retornarlos a la vista
     if (!errores.isEmpty()) {
       let errors = errores.mapped();
-      console.log(errors);
+      //   console.log(errors);
       return res.render("users/login", { errors: errors, olds: req.body });
     }
 
