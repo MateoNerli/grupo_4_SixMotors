@@ -4,6 +4,15 @@ function removeItem(index) {
     products.splice(index, 1);
     localStorage.setItem("carrito", JSON.stringify(carrito));
     document.getElementById(`row${index}`).remove();
+
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Producto eliminado del carrito",
+      text: "Se ha eliminado el producto del carrito exitosamente.",
+      showConfirmButton: false,
+      timer: 3000,
+    });
   } else {
     localStorage.removeItem("carrito");
     products = [];
@@ -11,13 +20,11 @@ function removeItem(index) {
   }
 
   let cartNumber = document.querySelector(".cart-number");
-  cartNumber.innerText = productsEnElCarrito();
+  cartNumber.innerText = productosEnElCarrito();
 
   document.querySelector(".totalAmount").innerText = `$ ${calcularTotal(
     products
   )}`;
-
-  toastr.success("Se borro el item del carrito");
 }
 
 function setCarritoVacio() {
@@ -25,11 +32,49 @@ function setCarritoVacio() {
   <tr>
       <td colspan="6" class="text-center">No hay productos en el carrito</td>
   </tr>
-  `;
+`;
   document.querySelector(".totalAmount").innerText = `$ 0`;
 }
+
 function vaciarCarrito() {
   localStorage.removeItem("carrito");
+
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: "btn btn-success",
+      cancelButton: "btn btn-danger",
+    },
+    buttonsStyling: false,
+  });
+
+  swalWithBootstrapButtons
+    .fire({
+      title: "Estas seguro de eliminar el carrito?",
+      text: "No puedes revertir esta accion!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Si, eliminar!",
+      cancelButtonText: "No, cancelar!",
+      reverseButtons: true,
+    })
+    .then((result) => {
+      if (result.isConfirmed) {
+        swalWithBootstrapButtons.fire(
+          "Eliminado !",
+          "Eliminado el carrito con exito.",
+          "success"
+        );
+
+        let cartNumber = document.querySelector(".cart-number");
+        cartNumber.innerText = 0; // Actualizar a 0 cuando el carrito se vacía
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        swalWithBootstrapButtons.fire(
+          "Cancelado",
+          "No has eliminado el carrito :)",
+          "error"
+        );
+      }
+    });
 }
 
 function calcularTotal(products) {
@@ -103,13 +148,29 @@ formCheckout.onsubmit = (e) => {
     .then((r) => r.json())
     .then((res) => {
       if (res.ok) {
-        //borro el carrito
+        // Borro el carrito
         vaciarCarrito();
+
+        Swal.fire({
+          icon: "success",
+          title: "Compra realizada",
+          text: "La compra se ha realizado con éxito.",
+        });
+
         location.href = `/order/${res.order.id}?creado=true`;
       } else {
-        toastr.error("No se pudo realizar la compra, intente mas tarde");
+        Swal.fire({
+          icon: "error",
+          title: "Error en la compra",
+          text: "No se pudo realizar la compra, inténtelo más tarde.",
+        });
       }
     })
     .catch((error) => console.log(error));
-  // console.log(formCheckout.elements, formData, products);
+};
+
+let vaciarTodo = document.querySelector(".vaciar-cart");
+vaciarTodo.onclick = () => {
+  vaciarCarrito();
+  setCarritoVacio();
 };

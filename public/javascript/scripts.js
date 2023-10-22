@@ -7,19 +7,10 @@ function productosEnElCarrito() {
 }
 
 window.addEventListener("load", function () {
-  /* Toastr Initialization */
-  toastr.options = {
-    positionClass: "toast-bottom-right",
-    fadeIn: 300,
-    fadeOut: 1000,
-    timeOut: 5000,
-    extendedTimeOut: 1000,
-  };
-
   /* Selecciono todos los productos de la página */
   let productos = document.querySelectorAll(".agregar_carrito");
 
-  /* Creo un event listener por cada boton */
+  /* Creo un event listener por cada botón */
   productos.forEach((producto) => {
     producto.addEventListener("click", function (e) {
       if (localStorage.carrito) {
@@ -38,7 +29,22 @@ window.addEventListener("load", function () {
         );
       }
       cartNumber.innerText = productosEnElCarrito();
-      toastr.success("Se agregó este producto al carrito");
+
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Producto agregado al carrito",
+        showConfirmButton: false,
+        timer: 1000,
+        toast: true, // Establece la alerta como estilo "toast"
+        customClass: {
+          container: "toast-container", // Clase para el contenedor del toast
+          popup: "toast-popup", // Clase para el toast en sí
+          title: "toast-title", // Clase para el título
+          icon: "toast-icon", // Clase para el icono
+        },
+        background: "#4BB543", // Fondo verde
+      });
     });
   });
 

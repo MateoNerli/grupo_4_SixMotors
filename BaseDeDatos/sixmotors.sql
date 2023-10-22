@@ -114,13 +114,13 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `name`, `type`, `description`, `img`, `category`, `colors`, `price`, `marked`, `createdAt`, `updatedAt`, `deletedAt`, `is_km`, `year`) VALUES
 (1, 'Peugeot 208', 0, 'Nondisp fx of unsp ulna styloid pro, 7thH', 'peugot-208.jpg', '', 'Khaki', 73.00, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 1998),
-(2, 'Toyota Hilux', 0, 'Lac w/o fb of unsp frnt wl of thrx w/o penet thor cav, subs', 'Toyota Hilux.jpg', '', 'Mauv', 29.00, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 1, 2006),
+(2, 'Toyota Hilux', 0, '  Lac w/o fb of unsp frnt wl of thrx w/o penet thor cav, subs', 'Toyota Hilux.jpg', '', 'Mauv', 99999999.99, 0, '0000-00-00 00:00:00', '2023-10-19 22:27:59', NULL, 1, 2006),
 (3, 'Alternador', 1, 'Unsp fx r patella, subs for opn fx type 3A/B/C w malunion', 'alternador.jpg', '', 'Mauv', 10.00, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 2000),
 (4, 'Volkswagen Amarok', 0, 'Other alopecia areata', 'Volkswagen Amarok.jpg', '', 'Goldenrod', 79.00, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 1, 2012),
 (5, 'Ford Ranger', 0, 'Cataract extraction status, right eye', 'Ford Ranger.jpg', '', 'Puce', 37.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 1, 1995),
 (6, 'Amortiguador', 1, 'Stress fracture, right finger(s), init encntr for fracture', 'Amortiguadores-autos.jpg', '', 'Aquamarine', 73.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 1, 1993),
 (7, 'espejos-laterales', 1, 'Benign neoplm of prph nerves and autonm nervous sys of abd', 'espejos-laterales-ap.jpg', '', 'Purple', 28.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 1993),
-(8, 'Renault Sandero', 0, 'Lacerat unsp blood vessel at shldr/up arm, right arm, init', 'Renault Sandero.jpg', '', 'Indigo', 24.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 2011),
+(8, 'Renault Sandero', 0, '  Lacerat unsp blood vessel at shldr/up arm, right arm, init', 'Renault Sandero.jpg', '', 'Indigo', 2400000.00, 0, '0000-00-00 00:00:00', '2023-10-19 22:28:24', NULL, 0, 2011),
 (9, 'Renault Alaskan', 0, 'Foster-Kennedy syndrome, unspecified eye', 'Renault Alaskan.jpg', '', 'Teal', 50.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 2012),
 (10, 'Fiat 147', 0, 'Associated transverse-posterior fracture of acetabulum', 'Fiat-147.jpg', '', 'Orange', 23.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 1994),
 (11, 'Bujia', 1, 'Inj muscle, fascia and tendon of lower back, subs encntr', 'bujia.jpeg', '', 'Mauv', 88.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 2000),
@@ -128,11 +128,7 @@ INSERT INTO `products` (`id`, `name`, `type`, `description`, `img`, `category`, 
 (13, 'rueda', 1, 'Contus/lac/hem crblm w LOC of unsp duration', 'rueda-camion.webp', '', 'Green', 94.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 1, 2005),
 (14, 'Fiat Cronos', 0, 'Unil post-trauma osteoarth of first carpometacarp joint', 'Fiat Cronos.jpg', '', 'Mauv', 69.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 1, 1995),
 (21, 'aaaaa', 1, 'dsadsad', 'products-img-1696861806939.jpg', '', 'gris', 12332.00, 0, '2023-10-09 14:30:06', '2023-10-09 14:30:06', NULL, 1, 2022),
-(22, 'aaaaa', 1, 'Osos', 'products-img-1697122027020.jpg', '', 'rojo', 4343.00, 0, '2023-10-12 14:47:07', '2023-10-12 14:47:07', NULL, 1, 2000);
-
-/*INSERT NUEVO*/
-
-INSERT INTO `products` (`id`, `name`, `type`, `description`, `img`, `category`, `colors`, `price`, `marked`, `createdAt`, `updatedAt`, `deletedAt`, `is_km`, `year`) VALUES
+(22, 'aaaaa', 1, 'Osos', 'products-img-1697122027020.jpg', '', 'rojo', 4343.00, 0, '2023-10-12 14:47:07', '2023-10-12 14:47:07', NULL, 1, 2000),
 (23, 'Optica Trasera Kit X2 Renault Sandero', 1, 'Nondisp fx of unsp ulna styloid pro, 7thH', 'Optica trasera  x2 Renault Sandero.jpg', '', 'Khaki', 140.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 2023),
 (24, 'Optica trasera Renault Sandero', 1, 'Lac w/o fb of unsp frnt wl of thrx w/o penet thor cav, subs', 'Optica trasera Renault Sandero.jpg', '', 'Mauv', 80.00, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 1, 2023),
 (25, 'Optica Delantera Kit x2 Renault Sandero', 1, 'Other alopecia areata', 'Optica delantera x2 Renault Sandero.jpg', '', 'Goldenrod', 280.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 1, 2023),
@@ -141,7 +137,7 @@ INSERT INTO `products` (`id`, `name`, `type`, `description`, `img`, `category`, 
 (28, 'Optica Delantera Kit x2 Ford Ranger', 1, 'Benign neoplm of prph nerves and autonm nervous sys of abd', 'Optica delantera x2 Ford Ranger.jpg', '', 'Purple', 280.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 2023),
 (29, 'Optica Delantera Ford Ranger', 1, 'Lacerat unsp blood vessel at shldr/up arm, right arm, init', 'Optica delantera Ford Ranger.jpg', '', 'Indigo', 150.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 2023),
 (30, 'Optica Trasera Kit x2 VW Amarokn', 1, 'Foster-Kennedy syndrome, unspecified eye', 'Optica trasera x2 VW Amarok.jpg', '', 'Teal', 280.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 2023),
-(31, 'Optica Trasera VW Amarok', 1, 'Associated transverse-posterior fracture of acetabulum', 'Optica trasera VW Amarok.jpg', '', 'Orange',150.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 2023),
+(31, 'Optica Trasera VW Amarok', 1, 'Associated transverse-posterior fracture of acetabulum', 'Optica trasera VW Amarok.jpg', '', 'Orange', 150.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 2023),
 (32, 'Optica Delantera Kit x2 VW Amarok', 1, 'Inj muscle, fascia and tendon of lower back, subs encntr', 'Optica delantera x2 VW Amarok.jpeg', '', 'Mauv', 280.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 2023),
 (33, 'Luz de Giro Kit x2 Toyota Hilux', 1, 'Lacerat extn musc/fasc/tend l little fngr at forarm lv, init', 'Luz de giro x2 Toyota Hilux.jpg', '', 'Violet', 280.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 1, 2023),
 (34, 'Optica Trasera Toyota Hilux', 1, 'Contus/lac/hem crblm w LOC of unsp duration', 'Optica Trasera Toyota Hilux.jpg', '', 'Green', 94.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 1, 2023),
@@ -157,14 +153,13 @@ INSERT INTO `products` (`id`, `name`, `type`, `description`, `img`, `category`, 
 (44, 'Parabrisas Fiat Cronos', 1, 'Benign neoplm of prph nerves and autonm nervous sys of abd', 'Parabrisas delantero Fiat Cronos.jpg', '', 'Purple', 900.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 2023),
 (45, 'Parabrisas Renault Sandero', 1, 'Lacerat unsp blood vessel at shldr/up arm, right arm, init', 'parabrisas delantero Renault Sandero.jpg', '', 'Indigo', 950.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 2023),
 (46, 'Parabrisas VW Amarok', 1, 'Foster-Kennedy syndrome, unspecified eye', 'Oparabrisas delantero VW Amarok.jpg', '', 'Teal', 1000.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 2023),
-(47, 'Parabrisas Peugeot 208', 1, 'Associated transverse-posterior fracture of acetabulum', 'parabrisas delantero Peugeot 208.jpg', '', 'Orange',950.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 2023),
+(47, 'Parabrisas Peugeot 208', 1, 'Associated transverse-posterior fracture of acetabulum', 'parabrisas delantero Peugeot 208.jpg', '', 'Orange', 950.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 2023),
 (48, 'Optica Delantera Kit x2 VW Amarok', 1, 'Inj muscle, fascia and tendon of lower back, subs encntr', 'Optica delantera x2 VW Amarok.jpeg', '', 'Mauv', 280.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 0, 2023),
 (49, 'Kit 2 amortiguadores delanteros', 1, 'Lacerat extn musc/fasc/tend l little fngr at forarm lv, init', 'kit 2 amortiguadores delanteros.jpg', '', 'Violet', 80.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 1, 2023),
 (50, 'Cubierta 205 55 16', 1, 'Contus/lac/hem crblm w LOC of unsp duration', 'cubierta 205 55 16.jpg', '', 'Green', 80.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 1, 2023),
 (51, 'Kit 4 Discos de Freno + Pastillas', 1, 'Unil post-trauma osteoarth of first carpometacarp joint', 'kit 4 discos + pastillas.jpg', '', 'Mauv', 50.00, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 1, 2023),
 (52, 'Kit 4 pastillas de freno', 1, 'dsadsad', 'juego 4 pastillas de freno.jpg', '', 'gris', 20.00, 0, '2023-10-09 14:30:06', '2023-10-09 14:30:06', NULL, 1, 2023),
 (53, 'Kit de embrague VW Amarok', 1, 'Osos', 'Kit de embrague Vw Amarok.jpg', '', 'rojo', 200.00, 0, '2023-10-12 14:47:07', '2023-10-12 14:47:07', NULL, 1, 2023);
-
 
 
 -- --------------------------------------------------------

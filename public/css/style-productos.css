@@ -169,7 +169,7 @@ main {
   border: solid 1px black;
   display: inline-block;
   width: 253px;
-  height: 329px;
+  /* height: 329px; */
   margin: 10px;
   text-align: center;
 }
@@ -290,7 +290,7 @@ main {
     border: solid 1px black;
     display: inline-block;
     width: 200px;
-    height: 329px;
+    /* height: 329px; */
     margin: 10px;
     text-align: center;
   }
