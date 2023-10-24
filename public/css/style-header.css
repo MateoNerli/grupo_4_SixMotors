@@ -260,13 +260,13 @@ button .arrow {
 
 @media (max-width: 1080px) {
   .container {
-    margin-left: 1rem;
+    margin: 1rem;
     margin-right: 1rem;
   }
 }
 @media (max-width: 991px) {
   .nav {
-    padding: 10px 5px;
+    padding: 10px 0px;
   }
   .icons {
     font-size: 20px;
@@ -331,5 +331,19 @@ button .arrow {
   }
   .logo {
     font-size: 1rem;
+  }
+}
+@media (max-width: 425px) {
+  .cart-number {
+    margin-bottom: 4px; /* Agrega un espacio entre el número y el ícono */
+  }
+  .cart-number {
+    font-size: 14px; /* Cambia el tamaño del número para pantallas más pequeñas */
+  }
+  .nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
