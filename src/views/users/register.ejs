@@ -69,6 +69,7 @@
             enctype="multipart/form-data"
             method="POST"
             class="form"
+            id="formulario"
           >
             <label for="">
               <i class="fa-solid fa-user"></i>
@@ -133,7 +134,7 @@
                 id="country"
                 class="form-control <%= locals.errors && errors.country ? 'is-invalid' : null %>"
               >
-                <option value="">Pais</option>
+                <option value="" selected disabled>Pais</option>
                 <option value="Argentina">Argentina</option>
                 <option value="Bolivia">Bolivia</option>
                 <option value="Brasil">Brasil</option>
@@ -188,7 +189,6 @@
             <% } %>
 
             <label
-              for="file"
               class="custum-file-upload nombre_campos"
               for="imgperfil"
             >
@@ -221,6 +221,7 @@
                 id="imgperfil"
                 type="file"
                 name="img"
+                accept=".jpg, .jpeg, .png, .gif"
                 class="form-control <%= locals.errors && errors.imgperfil ? 'is-invalid' : null %>"
               />
             </label>
@@ -238,5 +239,6 @@
       </div>
     </div>
     <script type="module" src="/javascript/Register.js"></script>
+    <script src="/javascript/validaciones/register.js"></script>
   </body>
 </html>
