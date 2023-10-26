@@ -5,10 +5,25 @@ const methodOverride = require("method-override");
 const session = require("express-session");
 const cookies = require("cookie-parser");
 const logger = require("morgan"); // para ver las peticiones que llegan al servidor
-
+const passport = require("passport");
 // ************ express() ************
 const app = express();
 
+// ************ Pass ************
+app.use(passport.initialize());
+const GoogleMidel = require("./src/middlewares/google");
+const loginRouter = require("./src/router/loginRouter");
+app.use(
+  "/auth",
+  passport.authenticate("auth-google", {
+    scope: [
+      "https://www.googleapis.com/auth/userinfo.profile",
+      "https://www.googleapis.com/auth/userinfo.email",
+    ],
+    session: false,
+  }),
+  loginRouter
+);
 // ************ session() ************
 app.use(
   session({

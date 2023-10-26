@@ -41,4 +41,7 @@ router.get("/profile/", authMiddleware, userController.profile);
 router.get("/logout/", userController.logout);
 //router.post("/edit/:id", upload.single("imgperfil"), userController.editUser);
 
+//Google
+router.get("/google", userController.google);
+
 module.exports = router;

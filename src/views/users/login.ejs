@@ -4,6 +4,11 @@
     <title>Login</title>
     <%- include ('../partials/head.ejs') %>
     <link rel="stylesheet" href="/css/style-login.css" />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta
+      name="google-signin-client_id"
+      content="348888010659-7eupt9hjg875d31ilgrf2tl5lle9unnk.apps.googleusercontent.com"
+    />
   </head>
   <body>
     <div class="container-form">
@@ -22,7 +27,8 @@
           <h2>Iniciar sesion</h2>
           <p>Ingresa tus datos para iniciar sesion</p>
           <div class="input-google">
-            <button class="button">
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <!-- <button class="button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="xMidYMid"
@@ -46,7 +52,7 @@
                 ></path>
               </svg>
               Continuar con Google
-            </button>
+            </button> -->
             <!-- <i class="fa-brands fa-google"></i> -->
           </div>
           <form action="/user/login" method="POST" class="form">
@@ -121,6 +127,6 @@
       </div>
     </div>
     <script type="module" src="/javascript/login.js"></script>
-    <script type="module" src="/javascript/authWithGoogle.js"></script>
+    <script type="module" src="/javascript/authGoogle.js"></script>
   </body>
 </html>

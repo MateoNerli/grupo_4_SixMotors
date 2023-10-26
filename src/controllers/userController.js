@@ -131,6 +131,10 @@ const userController = {
       orders,
     });
   },
+
+  google: (req, res) => {
+    res.send(req.user);
+  },
 };
 
 module.exports = userController;
