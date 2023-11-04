@@ -60,6 +60,7 @@ const productController = {
     });
   },
   contacto: (req, res) => {
+    const products = db.Product.findAll();
     res.render(path.join("products", "contacto"), {
       products,
     });
