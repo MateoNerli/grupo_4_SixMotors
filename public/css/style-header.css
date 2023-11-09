@@ -265,9 +265,9 @@ button .arrow {
   } */
 }
 @media (max-width: 991px) {
-  .nav {
+  /* .nav {
     padding: 10px 0px;
-  }
+  } */
   .icons {
     font-size: 20px;
     cursor: pointer;

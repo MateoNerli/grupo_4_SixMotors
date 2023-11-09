@@ -12,7 +12,7 @@
     <div class="conten">
       <% if (prod.type === 0) { %>
       <!-- <button class="producto-agregar agregar_carrito" data-id="<%= prod.id %>"> -->
-      <a href="/products/contacto/">
+      <a href="/products/contacto/<%= prod.id %>">
         <button class="producto-agregar">Contactar vendedor</button>
       </a>
       <% } else { %>
@@ -20,11 +20,11 @@
         Agregar
       </button>
       <% } %>
-      <div class="favorito">
+      <!-- <div class="favorito">
         <button>
           <i class="bi bi-heart"></i>
         </button>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

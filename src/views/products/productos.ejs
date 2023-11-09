@@ -30,6 +30,23 @@
         </header>
         <div class="menu-aside">
           <ul class="menu-autos">
+            <% if (products[0].type == 0) { %>
+            <li>
+              <button id="" class="boton-menu boton-categoria active">
+                <i class="bi bi-hand-index-thumb-fill"></i> Todos los autos
+              </button>
+            </li>
+            <li>
+              <button id="" class="boton-menu boton-categoria">
+                <i class="bi bi-hand-index-thumb"></i> 0km
+              </button>
+            </li>
+            <li>
+              <button id="" class="boton-menu boton-categoria">
+                <i class="bi bi-hand-index-thumb"></i> Usados
+              </button>
+            </li>
+            <% } else { %>
             <li>
               <button id="" class="boton-menu boton-categoria active">
                 <i class="bi bi-hand-index-thumb-fill"></i> Todos los repuestos
@@ -55,12 +72,7 @@
                 <i class="bi bi-hand-index-thumb"></i> Bateria
               </button>
             </li>
-            <li>
-              <a class="boton-menu boton-carrito" href="/carrito">
-                <i class="bi bi-cart-fill"></i> Carrito
-                <span id="numerito" class="numerito">0</span>
-              </a>
-            </li>
+            <% } %>
           </ul>
         </div>
         <footer>

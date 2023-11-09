@@ -59,10 +59,14 @@ const productController = {
       carrito: req.session.carrito,
     });
   },
-  contacto: (req, res) => {
-    const products = db.Product.findAll();
+  contacto: async (req, res) => {
+    const productId = await db.Product.findByPk(req.params.id);
+
+    if (!productId) {
+      return res.status(404).send("Producto no encontrado");
+    }
     res.render(path.join("products", "contacto"), {
-      products,
+      productName: productId.name,
     });
   },
   search: async (req, res) => {
