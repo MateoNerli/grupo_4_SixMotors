@@ -16,12 +16,15 @@
   border-bottom: 5px solid var(--accent);
 }
 /* CONTACTO */
+
 .mensaje-container {
+  background-color: var(--background);
+}
+.caja {
   max-width: 1250px;
   position: relative;
   width: 100%;
   padding: 40px 100px;
-  background-color: var(--background);
   margin: 0 auto;
 }
 
@@ -44,8 +47,6 @@
 }
 .caja {
   position: relative;
-
-  margin-top: 20px;
 }
 .conta h3 {
   color: var(--primary);

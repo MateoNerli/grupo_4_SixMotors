@@ -259,10 +259,10 @@ button .arrow {
 }
 
 @media (max-width: 1080px) {
-  .container {
+  /* .container {
     margin: 1rem;
     margin-right: 1rem;
-  }
+  } */
 }
 @media (max-width: 991px) {
   .nav {

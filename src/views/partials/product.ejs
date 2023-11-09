@@ -10,9 +10,16 @@
     <h3 class="producto-titulo"><%= prod.name %></h3>
     <p class="producto-precio">$<%= prod.price %></p>
     <div class="conten">
+      <% if (prod.type === 0) { %>
+      <!-- <button class="producto-agregar agregar_carrito" data-id="<%= prod.id %>"> -->
+      <a href="/products/contacto/">
+        <button class="producto-agregar">Contactar vendedor</button>
+      </a>
+      <% } else { %>
       <button class="producto-agregar agregar_carrito" data-id="<%= prod.id %>">
         Agregar
       </button>
+      <% } %>
       <div class="favorito">
         <button>
           <i class="bi bi-heart"></i>
