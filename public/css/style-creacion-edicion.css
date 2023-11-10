@@ -1,9 +1,22 @@
+
+.is-invalid{
+  border: red 1px solid !important;
+}
+
+.is-invalid::placeholder{
+  color: red;
+}
+
+
 .titulo {
   margin: 10px;
   padding: 5px;
   display: flex;
   justify-content: space-between;
 }
+
+
+
 .titulo h2 {
   text-align: center;
   justify-content: center;
