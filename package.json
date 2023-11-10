@@ -16,6 +16,7 @@
     "mysql": "^2.18.1",
     "mysql2": "^3.6.1",
     "sequelize": "5.21",
+    "sweetalert2": "^11.9.0",
     "toastify-js": "^1.12.0"
   },
   "name": "grupo_4_sixmotors",
