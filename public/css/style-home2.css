@@ -6,6 +6,14 @@ main {
   box-sizing: border-box;
   overflow-x: hidden;
 }
+
+.is-invalid{
+  border: 1px red solid !important;
+}
+.is-invalid::placeholder{
+  color: red !important;
+}
+
 /* banner */
 #banner {
   position: relative;
