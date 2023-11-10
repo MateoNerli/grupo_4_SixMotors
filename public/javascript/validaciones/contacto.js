@@ -82,7 +82,7 @@ form.email.addEventListener("blur", validarEmail);
 form.cel.addEventListener("blur", validarCel);
 form.mensaje.addEventListener("blur", validarMensaje);
 
-form.nombre.focus();
+// form.nombre.focus();
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -109,6 +109,12 @@ form.addEventListener("submit", (e) => {
       icon: "success",
       title: "Mensaje enviado con éxito",
       text: "En breve nos pondremos en contacto con usted",
+    }).then(() => {
+      form.nombre.value = "";
+      form.apellido.value = "";
+      form.email.value = "";
+      form.cel.value = "";
+      form.mensaje.value = "";
     });
 
     // form.submit();

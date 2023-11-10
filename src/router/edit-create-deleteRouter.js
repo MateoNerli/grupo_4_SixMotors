@@ -4,6 +4,8 @@ const editCreateDelete = require("../controllers/editCreateDeleteController.js")
 const multer = require("multer");
 const path = require("path");
 const validarProducts = require("../middlewares/validarProducts");
+const authMiddleware = require("../middlewares/authMiddleware");
+const adminMiddleware = require("../middlewares/adminMiddleware");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -20,18 +22,24 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
-router.get("/create", editCreateDelete.create);
+router.get("/create", authMiddleware, editCreateDelete.create);
 
 router.post(
   "/create",
   upload.single("img"),
   validarProducts,
+  authMiddleware,
   editCreateDelete.store
 );
 
-router.get("/edit/:id", editCreateDelete.edit);
+router.get("/edit/:id", adminMiddleware, editCreateDelete.edit);
 
-router.post("/edit/:id", upload.single("img"), editCreateDelete.update);
+router.post(
+  "/edit/:id",
+  adminMiddleware,
+  upload.single("img"),
+  editCreateDelete.update
+);
 
 router.delete("/delete/:id", editCreateDelete.delete);
 

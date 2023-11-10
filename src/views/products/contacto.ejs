@@ -19,62 +19,38 @@
         <div class="caja">
           <div class="conta form">
             <h3>Envianos un mensaje sobre <%= productName %></h3>
-            <form id="FormCont" action="">
+            <form id="formulario" method="POST">
               <div class="formBox">
                 <div class="row50">
                   <div class="inputBox">
                     <span>Nombre</span>
-                    <input
-                      type="text"
-                      id="name"
-                      name="nombre"
-                      placeholder="Pedro"
-                    />
-                    <i
-                      class="fas fa-exclamation-circle"
-                      style="display: none"
-                    ></i>
+                    <input type="text" placeholder="Pedro" name="nombre" />
                   </div>
                   <div class="inputBox">
                     <span>Apellido</span>
                     <input
                       type="text"
-                      id="lastName"
-                      name="apellido"
                       placeholder="Rodriguez"
+                      name="apellido"
                     />
-                    <i
-                      class="fas fa-exclamation-circle"
-                      style="display: none"
-                    ></i>
                   </div>
                 </div>
                 <div class="row50">
                   <div class="inputBox">
                     <span>Email</span>
                     <input
-                      id="email"
                       type="text"
-                      name="email"
                       placeholder="PedroRodriguez@email.com"
+                      name="email"
                     />
-                    <i
-                      class="fas fa-exclamation-circle"
-                      style="display: none"
-                    ></i>
                   </div>
                   <div class="inputBox">
                     <span>Telefono</span>
                     <input
-                      id="phone"
                       type="text"
-                      name="telefono"
                       placeholder="+54 3364525352"
+                      name="cel"
                     />
-                    <i
-                      class="fas fa-exclamation-circle"
-                      style="display: none"
-                    ></i>
                   </div>
                 </div>
                 <div class="row100">
@@ -82,7 +58,7 @@
                     <span>Message</span>
                     <textarea
                       name="mensaje"
-                      id="mensaje"
+                      id=""
                       cols="30"
                       rows="10"
                       placeholder="Escribi tu mensaje aqui..."
@@ -104,7 +80,7 @@
       <%- include ('../partials/footer.ejs') %>
       <!-- Scripts -->
       <%- include('../partials/scripts') %>
-      <script src="/javascript/contactoCompra.js"></script>
+      <script src="/javascript/validaciones/contacto.js"></script>
     </main>
   </body>
 </html>

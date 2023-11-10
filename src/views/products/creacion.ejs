@@ -4,6 +4,7 @@
     <title>Document</title>
     <%- include ('../partials/head.ejs') %>
     <link rel="stylesheet" href="/css/style-creacion-edicion.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
     <main>
@@ -38,6 +39,7 @@
                   <div class="inputBox">
                     <label for="type">Type</label>
                     <select name="type" id="type">
+                      <option value="">Selecionar tipo</option>
                       <option value="0">Vehiculo</option>
                       <option value="1">Autoparte</option>
                     </select>
@@ -72,6 +74,7 @@
                   <% } %>
                   <label for="category">Es:</label>
                   <select name="is_km" id="is_km">
+                    <option value="">Cateogria</option>
                     <option value="0">Usado</option>
                     <option value="1">Nuevo</option>
                   </select>
@@ -118,7 +121,8 @@
     </main>
     <!-- Footer -->
     <%- include ('../partials/footer.ejs') %>
-
+    <!-- script -->
+    <% include ('../partials/scripts.ejs') %>
     <script src="/javascript/validaciones/vender.js"></script>
   </body>
 </html>

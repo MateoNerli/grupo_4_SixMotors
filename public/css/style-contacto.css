@@ -15,6 +15,12 @@
   text-transform: uppercase;
   border-bottom: 5px solid var(--accent);
 }
+.is-invalid {
+  border: 1px red solid !important;
+}
+.is-invalid::placeholder {
+  color: red !important;
+}
 /* CONTACTO */
 
 .mensaje-container {

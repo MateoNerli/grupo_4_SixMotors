@@ -94,7 +94,7 @@ if (localStorage.carrito && localStorage.carrito != "[]") {
       .then((res) => res.json())
       .then((product) => {
         if (product) {
-          return (cartRows.innerHTML += `
+          cartRows.innerHTML += `
           <tr id="row${index}">
               <th scope="row">${index + 1}</th>
               <td>${product.name}</td>
@@ -106,7 +106,7 @@ if (localStorage.carrito && localStorage.carrito != "[]") {
               ).toFixed(2)}</td>
               <td><button class="btn btn-danger btn-sm" onclick=removeItem(${index})><i class="fas fa-trash"></i></button></td>
           </tr>
-          `);
+          `;
           products.push({
             productId: product.id,
             name: product.name,

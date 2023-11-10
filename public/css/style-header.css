@@ -257,6 +257,9 @@ button .arrow {
 #dropUser {
   cursor: pointer;
 }
+.arrow {
+  padding: 2.5px;
+}
 
 @media (max-width: 1080px) {
   /* .container {
