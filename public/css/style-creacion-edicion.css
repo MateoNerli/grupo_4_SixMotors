@@ -1,12 +1,10 @@
-
-.is-invalid{
+.is-invalid {
   border: red 1px solid !important;
 }
 
-.is-invalid::placeholder{
+.is-invalid::placeholder {
   color: red;
 }
-
 
 .titulo {
   margin: 10px;
@@ -14,8 +12,6 @@
   display: flex;
   justify-content: space-between;
 }
-
-
 
 .titulo h2 {
   text-align: center;
@@ -86,7 +82,7 @@
 
 /* Estilos para los inputs, selects y textarea */
 .formulario input[type="text"],
-.formulario input[type="num"],
+.formulario input[type="number"],
 .formulario select,
 .formulario textarea,
 .formulario input[type="file"] {
