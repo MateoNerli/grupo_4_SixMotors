@@ -1,0 +1,117 @@
+/* Button Styles */
+#open {
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: black;
+  font-size: 14px;
+  padding: 10px 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#open:hover {
+  background-color: #f0f0f0;
+}
+
+.info-tit {
+  display: flex;
+  justify-content: space-between;
+}
+/* Modal Container Styles */
+.modal-container {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.3);
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: opacity 0.3s ease;
+}
+.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+/* Modal Styles */
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 400px;
+  transform: translate(-50%, -50%);
+  background-color: #fff; /* White background */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow: auto; /* Enable scroll if needed */
+  z-index: 999999;
+}
+
+/* Responsive Modal */
+@media (max-width: 600px) {
+  .modal {
+    max-width: 100%;
+  }
+}
+
+/* Close Button Styles */
+#close {
+  background-color: #ccc;
+  color: #333;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#close:hover {
+  background-color: #b3b3b3;
+}
+
+/* Save Changes Button Styles */
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px; /* Increased margin-bottom for better spacing */
+}
+
+label {
+  display: block;
+  margin-bottom: 10px; /* Increased margin-bottom for better spacing */
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 12px; /* Increased padding for better input appearance */
+  box-sizing: border-box;
+  margin-top: 5px;
+  border: 1px solid #ccc; /* Added border for input fields */
+  border-radius: 5px;
+}
+
+/* File Input Styles */
+.form-control-file {
+  margin-top: 10px; /* Increased margin-top for better spacing */
+}

@@ -131,6 +131,51 @@ const userController = {
       orders,
     });
   },
+
+  // getEditarUsuario: async (req, res) => {
+  //   const usuarioId = req.params.id;
+  //   const usuario = await db.User.findByPk(usuarioId);
+  //   return res.render(path.join("users", "editUser"), { usuario });
+  // },
+
+  // postEditarUsuario: async (req, res) => {
+  //   const { name, lastname, user, img, password, country, cel, review } =
+  //     req.body;
+  //   const usuarioId = req.params.id;
+  //   const usuario = await db.User.findByPk(usuarioId);
+
+  //   if (password) {
+  //     const salt = await bcryptjs.genSalt(10);
+  //     const hashPassword = await bcryptjs.hash(password, salt);
+  //     await usuario.update({
+  //       name,
+  //       lastname,
+  //       user,
+  //       img,
+  //       password: hashPassword,
+  //       country,
+  //       cel,
+  //     });
+  //   } else {
+  //     await usuario.update({
+  //       name,
+  //       lastname,
+  //       user,
+  //       img,
+  //       country,
+  //       cel,
+  //     });
+  //   }
+
+  //   if (review) {
+  //     await db.Review.create({
+  //       userId: usuarioId,
+  //       review: review,
+  //     });
+  //   }
+
+  //   return res.redirect("/user/profile");
+  // },
 };
 
 module.exports = userController;

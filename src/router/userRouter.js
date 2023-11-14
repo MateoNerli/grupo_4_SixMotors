@@ -41,4 +41,6 @@ router.get("/profile/", authMiddleware, userController.profile);
 router.get("/logout/", userController.logout);
 //router.post("/edit/:id", upload.single("imgperfil"), userController.editUser);
 
+// router.get("/profile/edit/:id", userController.getEditarUsuario);
+// router.post("/profile/edit/:id", userController.postEditarUsuario);
 module.exports = router;
