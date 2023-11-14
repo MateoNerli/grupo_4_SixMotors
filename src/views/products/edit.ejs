@@ -4,16 +4,17 @@
     <title>Document</title>
     <%- include ('../partials/head.ejs') %>
     <link rel="stylesheet" href="/css/style-creacion-edicion.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
     <!-- Navbar -->
     <%- include ('../partials/header.ejs') %>
 
     <div class="titulo">
-      <h2>Crear Producto</h2>
+      <h2>Editar producto</h2>
     </div>
     <main class="formulario">
-      <form action="/products/configs/edit/<%= producto.id %>" method="POST">
+      <form id="formulario" action="/products/configs/edit/<%= producto.id %>" method="POST"   enctype="multipart/form-data">
         <div class="caja">
           <div class="conta form">
             <div class="formBox">
@@ -24,14 +25,15 @@
                     type="text"
                     name="name"
                     value="<%= producto.name %>"
-                    required
                   />
+                 
                 </div>
                 <div class="inputBox">
                   <label for="type">Type</label>
-                  <select name="type" id="type" value="<%= producto.type %>">
-                    <option value="vehiculo">Vehiculo</option>
-                    <option value="autoparte">Autoparte</option>
+                  <select name="type" id="type">
+                    <option value="">Selecionar tipo</option>
+                    <option value="0">Vehiculo</option>
+                    <option value="1">Autoparte</option>
                   </select>
                 </div>
                 <div class="inputBox">
@@ -41,33 +43,40 @@
                     name="price"
                     value="<%= producto.price %>"
                   />
+              
+                </div>
+                <div class="inputBox">
+                  <label for="year">Modelo:(año)</label>
+                  <select name="year" id="year">
+                    <% for (var i = new Date().getFullYear(); i >= 1900; i--) { %>
+                      <option value="<%= i %>" <%= locals.old && old.year == i ? 'selected' : '' %>><%= i %></option>
+                    <% } %>
+                  </select>
                 </div>
               </div>
             </div>
             <div class="col-der">
               <div class="infoBox">
+          
                 <label for="img"><br />Foto del producto:</label>
                 <img
                   class="producto-imagen"
                   src="/images/products/<%= producto.img %>"
                   alt="<%= producto.title %>"
                 />
-                <label for="category">Categoria</label>
-                <select
-                  name="category"
-                  id="category"
-                  value="<%= producto.type %>"
-                >
-                  <option value="nuevo">Nuevo</option>
-                  <option value="usado">Usado</option>
+                <label for="category">Es:</label>
+                <select name="is_km" id="is_km">
+                  <option value="">Estado</option>
+                  <option value="0">Usado</option>
+                  <option value="1">Nuevo</option>
                 </select>
                 <label for="colors">Colores (separados por comas):</label>
                 <input
                   type="text"
                   name="colors"
-                  value="<%= producto.colors %>"
-                  required
+                  value="<%=producto.colors  %>"
                 />
+            
               </div>
             </div>
           </div>
@@ -75,10 +84,19 @@
             <div class="row100">
               <div class="inputBox">
                 <label for="description">Descripción:</label>
-                <textarea name="description" required>
-  <%= producto.description %></textarea
+                <textarea name="description"><%= producto.description %></textarea
                 >
+            
               </div>
+              <div class="inputBox check">
+                <label for="marked">Venta inmediata?</label>
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  name="marked"
+                />
+              </div>
+
               <div class="inputBox">
                 <input type="submit" value="Enviar" />
               </div>
@@ -89,5 +107,8 @@
     </main>
     <!-- Footer -->
     <%- include ('../partials/footer.ejs') %>
+    <!-- script -->
+    <% include ('../partials/scripts.ejs') %>
+    <script src="/javascript/validaciones/edit.js"></script>
   </body>
 </html>

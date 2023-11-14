@@ -57,11 +57,11 @@
                   </div>
                   <div class="inputBox">
                     <label for="year">Modelo:(año)</label>
-                    <input
-                      type="date"
-                      name="year"
-                      value="<%= locals.old ? old.year : null %>"
-                    />
+                    <select name="year" id="year">
+                      <% for (var i = new Date().getFullYear(); i >= 1900; i--) { %>
+                        <option value="<%= i %>" <%= locals.old && old.year == i ? 'selected' : '' %>><%= i %></option>
+                      <% } %>
+                    </select>
                   </div>
                 </div>
               </div>
@@ -74,7 +74,7 @@
                   <% } %>
                   <label for="category">Es:</label>
                   <select name="is_km" id="is_km">
-                    <option value="">Cateogria</option>
+                    <option value="">Estado</option>
                     <option value="0">Usado</option>
                     <option value="1">Nuevo</option>
                   </select>

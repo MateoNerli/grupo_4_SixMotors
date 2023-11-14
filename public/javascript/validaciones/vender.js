@@ -97,6 +97,30 @@ const validarFoto = () => {
   }
 };
 
+const validarOption = () => {
+  const option = form.type.value;
+  if (option === "") {
+    form.type.classList.add("is-invalid");
+    return false;
+  } else {
+    form.type.classList.remove("is-invalid");
+    setPlaceholder(form.type, "");
+    return true;
+  }
+};
+
+const validarIsKM = () => {
+  const isKM = form.is_km.value;
+  if (isKM === "") {
+    form.is_km.classList.add("is-invalid");
+    return false;
+  } else {
+    form.is_km.classList.remove("is-invalid");
+    setPlaceholder(form.is_km, "");
+    return true;
+  }
+};
+
 let submitting = false; // Variable para rastrear si se está haciendo submit
 
 form.name.addEventListener("blur", validarNombre);
@@ -105,6 +129,8 @@ form.description.addEventListener("blur", validarDescripcion);
 form.colors.addEventListener("blur", validarColores);
 form.year.addEventListener("blur", validarFecha);
 form.img.addEventListener("blur", validarFoto);
+form.type.addEventListener("blur", validarOption);
+form.is_km.addEventListener("blur", validarIsKM);
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -117,6 +143,8 @@ form.addEventListener("submit", async (e) => {
   validarColores();
   validarFecha();
   validarFoto();
+  validarOption();
+  validarIsKM();
 
   submitting = false; // Establecer submitting a false después de las validaciones
 
@@ -126,7 +154,9 @@ form.addEventListener("submit", async (e) => {
     validarDescripcion() &&
     validarColores() &&
     validarFecha() &&
-    validarFoto()
+    validarFoto() &&
+    validarOption() &&
+    validarIsKM()
   ) {
     // Muestra la alerta y luego envía el formulario
     Swal.fire({
