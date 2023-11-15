@@ -67,7 +67,7 @@ app.use("/products/configs", editCreateRouter);
 app.use("/user", userRouter);
 app.use("/api/", apiRouter);
 app.use("/api/products", apiProductsRouter);
-app.use("/api/user", apiUsersRouter);
+app.use("/api/users", apiUsersRouter);
 
 // esto es un middleware de tiempo de session
 app.use(sessionMiddleware);

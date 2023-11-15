@@ -9,7 +9,7 @@ const userApi = {
         meta: {
           status: 200,
           total: user.length,
-          url: "/api/user",
+          url: "/api/users",
         },
         data: user,
       };
@@ -22,7 +22,7 @@ const userApi = {
         meta: {
           status: 200,
           total: user.length,
-          url: "/api/user/:id",
+          url: "/api/users/:id",
         },
         data: user,
       };
