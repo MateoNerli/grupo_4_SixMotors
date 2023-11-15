@@ -132,50 +132,39 @@ const userController = {
     });
   },
 
-  // getEditarUsuario: async (req, res) => {
+  // edit: async (req, res) => {
   //   const usuarioId = req.params.id;
   //   const usuario = await db.User.findByPk(usuarioId);
-  //   return res.render(path.join("users", "editUser"), { usuario });
+  //   return res.render(path.join("users", "editUser"), {
+  //     usuario,
+  //   });
   // },
 
-  // postEditarUsuario: async (req, res) => {
-  //   const { name, lastname, user, img, password, country, cel, review } =
-  //     req.body;
-  //   const usuarioId = req.params.id;
-  //   const usuario = await db.User.findByPk(usuarioId);
+  postEditarUsuario: async (req, res) => {
+    let user = await db.User.findByPk(req.params.id);
+    if (user) {
+      let image = user.img;
+      if (req.file) {
+        image = req.file.filename;
+      }
+      await user.update({
+        name: req.body.name,
+        lastname: req.body.lastname,
+        user: req.body.user,
+        country: req.body.country,
+        cel: req.body.cel,
+        img: image,
+      });
+    }
+    if (req.body.review) {
+      await db.Review.create({
+        userId: user.id,
+        review: req.body.review,
+      });
+    }
 
-  //   if (password) {
-  //     const salt = await bcryptjs.genSalt(10);
-  //     const hashPassword = await bcryptjs.hash(password, salt);
-  //     await usuario.update({
-  //       name,
-  //       lastname,
-  //       user,
-  //       img,
-  //       password: hashPassword,
-  //       country,
-  //       cel,
-  //     });
-  //   } else {
-  //     await usuario.update({
-  //       name,
-  //       lastname,
-  //       user,
-  //       img,
-  //       country,
-  //       cel,
-  //     });
-  //   }
-
-  //   if (review) {
-  //     await db.Review.create({
-  //       userId: usuarioId,
-  //       review: review,
-  //     });
-  //   }
-
-  //   return res.redirect("/user/profile");
-  // },
+    return res.redirect("/user/profile/" + req.params.id);
+  },
 };
 
 module.exports = userController;
