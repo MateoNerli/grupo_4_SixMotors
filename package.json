@@ -17,7 +17,8 @@
     "mysql2": "^3.6.1",
     "sequelize": "5.21",
     "sweetalert2": "^11.9.0",
-    "toastify-js": "^1.12.0"
+    "toastify-js": "^1.12.0",
+    "proxy": "http://localhost:3000"
   },
   "name": "grupo_4_sixmotors",
   "description": "Sitio de ecommerce de SixMotors - Grupo 4 - Comisión 52 - Full Stack Digital House",
