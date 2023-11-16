@@ -39,6 +39,7 @@ const adminMiddleware = require("./src/middlewares/adminMiddleware");
 // ************ Api ************
 const apiProductsRouter = require("./src/router/api/apiProducts");
 const apiUsersRouter = require("./src/router/api/apiUser");
+const apiOrdersRouter = require("./src/router/api/apiOrder");
 // .ENV
 require("dotenv").config(); // para usar variables de entorno
 
@@ -68,6 +69,7 @@ app.use("/user", userRouter);
 app.use("/api/", apiRouter);
 app.use("/api/products", apiProductsRouter);
 app.use("/api/users", apiUsersRouter);
+app.use("/api/orders", apiOrdersRouter);
 
 // esto es un middleware de tiempo de session
 app.use(sessionMiddleware);

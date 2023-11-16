@@ -8,6 +8,7 @@ const userApi = {
       let respuesta = {
         meta: {
           status: 200,
+          title: "Usuarios",
           total: user.length,
           url: "/api/users",
         },
