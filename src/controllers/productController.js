@@ -54,11 +54,13 @@ const productController = {
     const products = await db.Product.findAll();
     res.render(path.join("products", "detail"), { product, isAdmin, products });
   },
+
   viewCart: (req, res) => {
     res.render(path.join("products", "carrito"), {
       carrito: req.session.carrito,
     });
   },
+
   contacto: async (req, res) => {
     const productId = await db.Product.findByPk(req.params.id);
 

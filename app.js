@@ -5,6 +5,7 @@ const methodOverride = require("method-override");
 const session = require("express-session");
 const cookies = require("cookie-parser");
 const logger = require("morgan"); // para ver las peticiones que llegan al servidor
+const cors = require("cors");
 
 // ************ express() ************
 const app = express();
@@ -36,6 +37,10 @@ const menuMiddleware = require("./src/middlewares/menuMiddleware");
 const userLoggedMiddleware = require("./src/middlewares/userMiddleware");
 const adminMiddleware = require("./src/middlewares/adminMiddleware");
 
+// ************ Api ************
+const apiProductsRouter = require("./src/router/api/apiProducts");
+const apiUsersRouter = require("./src/router/api/apiUser");
+const apiOrdersRouter = require("./src/router/api/apiOrder");
 // .ENV
 require("dotenv").config(); // para usar variables de entorno
 
@@ -43,10 +48,18 @@ require("dotenv").config(); // para usar variables de entorno
 app.use(cookies());
 app.use(userLoggedMiddleware);
 app.use(adminMiddleware);
-
+app.use(cors());
 // ************ Middlewares ************
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(
+  "/uploads",
+  express.static(path.join(__dirname, "./public/images/products"))
+);
+app.use(
+  "/users",
+  express.static(path.join(__dirname, "./public/images/users"))
+);
 // app.use("/", express.static(__dirname + "/public"));
 app.use("/", express.static(__dirname + "/design"));
 app.use(express.urlencoded({ extended: true }));
@@ -63,6 +76,9 @@ app.use("/products", productRouter);
 app.use("/products/configs", editCreateRouter);
 app.use("/user", userRouter);
 app.use("/api/", apiRouter);
+app.use("/api/products", apiProductsRouter);
+app.use("/api/users", apiUsersRouter);
+app.use("/api/orders", apiOrdersRouter);
 
 // esto es un middleware de tiempo de session
 app.use(sessionMiddleware);

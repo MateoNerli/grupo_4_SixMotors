@@ -44,6 +44,7 @@
                       <option value="1">Autoparte</option>
                     </select>
                   </div>
+                  
                   <div class="inputBox">
                     <label for="price">Precio:</label>
                     <input
@@ -67,6 +68,18 @@
               </div>
               <div class="col-der">
                 <div class="infoBox">
+                  <div class="inputBox">
+                    <label for="category">Categoria</label>
+                    <select name="category" id="category">
+                      <option value="">Selecionar categoria</option>
+                      <option value="Iluminacion">Iluminacion</option>
+                      <option value="Motor">Motor</option>
+                      <option value="Cubiertas">Cubiertas</option>
+                      <option value="Otros">Otros</option>
+                      <option value="0km">0km</option>
+                      <option value="Usado">Usado</option>
+                    </select>
+                  </div>
                   <label for="img"><br />Foto del producto:</label>
                   <input type="file" id="img" name="img" />
                   <% if (locals.errores && errores.img) { %>
