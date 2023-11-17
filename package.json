@@ -3,6 +3,7 @@
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
@@ -17,8 +18,7 @@
     "mysql2": "^3.6.1",
     "sequelize": "5.21",
     "sweetalert2": "^11.9.0",
-    "toastify-js": "^1.12.0",
-    "proxy": "http://localhost:3000"
+    "toastify-js": "^1.12.0"
   },
   "name": "grupo_4_sixmotors",
   "description": "Sitio de ecommerce de SixMotors - Grupo 4 - Comisión 52 - Full Stack Digital House",

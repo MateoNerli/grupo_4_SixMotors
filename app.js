@@ -5,6 +5,7 @@ const methodOverride = require("method-override");
 const session = require("express-session");
 const cookies = require("cookie-parser");
 const logger = require("morgan"); // para ver las peticiones que llegan al servidor
+const cors = require("cors");
 
 // ************ express() ************
 const app = express();
@@ -47,10 +48,18 @@ require("dotenv").config(); // para usar variables de entorno
 app.use(cookies());
 app.use(userLoggedMiddleware);
 app.use(adminMiddleware);
-
+app.use(cors());
 // ************ Middlewares ************
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(
+  "/uploads",
+  express.static(path.join(__dirname, "./public/images/products"))
+);
+app.use(
+  "/users",
+  express.static(path.join(__dirname, "./public/images/users"))
+);
 // app.use("/", express.static(__dirname + "/public"));
 app.use("/", express.static(__dirname + "/design"));
 app.use(express.urlencoded({ extended: true }));

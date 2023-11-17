@@ -4,11 +4,19 @@ const orders = db.Order;
 
 const ordersApi = {
   list: (req, res) => {
-    orders.findAll().then((orders) => {
+    let limit = req.query.limit || 0; // 0 significa sin límite
+    limit = parseInt(limit); // Asegurarse de que limit sea un número entero
+
+    let options = {};
+    if (limit > 0) {
+      options.limit = limit;
+    }
+
+    orders.findAll(options).then((orders) => {
       let respuesta = {
         meta: {
           status: 200,
-          title: "Ordenes",
+          title: "Orders",
           total: orders.length,
           url: "/api/orders",
         },
