@@ -1,0 +1,153 @@
+#open {
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: black;
+  font-size: 14px;
+  padding: 10px 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#open:hover {
+  background-color: #f0f0f0;
+}
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: opacity 0.3s ease;
+}
+.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.modal {
+  z-index: 99999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(24, 20, 20, 0.987);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+.info-tit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1em;
+}
+#close {
+  padding: 10px;
+}
+.heading {
+  text-align: center;
+  margin: 0;
+  color: #fff;
+  font-size: 30px;
+  border-bottom: 1px solid white;
+}
+.modal .user-box {
+  position: relative;
+}
+
+.modal .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.modal .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.modal .user-box input:focus ~ label,
+.modal .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #bdb8b8;
+  font-size: 12px;
+}
+
+select.form-control,
+textarea.form-control {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+label[for="review"] {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+@media (max-width: 425px) {
+  .modal {
+    width: 100%;
+    padding: 20px;
+  }
+}
+.buttonClose {
+  position: relative;
+  width: 4em;
+  height: 4em;
+  border: none;
+  background: none;
+}
+
+.buttonClose:hover {
+  background-color: rgb(210, 0, 0);
+}
+
+.buttonClose:active {
+  background-color: rgb(130, 0, 0);
+}
+
+.buttonClose:hover > .close {
+  animation: close 0.2s forwards 1.25s;
+}
+
+@keyframes close {
+  100% {
+    opacity: 1;
+  }
+}
+
+.buttonClose i {
+  font-size: 18px;
+  color: #fff;
+}

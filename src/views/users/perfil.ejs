@@ -5,6 +5,7 @@
     <%- include ('../partials/head.ejs') %>
 
     <link rel="stylesheet" href="/css/style-usuario.css" />
+    <link rel="stylesheet" href="/css/style-editUser.css" />
   </head>
   <body>
     <!-- Navbar -->
@@ -21,10 +22,106 @@
               id="profile-image"
             />
 
-            <div class="editar">
-              <a href="/user/edit/<%= locals.userLogged.id %>">
-                <i class="fa-solid fa-pencil"></i>
-              </a>
+            <button class="editar" id="open">
+              <i class="fa-solid fa-pencil"></i>
+            </button>
+            <div id="modal_container" class="modal-container">
+              <div class="modal">
+                <div class="info-tit">
+                  <h3 class="heading">Editar Informacion</h3>
+                  <button class="buttonClose" id="close">
+                    <i class="fa fa-close"></i>
+                  </button>
+                </div>
+                <form
+                  action="/user/update-user"
+                  method="POST"
+                  enctype="multipart/form-data"
+                  id="form"
+                >
+                  <div class="user-box">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      name="name"
+                      value="<%= locals.userLogged.name %>"
+                    />
+                    <label for="name">Nombre:</label>
+                  </div>
+
+                  <div class="user-box">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="lastname"
+                      name="lastname"
+                      value="<%= locals.userLogged.lastname %>"
+                    />
+                    />
+                    <label for="lastname">Apellido:</label>
+                  </div>
+
+                  <div class="user-box">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="user"
+                      name="user"
+                      value="<%= locals.userLogged.user %>"
+                    />
+                    <label for="user">Username:</label>
+                  </div>
+
+                  <div class="user-box">
+                    <input
+                      type="cel"
+                      class="form-control"
+                      id="cel"
+                      name="cel"
+                      value="<%= locals.userLogged.cel %>"
+                    />
+                    <label for="email">Celular:</label>
+                  </div>
+
+                  <div class="user-box">
+                    <select name="country" id="country" class="form-control">
+                      <option value="" disabled>Pais</option>
+                      <option value="Argentina" <%= locals.userLogged.country === 'Argentina' ? 'selected' : '' %>>Argentina</option>
+                      <option value="Bolivia" <%= locals.userLogged.country === 'Bolivia' ? 'selected' : '' %>>Bolivia</option>
+                      <option value="Brasil" <%= locals.userLogged.country === 'Brasil' ? 'selected' : '' %>>Brasil</option>
+                      <option value="Chile" <%= locals.userLogged.country === 'Chile' ? 'selected' : '' %>>Chile</option>
+                      <option value="Colombia" <%= locals.userLogged.country === 'Colombia' ? 'selected' : '' %>>Colombia</option>
+                      <option value="Ecuador" <%= locals.userLogged.country === 'Ecuador' ? 'selected' : '' %>>Ecuador</option>
+                      <option value="Guyana" <%= locals.userLogged.country === 'Guyana' ? 'selected' : '' %>>Guyana</option>
+                      <option value="Paraguay" <%= locals.userLogged.country === 'Paraguay' ? 'selected' : '' %>>Paraguay</option>
+                      <option value="Peru" <%= locals.userLogged.country === 'Peru' ? 'selected' : '' %>>Peru</option>
+                      <option value="Surinam" <%= locals.userLogged.country === 'Surinam' ? 'selected' : '' %>>Surinam</option>
+                      <option value="Uruguay" <%= locals.userLogged.country === 'Uruguay' ? 'selected' : '' %>>Uruguay</option>
+                      <option value="Venezuela" <%= locals.userLogged.country === 'Venezuela' ? 'selected' : '' %>>Venezuela</option>
+                    </select>
+                  </div>
+
+                  <div class="user-box">
+                    <textarea
+                      class="form-control"
+                      id="review"
+                      name="review"
+                      rows="3"
+                    >
+<%= locals.userLogged.reviews %></textarea
+                    >
+                  </div>
+
+                  <button
+                    type="button"
+                    id="btnGuardarCambios"
+                    class="btn btn-primary"
+                  >
+                    Guardar cambios
+                  </button>
+                </form>
+              </div>
             </div>
 
             <h4>
@@ -125,5 +222,6 @@
     <%- include ('../partials/footer.ejs') %> <%- include('../partials/scripts')
     %>
     <script type="module" src="/javascript/usuario.js"></script>
+    <script type="module" src="/javascript/editUser.js"></script>
   </body>
 </html>

@@ -131,6 +131,29 @@ const userController = {
       orders,
     });
   },
+
+  // edit: async (req, res) => {
+  //   const usuarioId = req.params.id;
+  //   const usuario = await db.User.findByPk(usuarioId);
+  //   return res.render(path.join("users", "editUser"), {
+  //     usuario,
+  //   });
+  // },
+
+  postEditarUsuario: async (req, res) => {
+    const usuarioId = req.session.userLogged.id;
+    const usuarioActualizado = req.body;
+
+    await db.User.update(usuarioActualizado, {
+      where: { id: usuarioId },
+    });
+
+    // Actualiza los datos del usuario en la sesión
+    const usuario = await db.User.findByPk(usuarioId);
+    req.session.userLogged = usuario;
+
+    return res.redirect("/user/profile");
+  },
 };
 
 module.exports = userController;

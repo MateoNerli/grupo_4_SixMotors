@@ -13,7 +13,7 @@
 
 nav {
   position: relative;
-  z-index: 9999;
+  /* z-index: 1; */
 }
 nav {
   font-family: "Agdasima", sans-serif;
@@ -21,7 +21,7 @@ nav {
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 100;
+  /* z-index: 100; */
   background-color: var(--background);
 }
 
@@ -29,7 +29,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 35px;
+  padding: 20px 15px;
 }
 .logo-img img:hover {
   transform: rotate(360deg);
@@ -222,7 +222,7 @@ button .arrow {
 
 .item-log {
   display: inline-block;
-  margin-right: 20px;
+  /* margin-right: 20px; */
 }
 
 .link-drop {
@@ -231,10 +231,10 @@ button .arrow {
   display: flex;
   align-items: center;
 }
-
+/* 
 .link-drop img {
   margin-right: 5px;
-}
+} */
 
 /* Estilos para el menú desplegable */
 .dropdown-menu {

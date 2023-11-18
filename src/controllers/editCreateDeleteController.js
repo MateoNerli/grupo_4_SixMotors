@@ -44,7 +44,6 @@ const editCreacionCointroller = {
     }
     return res.redirect("/products");
   },
-
   update: async function (req, res) {
     let product = await db.Product.findByPk(req.params.id);
     if (product) {
