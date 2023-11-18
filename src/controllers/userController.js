@@ -141,29 +141,35 @@ const userController = {
   // },
 
   postEditarUsuario: async (req, res) => {
-    let user = await db.User.findByPk(req.params.id);
-    if (user) {
-      let image = user.img;
-      if (req.file) {
-        image = req.file.filename;
-      }
-      await user.update({
-        name: req.body.name,
-        lastname: req.body.lastname,
-        user: req.body.user,
-        country: req.body.country,
-        cel: req.body.cel,
-        img: image,
-      });
-    }
-    if (req.body.review) {
-      await db.Review.create({
-        userId: user.id,
-        review: req.body.review,
-      });
-    }
+    try {
+      const usuarioId = req.session.userLogged.id;
+      console.log(`Usuario ID: ${usuarioId}`);
 
-    return res.redirect("/user/profile/" + req.params.id);
+      const usuario = await db.User.findByPk(usuarioId);
+      console.log("Usuario antes de la actualización:", usuario);
+
+      if (!usuario) {
+        console.log("Usuario no encontrado");
+        return res.status(404).json({ error: "Usuario no encontrado" });
+      }
+
+      const usuarioActualizado = {
+        ...usuario,
+        ...req.body,
+      };
+      console.log("Usuario actualizado:", usuarioActualizado);
+
+      await db.User.update(usuarioActualizado, {
+        where: { id: usuarioId },
+      });
+
+      console.log("Usuario después de la actualización:", usuario);
+
+      return res.redirect("/user/profile");
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({ error: "Error al editar el usuario" });
+    }
   },
 };
 
