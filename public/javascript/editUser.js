@@ -10,11 +10,10 @@ close.addEventListener("click", () => {
   modal_container.classList.remove("show");
 });
 
-// Asumiendo que tienes un botón con el ID "btnGuardarCambios"
 document
   .getElementById("btnGuardarCambios")
   .addEventListener("click", function (event) {
-    event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
+    event.preventDefault();
     actualizarPerfil();
   });
 function actualizarPerfil() {
@@ -43,24 +42,28 @@ function actualizarPerfil() {
       encodeURIComponent(cel) +
       "&review=" +
       encodeURIComponent(review),
+    //esto lo que hace es que toma los datos del formulario y los envia al controlador
   })
-    .then(function (response) {
-      if (response.ok) {
-        console.log("Perfil actualizado");
-        return response.text();
-      } else {
-        console.log("Error al actualizar el perfil");
-      }
-    })
     .then(function (data) {
-      // Manejar la respuesta exitosa, si es necesario
       console.log("Perfil actualizado exitosamente");
-      // modal_container.classList.toggle("show");
-      // Recargar la página
-      // location.reload();
+
+      Swal.fire({
+        title: "Perfil Actualizado",
+        text: "¡Tu perfil se ha actualizado correctamente!",
+        icon: "success",
+        confirmButtonText: "Aceptar",
+      }).then(() => {
+        // modal_container.classList.remove("show");
+        location.reload();
+      });
     })
     .catch(function (error) {
-      // Manejar errores
       console.error(error.message);
+      Swal.fire({
+        title: "Error",
+        text: "Hubo un error al actualizar el perfil. Por favor, inténtalo nuevamente.",
+        icon: "error",
+        confirmButtonText: "Aceptar",
+      });
     });
 }

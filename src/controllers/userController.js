@@ -141,35 +141,18 @@ const userController = {
   // },
 
   postEditarUsuario: async (req, res) => {
-    try {
-      const usuarioId = req.session.userLogged.id;
-      console.log(`Usuario ID: ${usuarioId}`);
+    const usuarioId = req.session.userLogged.id;
+    const usuarioActualizado = req.body;
 
-      const usuario = await db.User.findByPk(usuarioId);
-      console.log("Usuario antes de la actualización:", usuario);
+    await db.User.update(usuarioActualizado, {
+      where: { id: usuarioId },
+    });
 
-      if (!usuario) {
-        console.log("Usuario no encontrado");
-        return res.status(404).json({ error: "Usuario no encontrado" });
-      }
+    // Actualiza los datos del usuario en la sesión
+    const usuario = await db.User.findByPk(usuarioId);
+    req.session.userLogged = usuario;
 
-      const usuarioActualizado = {
-        ...usuario,
-        ...req.body,
-      };
-      console.log("Usuario actualizado:", usuarioActualizado);
-
-      await db.User.update(usuarioActualizado, {
-        where: { id: usuarioId },
-      });
-
-      console.log("Usuario después de la actualización:", usuario);
-
-      return res.redirect("/user/profile");
-    } catch (error) {
-      console.error(error);
-      return res.status(500).json({ error: "Error al editar el usuario" });
-    }
+    return res.redirect("/user/profile");
   },
 };
 
