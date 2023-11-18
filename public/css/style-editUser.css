@@ -1,4 +1,3 @@
-/* Button Styles */
 #open {
   border: 0;
   border-radius: 5px;
@@ -13,9 +12,7 @@
 #open:hover {
   background-color: #f0f0f0;
 }
-
 .modal-container {
-  display: flex;
   background-color: rgba(0, 0, 0, 0.3);
   align-items: center;
   justify-content: center;
@@ -33,80 +30,124 @@
   opacity: 1;
 }
 
-/* Modal Styles */
 .modal {
+  z-index: 99999;
   position: absolute;
   top: 50%;
   left: 50%;
-  height: 400px;
+  width: 400px;
+  padding: 40px;
   transform: translate(-50%, -50%);
-  background-color: #fff; /* White background */
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  overflow: auto; /* Enable scroll if needed */
-  z-index: 999999;
+  background: rgba(24, 20, 20, 0.987);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+.info-tit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1em;
+}
+#close {
+  padding: 10px;
+}
+.heading {
+  text-align: center;
+  margin: 0;
+  color: #fff;
+  font-size: 30px;
+  border-bottom: 1px solid white;
+}
+.modal .user-box {
+  position: relative;
 }
 
-/* Responsive Modal */
-@media (max-width: 600px) {
+.modal .user-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.modal .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.modal .user-box input:focus ~ label,
+.modal .user-box input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #bdb8b8;
+  font-size: 12px;
+}
+
+select.form-control,
+textarea.form-control {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+textarea.form-control {
+  resize: vertical;
+}
+label[for="review"] {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+@media (max-width: 425px) {
   .modal {
-    max-width: 100%;
+    width: 100%;
+    padding: 20px;
+  }
+}
+.buttonClose {
+  position: relative;
+  width: 4em;
+  height: 4em;
+  border: none;
+  background: none;
+}
+
+.buttonClose:hover {
+  background-color: rgb(210, 0, 0);
+}
+
+.buttonClose:active {
+  background-color: rgb(130, 0, 0);
+}
+
+.buttonClose:hover > .close {
+  animation: close 0.2s forwards 1.25s;
+}
+
+@keyframes close {
+  100% {
+    opacity: 1;
   }
 }
 
-/* Close Button Styles */
-#close {
-  background-color: #ccc;
-  color: #333;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#close:hover {
-  background-color: #b3b3b3;
-}
-
-/* Save Changes Button Styles */
-.btn-primary {
-  background-color: #007bff;
+.buttonClose i {
+  font-size: 18px;
   color: #fff;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3;
-}
-
-/* Form Styles */
-.form-group {
-  margin-bottom: 20px; /* Increased margin-bottom for better spacing */
-}
-
-label {
-  display: block;
-  margin-bottom: 10px; /* Increased margin-bottom for better spacing */
-}
-
-input,
-textarea,
-select {
-  width: 100%;
-  padding: 12px; /* Increased padding for better input appearance */
-  box-sizing: border-box;
-  margin-top: 5px;
-  border: 1px solid #ccc; /* Added border for input fields */
-  border-radius: 5px;
-}
-
-/* File Input Styles */
-.form-control-file {
-  margin-top: 10px; /* Increased margin-top for better spacing */
 }

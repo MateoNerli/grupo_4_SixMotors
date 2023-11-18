@@ -28,8 +28,10 @@
             <div id="modal_container" class="modal-container">
               <div class="modal">
                 <div class="info-tit">
-                  <h3>Editar Informacion</h3>
-                  <button id="close"><i class="fa fa-close"></i></button>
+                  <h3 class="heading">Editar Informacion</h3>
+                  <button class="buttonClose" id="close">
+                    <i class="fa fa-close"></i>
+                  </button>
                 </div>
                 <form
                   action="/user/update-user"
@@ -37,76 +39,70 @@
                   enctype="multipart/form-data"
                   id="form"
                 >
-                  <div class="form-group">
-                    <label for="name">Nombre:</label>
+                  <div class="user-box">
                     <input
                       type="text"
                       class="form-control"
                       id="name"
                       name="name"
                       value="<%= locals.userLogged.name %>"
-                      required
                     />
-                    <label for="lastname">Apellido:</label>
+                    <label for="name">Nombre:</label>
+                  </div>
+
+                  <div class="user-box">
                     <input
                       type="text"
                       class="form-control"
                       id="lastname"
                       name="lastname"
                       value="<%= locals.userLogged.lastname %>"
-                      required
                     />
+                    />
+                    <label for="lastname">Apellido:</label>
                   </div>
-                  <div class="form-group">
-                    <label for="user">Nombre de usuario:</label>
+
+                  <div class="user-box">
                     <input
                       type="text"
                       class="form-control"
                       id="user"
                       name="user"
                       value="<%= locals.userLogged.user %>"
-                      required
                     />
+                    <label for="user">Username:</label>
                   </div>
 
-                  <div class="form-group">
-                    <!-- <label for="password">Contraseña:</label>
+                  <div class="user-box">
                     <input
-                      type="password"
-                      class="form-control"
-                      id="password"
-                      name="password"
-                      required
-                    /> -->
-                    <label for="country">País:</label>
-                    <select name="country" id="country" class="form-control">
-                      <option value="" selected disabled>Pais</option>
-                      <option value="Argentina">Argentina</option>
-                      <option value="Bolivia">Bolivia</option>
-                      <option value="Brasil">Brasil</option>
-                      <option value="Chile">Chile</option>
-                      <option value="Colombia">Colombia</option>
-                      <option value="Ecuador">Ecuador</option>
-                      <option value="Guyana">Guyana</option>
-                      <option value="Paraguay">Paraguay</option>
-                      <option value="Peru">Peru</option>
-                      <option value="Surinam">Surinam</option>
-                      <option value="Uruguay">Uruguay</option>
-                      <option value="Venezuela">Venezuela</option>
-                    </select>
-                    <label for="cel">Teléfono:</label>
-                    <input
-                      type="text"
+                      type="cel"
                       class="form-control"
                       id="cel"
                       name="cel"
                       value="<%= locals.userLogged.cel %>"
-                      required
                     />
+                    <label for="email">Celular:</label>
                   </div>
 
-                  <div class="form-group">
-                    <label for="review">Reseña:</label>
+                  <div class="user-box">
+                    <select name="country" id="country" class="form-control">
+                      <option value="" disabled>Pais</option>
+                      <option value="Argentina" <%= locals.userLogged.country === 'Argentina' ? 'selected' : '' %>>Argentina</option>
+                      <option value="Bolivia" <%= locals.userLogged.country === 'Bolivia' ? 'selected' : '' %>>Bolivia</option>
+                      <option value="Brasil" <%= locals.userLogged.country === 'Brasil' ? 'selected' : '' %>>Brasil</option>
+                      <option value="Chile" <%= locals.userLogged.country === 'Chile' ? 'selected' : '' %>>Chile</option>
+                      <option value="Colombia" <%= locals.userLogged.country === 'Colombia' ? 'selected' : '' %>>Colombia</option>
+                      <option value="Ecuador" <%= locals.userLogged.country === 'Ecuador' ? 'selected' : '' %>>Ecuador</option>
+                      <option value="Guyana" <%= locals.userLogged.country === 'Guyana' ? 'selected' : '' %>>Guyana</option>
+                      <option value="Paraguay" <%= locals.userLogged.country === 'Paraguay' ? 'selected' : '' %>>Paraguay</option>
+                      <option value="Peru" <%= locals.userLogged.country === 'Peru' ? 'selected' : '' %>>Peru</option>
+                      <option value="Surinam" <%= locals.userLogged.country === 'Surinam' ? 'selected' : '' %>>Surinam</option>
+                      <option value="Uruguay" <%= locals.userLogged.country === 'Uruguay' ? 'selected' : '' %>>Uruguay</option>
+                      <option value="Venezuela" <%= locals.userLogged.country === 'Venezuela' ? 'selected' : '' %>>Venezuela</option>
+                    </select>
+                  </div>
+
+                  <div class="user-box">
                     <textarea
                       class="form-control"
                       id="review"
@@ -116,6 +112,7 @@
 <%= locals.userLogged.reviews %></textarea
                     >
                   </div>
+
                   <button
                     type="button"
                     id="btnGuardarCambios"
