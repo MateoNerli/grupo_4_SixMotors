@@ -21,30 +21,47 @@ const productController = {
   list: async (req, res, type) => {
     try {
       let products;
+      const page = req.query.page || 1;
+      const limit = 15;
+      const offset = (page - 1) * limit;
 
       if (type === 0) {
-        // Consulta para obtener todos los productos de tipo "vehiculo"
         products = await db.Product.findAll({
-          where: {
-            type: 0,
-          },
+          where: { type: 0 },
+          limit: limit,
+          offset: offset,
         });
       } else if (type === 1) {
-        // Consulta para obtener todos los productos de tipo "autoparte"
         products = await db.Product.findAll({
-          where: {
-            type: 1,
-          },
+          where: { type: 1 },
+          limit: limit,
+          offset: offset,
         });
       } else {
-        // Si se proporciona un tipo desconocido, muestra todos los productos
-        products = await db.Product.findAll();
+        products = await db.Product.findAll({
+          limit: limit,
+          offset: offset,
+        });
       }
 
-      res.render(path.join("products", "productos"), { products });
+      let totalProducts;
+      if (type === 0) {
+        totalProducts = await db.Product.count({ where: { type: 0 } });
+      } else if (type === 1) {
+        totalProducts = await db.Product.count({ where: { type: 1 } });
+      } else {
+        totalProducts = await db.Product.count();
+      }
+      const totalPages = Math.ceil(totalProducts / limit);
+
+      res.render("products/productos", {
+        products: products,
+        currentPage: page,
+        totalPages: totalPages,
+        type: type,
+      });
     } catch (error) {
-      console.error("Error al obtener productos:", error);
-      // Maneja el error adecuadamente aquí
+      console.log(error);
     }
   },
 
