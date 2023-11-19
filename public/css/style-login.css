@@ -5,6 +5,14 @@
   font-family: "Agdasima", sans-serif;
 }
 
+.is-invalid {
+  border: red 1px solid !important;
+}
+.fa-circle-exclamation {
+  display: none;
+  color: red;
+}
+
 body {
   padding: 20px;
   min-height: 100vh;

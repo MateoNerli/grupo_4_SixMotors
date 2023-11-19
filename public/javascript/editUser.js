@@ -27,7 +27,7 @@ function actualizarPerfil() {
   fetch("/user/update-user", {
     method: "POST",
     headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
+      "Content-Type": "application/x-www-form-urlencoded", //esto es para que el controlador sepa que le estoy enviando datos
     },
     body:
       "name=" +
@@ -53,7 +53,6 @@ function actualizarPerfil() {
         icon: "success",
         confirmButtonText: "Aceptar",
       }).then(() => {
-        // modal_container.classList.remove("show");
         location.reload();
       });
     })
