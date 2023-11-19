@@ -58,7 +58,7 @@
           <div class="autos-0km autos-cont">
             <div class="titulo">
               <h3>Autos 0km</h3>
-              <a href="/autos">
+              <a href="/products/autos">
                 <p>Ver mas</p>
               </a>
             </div>
@@ -89,7 +89,7 @@
           <div class="autos-usados autos-cont">
             <div class="titulo">
               <h3>Autos usados</h3>
-              <a href="/autos">
+              <a href="/products/autos">
                 <p>Ver mas</p>
               </a>
             </div>
@@ -121,14 +121,14 @@
         <!-- Swiper de los más vendidos -->
         <div class="masVendidos autos-cont">
           <div class="titulo">
-            <h3>Los más vendidos</h3>
+            <h3>Venta inmediata</h3>
           </div>
           <div class="swiperVendi mySwiperVendi">
             <div class="swiper-wrapperVendi">
-              <% for (let i = 0; i < 7; i++) { %> <% const randomIndex =
-              Math.floor(Math.random() * marked.length); %> <% const
-              randomProduct = marked[randomIndex]; %> <% if
-              (randomProduct.marked) { %>
+              <% for (let i = 0; i < 7; i++) { %> <% if (marked.length > 0) { %>
+              <% const randomIndex = Math.floor(Math.random() * marked.length);
+              %> <% const randomProduct = marked[randomIndex]; %> <% if
+              (randomProduct && randomProduct.marked) { %>
               <div class="swiper-slide">
                 <div class="card float-left p-4">
                   <div class="row">
@@ -147,7 +147,7 @@
                   </div>
                 </div>
               </div>
-              <% } %> <% } %>
+              <% } %> <% marked.splice(randomIndex, 1); %> <% } %> <% } %>
             </div>
             <div class="swiper-paginationVendi"></div>
           </div>
@@ -160,14 +160,15 @@
 
       <div class="titulo titulo-auto-partes">
         <h3>Autopartes</h3>
-        <a href="/">
+        <a href="/products/autopartes">
           <p>Ver mas</p>
         </a>
       </div>
       <section id="autopartes" class="autopartes">
         <div class="autopartes-items">
-          <% for (let i = 0; i < 12 ; i++) { %> <% const autoparteItem =
-          autoparte[i]; %>
+          <% for (let i = 0; i < 12 ; i++) { %> <% const randomIndex =
+          Math.floor(Math.random() * autoparte.length); %> <% const
+          autoparteItem = autoparte[randomIndex]; %>
           <a href="/products/detail/<%= autoparteItem.id %>">
             <div class="items">
               <span class="titulo-items"><%= autoparteItem.title %></span>
@@ -179,7 +180,7 @@
               <span class="precio-item">$<%= autoparteItem.price %></span>
             </div>
           </a>
-          <% } %>
+          <% autoparte.splice(randomIndex, 1); %> <% } %>
         </div>
       </section>
 
@@ -192,19 +193,23 @@
         <div class="wrapper">
           <i id="left" class="fa-solid fa-angle-left"></i>
           <ul class="carousel">
-            <% usuarios.forEach(usuarios => { %>
+            <% let usuariosConReseñas = usuarios.filter(usuario =>
+            usuario.reviews); for (let i = 0; i < 6; i++) { if
+            (usuariosConReseñas.length > 0) { const randomIndex =
+            Math.floor(Math.random() * usuariosConReseñas.length); const usuario
+            = usuariosConReseñas[randomIndex]; %>
             <li class="card-reseña">
               <div class="img">
                 <img
-                  src="/images/users/<%= usuarios.img %>"
-                  alt="<%= usuarios.name %>"
+                  src="/images/users/<%= usuario.img %>"
+                  alt="<%= usuario.name %>"
                   draggable="false"
                 />
               </div>
-              <h2><%= usuarios.name %></h2>
-              <span><%= usuarios.reviews %> </span>
+              <h2><%= usuario.name %></h2>
+              <span><%= usuario.reviews %> </span>
             </li>
-            <% }); %>
+            <% usuariosConReseñas.splice(randomIndex, 1); } } %>
           </ul>
           <i id="right" class="fa-solid fa-angle-right"></i>
         </div>
