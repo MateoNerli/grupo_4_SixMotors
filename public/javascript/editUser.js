@@ -22,7 +22,7 @@ function actualizarPerfil() {
   var user = document.getElementById("user").value;
   var country = document.getElementById("country").value;
   var cel = document.getElementById("cel").value;
-  var review = document.getElementById("review").value;
+  var reviews = document.getElementById("reviews").value;
 
   fetch("/user/update-user", {
     method: "POST",
@@ -40,8 +40,8 @@ function actualizarPerfil() {
       encodeURIComponent(country) +
       "&cel=" +
       encodeURIComponent(cel) +
-      "&review=" +
-      encodeURIComponent(review),
+      "&reviews=" +
+      encodeURIComponent(reviews),
     //esto lo que hace es que toma los datos del formulario y los envia al controlador
   })
     .then(function (data) {

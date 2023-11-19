@@ -143,7 +143,7 @@ const userController = {
   postEditarUsuario: async (req, res) => {
     const usuarioId = req.session.userLogged.id;
     const usuarioActualizado = req.body;
-
+    console.log(usuarioActualizado);
     await db.User.update(usuarioActualizado, {
       where: { id: usuarioId },
     });

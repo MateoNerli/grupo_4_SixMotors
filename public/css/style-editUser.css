@@ -109,7 +109,7 @@ textarea.form-control {
 textarea.form-control {
   resize: vertical;
 }
-label[for="review"] {
+label[for="reviews"] {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
