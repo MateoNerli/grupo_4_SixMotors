@@ -43,7 +43,7 @@ CREATE TABLE `orderitems` (
 -- Volcado de datos para la tabla `orderitems`
 --
 
-INSERT INTO `orderitems` (`id`, `orderId`, `productId`, `name`, `price`, `quantity`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
+INSERT INTO `Orderitems` (`id`, `orderId`, `productId`, `name`, `price`, `quantity`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
 (1, 2, 2, 'Toyota Hilux', 29.00, 1, '2023-10-10 02:50:53', '2023-10-10 02:50:53', NULL),
 (2, 2, 1, 'Peugeot 208', 73.00, 1, '2023-10-10 02:50:53', '2023-10-10 02:50:53', NULL),
 (3, 3, 1, 'Peugeot 208', 73.00, 1, '2023-10-10 03:12:06', '2023-10-10 03:12:06', NULL),
@@ -86,7 +86,7 @@ CREATE TABLE `orders` (
 -- Volcado de datos para la tabla `orders`
 --
 
-INSERT INTO `orders` (`id`, `userId`, `total`, `paymentMethod`, `shippingMethod`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
+INSERT INTO `Orders` (`id`, `userId`, `total`, `paymentMethod`, `shippingMethod`, `createdAt`, `updatedAt`, `deletedAt`) VALUES
 (2, 20, 102.00, 'Débito', 'Cadete', '2023-10-10 02:50:53', '2023-10-10 02:50:53', NULL),
 (3, 20, 73.00, 'Efectivo', 'Correo', '2023-10-10 03:12:06', '2023-10-10 03:12:06', NULL),
 (4, 20, 199.00, 'Efectivo', 'Cadete', '2023-10-10 23:01:48', '2023-10-10 23:01:48', NULL),
@@ -255,7 +255,7 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `lastname`, `user`, `type`, `email`, `password`, `img`, `createdAt`, `updatedAt`, `deletedAt`, `country`, `cel`, `reviews`) VALUES
+INSERT INTO `Users` (`id`, `name`, `lastname`, `user`, `type`, `email`, `password`, `img`, `createdAt`, `updatedAt`, `deletedAt`, `country`, `cel`, `reviews`) VALUES
 (1, 'Guss', 'Twyford', 'gtwyford0', 0, 'gtwyford0@theatlantic.com', '123456', 'ImgProfile-1697757123851.jpg', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 'Russia', '132-766-8677', 'muy buena antencion, muy buena pagina'),
 (2, 'Armstrong', 'Joule', 'ajoule1', 0, 'ajoule1@youku.com', '$2a$04$mTFjNKNrbF3MdFE9OOu0BukIwrMB8u1EZl7wZ6rnDJwIV7qQXqj9u', 'ImgProfile-1697758258875.jpg', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 'Indonesia', '337-699-6396', 'muy buena antencion, muy buena pagina'),
 (3, 'Cassandre', 'Boutellier', 'cboutellier2', 0, 'cboutellier2@unblog.fr', '$2a$04$mj6YC8Grvj1yedZx/yHBBOJTwCyZnIZOD3K3rIGkP1/3mmaPtQfae', 'ImgProfile-1697756959547.jpg', '0000-00-00 00:00:00', '0000-00-00 00:00:00', NULL, 'Indonesia', '736-567-3935', 'muy buena antencion, muy buena pagina'),
