@@ -1,3 +1,6 @@
+* {
+  font-family: "Rubik", sans-serif;
+}
 main {
   background-color: var(--background);
   color: var(--text);
@@ -7,10 +10,10 @@ main {
   overflow-x: hidden;
 }
 
-.is-invalid{
+.is-invalid {
   border: 1px red solid !important;
 }
-.is-invalid::placeholder{
+.is-invalid::placeholder {
   color: red !important;
 }
 
