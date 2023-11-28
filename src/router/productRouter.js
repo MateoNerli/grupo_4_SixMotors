@@ -22,5 +22,6 @@ router.get(
 router.get("/carrito", authMiddleware, productController.viewCart);
 router.get("/search", productController.search);
 router.get("/contacto/:id", authMiddleware, productController.contacto);
+router.get("/category/:category", productController.category);
 
 module.exports = router;

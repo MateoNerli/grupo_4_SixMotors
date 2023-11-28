@@ -32,7 +32,7 @@
           <ul class="menu-autos">
             <% if (products[0].type == 0) { %>
             <li>
-              <a href="/products/auto">
+              <a href="/products/autos">
                 <button
                   id="todosAutos"
                   class="boton-menu boton-categoria"
@@ -139,27 +139,6 @@
           <% products.forEach(prod => { %> <%-
           include('../partials/product.ejs', { prod: prod }) %> <% }); %>
         </div>
-        <% if(type === 0) { %>
-        <div class="pagination">
-          <% for(let i = 1; i <= totalPages; i++) { %>
-          <a
-            href="/products/autos?page=<%= i %>"
-            class="<%= currentPage == i ? 'active' : '' %>"
-            ><%= i %></a
-          >
-          <% } %>
-        </div>
-        <% } else if(type === 1) { %>
-        <div class="pagination">
-          <% for(let i = 1; i <= totalPages; i++) { %>
-          <a
-            href="/products/autopartes?page=<%= i %>"
-            class="<%= currentPage == i ? 'active' : '' %>"
-            ><%= i %></a
-          >
-          <% } %>
-        </div>
-        <% } %>
       </main>
     </div>
 
@@ -171,8 +150,5 @@
     <!-- javascript del Nav -->
     <script src="/javascript/cart.js"></script>
     <%- include('../partials/scripts') %>
-
-    <script src="/javascript/autos.js"></script>
-    <script src="/javascript/productCategory.js"></script>
   </body>
 </html>

@@ -104,6 +104,19 @@ const productController = {
       // Maneja el error adecuadamente aquí
     }
   },
+  category: async (req, res) => {
+    try {
+      const category = req.params.category;
+      const products = await db.Product.findAll({
+        where: {
+          category: category,
+        },
+      });
+      res.render(path.join("products", "category"), { products, category });
+    } catch (error) {
+      console.error("Error al buscar productos:", error);
+    }
+  },
 };
 
 module.exports = productController;
