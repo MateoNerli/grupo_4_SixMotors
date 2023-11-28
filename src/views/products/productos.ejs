@@ -32,44 +32,75 @@
           <ul class="menu-autos">
             <% if (products[0].type == 0) { %>
             <li>
-              <button id="" class="boton-menu boton-categoria active">
+              <button
+                id="todosAutos"
+                class="boton-menu boton-categoria active"
+                data-category="todosA"
+              >
                 <i class="bi bi-hand-index-thumb-fill"></i> Todos los autos
               </button>
             </li>
             <li>
-              <button id="" class="boton-menu boton-categoria">
+              <button
+                id="0km"
+                class="boton-menu boton-categoria"
+                data-category="0km"
+              >
                 <i class="bi bi-hand-index-thumb"></i> 0km
               </button>
             </li>
             <li>
-              <button id="" class="boton-menu boton-categoria">
-                <i class="bi bi-hand-index-thumb"></i> Usados
+              <button
+                id="Usado"
+                class="boton-menu boton-categoria"
+                data-category="Usado"
+              >
+                <i class="bi bi-hand-index-thumb"></i> Usado
               </button>
             </li>
             <% } else { %>
             <li>
-              <button id="btn-todos" class="boton-menu boton-categoria active">
+              <button
+                id="todosRepuestos"
+                class="boton-menu boton-categoria active"
+                data-category="TodosR"
+              >
                 <i class="bi bi-hand-index-thumb-fill"></i> Todos los repuestos
               </button>
             </li>
             <li>
-              <button id="btn-iluminacion" class="boton-menu boton-categoria">
-                <i class="bi bi-hand-index-thumb"></i> iluminacion
+              <button
+                id="iluminacion"
+                class="boton-menu boton-categoria"
+                data-category="Iluminación"
+              >
+                <i class="bi bi-hand-index-thumb"></i> Iluminación
               </button>
             </li>
-
             <li>
-              <button id="btn-motor" class="boton-menu boton-categoria">
+              <button
+                id="motor"
+                class="boton-menu boton-categoria"
+                data-category="Motor"
+              >
                 <i class="bi bi-hand-index-thumb"></i> Motor
               </button>
             </li>
             <li>
-              <button id="btn-cubiertas" class="boton-menu boton-categoria">
+              <button
+                id="cubiertas"
+                class="boton-menu boton-categoria"
+                data-category="Cubiertas"
+              >
                 <i class="bi bi-hand-index-thumb"></i> Cubiertas
               </button>
             </li>
             <li>
-              <button id="btn-otros" class="boton-menu boton-categoria">
+              <button
+                id="otros"
+                class="boton-menu boton-categoria"
+                data-category="Otros"
+              >
                 <i class="bi bi-hand-index-thumb"></i> Otros
               </button>
             </li>
@@ -88,8 +119,8 @@
         </h2>
         <!-- Contenedor de articulos, autopartes -->
         <div id="contenedor-productos" class="contenedor-productos">
-          <% products.forEach( prod=> { %> <%- include('../partials/product.ejs'
-          ,{prod}) %> <% } ) %>
+          <% products.forEach(prod => { %> <%-
+          include('../partials/product.ejs', { prod: prod }) %> <% }); %>
         </div>
         <% if(type === 0) { %>
         <div class="pagination">
@@ -125,5 +156,6 @@
     <%- include('../partials/scripts') %>
 
     <script src="/javascript/autos.js"></script>
+    <script src="/javascript/productCategory.js"></script>
   </body>
 </html>

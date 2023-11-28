@@ -16,19 +16,22 @@
           <% if (products.length > 0) { %>
           <div class="col-12">
             <h2 class="products-title">
-              Resultados de la búsqueda: <%= search %>
+              Resultados de la búsqueda: <%= keywords %>
             </h2>
           </div>
           <% products.forEach((product) => { %>
           <div class="container-prod">
             <section class="product-box">
-              <a href="<%= product.id %>">
+              <a href="/products/detail/<%= product.id %>">
                 <figure class="product-box_image">
-                  <img src="<%= product.img %>" alt="imagen de producto" />
+                  <img
+                    src="/images/products/<%= product.img != ''? product.img: 'default.png' %>"
+                    alt="imagen de producto"
+                  />
                 </figure>
                 <article class="product-box_data">
                   <h2>$<%= product.price %></h2>
-                  <p><%= product.title %></p>
+                  <p><%= product.name %></p>
                 </article>
               </a>
             </section>

@@ -90,14 +90,15 @@ const productController = {
   },
   search: async (req, res) => {
     try {
+      const keywords = req.query.keywords;
       const products = await db.Product.findAll({
         where: {
           name: {
-            [db.Sequelize.Op.like]: `%${req.query.keywords}%`,
+            [db.Sequelize.Op.like]: `%${keywords}%`,
           },
         },
       });
-      res.render(path.join("products", "productos"), { products });
+      res.render(path.join("products", "resultSearch"), { products, keywords });
     } catch (error) {
       console.error("Error al buscar productos:", error);
       // Maneja el error adecuadamente aquí
