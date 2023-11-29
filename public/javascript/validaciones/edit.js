@@ -42,23 +42,23 @@ const validarIsKM = () => {
     return true;
   }
 };
-const validarPrecio = () => {
-  const precio = form.price.value.trim();
-  if (precio === "") {
-    form.price.classList.add("is-invalid");
-    setPlaceholder(form.price, "El precio no puede estar vacío");
-    return false;
-  }
-  if (!sonTodosNumeros(precio)) {
-    form.price.classList.add("is-invalid");
-    setPlaceholder(form.price, "Debe ingresar un precio válido");
-    return false;
-  } else {
-    form.price.classList.remove("is-invalid");
-    setPlaceholder(form.price, "");
-    return true;
-  }
-};
+// const validarPrecio = () => {
+//   const precio = form.price.value.trim();
+//   if (precio === "") {
+//     form.price.classList.add("is-invalid");
+//     setPlaceholder(form.price, "El precio no puede estar vacío");
+//     return false;
+//   }
+//   if (!sonTodosNumeros(precio)) {
+//     form.price.classList.add("is-invalid");
+//     setPlaceholder(form.price, "Debe ingresar un precio válido");
+//     return false;
+//   } else {
+//     form.price.classList.remove("is-invalid");
+//     setPlaceholder(form.price, "");
+//     return true;
+//   }
+// };
 
 const validarDescripcion = () => {
   const descripcion = form.description.value.trim();
@@ -107,7 +107,7 @@ form.addEventListener("submit", async (e) => {
   submitting = true; // Establecer submitting a true antes de las validaciones
 
   const esNombreValido = validarNombre();
-  const esPrecioValido = validarPrecio();
+  // const esPrecioValido = validarPrecio();
   const esDescripcionValida = validarDescripcion();
   const sonColoresValidos = validarColores();
   const esFechaValida = validarFecha();
@@ -118,7 +118,7 @@ form.addEventListener("submit", async (e) => {
 
   if (
     esNombreValido &&
-    esPrecioValido &&
+    // esPrecioValido &&
     esDescripcionValida &&
     sonColoresValidos &&
     esFechaValida &&
