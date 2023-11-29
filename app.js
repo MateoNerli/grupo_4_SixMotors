@@ -69,9 +69,9 @@ app.use("/", express.static(__dirname + "/design"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
-const puerto = 3000;
+const puerto = process.env.PORT || 3000;
 app.listen(puerto, () => {
-  console.log("Aplicación corriendo en el puerto 3000");
+  console.log("Aplicación corriendo en puerto http://localhost:" + puerto);
 });
 
 app.use(logger("dev"));
