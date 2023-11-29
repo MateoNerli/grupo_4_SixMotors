@@ -20,9 +20,6 @@ app.use(
     secret: "Shhh, It's a secret",
     resave: false,
     saveUninitialized: true,
-    store: new (require("connect-pg-simple")(session))({
-      conString: process.env.DB_HOST,
-    }),
   })
 );
 
