@@ -76,16 +76,25 @@ const validarMensaje = () => {
   }
 };
 
+function sonTodosNumeros(cadena) {
+  return /^\d+$/.test(cadena);
+}
+
+function validarQueSeaEmail(email) {
+  var emailValido = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+  return emailValido.test(email);
+}
+
 form.nombre.addEventListener("blur", validarNombre);
 form.apellido.addEventListener("blur", validarApellido);
 form.email.addEventListener("blur", validarEmail);
 form.cel.addEventListener("blur", validarCel);
 form.mensaje.addEventListener("blur", validarMensaje);
 
-// form.nombre.focus();
+async function handleSubmit(event) {
+  event.preventDefault();
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+  const formData = new FormData(this);
 
   submitting = true; // Establecer submitting a true antes de las validaciones
 
@@ -95,8 +104,8 @@ form.addEventListener("submit", (e) => {
   let esValidoCel = validarCel();
   let esValidoMensaje = validarMensaje();
 
-  submitting = false; // Establecer submitting a false después de las validaciones
-
+  submitting = false;
+  // Validar campos
   if (
     esValidoNombre &&
     esValidoApellido &&
@@ -104,28 +113,23 @@ form.addEventListener("submit", (e) => {
     esValidoCel &&
     esValidoMensaje
   ) {
-    // Si todas las validaciones son exitosas, mostrar una alerta de SweetAlert
-    Swal.fire({
-      icon: "success",
-      title: "Mensaje enviado con éxito",
-      text: "En breve nos pondremos en contacto con usted",
-    }).then(() => {
-      form.nombre.value = "";
-      form.apellido.value = "";
-      form.email.value = "";
-      form.cel.value = "";
-      form.mensaje.value = "";
+    const response = await fetch(this.action, {
+      method: this.method,
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
     });
 
-    // form.submit();
+    if (response.ok) {
+      this.reset();
+      Swal.fire({
+        icon: "success",
+        title: "Gracias por contactarnos",
+        text: "Pronto nos pondremos en contacto con usted.",
+      });
+    }
   }
-});
-
-function sonTodosNumeros(cadena) {
-  return /^\d+$/.test(cadena);
 }
 
-function validarQueSeaEmail(email) {
-  var emailValido = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
-  return emailValido.test(email);
-}
+form.addEventListener("submit", handleSubmit);
