@@ -7,8 +7,6 @@ const cookies = require("cookie-parser");
 const logger = require("morgan"); // para ver las peticiones que llegan al servidor
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const MySQLStore = require("express-mysql-session")(session);
-require("dotenv").config();
 // ************ express() ************
 const app = express();
 
@@ -17,19 +15,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // ************ session() ************
-const sessionStore = new MySQLStore({
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_NAME,
-});
 app.use(
   session({
     secret: "Shhh, It's a secret",
     resave: false,
     saveUninitialized: true,
-    store: sessionStore,
   })
 );
 
